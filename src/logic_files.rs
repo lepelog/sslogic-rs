@@ -10,6 +10,8 @@ use serde::{Serialize, Deserialize};
 use serde_yaml::Mapping;
 
 use crate::items::Item;
+use crate::RandomizerOptions;
+use crate::inventory::Inventory;
 
 
 #[derive(Deserialize)]
@@ -24,12 +26,16 @@ pub struct LogicLocationEntryYaml {
 pub enum LogicElement {
     AndExpression(Vec<LogicElement>),
     OrExpression(Vec<LogicElement>),
-    BaseRequirement(String),
+    MacroRequirement(String),
+    FixedValue(bool),
     SingleItem(Item),
     CountableItem(Item, usize),
     OptionEnabledRequirement(String),
     OptionDisabledRequirement(String),
-    OptionValueRequirement(String),
+    OptionIsRequirement(String, String),
+    OptionIsNotRequirement(String, String),
+    OptionContainsRequirement(String, String),
+    OptionDoesNotContainRequirement(String, String),
 }
 
 fn find_closing_parenthesis(s: &str, start_index: usize) -> Option<usize> {
@@ -60,7 +66,7 @@ enum LogicType {
 impl LogicElement {
     // Can Access Skyview & (Practice Sword | (Water Scale & Bomb Bag)) & (Slingshot | Clawshots | Beetle | Bow) & SV Small Key x1
     pub fn parse(string: &str) -> Result<Self, Box<dyn Error>> {
-        let mut logicType = LogicType::None;
+        let mut logic_type = LogicType::None;
         let mut current_rest = string;
         let mut current_level = Vec::new();
         let split_chars: &[_] = &['&','|'];
@@ -78,16 +84,16 @@ impl LogicElement {
             if let Some(pos) = current_rest.find(split_chars) {
                 match &current_rest[pos..=pos] {
                     "&" => {
-                        if logicType == LogicType::Or {
+                        if logic_type == LogicType::Or {
                             return Err("& and | mixed!".into());
                         }
-                        logicType = LogicType::And;
+                        logic_type = LogicType::And;
                     },
                     "|" => {
-                        if logicType == LogicType::And {
+                        if logic_type == LogicType::And {
                             return Err("& and | mixed!".into());
                         }
-                        logicType = LogicType::Or;
+                        logic_type = LogicType::Or;
                     },
                     _ => unreachable!(),
                 };
@@ -108,7 +114,7 @@ impl LogicElement {
         if current_level.len() == 1 {
             return Ok(current_level.remove(0));
         }
-        match logicType {
+        match logic_type {
             LogicType::And => {
                 return Ok(LogicElement::AndExpression(current_level));
             },
@@ -120,6 +126,12 @@ impl LogicElement {
     }
 
     fn parse_base_requirement(s: &str) -> Result<Self, Box<dyn Error>> {
+        if s == "Nothing" {
+            return Ok(LogicElement::FixedValue(true))
+        }
+        if s == "Impossible" {
+            return Ok(LogicElement::FixedValue(false))
+        }
         // simple item requirement
         if let Some(item) = Item::try_from(s).ok() {
             return Ok(LogicElement::SingleItem(item));
@@ -135,15 +147,54 @@ impl LogicElement {
             }
         }
         // option requirements
-        if s.starts_with("Option \"") && s.ends_with("\" Enabled") {
-            return Ok(LogicElement::OptionEnabledRequirement(s["Option \"".len()..s.len()-"\" Enabled".len()].to_string()))
+        if s.starts_with("Option \"") {
+            if s.ends_with("\" Enabled") {
+                return Ok(LogicElement::OptionEnabledRequirement(s["Option \"".len()..s.len()-"\" Enabled".len()].to_string()))
+            }
+            if s.ends_with("\" Disabled") {
+                return Ok(LogicElement::OptionDisabledRequirement(s["Option \"".len()..s.len()-"\" Disabled".len()].to_string()))
+            }
+            if s.ends_with('"') {
+                match s.find("\" Is \"") {
+                    Some(pos) => {
+                        let option_name = s["Option \"".len()..pos].to_string();
+                        let option_value = s[pos + "\" Is \"".len()..s.len()-1].to_string();
+                        return Ok(LogicElement::OptionIsRequirement(option_name, option_value));
+                    },
+                    None => {},
+                }
+                match s.find("\" Is Not \"") {
+                    Some(pos) => {
+                        let option_name = s["Option \"".len()..pos].to_string();
+                        let option_value = s[pos + "\" Is Not \"".len()..s.len()-1].to_string();
+                        return Ok(LogicElement::OptionIsNotRequirement(option_name, option_value));
+                    },
+                    None => {},
+                }
+                match s.find("\" Contains \"") {
+                    Some(pos) => {
+                        let option_name = s["Option \"".len()..pos].to_string();
+                        let option_value = s[pos + "\" Contains \"".len()..s.len()-1].to_string();
+                        return Ok(LogicElement::OptionContainsRequirement(option_name, option_value));
+                    },
+                    None => {},
+                }
+                match s.find("\" Does Not Contain \"") {
+                    Some(pos) => {
+                        let option_name = s["Option \"".len()..pos].to_string();
+                        let option_value = s[pos + "\" Does Not Contain \"".len()..s.len()-1].to_string();
+                        return Ok(LogicElement::OptionDoesNotContainRequirement(option_name, option_value));
+                    },
+                    None => {},
+                }
+            }
         }
-        return Ok(LogicElement::BaseRequirement(s.to_string()));
+        return Ok(LogicElement::MacroRequirement(s.to_string()));
     }
 
     pub fn get_all_base_reqs(&self, all_base_reqs: &mut HashSet<String>) {
         match self {
-            LogicElement::BaseRequirement(s) => {
+            LogicElement::MacroRequirement(s) => {
                 all_base_reqs.insert(s.clone());
             },
             LogicElement::OrExpression(exprs) | LogicElement::AndExpression(exprs) => {
@@ -152,6 +203,59 @@ impl LogicElement {
                 }
             }
             _ => {},
+        };
+    }
+
+    pub fn check_requirement_met(&self, options: &RandomizerOptions, inventory: &Inventory, macros: &HashMap<String, LogicElement>) -> bool {
+        match self {
+            LogicElement::FixedValue(val) => {
+                return *val;
+            },
+            LogicElement::SingleItem(item) => {
+                return inventory.has_item(*item);
+            },
+            LogicElement::CountableItem(item, req_count) => {
+                return inventory.get_item_count(*item) >= *req_count;
+            },
+            LogicElement::OptionEnabledRequirement(opt) => {
+                return options.get_option_enabled(&opt).unwrap();
+            },
+            LogicElement::OptionDisabledRequirement(opt) => {
+                return !options.get_option_enabled(&opt).unwrap();
+            },
+            LogicElement::OptionIsRequirement(opt, val) => {
+                return options.get_option_choice_str(&opt).unwrap() == val;
+            },
+            LogicElement::OptionIsNotRequirement(opt, val) => {
+                return options.get_option_choice_str(&opt).unwrap() != val;
+            },
+            LogicElement::OptionContainsRequirement(opt, val) => {
+                return options.get_option_choices(&opt).unwrap().contains(val);
+            },
+            LogicElement::OptionDoesNotContainRequirement(opt, val) => {
+                return !options.get_option_choices(&opt).unwrap().contains(val);
+            },
+            LogicElement::OrExpression(requirements) => {
+                // compute all for test
+                return requirements.iter().fold(false, |last, cur| last || cur.check_requirement_met(options, inventory, macros));
+                // return requirements.iter().any(|cur| cur.check_requirement_met(options, inventory));
+            },
+            LogicElement::AndExpression(requirements) => {
+                // compute all for test
+                return requirements.iter().fold(true, |last, cur| last && cur.check_requirement_met(options, inventory, macros));
+                // return requirements.iter().all(|cur| cur.check_requirement_met(options, inventory));
+            },
+            LogicElement::MacroRequirement(macr) => {
+                match macros.get(macr) {
+                    Some(req) => {
+                        return req.check_requirement_met(options, inventory, macros);
+                    },
+                    None => {
+                        println!("macro not found: {}", macr);
+                        return false;
+                    }
+                }
+            }
         };
     }
 }

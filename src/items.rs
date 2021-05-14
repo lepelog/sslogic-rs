@@ -1,7 +1,7 @@
 
 use std::convert::TryFrom;
 
-#[derive(Debug)]
+#[derive(Debug, Eq, PartialEq, Hash, Copy, Clone)]
 pub enum Item {
     Slingshot,
     BombBag,
@@ -107,8 +107,8 @@ impl TryFrom<&str> for Item {
             "LMF Boss Key" => Ok(Item::LMFBossKey),
             "AC Small Key" => Ok(Item::ACSmallKey),
             "AC Boss Key" => Ok(Item::ACBossKey),
-            "SSH Small Key" => Ok(Item::SSHSmallKey),
-            "SSH Boss Key" => Ok(Item::SSHBossKey),
+            "SS Small Key" => Ok(Item::SSHSmallKey),
+            "SS Boss Key" => Ok(Item::SSHBossKey),
             "FS Small Key" => Ok(Item::FSSmallKey),
             "FS Boss Key" => Ok(Item::FSBossKey),
             "SK Small Key" => Ok(Item::SKSmallKey),
