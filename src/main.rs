@@ -35,7 +35,7 @@ fn main2() {
     println!("{:?}", RandomizerOptions::parse_option_file().unwrap().get_options());
 }
 
-fn main() {
+fn main5() {
     let logic_file = LogicFiles::read_logic().unwrap();
     let options = RandomizerOptions::parse_option_file().unwrap();
     let mut inventory = Inventory::new();
@@ -44,4 +44,14 @@ fn main() {
         let reachable = logic_file.requirement_map.get(loc).unwrap().check_requirement_met(&options, &inventory, &logic_file.requirement_map);
         println!("{}: {}", loc, reachable);
     }
+}
+
+fn main() {
+    let mut options = RandomizerOptions::parse_option_file().unwrap();
+    // let permalink = options.to_permalink();
+    // println!("{}", permalink);
+    options.update_from_permalink("AwEAAADARjN8EwAAAAACAAA=").unwrap();
+    options.set_option_bool("swordless", true).unwrap();
+    options.set_option_str("hint-distribution", "Bingo").unwrap();
+    println!("{}", options.to_string());
 }
