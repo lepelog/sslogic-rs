@@ -2,7 +2,7 @@
 name = "sslogic-rs"
 version = "0.1.0"
 authors = ["lepelog <lepelog@users.noreply.github.com>"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -10,3 +10,5 @@ edition = "2018"
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = { version = "0.8" }
 base64 = "0.13.0"
+rand = "0.8.3"
+rand_pcg = "0.3.0"

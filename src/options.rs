@@ -1,33 +1,56 @@
-use std::fmt::Write;
-use crate::PackedBitsReader;
-use crate::PackedBitsWriter;
-use std::fs::File;
+use crate::packedbits::{PackedBitsReader, PackedBitsWriter};
+use serde_yaml::{Mapping, Value};
+use std::collections::HashSet;
 use std::convert::TryInto;
 use std::error::Error;
-use std::collections::HashSet;
-use serde_yaml::{Mapping, Value};
+use std::fmt::Write;
+use std::fs::File;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct RandomizerOptions {
+    pub seed: Option<usize>,
     options: Vec<RandomizerOption>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct RandomizerOption {
-    name: String,
-    command: String,
-    permalink: bool,
-    inner: SpecialOptions,
-    help: String,
+    pub name: String,
+    pub command: String,
+    pub permalink: bool,
+    pub inner: SpecialOptions,
+    pub help: String,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum SpecialOptions {
-    Boolean{value: bool, default: bool},
-    UInt{value: usize, default: usize, bits: u8, min: Option<usize>, max: Option<usize>},
-    Multichoice{value: HashSet<String>, default: HashSet<String>, all_values: Vec<String>},
-    Singlechoice{value: String, default: String, all_values: Vec<String>, bits: u8},
-    SinglechoiceUInt{value: usize, default: usize, all_values: Vec<usize>, bits: u8},
+    Boolean {
+        value: bool,
+        default: bool,
+    },
+    UInt {
+        value: usize,
+        default: usize,
+        bits: u8,
+        min: Option<usize>,
+        max: Option<usize>,
+    },
+    Multichoice {
+        value: HashSet<String>,
+        default: HashSet<String>,
+        all_values: Vec<String>,
+    },
+    Singlechoice {
+        value: String,
+        default: String,
+        all_values: Vec<String>,
+        bits: u8,
+    },
+    SinglechoiceUInt {
+        value: usize,
+        default: usize,
+        all_values: Vec<usize>,
+        bits: u8,
+    },
 }
 
 #[derive(Debug)]
@@ -38,11 +61,16 @@ pub enum SetOptionError {
 }
 
 fn get_str_key_from_yaml<'a>(mapping: &'a Mapping, key: &str) -> Result<&'a Value, Box<dyn Error>> {
-    Ok(mapping.get(&Value::String(key.into())).ok_or_else(|| format!("{} did not exist!", key))?)
+    Ok(mapping
+        .get(&Value::String(key.into()))
+        .ok_or_else(|| format!("{} did not exist!", key))?)
 }
 
 fn get_str_key_as_str_from_yaml(mapping: &Mapping, key: &str) -> Result<String, Box<dyn Error>> {
-    Ok(get_str_key_from_yaml(mapping, key)?.as_str().unwrap().to_string())
+    Ok(get_str_key_from_yaml(mapping, key)?
+        .as_str()
+        .unwrap()
+        .to_string())
 }
 
 impl RandomizerOptions {
@@ -55,50 +83,82 @@ impl RandomizerOptions {
             let command = get_str_key_as_str_from_yaml(&opt, "command")?;
             let help = get_str_key_as_str_from_yaml(&opt, "help")?;
             let option_type = get_str_key_as_str_from_yaml(&opt, "type")?;
-            let is_permalink = get_str_key_from_yaml(&opt, "permalink").ok().and_then(|v| v.as_bool()).unwrap_or(true);
+            let is_permalink = get_str_key_from_yaml(&opt, "permalink")
+                .ok()
+                .and_then(|v| v.as_bool())
+                .unwrap_or(true);
             let special_opts = match option_type.as_str() {
                 "boolean" => {
-                    let default = get_str_key_from_yaml(&opt, "default")?.as_bool().unwrap_or(false);
-                    SpecialOptions::Boolean{default, value: default}
-                },
+                    let default = get_str_key_from_yaml(&opt, "default")?
+                        .as_bool()
+                        .unwrap_or(false);
+                    SpecialOptions::Boolean {
+                        default,
+                        value: default,
+                    }
+                }
                 "int" => {
                     if name == "Seed" {
                         continue;
                     }
-                    let default = get_str_key_from_yaml(&opt, "default")?.as_u64()
-                        .and_then(|v| v.try_into().ok()).ok_or_else(|| format!("default value of {} is not valid!", name))?;
-                    let bits = get_str_key_from_yaml(&opt, "bits")?.as_u64()
-                        .and_then(|v| v.try_into().ok()).ok_or_else(|| format!("bits value of {} is not valid!", name))?;
+                    let default = get_str_key_from_yaml(&opt, "default")?
+                        .as_u64()
+                        .and_then(|v| v.try_into().ok())
+                        .ok_or_else(|| format!("default value of {} is not valid!", name))?;
+                    let bits = get_str_key_from_yaml(&opt, "bits")?
+                        .as_u64()
+                        .and_then(|v| v.try_into().ok())
+                        .ok_or_else(|| format!("bits value of {} is not valid!", name))?;
                     // field is optional
-                    let min = get_str_key_from_yaml(&opt, "min").ok().and_then(|m| m.as_u64()).and_then(|v| v.try_into().ok());
-                    let max = get_str_key_from_yaml(&opt, "max").ok().and_then(|m| m.as_u64()).and_then(|v| v.try_into().ok());
-                    SpecialOptions::UInt{
+                    let min = get_str_key_from_yaml(&opt, "min")
+                        .ok()
+                        .and_then(|m| m.as_u64())
+                        .and_then(|v| v.try_into().ok());
+                    let max = get_str_key_from_yaml(&opt, "max")
+                        .ok()
+                        .and_then(|m| m.as_u64())
+                        .and_then(|v| v.try_into().ok());
+                    SpecialOptions::UInt {
                         default,
                         value: default,
                         bits,
                         min,
                         max,
                     }
-                },
+                }
                 "multichoice" => {
                     let default: HashSet<_> = get_str_key_from_yaml(&opt, "default")?
-                        .as_sequence().unwrap().iter().map(|val| val.as_str().unwrap().to_string()).collect();
+                        .as_sequence()
+                        .unwrap()
+                        .iter()
+                        .map(|val| val.as_str().unwrap().to_string())
+                        .collect();
                     let choices = get_str_key_from_yaml(&opt, "choices")?
-                        .as_sequence().unwrap().iter().map(|val| val.as_str().unwrap().to_string()).collect();
+                        .as_sequence()
+                        .unwrap()
+                        .iter()
+                        .map(|val| val.as_str().unwrap().to_string())
+                        .collect();
                     SpecialOptions::Multichoice {
                         default: default.clone(),
                         value: default,
                         all_values: choices,
                     }
-                },
+                }
                 "singlechoice" => {
                     let default_value = get_str_key_from_yaml(&opt, "default")?;
-                    let bits = get_str_key_from_yaml(&opt, "bits")?.as_u64()
-                        .and_then(|v| v.try_into().ok()).ok_or_else(|| format!("bits value of {} is not valid!", name))?;
+                    let bits = get_str_key_from_yaml(&opt, "bits")?
+                        .as_u64()
+                        .and_then(|v| v.try_into().ok())
+                        .ok_or_else(|| format!("bits value of {} is not valid!", name))?;
                     if default_value.is_u64() {
                         let default = default_value.as_u64().unwrap().try_into()?;
                         let choices = get_str_key_from_yaml(&opt, "choices")?
-                            .as_sequence().unwrap().iter().map(|val| val.as_u64().unwrap().try_into().unwrap()).collect();
+                            .as_sequence()
+                            .unwrap()
+                            .iter()
+                            .map(|val| val.as_u64().unwrap().try_into().unwrap())
+                            .collect();
                         SpecialOptions::SinglechoiceUInt {
                             default,
                             value: default,
@@ -108,7 +168,11 @@ impl RandomizerOptions {
                     } else {
                         let default = default_value.as_str().unwrap().to_string();
                         let choices = get_str_key_from_yaml(&opt, "choices")?
-                            .as_sequence().unwrap().iter().map(|val| val.as_str().unwrap().to_string()).collect();
+                            .as_sequence()
+                            .unwrap()
+                            .iter()
+                            .map(|val| val.as_str().unwrap().to_string())
+                            .collect();
                         SpecialOptions::Singlechoice {
                             default: default.clone(),
                             value: default,
@@ -116,7 +180,7 @@ impl RandomizerOptions {
                             bits,
                         }
                     }
-                },
+                }
                 _ => {
                     println!("unknown opt type: {}", name);
                     continue;
@@ -131,7 +195,8 @@ impl RandomizerOptions {
             });
         }
         return Ok(RandomizerOptions {
-            options: result
+            seed: None,
+            options: result,
         });
     }
 
@@ -146,47 +211,72 @@ impl RandomizerOptions {
                 continue;
             }
             match &option.inner {
-                SpecialOptions::Boolean{value, ..} => {
+                SpecialOptions::Boolean { value, .. } => {
                     writer.write(if *value { 1 } else { 0 }, 1);
-                },
-                SpecialOptions::UInt{value, bits, ..} => {
+                }
+                SpecialOptions::UInt { value, bits, .. } => {
                     writer.write(*value, *bits);
-                },
-                SpecialOptions::Multichoice{value, all_values, ..} => {
+                }
+                SpecialOptions::Multichoice {
+                    value, all_values, ..
+                } => {
                     for val in all_values.iter() {
-                        writer.write(if value.contains(val) {1} else {0}, 1);
+                        writer.write(if value.contains(val) { 1 } else { 0 }, 1);
                     }
-                },
-                SpecialOptions::Singlechoice{value, all_values, bits, ..} => {
+                }
+                SpecialOptions::Singlechoice {
+                    value,
+                    all_values,
+                    bits,
+                    ..
+                } => {
                     // if this is not the array, something else is messed up
                     let index = all_values.iter().position(|v| v == value).unwrap();
                     writer.write(index, *bits);
-                },
-                SpecialOptions::SinglechoiceUInt{value, all_values, bits, ..} => {
+                }
+                SpecialOptions::SinglechoiceUInt {
+                    value,
+                    all_values,
+                    bits,
+                    ..
+                } => {
                     let index = all_values.iter().position(|v| v == value).unwrap();
                     writer.write(index, *bits);
                 }
             }
         }
         writer.flush();
-        writer.to_base64()
+        let mut out = writer.to_base64();
+        if let Some(seed) = self.seed {
+            write!(out, "#{}", seed).unwrap();
+        }
+        return out;
     }
 
     pub fn update_from_permalink(&mut self, s: &str) -> Result<(), Box<dyn Error>> {
-        let mut reader = PackedBitsReader::from_base64(s)?;
+        let mut reader = match s.find("#") {
+            None => PackedBitsReader::from_base64(s)?,
+            Some(seed_str_idx) => {
+                self.seed = Some(s[seed_str_idx + 1..].parse()?);
+                PackedBitsReader::from_base64(&s[..seed_str_idx])?
+            }
+        };
+        // let mut reader = PackedBitsReader::from_base64(s)?;
         for option in self.options.iter_mut() {
             if !option.permalink {
                 continue;
             }
             let option_name = &option.name;
             match &mut option.inner {
-                SpecialOptions::Boolean{value, ..} => {
+                SpecialOptions::Boolean { value, .. } => {
                     *value = reader.read(1)? == 1;
-                },
-                SpecialOptions::UInt{value, bits, ..} => {
+                }
+                SpecialOptions::UInt { value, bits, .. } => {
                     *value = reader.read(*bits)?;
-                },
-                SpecialOptions::Multichoice{value, all_values, ..} => {
+                }
+                SpecialOptions::Multichoice {
+                    value, all_values, ..
+                } => {
                     let mut new_val = HashSet::new();
                     for val in all_values.iter() {
                         if reader.read(1)? == 1 {
@@ -194,14 +284,28 @@ impl RandomizerOptions {
                         }
                     }
                     *value = new_val;
-                },
-                SpecialOptions::Singlechoice{value, all_values, bits, ..} => {
+                }
+                SpecialOptions::Singlechoice {
+                    value,
+                    all_values,
+                    bits,
+                    ..
+                } => {
                     let index = reader.read(*bits)?;
-                    *value = all_values.get(index).cloned().ok_or_else(|| format!("index {} out of range for {}", index, option_name))?;
-                },
-                SpecialOptions::SinglechoiceUInt{value, all_values, bits, ..} => {
+                    *value = all_values.get(index).cloned().ok_or_else(|| {
+                        format!("index {} out of range for {}", index, option_name)
+                    })?;
+                }
+                SpecialOptions::SinglechoiceUInt {
+                    value,
+                    all_values,
+                    bits,
+                    ..
+                } => {
                     let index = reader.read(*bits)?;
-                    *value = all_values.get(index).cloned().ok_or_else(|| format!("index {} out of range for {}", index, option_name))?;
+                    *value = all_values.get(index).cloned().ok_or_else(|| {
+                        format!("index {} out of range for {}", index, option_name)
+                    })?;
                 }
             }
         }
@@ -213,11 +317,11 @@ impl RandomizerOptions {
     pub fn get_option_enabled(&self, option_name: &str) -> Option<bool> {
         for opt in self.options.iter() {
             match opt.inner {
-                SpecialOptions::Boolean{value, ..} => {
+                SpecialOptions::Boolean { value, .. } => {
                     if opt.command == option_name {
                         return Some(value);
                     }
-                },
+                }
                 _ => {}
             }
         }
@@ -228,11 +332,11 @@ impl RandomizerOptions {
     pub fn get_option_uint(&self, option_name: &str) -> Option<usize> {
         for opt in self.options.iter() {
             match opt.inner {
-                SpecialOptions::UInt{value, ..} => {
+                SpecialOptions::UInt { value, .. } => {
                     if opt.command == option_name {
                         return Some(value);
                     }
-                },
+                }
                 _ => {}
             }
         }
@@ -243,11 +347,11 @@ impl RandomizerOptions {
     pub fn get_option_choice_str(&self, option_name: &str) -> Option<&String> {
         for opt in self.options.iter() {
             match &opt.inner {
-                SpecialOptions::Singlechoice{value, ..} => {
+                SpecialOptions::Singlechoice { value, .. } => {
                     if opt.command == option_name {
                         return Some(&value);
                     }
-                },
+                }
                 _ => {}
             }
         }
@@ -257,11 +361,11 @@ impl RandomizerOptions {
     pub fn get_option_choice_uint(&self, option_name: &str) -> Option<usize> {
         for opt in self.options.iter() {
             match opt.inner {
-                SpecialOptions::SinglechoiceUInt{value, ..} => {
+                SpecialOptions::SinglechoiceUInt { value, .. } => {
                     if opt.command == option_name {
                         return Some(value);
                     }
-                },
+                }
                 _ => {}
             }
         }
@@ -271,25 +375,29 @@ impl RandomizerOptions {
     pub fn get_option_choices(&self, option_name: &str) -> Option<&HashSet<String>> {
         for opt in self.options.iter() {
             match &opt.inner {
-                SpecialOptions::Multichoice{value, ..} => {
+                SpecialOptions::Multichoice { value, .. } => {
                     if opt.command == option_name {
                         return Some(value);
                     }
-                },
+                }
                 _ => {}
             }
         }
         None
     }
 
-    pub fn set_option_bool(&mut self, option_name: &str, new_value: bool) -> Result<(), SetOptionError> {
+    pub fn set_option_bool(
+        &mut self,
+        option_name: &str,
+        new_value: bool,
+    ) -> Result<(), SetOptionError> {
         for opt in self.options.iter_mut() {
             if opt.command == option_name {
                 match &mut opt.inner {
-                    SpecialOptions::Boolean{value, ..} => {
+                    SpecialOptions::Boolean { value, .. } => {
                         *value = new_value;
                         return Ok(());
-                    },
+                    }
                     _ => {
                         return Err(SetOptionError::WrongOptionType);
                     }
@@ -299,11 +407,17 @@ impl RandomizerOptions {
         Err(SetOptionError::DoesNotExist)
     }
 
-    pub fn set_option_uint(&mut self, option_name: &str, new_value: usize) -> Result<(), SetOptionError> {
+    pub fn set_option_uint(
+        &mut self,
+        option_name: &str,
+        new_value: usize,
+    ) -> Result<(), SetOptionError> {
         for opt in self.options.iter_mut() {
             if opt.command == option_name {
                 match &mut opt.inner {
-                    SpecialOptions::UInt{value, min, max, ..} => {
+                    SpecialOptions::UInt {
+                        value, min, max, ..
+                    } => {
                         if let Some(min_val) = min {
                             if *min_val > new_value {
                                 return Err(SetOptionError::NotInAvailableChoices);
@@ -316,14 +430,16 @@ impl RandomizerOptions {
                         }
                         *value = new_value;
                         return Ok(());
-                    },
-                    SpecialOptions::SinglechoiceUInt{value, all_values, ..} => {
+                    }
+                    SpecialOptions::SinglechoiceUInt {
+                        value, all_values, ..
+                    } => {
                         if !all_values.contains(&new_value) {
                             return Err(SetOptionError::NotInAvailableChoices);
                         }
                         *value = new_value;
                         return Ok(());
-                    },
+                    }
                     _ => {
                         return Err(SetOptionError::WrongOptionType);
                     }
@@ -333,17 +449,23 @@ impl RandomizerOptions {
         Err(SetOptionError::DoesNotExist)
     }
 
-    pub fn set_option_str(&mut self, option_name: &str, new_value: &str) -> Result<(), SetOptionError> {
+    pub fn set_option_str(
+        &mut self,
+        option_name: &str,
+        new_value: &str,
+    ) -> Result<(), SetOptionError> {
         for opt in self.options.iter_mut() {
             if opt.command == option_name {
                 match &mut opt.inner {
-                    SpecialOptions::Singlechoice{value, all_values, ..} => {
+                    SpecialOptions::Singlechoice {
+                        value, all_values, ..
+                    } => {
                         if !all_values.iter().any(|v| v == new_value) {
                             return Err(SetOptionError::NotInAvailableChoices);
                         }
                         *value = new_value.to_owned();
                         return Ok(());
-                    },
+                    }
                     _ => {
                         return Err(SetOptionError::WrongOptionType);
                     }
@@ -357,24 +479,28 @@ impl RandomizerOptions {
         let mut out = String::new();
         for opt in self.options.iter() {
             match &opt.inner {
-                SpecialOptions::Boolean{value, ..} => {
-                    writeln!(out, "{}: {}", opt.name, value);
-                },
-                SpecialOptions::UInt{value, ..} => {
-                    writeln!(out, "{}: {}", opt.name, value);
-                },
-                SpecialOptions::Multichoice{value, all_values, ..} => {
-                    let chosen = all_values.iter()
+                SpecialOptions::Boolean { value, .. } => {
+                    writeln!(out, "{}: {}", opt.name, value).unwrap();
+                }
+                SpecialOptions::UInt { value, .. } => {
+                    writeln!(out, "{}: {}", opt.name, value).unwrap();
+                }
+                SpecialOptions::Multichoice {
+                    value, all_values, ..
+                } => {
+                    let chosen = all_values
+                        .iter()
                         .filter(|&v| value.contains(v))
                         .cloned()
-                        .collect::<Vec<_>>().join(", ");
-                    writeln!(out, "{}: {}", opt.name, chosen);
-                },
-                SpecialOptions::Singlechoice{value, ..} => {
-                    writeln!(out, "{}: {}", opt.name, value);
-                },
-                SpecialOptions::SinglechoiceUInt{value, ..} => {
-                    writeln!(out, "{}: {}", opt.name, value);
+                        .collect::<Vec<_>>()
+                        .join(", ");
+                    writeln!(out, "{}: {}", opt.name, chosen).unwrap();
+                }
+                SpecialOptions::Singlechoice { value, .. } => {
+                    writeln!(out, "{}: {}", opt.name, value).unwrap();
+                }
+                SpecialOptions::SinglechoiceUInt { value, .. } => {
+                    writeln!(out, "{}: {}", opt.name, value).unwrap();
                 }
             }
         }

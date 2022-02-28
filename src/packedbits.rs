@@ -1,5 +1,5 @@
-use base64::{decode, encode};
 use base64::DecodeError;
+use base64::{decode, encode};
 
 pub struct PackedBitsReader {
     bytes: Vec<u8>,
@@ -10,7 +10,6 @@ pub struct PackedBitsReader {
 impl PackedBitsReader {
     pub fn from_base64(encoded: &str) -> Result<Self, DecodeError> {
         let decoded = decode(encoded)?;
-        let first_byte = decoded[0];
         return Ok(PackedBitsReader {
             bytes: decoded,
             current_byte_index: 0,
@@ -30,8 +29,12 @@ impl PackedBitsReader {
             }
 
             let mask = ((1 << bits_to_read) - 1) << self.current_bit_index;
-            let current_byte = *self.bytes.get(self.current_byte_index).ok_or_else(|| "no more bytes left!")?;
-            value = (((current_byte & mask) >> self.current_bit_index) as usize) << bits_read | value;
+            let current_byte = *self
+                .bytes
+                .get(self.current_byte_index)
+                .ok_or_else(|| "no more bytes left!")?;
+            value =
+                (((current_byte & mask) >> self.current_bit_index) as usize) << bits_read | value;
 
             self.current_bit_index += bits_to_read;
             self.current_byte_index += (self.current_bit_index >> 3) as usize;
@@ -50,7 +53,6 @@ pub struct PackedBitsWriter {
 }
 
 impl PackedBitsWriter {
-
     pub fn new() -> Self {
         PackedBitsWriter {
             bytes: Vec::new(),
@@ -83,7 +85,31 @@ impl PackedBitsWriter {
         self.bits_left_in_byte = 8;
     }
 
-    pub fn to_base64(&self) -> String{
+    pub fn to_base64(&self) -> String {
         encode(&self.bytes)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+
+    use super::{PackedBitsReader, PackedBitsWriter};
+
+    #[test]
+    fn try_pack_unpack() {
+        let mut writer = PackedBitsWriter::new();
+        writer.write(0, 2);
+        writer.write(2, 2);
+        writer.write(4, 5);
+        writer.write(10, 5);
+        writer.flush();
+        let out_w = writer.to_base64();
+        let reader = PackedBitsReader::from_base64(&out_w);
+        assert_eq!(reader.is_ok(), true);
+        let mut reader = reader.unwrap();
+        assert_eq!(Ok(0), reader.read(2));
+        assert_eq!(Ok(2), reader.read(2));
+        assert_eq!(Ok(4), reader.read(5));
+        assert_eq!(Ok(10), reader.read(5));
     }
 }

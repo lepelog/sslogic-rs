@@ -1,0 +1,314 @@
+Lanayru Mines:
+  force-tod: Day
+  stages:
+    Lanayru Mines:
+      stage: F300_1
+      areas:
+        First Half:
+          locations:
+            Chest behind First Landing: Clawshots
+            Chest near First Timeshift Stone: Distance Activator | Bomb Bag | Sword | Itemless First Timeshift Stone Trick
+            # includes activating the Timeshift stone
+            Chest behind Statue: Bomb Bag | Hook Beetle
+            Chest at the End of Mines: Bomb Bag | Hook Beetle
+          events:
+            Lanayru Mine Entry Statue: Nothing
+            Goddess Cube at Lanayru Mines Entrance: Goddess Sword
+          logic-exits:
+            To Caves: Clawshots
+            To Desert: Bomb Bag | Hook Beetle
+          map-exits:
+            Sky - Field (Lanayru Mine Entry Statue): Nothing
+        To Caves:
+          logic-exits:
+            First Half: Clawshots
+          map-exits:
+            Lanayru Caves - Main: Nothing
+        To Desert:
+          map-exits:
+            Lanayru Desert - Hook Beetle Area: Nothing
+
+Lanayru Desert:
+  force-tod: Day
+  stages:
+    Lanayru Desert:
+      stage: F300
+      areas:
+        Hook Beetle Area:
+          locations:
+            Chest near Party Wheel: Bomb Bag
+            Chest near Hook Beetle Fight: Nothing
+            Hook Beetle Fight: Bomb Bag | Hook Beetle
+          events:
+            Can Retrieve Party Wheel: Bomb Bag
+            Desert Entrance Statue: Nothing
+            Goddess Cube near Hook Beetle Fight: Long Range Skyward Strike | (Clawshots & Goddess Sword)
+          logic-exits:
+            Past ToT: Clawshots | Raise Lanayru Mining Facility
+            Sand Oasis: Hook Beetle | Clawshots
+          map-exits:
+            Lanayru Mines - To Desert: Bomb Bag
+            Sky - Field (Desert Entrance Statue): Nothing
+        Past ToT:
+          macros:
+            Can Reach Secret Passageway: Bomb Bag | (Hook Beetle & Long Hook Beetle Flights Trick)
+          locations:
+            Secret Passageway Chest: Can Reach Secret Passageway
+            Chest on Platform near Lightning Node: Clawshots
+            Chest on Platform near Fire Node: Clawshots
+            Chest on top of Lanayru Mining Facility: Raise Lanayru Mining Facility
+          events:
+            Goddess Cube in Secret Passageway in Desert: Can Reach Secret Passageway | Clawshots | Goddess Sword
+            Activate Water Node: Bomb Bag & Sword
+            Raise Lanayru Mining Facility: Activate Water Node & Activate Fire Node & Activate Lightning Node & Sword & Bomb Bag
+            North Desert Statue: Nothing
+            Stone Cache Statue: Nothing
+          logic-exits:
+            Hook Beetle Area: Nothing
+          map-exits:
+            Lightning Node - Main: Nothing
+            Fire Node - Main: Nothing
+            Temple of Time - End (End): Nothing
+            Lanayru Silent Realm - Trial: Nayru's Wisdom & Goddess Harp
+            Lanayru Mining Facility A - Entry: Raise Lanayru Mining Facility
+            Sky - Field (North Desert Statue): Nothing
+            Sky - Field (Stone Cache Statue): Nothing
+        Sand Oasis: # access to the area next to the entrance to ToT
+          locations:
+            Chest near Sand Oasis: Clawshots
+          events:
+            Goddess Cube in Sand Oasis: Goddess Sword
+            West Desert Statue: Nothing
+          logic-exits:
+            Hook Beetle Area: Nothing
+          map-exits:
+            Sky - Field (West Desert Statue): Nothing
+            Temple of Time - Start (Start): Nothing
+            Lanayru Caves - Main: Clawshots
+    Lightning Node:
+      stage: F300_2
+      areas:
+        Main:
+          locations:
+            Lightning Node - First Chest: Bomb Bag
+            Lightning Node - Second Chest: Bomb Bag
+            Lightning Node - Raised Chest near Generator: Bomb Bag & (Beetle | Bow | (Bomb Bag & Lightning Node End with Bombs Trick))
+          events:
+            Activate Lightning Node: Bomb Bag & Sword
+          map-exits:
+            Lanayru Desert - Past ToT: Nothing
+    Fire Node:
+      stage: F300_3
+      areas:
+        Main:
+          locations:
+            Fire Node - Shortcut Chest: Can Defeat Ampilus | Fire Node - Brakeslide Trick
+            Fire Node - First Small Chest: Bomb Bag
+            Fire Node - Second Small Chest: Bomb Bag
+          logic-exits:
+            End: Bomb Bag & Hook Beetle
+          map-exits:
+            Lanayru Desert - Past ToT: Nothing
+        End:
+          locations:
+            Fire Node - Left Ending Chest: Nothing
+            Fire Node - Right Ending Chest: Nothing
+          events:
+            Activate Fire Node: Sword
+
+    Temple of Time:
+      stage: F300_4
+      areas:
+        Start:
+          map-exits:
+            # TODO: this disambiguation kinda sucks
+            Lanayru Desert - Sand Oasis (Start): Nothing
+          logic-exits:
+            Near Gossip Stone: Hook Beetle | (Slingshot & Temple of Time - Slingshot Shot Trick)
+        Near Gossip Stone:
+          locations:
+            Gossip Stone in Temple of Time Area: Nothing
+          logic-exits:
+            Near Cube: (
+                Hook Beetle |
+                (Temple of Time - Bomb Throw Trick & Bomb Bag) |
+                (Temple of Time - Bomb Throw Trick & Cactus Bomb Whip Trick & Whip)
+              ) &
+              (Distance Activator | Long Range Skyward Strike)
+        Near Cube:
+          events:
+            Goddess Cube at Ride near Temple of Time: Goddess Sword
+          logic-exits:
+            End: Nothing
+        After LMF:
+          events:
+            # TODO: how does this work in full entrance rando?
+            Lanayru Desert Dungeon Beaten: Nothing
+          logic-exits:
+            Near Gossip Stone: Nothing
+        End:
+          map-exits:
+            Lanayru Desert - Past ToT (End): Nothing
+          logic-exits:
+            Start: Distance Activator
+
+Lanayru Caves:
+  force-tod: Day
+  stages:
+    Lanayru Caves:
+      stage: F303
+      areas:
+        Main:
+          locations:
+            # with entrance rando, we should remove the
+            # clawshot requirement for his layer
+            Golo's Gift: Nothing
+            Chest: Nothing
+            Gossip Stone in Center: Nothing
+          map-exits:
+            Lanayru Mines - To Caves: Nothing
+            Lanayru Desert - Sand Oasis: Nothing
+          logic-exits:
+            To Sand Sea: LanayruCaves Small Key x1 & Clawshots
+        To Sand Sea:
+          map-exits:
+            Sand Sea Docks - To Caves: Nothing
+          logic-exits:
+            Main: LanayruCaves Small Key x1
+
+Lanayru Silent Realm:
+  force-tod: Day
+  stages:
+    Lanayru Silent Realm:
+      stage: S300
+      areas:
+        Trial:
+          locations:
+            Clawshots: Nothing
+          map-exits:
+            Lanayru Desert - Past ToT: Nothing
+
+Lanayru Sand Sea:
+  force-tod: Day
+  stages:
+    Sand Sea Docks:
+      stage: F301_1 # or something like that
+      areas:
+        To Caves:
+          map-exits:
+            Lanayru Caves - To Sand Sea: Nothing
+          logic-exits:
+            Main: Clawshots
+        Main:
+          events:
+            Goddess Cube in Ancient Harbour: Clawshots & Goddess Sword
+          map-exits:
+            Sand Sea - Main: Switch Activator
+
+    Sand Sea:
+      stage: F301 # probably?
+      areas:
+        Main:
+          map-exits:
+            Sand Sea Docks - Main: Nothing
+            Sandship - Deck: Sea Chart & Sword
+            Skipper's Retreat - Start: Nothing
+            Shipyard - Main: Nothing
+            Outside Pirate's Stronghold - Main: Nothing
+
+    Skipper's Retreat:
+      stage: idk
+      areas:
+        Start:
+          map-exits:
+            Sand Sea - Main: Nothing
+          logic-exits:
+            Past Moblin: (Bomb Bag | Hook Beetle | (Whip & Cactus Bomb Whip Trick)) & Clawshots
+        Past Moblin:
+          locations:
+            Skipper's Retreat - Chest after Moblin: Nothing
+          events:
+            Goddess Cube in Skipper's Retreat: Clawshots & Goddess Sword
+          logic-exits:
+            Past Deku Baba: Whip & Clawshots & (Slingshot | Beetle | Bow | Skipper's Retreat Fast Clawshots Trick)
+        Past Deku Baba:
+          locations:
+            Skipper's Retreat - Chest on top of Cacti Pillar: Clawshots
+          logic-exits:
+            Next to Shack: Clawshots
+        Next to Shack:
+          locations:
+            Skipper's Retreat - Skydive Chest: Nothing
+          map-exits:
+            Skipper's Shack - Main: Nothing
+          logic-exits:
+            Past Deku Baba: Clawshots # TODO: can you go back?
+
+    Skipper's Shack:
+      stage: idk
+      areas:
+        Main:
+          locations:
+            Skipper's Retreat - Chest in Shack: Gust Bellows
+          map-exits:
+            Skipper's Retreat - Next to Shack: Nothing
+
+    Shipyard:
+      stage: idk
+      areas:
+        Main:
+          locations:
+            Gossip Stone in Shipyard: Nothing
+            Rickety Coaster - Heart Stopping Track in 1'05: Defeated Shipyard Molderach
+          map-exits:
+            Sand Sea - Main: Nothing
+            Shipyard Construction Bay - Lower (Lower): Nothing
+          logic-exits:
+            After Minecart Ride: Nothing
+        After Minecart Ride:
+          map-exits:
+            Shipyard Construction Bay - Upper (Upper): Nothing
+    
+    Shipyard Construction Bay:
+      stage: idk
+      areas:
+        Upper:
+          map-exits:
+            Shipyard - After Minecart Ride (Upper): Nothing
+          logic-exits:
+            Lower: Nothing
+        Lower:
+          events:
+            Defeated Shipyard Molderach: Gust Bellows & Sword
+          map-exits:
+            Shipyard - Main (Lower): Nothing
+          
+    Outside Pirate's Stronghold:
+      stage: idk
+      areas:
+        Main:
+          map-exits:
+            Sand Sea - Main: Nothing
+            Inside Pirate's Stronghold - Main (Beginning): Nothing
+          logic-exits:
+            Inside Sharkhead: Open Sharkhead
+        Inside Sharkhead:
+          events:
+            Goddess Cube in Pirate Stronghold: Clawshots & Goddess Sword
+          map-exits:
+            Inside Pirate's Stronghold - Main (End): Nothing
+
+    Inside Pirate's Stronghold:
+      stage: idk
+      areas:
+        Main:
+          locations:
+            Pirate Stronghold - First Chest: Nothing
+            Pirate Stronghold - Second Chest: Nothing
+            Pirate Stronghold - Third Chest: Nothing
+          events:
+            Open Sharkhead: Can Defeat Beamos & Can Defeat Armos
+          map-exits:
+            Outside Pirate's Stronghold - Main (Beginning): Nothing
+            Outside Pirate's Stronghold - Inside Sharkhead (End): Open Sharkhead
+

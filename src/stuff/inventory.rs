@@ -2,6 +2,7 @@ use std::collections::HashMap;
 
 use crate::Item;
 
+#[derive(Debug, Clone)]
 pub struct Inventory {
     inventory: HashMap<Item, usize>,
 }
@@ -22,7 +23,7 @@ impl Inventory {
         // does nothing if the item isn't in the map or if the owned count is already 0
         self.inventory.entry(item).and_modify(|item_count| {
             if *item_count > 0 {
-                *item_count-=1;
+                *item_count -= 1;
             }
         });
     }
