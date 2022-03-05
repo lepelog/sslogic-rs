@@ -26,10 +26,11 @@ Central Skyloft:
             Parrow and Orielle's House - Main: Nothing
             Peatrice's House - Main: Nothing
             Wryna's House - Main: Nothing
+            Piper's House - Main: Nothing
             Beedle's Shop - Main (Day): Daytime & (Distance Activator | (Beedle's Shop With Bombs Trick & Bomb Bag))
             Skyloft Silent Realm - Trial: Song of the Hero & Goddess Harp
             Bazaar - Main (North): Daytime
-            Bazaar - Main (East): Daytime
+            Bazaar - Main (West): Daytime
             Bazaar - Main (South): Daytime
           logic-exits:
             Outside Goddess Statue: Nothing
@@ -67,7 +68,7 @@ Central Skyloft:
             Talk to Peatrice in Bazaar: Nothing
           map-exits:
             Skyloft - Central Outside (North): Nothing
-            Skyloft - Central Outside (East): Nothing
+            Skyloft - Central Outside (West): Nothing
             Skyloft - Central Outside (South): Nothing
 
     Parrow and Orielle's House:
@@ -94,6 +95,13 @@ Central Skyloft:
           can-sleep: true
           locations:
             Wryna's Crystals: Nothing
+          map-exits:
+            Skyloft - Central Outside: Nothing
+    
+    Piper's House:
+      areas:
+        Main:
+          can-sleep: true
           map-exits:
             Skyloft - Central Outside: Nothing
 
@@ -187,6 +195,8 @@ Skyloft Village:
             Sparrot's House - Main: Nothing
             Mallara's House - Main: Nothing
             Batreaux' House - Main: Opened Shed # is encoded in event cause entering batreaux house is possible at day after opening the shed door
+            Gondo's House - Main: Nothing
+            Rupin's House - Main: Nothing
           logic-exits:
             Central Outside: Nothing
             Past Waterfall Cave: Waterfall Cave Jump Trick & Daytime
@@ -215,6 +225,22 @@ Skyloft Village:
           can-sleep: true
           locations:
             Mallara's Crystals: Gust Bellows
+          map-exits:
+            Skyloft - Central Outside: Nothing
+    
+    Rupin's House:
+      areas:
+        Main:
+          can-sleep: true
+          events:
+            Can Sell Treasures: Nothing
+          map-exits:
+            Skyloft - Central Outside: Nothing
+    
+    Gondo's House:
+      areas:
+        Main:
+          can-sleep: true
           map-exits:
             Skyloft - Central Outside: Nothing
 

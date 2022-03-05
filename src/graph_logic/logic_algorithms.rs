@@ -2,6 +2,8 @@ use std::collections::{HashMap, HashSet};
 
 use rand::prelude::*;
 
+use crate::graph_logic::logic_structs::AllowedToD;
+
 use super::logic_structs::{
     collect_items, Area, CheckKey, Inventory, LocalizedAreaKey, LogicKey,
     PassagewayKey, Placement, TimeOfDay, LogicKeyMapper, Entrance, Exit,
@@ -13,7 +15,7 @@ pub enum FillError {
     NoValidLocationLeft(LogicKey),
 }
 
-pub fn place_entrances_two_way<R: Rng>(
+pub fn place_entrances_decoupled<R: Rng>(
     rng: &mut R,
     areas: &HashMap<LogicKey, Area>,
     placement: &mut Placement,
@@ -26,6 +28,7 @@ pub fn place_entrances_two_way<R: Rng>(
     entrances_to_place.shuffle(rng);
     exits_to_place.shuffle(rng);
     // assumed fill, assume all entrances are reachable at the start
+    // cache all entrances and their supported ToD here, to avoid area lookups later
     let mut unconnected_entrances_with_tod = HashMap::new();
     for entrance in entrances_to_place.iter() {
         let area = areas.get(&entrance.area).unwrap();
@@ -33,46 +36,98 @@ pub fn place_entrances_two_way<R: Rng>(
     }
     // what entrance we want to place now
     while let Some(entrance_to_place) = entrances_to_place.pop() {
-        // since we are placing 2 way, we now have to try all the exits
         let mut exit_iter = exits_to_place.iter().enumerate();
         let mut try_count = 0;
-        let selected_exit_index = loop {
-            let mut current_inventory = inventory.clone();
+
+        let mut current_inventory = inventory.clone();
+        // TODO: here we assume that every area that can have both day/night where you can't sleep
+        // needs to be accessible at both times, this isn't necessarily true (waterfall cave, goddess statue)
+        let mut needs_both_tod = unconnected_entrances_with_tod.remove(&entrance_to_place).unwrap() == AllowedToD::Both;
+        if areas.get(&entrance_to_place.area).unwrap().can_sleep {
+            needs_both_tod = false;
+        }
+        // assume all unplaced entrances
+        for (entrance, allowed_tod) in unconnected_entrances_with_tod.iter() {
+            for tod in allowed_tod.all_allowed() {
+                current_inventory.add_area_tod(&entrance.area, tod);
+            }
+        }
+        do_exploration(areas, &placement, &mut current_inventory);
+        let selected_exit_index = 'exit_loop: loop {
             try_count += 1;
-            let (exit_index, exit_to_place) = exit_iter
-                .next()
-                .ok_or_else(|| FillError::NoValidExitLeft(entrance_to_place.clone()))?;
-            // remove both entrances and connect both sides
-            // make sure to reverse it in case of failure!!!!!
-            let exit_to_place_entrance = exit_to_place.to_this_side_entrance();
-            let entrance_to_place_exit = entrance_to_place.to_this_side_exit();
-            // assume all entrances, exept the ones we just connected
+            let (exit_index, exit) = exit_iter.next().ok_or_else(|| FillError::NoValidExitLeft(entrance_to_place.clone()))?;
+            let (exit_area_key, exit_psgw) = exit.to_area_psgw();
+            let exit_area = areas.get(&exit_area_key).unwrap();
+            // check if exit is reachable
+            if needs_both_tod {
+                for tod in TimeOfDay::ALL {
+                    if !(current_inventory.check_area_tod(&exit_area_key, &tod) &&
+                        exit_area.exits.get(&exit_psgw).unwrap().check_requirement_met(&current_inventory, &tod)) {
+                            continue 'exit_loop;
+                    }
+                }
+            } else {
+                for tod in current_inventory.areas.get(&exit_area_key).unwrap_or(&AllowedToD::None).all_allowed() {
+                    if current_inventory.check_area_tod(&exit_area_key, &tod) &&
+                        exit_area.exits.get(&exit_psgw).unwrap().check_requirement_met(&current_inventory, &tod) {
+                            break 'exit_loop exit_index;
+                    }
+                }
+            }
+        };
+        // remove exit from list to be placed
+        // fast remove, order is random anyways
+        let placed_exit = exits_to_place.swap_remove(selected_exit_index);
+        // println!("connecting <{}> to <{}>", placed_exit.dbg_to_string(logic_key_mapper), entrance_to_place.dbg_to_string(logic_key_mapper));
+    }
+    Ok(())
+}
+
+pub fn place_entrances_coupled<R: Rng>(
+    rng: &mut R,
+    areas: &HashMap<LogicKey, Area>,
+    placement: &mut Placement,
+    inventory: &Inventory,
+    // each entrance represents both exit and entrance from one side
+    entrances_to_place: &mut Vec<Entrance>,
+    logic_key_mapper: &LogicKeyMapper,
+) -> Result<(), FillError> {
+    entrances_to_place.shuffle(rng);
+    // assumed fill, assume all entrances are reachable at the start
+    // cache all entrances and their supported ToD here, to avoid area lookups later
+    let mut unconnected_entrances_with_tod = HashMap::new();
+    for entrance in entrances_to_place.iter() {
+        let area = areas.get(&entrance.area).unwrap();
+        unconnected_entrances_with_tod.insert(entrance.clone(), area.allowed_tod.clone());
+    }
+    while let Some(side_1_entrance) = entrances_to_place.pop() {
+        let side_1_exit = side_1_entrance.to_this_side_exit();
+        assert!(unconnected_entrances_with_tod.remove(&side_1_entrance).is_some());
+        let mut side_2_entrances_iter = entrances_to_place.iter().enumerate();
+        let selected_index = loop {
+            let (side_2_entrance_index, side_2_entrance) = side_2_entrances_iter.next().ok_or_else(|| FillError::NoValidExitLeft(side_1_entrance.clone()))?;
+            let side_2_exit = side_2_entrance.to_this_side_exit();
+            let mut current_inventory = inventory.clone();
             for (entrance, allowed_tod) in unconnected_entrances_with_tod.iter() {
-                if entrance != &entrance_to_place && entrance != &exit_to_place_entrance {
+                if entrance != side_2_entrance {
                     for tod in allowed_tod.all_allowed() {
                         current_inventory.add_area_tod(&entrance.area, tod);
                     }
                 }
             }
-            placement.connected_areas.insert(exit_to_place.clone(), entrance_to_place.clone());
-            placement.connected_areas.insert(entrance_to_place_exit.clone(), exit_to_place_entrance.clone());
-            do_exploration(areas, &placement, &mut current_inventory);
+            // temporarily connect entrances, will be reverted if this doesn't work out
+            placement.connected_areas.insert(side_1_exit.clone(), side_2_entrance.clone());
+            placement.connected_areas.insert(side_2_exit.clone(), side_1_entrance.clone());
+            do_exploration(areas, placement, &mut current_inventory);
             if get_first_unreachable_loc(areas, &current_inventory).is_some() {
-                // we created unreachable locations, so this connection won't work
-                placement.connected_areas.remove(exit_to_place);
-                placement.connected_areas.remove(&entrance_to_place_exit);
+                placement.connected_areas.remove(&side_1_exit);
+                placement.connected_areas.remove(&side_2_exit);
                 continue;
+            } else {
+                break side_2_entrance_index
             }
-            // this connection works!
-            // remove the assumed entrances we just placed (the placement was done before)
-            unconnected_entrances_with_tod.remove(&entrance_to_place);
-            unconnected_entrances_with_tod.remove(&exit_to_place_entrance);
-            break exit_index;
         };
-        // remove exit from list to be placed
-        // fast remove, order is random anyways
-        let placed_exit = exits_to_place.swap_remove(selected_exit_index);
-        println!("connecting <{}> to <{}>", placed_exit.dbg_to_string(logic_key_mapper), entrance_to_place.dbg_to_string(logic_key_mapper));
+        entrances_to_place.swap_remove(selected_index);
     }
     Ok(())
 }

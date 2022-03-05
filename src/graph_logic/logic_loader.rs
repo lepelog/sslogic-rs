@@ -2,6 +2,7 @@ use std::collections::HashMap;
 use std::fs::{read_dir, File};
 use std::path::PathBuf;
 
+use serde::Deserialize;
 use serde_yaml::{Mapping, Value};
 
 use crate::options::RandomizerOptions;
@@ -311,6 +312,23 @@ pub fn specialize_for_options(areas: &mut HashMap<LogicKey, Area>, options: &Ran
     }
 }
 
+#[derive(Deserialize)]
+#[serde(rename_all="kebab-case")]
+pub struct PassagewayEntry {
+    stage: String,
+    to_stage: String,
+    disambiguation: Option<String>,
+    door: Option<String>,
+    #[serde(rename = "type")]
+    pswg_type: Option<String>,
+}
+
+pub fn load_passageway_defs() -> Result<Vec<PassagewayEntry>, Box<dyn std::error::Error>> {
+    let f = File::open("entrance_table2.yaml")?;
+    let result: Vec<PassagewayEntry> = serde_yaml::from_reader(f)?;
+    Ok(result)
+}
+
 #[cfg(test)]
 mod tests {
 
@@ -318,11 +336,12 @@ mod tests {
 
     use rand::prelude::*;
     use rand_pcg::Pcg64;
+    use serde::Deserialize;
 
     use crate::{
         graph_logic::{
             logic_algorithms::{
-                do_exploration, get_entrance_exits, get_exits, place_entrances_two_way, FillError, get_first_unreachable_loc, get_progress_item_list,
+                do_exploration, get_entrance_exits, get_exits, place_entrances_coupled, FillError, get_first_unreachable_loc, get_progress_item_list,
             },
             logic_loader::specialize_for_options,
             logic_structs::{
@@ -333,7 +352,7 @@ mod tests {
         options::RandomizerOptions,
     };
 
-    use super::do_parse;
+    use super::{do_parse, load_passageway_defs};
 
     #[test]
     pub fn test_do_parse() {
@@ -516,23 +535,52 @@ mod tests {
             HashMap::new();
         let exits = get_exits(&areas);
 
-        let exit_map: Vec<_> = exits.iter().cloned().collect();
+        let mut seen_passageways = HashSet::new();
 
-        let mut exits_to_shuffle = Vec::new();
+        let passageway_defs = load_passageway_defs().unwrap();
+        let mut psgw_set = HashSet::new();
+        for p in passageway_defs.iter() {
+            if p.pswg_type.is_some() {
+                continue;
+            }
+            // ignore one set of doors for now
+            if p.door.as_ref().map_or(false, |d| d == "Right") {
+                continue;
+            }
+            let from_key = logic_key_mapper.convert_to_num_assuming_present(&p.stage).unwrap();
+            let to_key = logic_key_mapper.convert_to_num_assuming_present(&p.to_stage).unwrap();
+            let disambig = p.disambiguation.as_ref().map(|d| logic_key_mapper.convert_to_num_assuming_present(d).unwrap());
+            psgw_set.insert((from_key, to_key, disambig));
+        }
+
+        for exit in exits.iter() {
+            let from_stage = areas.get(&exit.area).unwrap().stage.clone();
+            let to_stage = areas.get(&exit.to_area).unwrap().stage.clone();
+            if from_stage == to_stage {
+                continue;
+            }
+            let psgw = (from_stage, to_stage, exit.disambiguation.clone());
+            if psgw_set.contains(&psgw) && seen_passageways.contains(&psgw) {
+                println!("duplicate passageway: {}, {}", psgw.0.name(&logic_key_mapper), psgw.1.name(&logic_key_mapper));
+            } else {
+                seen_passageways.insert(psgw);
+            }
+        }
+
+        let exit_map: HashSet<_> = exits.iter().cloned().collect();
+
         let mut entrances_to_shuffle = Vec::new();
 
         for exit in exits.iter() {
-            let side1_stage = &areas.get(&exit.area).unwrap().stage;
-            let side2_stage = &areas.get(&exit.to_area).unwrap().stage;
-            if side1_stage == side2_stage {
+            let stages_pswg = exit.to_stages(&areas);
+            if stages_pswg.0 == stages_pswg.1 {
                 // inside a stage, always vanilla
                 entrance_connections.insert(exit.clone(), exit.to_entrance());
             } else {
                 // ensure this is a 2 way entrance
                 let opposite_way = exit.reverse();
-                if exit_map.contains(&opposite_way) {
+                if psgw_set.contains(&stages_pswg) && exit_map.contains(&opposite_way) {
                     // different stage, needs to be randomized
-                    exits_to_shuffle.push(exit.clone());
                     entrances_to_shuffle.push(exit.to_entrance());
                 } else {
                     // one way, not randomized
@@ -542,6 +590,8 @@ mod tests {
         }
 
         let mut rng = Pcg64::seed_from_u64(0);
+
+        entrances_to_shuffle.sort();
 
         let mut placement = Placement {
             connected_areas: entrance_connections,
@@ -583,16 +633,21 @@ mod tests {
 
         do_exploration(&areas, &placement, &mut inventory);
 
-        if let Err(FillError::NoValidExitLeft(entr)) = place_entrances_two_way(&mut rng, &areas, &mut placement, &inventory, &mut entrances_to_shuffle, &mut exits_to_shuffle, &logic_key_mapper) {
-            println!("error placing {}", entr.dbg_to_string(&logic_key_mapper));
+        let new_placement = loop {
+            let mut new_placement = placement.clone();
+            let mut entrances = entrances_to_shuffle.clone();
+            if let Err(FillError::NoValidExitLeft(entr)) = place_entrances_coupled(&mut rng, &areas, &mut new_placement, &inventory, &mut entrances, &logic_key_mapper) {
+                println!("error placing {}", entr.dbg_to_string(&logic_key_mapper));
+            } else {
+                break new_placement;
+            }
         };
 
-        for entrance in exits_to_shuffle {
-            println!("exit left: {}", entrance.dbg_to_string(&logic_key_mapper));
-        }
-
-        for entrance in entrances_to_shuffle {
-            println!("entrance left: {}", entrance.dbg_to_string(&logic_key_mapper));
+        for (exit, entrance) in new_placement.connected_areas.iter() {
+            // quadratic complexity let's go
+            if entrances_to_shuffle.contains(&entrance) {
+                println!("{:<70}: {}", entrance.dbg_to_string(&logic_key_mapper), exit.dbg_to_string(&logic_key_mapper));
+            }
         }
 
         // println!()

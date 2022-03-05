@@ -2,6 +2,8 @@ use std::collections::{HashMap, HashSet};
 use std::hash::Hash;
 use std::num::NonZeroU16;
 
+use serde::Deserialize;
+
 use super::logic_expression::LogicElement;
 
 // parsing the definition files directly retrieves an initial placement
@@ -9,10 +11,10 @@ use super::logic_expression::LogicElement;
 
 // give every string in the logic a unique ID
 // helps, so that we can clone stuff more cheaply
-#[derive(PartialEq, Eq, Hash, Debug, Clone)]
+#[derive(PartialEq, Eq, Hash, Debug, Clone, PartialOrd, Ord)]
 pub struct LogicKey(pub NonZeroU16);
 
-#[derive(PartialEq, Eq, Hash, Debug, Clone)]
+#[derive(PartialEq, Eq, Hash, Debug, Clone, Deserialize)]
 pub enum AllowedToD {
     Day,
     Night,
@@ -59,6 +61,12 @@ impl AllowedToD {
                 }
             },
         }
+    }
+}
+
+impl Default for AllowedToD {
+    fn default() -> Self {
+        AllowedToD::Both
     }
 }
 
@@ -141,7 +149,7 @@ pub struct PassagewayKey {
     pub disambiguation: Option<LogicKey>,
 }
 
-#[derive(PartialEq, Eq, Hash, Debug, Clone)]
+#[derive(PartialEq, Eq, Hash, Debug, Clone, PartialOrd, Ord)]
 pub struct Entrance {
     // area we are in
     pub area: LogicKey,
@@ -150,7 +158,7 @@ pub struct Entrance {
     pub disambiguation: Option<LogicKey>,
 }
 
-#[derive(PartialEq, Eq, Hash, Debug, Clone)]
+#[derive(PartialEq, Eq, Hash, Debug, Clone, PartialOrd, Ord)]
 pub struct Exit {
     // area we are in
     pub area: LogicKey,
@@ -168,11 +176,11 @@ impl Entrance {
         if let Some(disambig) = &self.disambiguation {
             let disambig_name = mapper.convert_to_string(disambig).unwrap();
             format!(
-                "{} from {} ({})",
+                "{} (from {}, {})",
                 to_area_name, from_area_name, disambig_name
             )
         } else {
-            format!("{} from {}", to_area_name, from_area_name)
+            format!("{} (from {})", to_area_name, from_area_name)
         }
     }
 
@@ -229,6 +237,12 @@ impl Exit {
     // when you immediately go through the exit which entrance you came from
     pub fn to_this_side_entrance(&self) -> Entrance {
         Entrance { area: self.area.clone(), from_area: self.to_area.clone(), disambiguation: self.disambiguation.clone() }
+    }
+
+    pub fn to_stages(&self, areas: &HashMap<LogicKey, Area>) -> (LogicKey, LogicKey, Option<LogicKey>) {
+        let from_stage = areas.get(&self.area).unwrap().stage.clone();
+        let to_stage = areas.get(&self.to_area).unwrap().stage.clone();
+        (from_stage, to_stage, self.disambiguation.clone())
     }
 }
 
