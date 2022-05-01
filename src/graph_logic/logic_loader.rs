@@ -7,7 +7,7 @@ use serde_yaml::{Mapping, Value};
 
 use crate::options::RandomizerOptions;
 
-use super::logic_structs::CheckKey;
+use super::logic_structs::{AreaKey, CheckKey};
 use super::{
     logic_expression::LogicElement,
     logic_structs::{AllowedToD, Area, LogicKey, LogicKeyMapper, PassagewayKey},
@@ -29,7 +29,7 @@ fn parse_force_tod(mapping: &Mapping) -> Result<Option<AllowedToD>, String> {
 
 pub fn do_parse(
     logic_key_mapper: &mut LogicKeyMapper,
-) -> Result<(HashMap<LogicKey, Area>, HashMap<CheckKey, LogicKey>), Box<dyn std::error::Error>> {
+) -> Result<(HashMap<AreaKey, Area>, HashMap<CheckKey, LogicKey>), Box<dyn std::error::Error>> {
     let mut paths: Vec<PathBuf> = read_dir("bitless")?
         .map(|res| res.map(|e| e.path()))
         .collect::<Result<_, std::io::Error>>()?;
@@ -80,7 +80,7 @@ pub fn parse_file(
     global_macros: &HashMap<String, LogicElement>,
     mapping: &Mapping,
     logic_key_mapper: &mut LogicKeyMapper,
-    areas: &mut HashMap<LogicKey, Area>,
+    areas: &mut HashMap<AreaKey, Area>,
     placement: &mut HashMap<CheckKey, LogicKey>,
 ) -> Result<(), Box<dyn std::error::Error>> {
     for (raw_region_name, raw_region) in mapping {
@@ -103,7 +103,7 @@ pub fn parse_region(
     global_macros: &HashMap<String, LogicElement>,
     mapping: &Mapping,
     logic_key_mapper: &mut LogicKeyMapper,
-    areas: &mut HashMap<LogicKey, Area>,
+    areas: &mut HashMap<AreaKey, Area>,
     placement: &mut HashMap<CheckKey, LogicKey>,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let local_allowed_tod = parse_force_tod(mapping)?;
@@ -135,7 +135,7 @@ pub fn parse_stage(
     global_macros: &HashMap<String, LogicElement>,
     mapping: &Mapping,
     logic_key_mapper: &mut LogicKeyMapper,
-    areas: &mut HashMap<LogicKey, Area>,
+    areas: &mut HashMap<AreaKey, Area>,
     placement: &mut HashMap<CheckKey, LogicKey>,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let local_allowed_tod = parse_force_tod(mapping)?.or_else(|| force_tod.clone());
@@ -169,10 +169,12 @@ pub fn parse_area(
     global_macros: &HashMap<String, LogicElement>,
     mapping: &Mapping,
     logic_key_mapper: &mut LogicKeyMapper,
-    areas: &mut HashMap<LogicKey, Area>,
+    areas: &mut HashMap<AreaKey, Area>,
     placement: &mut HashMap<CheckKey, LogicKey>,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    let self_area_key = logic_key_mapper.convert_to_num(&format!("{} - {}", stage_name, area_name));
+    let self_stage_key = logic_key_mapper.convert_to_num(stage_name);
+    let self_area_part_key = logic_key_mapper.convert_to_num(area_name);
+    let self_area_key = self_stage_key.stage_with_area(&self_area_part_key);
     let mut local_macros = HashMap::new();
     if let Some(raw_macros) = mapping
         .get(&Value::String("macros".to_string()))
@@ -247,8 +249,7 @@ pub fn parse_area(
                 } else {
                     (other_area_name, None)
                 };
-            let other_area = logic_key_mapper
-                .convert_to_num(&format!("{} - {}", other_stage_name, other_area_name));
+            let other_area = logic_key_mapper.convert_to_area(other_stage_name, other_area_name);
             let expr =
                 LogicElement::parse(raw_expr.as_str().unwrap(), &local_macros, logic_key_mapper)?;
             exits.insert(
@@ -266,8 +267,7 @@ pub fn parse_area(
     {
         for (raw_name, raw_expr) in raw_logic_exits {
             let other_area_name = raw_name.as_str().unwrap();
-            let other_area =
-                logic_key_mapper.convert_to_num(&format!("{} - {}", stage_name, other_area_name));
+            let other_area = logic_key_mapper.convert_to_area(stage_name, other_area_name);
             let expr =
                 LogicElement::parse(raw_expr.as_str().unwrap(), &local_macros, logic_key_mapper)?;
             exits.insert(
@@ -301,7 +301,7 @@ pub fn parse_area(
     Ok(())
 }
 
-pub fn specialize_for_options(areas: &mut HashMap<LogicKey, Area>, options: &RandomizerOptions) {
+pub fn specialize_for_options(areas: &mut HashMap<AreaKey, Area>, options: &RandomizerOptions) {
     for area in areas.values_mut() {
         for expr in area.exits.values_mut() {
             expr.specialize_for_options_macros(options);
@@ -313,20 +313,42 @@ pub fn specialize_for_options(areas: &mut HashMap<LogicKey, Area>, options: &Ran
 }
 
 #[derive(Deserialize)]
-#[serde(rename_all="kebab-case")]
+#[serde(rename_all = "kebab-case")]
 pub struct PassagewayEntry {
-    stage: String,
-    to_stage: String,
-    disambiguation: Option<String>,
-    door: Option<String>,
+    pub stage: String,
+    pub to_stage: String,
+    pub disambiguation: Option<String>,
+    pub door: Option<String>,
     #[serde(rename = "type")]
-    pswg_type: Option<String>,
+    pub pswg_type: Option<String>,
 }
 
 pub fn load_passageway_defs() -> Result<Vec<PassagewayEntry>, Box<dyn std::error::Error>> {
     let f = File::open("entrance_table2.yaml")?;
     let result: Vec<PassagewayEntry> = serde_yaml::from_reader(f)?;
     Ok(result)
+}
+
+#[derive(Deserialize)]
+struct RawCheckEntry {
+    #[serde(rename = "type")]
+    types: String,
+}
+
+pub fn load_check_defs(
+    mapper: &LogicKeyMapper,
+) -> Result<HashMap<LogicKey, Vec<String>>, Box<dyn std::error::Error>> {
+    let f = File::open("checks.yaml")?;
+    let result: HashMap<String, RawCheckEntry> = serde_yaml::from_reader(f)?;
+    Ok(result
+        .into_iter()
+        .map(|(name, raw)| {
+            let (_region, name) = name.split_once(" - ").unwrap();
+            let logic_key = mapper.convert_to_num_assuming_present(name).unwrap();
+            let types = raw.types.split(',').map(|t| t.trim().to_string()).collect();
+            (logic_key, types)
+        })
+        .collect())
 }
 
 #[cfg(test)]
@@ -341,13 +363,15 @@ mod tests {
     use crate::{
         graph_logic::{
             logic_algorithms::{
-                do_exploration, get_entrance_exits, get_exits, place_entrances_coupled, FillError, get_first_unreachable_loc, get_progress_item_list,
+                do_exploration, get_entrance_exits, get_exits, get_first_unreachable_loc,
+                get_progress_item_list, place_entrances_coupled, FillError,
             },
+            logic_expression::LogicElement,
             logic_loader::specialize_for_options,
             logic_structs::{
-                Inventory, LogicKey, LogicKeyMapper, PassagewayKey, Placement,
-                TimeOfDay, Exit, Entrance,
-            }, logic_expression::LogicElement,
+                Entrance, Exit, Inventory, LogicKey, LogicKeyMapper, PassagewayKey, Placement,
+                TimeOfDay,
+            },
         },
         options::RandomizerOptions,
     };
@@ -361,14 +385,9 @@ mod tests {
         println!("area count: {}", areas.len());
         let mut area_names: Vec<_> = areas
             .iter()
-            .map(|(key, area)| {
-                (
-                    logic_key_mapper.convert_to_string(key).unwrap(),
-                    &area.allowed_tod,
-                )
-            })
+            .map(|(key, area)| (key.name(&logic_key_mapper), &area.allowed_tod))
             .collect();
-        area_names.sort_by_key(|(area, _)| *area);
+        // area_names.sort_by_key(|(area, _)| area);
         for (area, tod) in area_names {
             println!("{}: {:?}", area, tod);
         }
@@ -401,7 +420,10 @@ mod tests {
         // test that all areas do exist
         for exit in exits.iter() {
             if areas.get(&exit.to_area).is_none() {
-                println!("can't find entrance area for {}", exit.dbg_to_string(&logic_key_mapper));
+                println!(
+                    "can't find entrance area for {}",
+                    exit.dbg_to_string(&logic_key_mapper)
+                );
             }
         }
     }
@@ -451,8 +473,7 @@ mod tests {
         // find exits without entrance
         let mut logic_key_mapper = LogicKeyMapper::default();
         let (mut areas, mut item_placement) = do_parse(&mut logic_key_mapper).unwrap();
-        let mut entrance_connections: HashMap<Exit, Entrance> =
-            HashMap::new();
+        let mut entrance_connections: HashMap<Exit, Entrance> = HashMap::new();
         let exits = get_exits(&areas);
 
         let exit_map: Vec<_> = exits.iter().cloned().collect();
@@ -476,7 +497,7 @@ mod tests {
 
         // begin seach from central skyloft
         let skyloft_central = logic_key_mapper
-            .convert_to_num_assuming_present("Skyloft - Central Outside")
+            .convert_to_area_assuming_present("Skyloft", "Central Outside")
             .unwrap();
 
         inventory.add_area_tod(&skyloft_central, &TimeOfDay::Day);
@@ -487,16 +508,31 @@ mod tests {
         }
 
         // used for initial statue rando
-        for item in &["Sealed Grounds Statue", "Eldin Entrance Statue", "Lanayru Mine Entry Statue"] {
-            let item_key = logic_key_mapper.convert_to_num_assuming_present(item).unwrap();
+        for item in &[
+            "Sealed Grounds Statue",
+            "Eldin Entrance Statue",
+            "Lanayru Mine Entry Statue",
+        ] {
+            let item_key = logic_key_mapper
+                .convert_to_num_assuming_present(item)
+                .unwrap();
             inventory.collect_item(item_key);
         }
 
         // set required dungeons to 0
-        let sealed_temple_main = logic_key_mapper.convert_to_num_assuming_present("Sealed Temple - Main").unwrap();
-        let beat_req_dungeons = logic_key_mapper.convert_to_num_assuming_present("Beat Required Dungeons").unwrap();
+        let sealed_temple_main = logic_key_mapper
+            .convert_to_area_assuming_present("Sealed Temple", "Main")
+            .unwrap();
+        let beat_req_dungeons = logic_key_mapper
+            .convert_to_num_assuming_present("Beat Required Dungeons")
+            .unwrap();
 
-        *areas.get_mut(&sealed_temple_main).unwrap().locations.get_mut(&beat_req_dungeons).unwrap() = LogicElement::FixedValue(true);
+        *areas
+            .get_mut(&sealed_temple_main)
+            .unwrap()
+            .locations
+            .get_mut(&beat_req_dungeons)
+            .unwrap() = LogicElement::FixedValue(true);
 
         let options = RandomizerOptions::parse_option_file().unwrap();
         specialize_for_options(&mut areas, &options);
@@ -531,8 +567,7 @@ mod tests {
         // find exits without entrance
         let mut logic_key_mapper = LogicKeyMapper::default();
         let (mut areas, mut item_placement) = do_parse(&mut logic_key_mapper).unwrap();
-        let mut entrance_connections: HashMap<Exit, Entrance> =
-            HashMap::new();
+        let mut entrance_connections: HashMap<Exit, Entrance> = HashMap::new();
         let exits = get_exits(&areas);
 
         let mut seen_passageways = HashSet::new();
@@ -547,9 +582,16 @@ mod tests {
             if p.door.as_ref().map_or(false, |d| d == "Right") {
                 continue;
             }
-            let from_key = logic_key_mapper.convert_to_num_assuming_present(&p.stage).unwrap();
-            let to_key = logic_key_mapper.convert_to_num_assuming_present(&p.to_stage).unwrap();
-            let disambig = p.disambiguation.as_ref().map(|d| logic_key_mapper.convert_to_num_assuming_present(d).unwrap());
+            let from_key = logic_key_mapper
+                .convert_to_num_assuming_present(&p.stage)
+                .unwrap();
+            let to_key = logic_key_mapper
+                .convert_to_num_assuming_present(&p.to_stage)
+                .unwrap();
+            let disambig = p
+                .disambiguation
+                .as_ref()
+                .map(|d| logic_key_mapper.convert_to_num_assuming_present(d).unwrap());
             psgw_set.insert((from_key, to_key, disambig));
         }
 
@@ -561,7 +603,11 @@ mod tests {
             }
             let psgw = (from_stage, to_stage, exit.disambiguation.clone());
             if psgw_set.contains(&psgw) && seen_passageways.contains(&psgw) {
-                println!("duplicate passageway: {}, {}", psgw.0.name(&logic_key_mapper), psgw.1.name(&logic_key_mapper));
+                println!(
+                    "duplicate passageway: {}, {}",
+                    psgw.0.name(&logic_key_mapper),
+                    psgw.1.name(&logic_key_mapper)
+                );
             } else {
                 seen_passageways.insert(psgw);
             }
@@ -591,6 +637,9 @@ mod tests {
 
         let mut rng = Pcg64::seed_from_u64(0);
 
+        // due to areas being a hash map, this is essentially random
+        // otherwise
+        // logic keys are stable though
         entrances_to_shuffle.sort();
 
         let mut placement = Placement {
@@ -605,7 +654,7 @@ mod tests {
 
         // start search from central skyloft
         let skyloft_central = logic_key_mapper
-            .convert_to_num_assuming_present("Skyloft - Central Outside")
+            .convert_to_area_assuming_present("Skyloft", "Central Outside")
             .unwrap();
 
         inventory.add_area_tod(&skyloft_central, &TimeOfDay::Day);
@@ -616,16 +665,31 @@ mod tests {
         }
 
         // assume vanilla starting statues
-        for item in &["Sealed Grounds Statue", "Eldin Entrance Statue", "Lanayru Mine Entry Statue"] {
-            let item_key = logic_key_mapper.convert_to_num_assuming_present(item).unwrap();
+        for item in &[
+            "Sealed Grounds Statue",
+            "Eldin Entrance Statue",
+            "Lanayru Mine Entry Statue",
+        ] {
+            let item_key = logic_key_mapper
+                .convert_to_num_assuming_present(item)
+                .unwrap();
             inventory.collect_item(item_key);
         }
 
         // set required dungeons to 0
-        let sealed_temple_main = logic_key_mapper.convert_to_num_assuming_present("Sealed Temple - Main").unwrap();
-        let beat_req_dungeons = logic_key_mapper.convert_to_num_assuming_present("Beat Required Dungeons").unwrap();
+        let sealed_temple_main = logic_key_mapper
+            .convert_to_area_assuming_present("Sealed Temple", "Main")
+            .unwrap();
+        let beat_req_dungeons = logic_key_mapper
+            .convert_to_num_assuming_present("Beat Required Dungeons")
+            .unwrap();
 
-        *areas.get_mut(&sealed_temple_main).unwrap().locations.get_mut(&beat_req_dungeons).unwrap() = LogicElement::FixedValue(true);
+        *areas
+            .get_mut(&sealed_temple_main)
+            .unwrap()
+            .locations
+            .get_mut(&beat_req_dungeons)
+            .unwrap() = LogicElement::FixedValue(true);
 
         let options = RandomizerOptions::parse_option_file().unwrap();
 
@@ -636,7 +700,14 @@ mod tests {
         let new_placement = loop {
             let mut new_placement = placement.clone();
             let mut entrances = entrances_to_shuffle.clone();
-            if let Err(FillError::NoValidExitLeft(entr)) = place_entrances_coupled(&mut rng, &areas, &mut new_placement, &inventory, &mut entrances, &logic_key_mapper) {
+            if let Err(FillError::NoValidExitLeft(entr)) = place_entrances_coupled(
+                &mut rng,
+                &areas,
+                &mut new_placement,
+                &inventory,
+                &mut entrances,
+                &logic_key_mapper,
+            ) {
                 println!("error placing {}", entr.dbg_to_string(&logic_key_mapper));
             } else {
                 break new_placement;
@@ -646,7 +717,11 @@ mod tests {
         for (exit, entrance) in new_placement.connected_areas.iter() {
             // quadratic complexity let's go
             if entrances_to_shuffle.contains(&entrance) {
-                println!("{:<70}: {}", entrance.dbg_to_string(&logic_key_mapper), exit.dbg_to_string(&logic_key_mapper));
+                println!(
+                    "{:<70}: {}",
+                    entrance.dbg_to_string(&logic_key_mapper),
+                    exit.dbg_to_string(&logic_key_mapper)
+                );
             }
         }
 

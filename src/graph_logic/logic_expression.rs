@@ -163,7 +163,7 @@ impl LogicElement {
         // trick requirements
         if s.ends_with(" Trick") {
             return Ok(LogicElement::OptionContainsRequirement(
-                "enabled-tricks".to_string(),
+                "enabled-tricks-bitless".to_string(), // TODO: glitched and er tricks
                 s[..s.len() - " Trick".len()].to_string(),
             ));
         }
@@ -250,24 +250,26 @@ impl LogicElement {
                 *self = LogicElement::FixedValue(options.get_option_enabled(&opt).expect(opt));
             }
             LogicElement::OptionDisabledRequirement(opt) => {
-                *self = LogicElement::FixedValue(!options.get_option_enabled(&opt).unwrap());
+                *self = LogicElement::FixedValue(!options.get_option_enabled(&opt).expect(opt));
             }
             LogicElement::OptionIsRequirement(opt, val) => {
-                *self =
-                    LogicElement::FixedValue(options.get_option_choice_str(&opt).unwrap() == val);
+                *self = LogicElement::FixedValue(
+                    options.get_option_choice_str(&opt).expect(opt) == val,
+                );
             }
             LogicElement::OptionIsNotRequirement(opt, val) => {
-                *self =
-                    LogicElement::FixedValue(options.get_option_choice_str(&opt).unwrap() != val);
+                *self = LogicElement::FixedValue(
+                    options.get_option_choice_str(&opt).expect(opt) != val,
+                );
             }
             LogicElement::OptionContainsRequirement(opt, val) => {
                 *self = LogicElement::FixedValue(
-                    options.get_option_choices(&opt).unwrap().contains(val),
+                    options.get_option_choices(&opt).expect(opt).contains(val),
                 );
             }
             LogicElement::OptionDoesNotContainRequirement(opt, val) => {
                 *self = LogicElement::FixedValue(
-                    !options.get_option_choices(&opt).unwrap().contains(val),
+                    !options.get_option_choices(&opt).expect(opt).contains(val),
                 );
             }
             LogicElement::AndExpression(elems) => {

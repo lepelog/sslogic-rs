@@ -5,8 +5,8 @@ use rand::prelude::*;
 use crate::graph_logic::logic_structs::AllowedToD;
 
 use super::logic_structs::{
-    collect_items, Area, CheckKey, Inventory, LocalizedAreaKey, LogicKey,
-    PassagewayKey, Placement, TimeOfDay, LogicKeyMapper, Entrance, Exit,
+    collect_items, Area, AreaKey, CheckKey, Entrance, Exit, Inventory, LocalizedAreaKey, LogicKey,
+    LogicKeyMapper, PassagewayKey, Placement, TimeOfDay,
 };
 
 #[derive(Debug, Clone)]
@@ -17,7 +17,7 @@ pub enum FillError {
 
 pub fn place_entrances_decoupled<R: Rng>(
     rng: &mut R,
-    areas: &HashMap<LogicKey, Area>,
+    areas: &HashMap<AreaKey, Area>,
     placement: &mut Placement,
     inventory: &Inventory,
     entrances_to_place: &mut Vec<Entrance>,
@@ -42,10 +42,14 @@ pub fn place_entrances_decoupled<R: Rng>(
         let mut current_inventory = inventory.clone();
         // TODO: here we assume that every area that can have both day/night where you can't sleep
         // needs to be accessible at both times, this isn't necessarily true (waterfall cave, goddess statue)
-        let mut needs_both_tod = unconnected_entrances_with_tod.remove(&entrance_to_place).unwrap() == AllowedToD::Both;
+        let mut needs_both_tod = unconnected_entrances_with_tod
+            .remove(&entrance_to_place)
+            .unwrap()
+            == AllowedToD::Both;
         if areas.get(&entrance_to_place.area).unwrap().can_sleep {
             needs_both_tod = false;
         }
+        needs_both_tod = false;
         // assume all unplaced entrances
         for (entrance, allowed_tod) in unconnected_entrances_with_tod.iter() {
             for tod in allowed_tod.all_allowed() {
@@ -55,22 +59,39 @@ pub fn place_entrances_decoupled<R: Rng>(
         do_exploration(areas, &placement, &mut current_inventory);
         let selected_exit_index = 'exit_loop: loop {
             try_count += 1;
-            let (exit_index, exit) = exit_iter.next().ok_or_else(|| FillError::NoValidExitLeft(entrance_to_place.clone()))?;
+            let (exit_index, exit) = exit_iter
+                .next()
+                .ok_or_else(|| FillError::NoValidExitLeft(entrance_to_place.clone()))?;
             let (exit_area_key, exit_psgw) = exit.to_area_psgw();
             let exit_area = areas.get(&exit_area_key).unwrap();
             // check if exit is reachable
             if needs_both_tod {
                 for tod in TimeOfDay::ALL {
-                    if !(current_inventory.check_area_tod(&exit_area_key, &tod) &&
-                        exit_area.exits.get(&exit_psgw).unwrap().check_requirement_met(&current_inventory, &tod)) {
-                            continue 'exit_loop;
+                    if !(current_inventory.check_area_tod(&exit_area_key, &tod)
+                        && exit_area
+                            .exits
+                            .get(&exit_psgw)
+                            .unwrap()
+                            .check_requirement_met(&current_inventory, &tod))
+                    {
+                        continue 'exit_loop;
                     }
                 }
             } else {
-                for tod in current_inventory.areas.get(&exit_area_key).unwrap_or(&AllowedToD::None).all_allowed() {
-                    if current_inventory.check_area_tod(&exit_area_key, &tod) &&
-                        exit_area.exits.get(&exit_psgw).unwrap().check_requirement_met(&current_inventory, &tod) {
-                            break 'exit_loop exit_index;
+                for tod in current_inventory
+                    .areas
+                    .get(&exit_area_key)
+                    .unwrap_or(&AllowedToD::None)
+                    .all_allowed()
+                {
+                    if current_inventory.check_area_tod(&exit_area_key, &tod)
+                        && exit_area
+                            .exits
+                            .get(&exit_psgw)
+                            .unwrap()
+                            .check_requirement_met(&current_inventory, &tod)
+                    {
+                        break 'exit_loop exit_index;
                     }
                 }
             }
@@ -85,7 +106,7 @@ pub fn place_entrances_decoupled<R: Rng>(
 
 pub fn place_entrances_coupled<R: Rng>(
     rng: &mut R,
-    areas: &HashMap<LogicKey, Area>,
+    areas: &HashMap<AreaKey, Area>,
     placement: &mut Placement,
     inventory: &Inventory,
     // each entrance represents both exit and entrance from one side
@@ -102,10 +123,14 @@ pub fn place_entrances_coupled<R: Rng>(
     }
     while let Some(side_1_entrance) = entrances_to_place.pop() {
         let side_1_exit = side_1_entrance.to_this_side_exit();
-        assert!(unconnected_entrances_with_tod.remove(&side_1_entrance).is_some());
+        assert!(unconnected_entrances_with_tod
+            .remove(&side_1_entrance)
+            .is_some());
         let mut side_2_entrances_iter = entrances_to_place.iter().enumerate();
         let selected_index = loop {
-            let (side_2_entrance_index, side_2_entrance) = side_2_entrances_iter.next().ok_or_else(|| FillError::NoValidExitLeft(side_1_entrance.clone()))?;
+            let (side_2_entrance_index, side_2_entrance) = side_2_entrances_iter
+                .next()
+                .ok_or_else(|| FillError::NoValidExitLeft(side_1_entrance.clone()))?;
             let side_2_exit = side_2_entrance.to_this_side_exit();
             let mut current_inventory = inventory.clone();
             for (entrance, allowed_tod) in unconnected_entrances_with_tod.iter() {
@@ -116,15 +141,19 @@ pub fn place_entrances_coupled<R: Rng>(
                 }
             }
             // temporarily connect entrances, will be reverted if this doesn't work out
-            placement.connected_areas.insert(side_1_exit.clone(), side_2_entrance.clone());
-            placement.connected_areas.insert(side_2_exit.clone(), side_1_entrance.clone());
+            placement
+                .connected_areas
+                .insert(side_1_exit.clone(), side_2_entrance.clone());
+            placement
+                .connected_areas
+                .insert(side_2_exit.clone(), side_1_entrance.clone());
             do_exploration(areas, placement, &mut current_inventory);
             if get_first_unreachable_loc(areas, &current_inventory).is_some() {
                 placement.connected_areas.remove(&side_1_exit);
                 placement.connected_areas.remove(&side_2_exit);
                 continue;
             } else {
-                break side_2_entrance_index
+                break side_2_entrance_index;
             }
         };
         entrances_to_place.swap_remove(selected_index);
@@ -134,7 +163,7 @@ pub fn place_entrances_coupled<R: Rng>(
 
 pub fn fill_assumed<R: Rng>(
     rng: &mut R,
-    areas: &HashMap<LogicKey, Area>,
+    areas: &HashMap<AreaKey, Area>,
     placement: &mut Placement,
     inventory: &Inventory,
     locations_to_fill: &mut Vec<CheckKey>,
@@ -159,9 +188,8 @@ pub fn fill_assumed<R: Rng>(
             let area = areas.get(area_key).unwrap();
 
             // check each time of day
-            for tod in [TimeOfDay::Day, TimeOfDay::Night].into_iter() {
-                if area.allowed_tod.allows(&tod)
-                    && current_inventory.check_area_tod(area_key, &tod)
+            for tod in TimeOfDay::ALL {
+                if area.allowed_tod.allows(&tod) && current_inventory.check_area_tod(area_key, &tod)
                 {
                     let check_req = area.locations.get(check).unwrap();
                     if check_req.check_requirement_met(&current_inventory, &tod) {
@@ -176,7 +204,7 @@ pub fn fill_assumed<R: Rng>(
 }
 
 pub fn do_exploration(
-    areas: &HashMap<LogicKey, Area>,
+    areas: &HashMap<AreaKey, Area>,
     placement: &Placement,
     inventory: &mut Inventory,
 ) {
@@ -186,18 +214,21 @@ pub fn do_exploration(
         is_done = true;
         // explore areas
         let mut new_areas = HashSet::new();
-        for (area_key, allowed_tod) in inventory.areas.iter()
-        {
+        for (area_key, allowed_tod) in inventory.areas.iter() {
             let area = areas.get(area_key).unwrap();
             // try to sleep
             if area.can_sleep {
                 let day_area = area_key.area_localize(&TimeOfDay::Day);
                 let night_area = area_key.area_localize(&TimeOfDay::Night);
-                if !inventory.check_area_tod(area_key, &TimeOfDay::Day) && !new_areas.contains(&day_area) {
+                if !inventory.check_area_tod(area_key, &TimeOfDay::Day)
+                    && !new_areas.contains(&day_area)
+                {
                     new_areas.insert(day_area);
                     is_done = false;
                 }
-                if !inventory.check_area_tod(area_key, &TimeOfDay::Night) && !new_areas.contains(&night_area) {
+                if !inventory.check_area_tod(area_key, &TimeOfDay::Night)
+                    && !new_areas.contains(&night_area)
+                {
                     new_areas.insert(night_area);
                     is_done = false;
                 }
@@ -205,7 +236,10 @@ pub fn do_exploration(
             // explore exits
             for (exit, exit_req) in area.exits.iter() {
                 // what area this actually leads to
-                if let Some(entrance) = placement.connected_areas.get(&area_key.area_exit_to_psgw(exit)) {
+                if let Some(entrance) = placement
+                    .connected_areas
+                    .get(&area_key.area_exit_to_psgw(exit))
+                {
                     let other_area_key = &entrance.area;
                     let other_area = areas.get(other_area_key).unwrap();
                     for possible_tod in allowed_tod.all_allowed() {
@@ -214,7 +248,9 @@ pub fn do_exploration(
                         let actual_tod = possible_tod.with_forced(&other_area.allowed_tod);
                         // if this area is already collected, no need to check the requirement again
                         let area_end = other_area_key.area_localize(&actual_tod);
-                        if !inventory.check_area_tod(other_area_key, &actual_tod) && !new_areas.contains(&area_end) {
+                        if !inventory.check_area_tod(other_area_key, &actual_tod)
+                            && !new_areas.contains(&area_end)
+                        {
                             // check if this area is reachable
                             if exit_req.check_requirement_met(inventory, possible_tod) {
                                 new_areas.insert(area_end);
@@ -257,11 +293,16 @@ pub fn do_exploration(
     }
 }
 
-pub fn get_first_unreachable_loc(areas: &HashMap<LogicKey, Area>, inventory: &Inventory) -> Option<CheckKey> {
+pub fn get_first_unreachable_loc(
+    areas: &HashMap<AreaKey, Area>,
+    inventory: &Inventory,
+) -> Option<CheckKey> {
     for (area_key, area) in areas.iter() {
         'locations: for (check, loc_req) in area.locations.iter() {
             for tod in TimeOfDay::ALL.iter() {
-                if inventory.check_area_tod(area_key, tod) && loc_req.check_requirement_met(inventory, tod) {
+                if inventory.check_area_tod(area_key, tod)
+                    && loc_req.check_requirement_met(inventory, tod)
+                {
                     continue 'locations;
                 }
             }
@@ -298,8 +339,7 @@ pub fn get_progress_item_list(logic_key_mapper: &LogicKeyMapper) -> Vec<LogicKey
         "Faron Song of the Hero Part",
         "Eldin Song of the Hero Part",
         "Lanayru Song of the Hero Part",
-        "Spiral Charge"
-        // "Revitalizing Potion" // causes problems in events, as it's treated like you buy a potion
+        "Spiral Charge", // "Revitalizing Potion" // causes problems in events, as it's treated like you buy a potion
     ];
     let copied_items = [
         ("Gratitude Crystal Pack", 13),
@@ -328,10 +368,16 @@ pub fn get_progress_item_list(logic_key_mapper: &LogicKeyMapper) -> Vec<LogicKey
     ];
     let mut result = Vec::new();
     for item in items {
-        result.push(logic_key_mapper.convert_to_num_assuming_present(item).unwrap());
+        result.push(
+            logic_key_mapper
+                .convert_to_num_assuming_present(item)
+                .unwrap(),
+        );
     }
     for (item, count) in copied_items {
-        let key = logic_key_mapper.convert_to_num_assuming_present(item).unwrap();
+        let key = logic_key_mapper
+            .convert_to_num_assuming_present(item)
+            .unwrap();
         for _ in 0..count {
             result.push(key.clone());
         }
@@ -339,7 +385,7 @@ pub fn get_progress_item_list(logic_key_mapper: &LogicKeyMapper) -> Vec<LogicKey
     result
 }
 
-pub fn get_exits(areas: &HashMap<LogicKey, Area>) -> Vec<Exit> {
+pub fn get_exits(areas: &HashMap<AreaKey, Area>) -> Vec<Exit> {
     let mut exits = Vec::new();
     for (area_key, area) in areas.iter() {
         for exit in area.exits.keys() {
@@ -348,9 +394,7 @@ pub fn get_exits(areas: &HashMap<LogicKey, Area>) -> Vec<Exit> {
     }
     exits
 }
-pub fn get_entrance_exits(
-    areas: &HashMap<LogicKey, Area>,
-) -> (Vec<Entrance>, Vec<Exit>) {
+pub fn get_entrance_exits(areas: &HashMap<AreaKey, Area>) -> (Vec<Entrance>, Vec<Exit>) {
     let mut entrances = Vec::new();
     let mut exits = Vec::new();
     for (area_key, area) in areas.iter() {
