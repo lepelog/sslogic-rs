@@ -256,6 +256,9 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
         }
     }
 
+    locations_to_fill.sort();
+    progress_items.sort();
+
     fill_assumed(rng, &areas, &mut placement, &mut start_inventory, &mut locations_to_fill, &mut progress_items);
 
     for (check, item) in placement.filled_checks.iter() {

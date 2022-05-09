@@ -20,12 +20,13 @@ pub struct AreaKey {
     pub area: LogicKey,
 }
 
+// TODO: this should really be bitflags, one for night one for day
 #[derive(PartialEq, Eq, Hash, Debug, Clone, Deserialize)]
 pub enum AllowedToD {
+    None,
     Day,
     Night,
     Both,
-    None,
 }
 
 impl AllowedToD {
@@ -92,7 +93,7 @@ impl TimeOfDay {
     }
 }
 
-#[derive(PartialEq, Eq, Hash, Debug, Clone)]
+#[derive(PartialEq, Eq, Hash, Debug, Clone, PartialOrd, Ord)]
 pub struct CheckKey {
     pub area_key: AreaKey,
     pub check: LogicKey,
@@ -424,6 +425,20 @@ impl LogicKeyMapper {
 
     pub fn len(&self) -> usize {
         self.num_to_name.len()
+    }
+
+    pub fn dbg_logic<I>(&self, iter: I) -> String where I: Iterator<Item = LogicKey> {
+        iter.map(|k| self.convert_to_string(&k)).fold(String::new(), |mut acc, elem| {
+            acc.push_str(elem.unwrap());
+            acc
+        })
+    }
+
+    pub fn dbg_areas<I>(&self, iter: I) -> String where I: Iterator<Item = AreaKey> {
+        iter.map(|k| k.name(self)).fold(String::new(), |mut acc, elem| {
+            acc.push_str(&elem);
+            acc
+        })
     }
 }
 
