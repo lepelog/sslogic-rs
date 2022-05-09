@@ -99,6 +99,12 @@ pub struct CheckKey {
     pub check: LogicKey,
 }
 
+impl CheckKey {
+    pub fn dbg_to_string(&self, mapper: &LogicKeyMapper) -> String {
+        format!("{} - {}", self.area_key.stage.name(mapper), self.check.name(mapper))
+    }
+}
+
 impl LogicKey {
     pub fn stage_with_area(&self, area: &LogicKey) -> AreaKey {
         AreaKey {

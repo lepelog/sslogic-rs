@@ -4,7 +4,7 @@ use crate::options::RandomizerOptions;
 use rand::prelude::*;
 
 use super::{
-    logic_algorithms::{get_progress_item_list, place_entrances_decoupled, FillError, fill_assumed},
+    logic_algorithms::{get_progress_item_list, place_entrances_decoupled, FillError, fill_assumed, do_playthrough},
     logic_expression::LogicElement,
     logic_loader::{self, load_check_defs, specialize_for_options},
     logic_structs::{Area, AreaKey, Inventory, LogicKeyMapper, Placement, TimeOfDay},
@@ -155,13 +155,15 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
     let mut entrances_to_shuffle = Vec::new();
 
     let skyloft_stage = mpu("Skyloft");
+    let academy_stage = mpu("Knight Academy");
 
     for (area_key, area) in areas.iter() {
         for passageway in area.exits.keys() {
             let exit = area_key.area_exit_to_psgw(passageway);
             // same stage is always vanilla
-            // if area_key.stage == passageway.other_area.stage {
-            if true {
+            if area_key.stage == passageway.other_area.stage {
+            // if !(area_key.stage == academy_stage || passageway.other_area.stage == academy_stage) {
+            // if true {
                 placement
                     .connected_areas
                     .insert(exit.clone(), exit.to_entrance());
@@ -174,53 +176,6 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
 
     exits_to_shuffle.sort();
     entrances_to_shuffle.sort();
-
-    let mut full_inventory = Inventory::default();
-    for item in start_items.iter().chain(progress_items.iter()) {
-        full_inventory.collect_item(item.clone());
-    }
-
-    // build logic from skyloft
-    full_inventory.add_area_tod(
-        &mapper
-            .convert_to_area_assuming_present("Skyloft", "Central Outside")
-            .unwrap(),
-        &TimeOfDay::Day,
-    );
-
-    // assume vanilla starting statues
-    for item in &[
-        "Sealed Grounds Statue",
-        "Eldin Entrance Statue",
-        "Lanayru Mine Entry Statue",
-    ] {
-        full_inventory.collect_item(mpu(item));
-    }
-
-    // do place entrance
-    // let mut placement = loop {
-    //     let mut placement_copy = placement.clone();
-    //     let mut cloned_entrances_to_place = entrances_to_shuffle.clone();
-    //     let mut cloned_exits_to_place = exits_to_shuffle.clone();
-    //     if let Err(FillError::NoValidExitLeft(e)) = place_entrances_decoupled(
-    //         rng,
-    //         &areas,
-    //         &mut placement_copy,
-    //         &full_inventory,
-    //         &mut cloned_entrances_to_place,
-    //         &mut cloned_exits_to_place,
-    //         &mapper,
-    //     )
-    //     {
-    //         println!("entrance: {}", e.dbg_to_string(&mapper));
-    //         for exit in cloned_exits_to_place {
-    //             println!("exit: {}", exit.dbg_to_string(&mapper));
-    //         }
-    //     } else
-    //     {
-    //         break placement_copy;
-    //     }
-    // };
 
     let mut start_inventory = Inventory::default();
     for item in start_items.iter() {
@@ -244,6 +199,37 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
         start_inventory.collect_item(mpu(item));
     }
 
+    let mut full_inventory = start_inventory.clone();
+
+    for item in progress_items.iter() {
+        full_inventory.collect_item(item.clone());
+    }
+
+    // do place entrance
+    placement = loop {
+        let mut placement_copy = placement.clone();
+        let mut cloned_entrances_to_place = entrances_to_shuffle.clone();
+        let mut cloned_exits_to_place = exits_to_shuffle.clone();
+        if let Err(FillError::NoValidExitLeft(e)) = place_entrances_decoupled(
+            rng,
+            &areas,
+            &mut placement_copy,
+            &full_inventory,
+            &mut cloned_entrances_to_place,
+            &mut cloned_exits_to_place,
+            &mapper,
+        )
+        {
+            println!("entrance: {}", e.dbg_to_string(&mapper));
+            for exit in cloned_exits_to_place {
+                println!("exit: {}", exit.dbg_to_string(&mapper));
+            }
+        } else
+        {
+            break placement_copy;
+        }
+    };
+
     let mut locations_to_fill = Vec::new();
 
     let check_defs = load_check_defs(&mapper).unwrap();
@@ -263,6 +249,15 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
 
     for (check, item) in placement.filled_checks.iter() {
         println!("{:<70}: {}", check.check.name(&mapper), item.name(&mapper));
+    }
+
+    let playthrough = do_playthrough(&areas, &start_inventory, &placement, &mapper);
+
+    for (idx, sphere) in playthrough.iter().enumerate() {
+        println!("\n\nSphere {}:", idx);
+        for (a,b) in sphere.iter() {
+            println!("{:<70}: {}", a, b);
+        }
     }
 
     Ok(())

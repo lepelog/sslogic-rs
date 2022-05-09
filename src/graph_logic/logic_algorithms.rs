@@ -100,6 +100,7 @@ pub fn place_entrances_decoupled<R: Rng>(
         // fast remove, order is random anyways
         let placed_exit = exits_to_place.swap_remove(selected_exit_index);
         // println!("connecting <{}> to <{}>", placed_exit.dbg_to_string(logic_key_mapper), entrance_to_place.dbg_to_string(logic_key_mapper));
+        placement.connected_areas.insert(placed_exit, entrance_to_place);
     }
     Ok(())
 }
@@ -291,6 +292,108 @@ pub fn do_exploration(
             }
         }
     }
+}
+
+pub fn do_playthrough(
+    areas: &HashMap<AreaKey, Area>,
+    start_inventory: &Inventory,
+    placement: &Placement,
+    logic_key_mapper: &LogicKeyMapper,
+) -> Vec<Vec<(String, String)>> {
+    let mut spheres = Vec::new();
+    let mut visited_locations = HashSet::with_capacity(600);
+    let mut inventory = start_inventory.clone();
+    let mut is_done = false;
+    while !is_done {
+        let mut current_sphere = Vec::new();
+        is_done = true;
+        // explore areas
+        let mut new_areas = HashSet::new();
+        for (area_key, allowed_tod) in inventory.areas.iter() {
+            let area = areas.get(area_key).unwrap();
+            // try to sleep
+            if area.can_sleep {
+                let day_area = area_key.area_localize(&TimeOfDay::Day);
+                let night_area = area_key.area_localize(&TimeOfDay::Night);
+                if !inventory.check_area_tod(area_key, &TimeOfDay::Day)
+                    && !new_areas.contains(&day_area)
+                {
+                    current_sphere.push(("Sleep".to_string(), format!("{}, Day", area_key.name(logic_key_mapper))));
+                    new_areas.insert(day_area);
+                    is_done = false;
+                }
+                if !inventory.check_area_tod(area_key, &TimeOfDay::Night)
+                    && !new_areas.contains(&night_area)
+                {
+                    current_sphere.push(("Sleep".to_string(), format!("{}, Night", area_key.name(logic_key_mapper))));
+                    new_areas.insert(night_area);
+                    is_done = false;
+                }
+            }
+            // explore exits
+            for (exit, exit_req) in area.exits.iter() {
+                // what area this actually leads to
+                if let Some(entrance) = placement
+                    .connected_areas
+                    .get(&area_key.area_exit_to_psgw(exit))
+                {
+                    let other_area_key = &entrance.area;
+                    let other_area = areas.get(other_area_key).unwrap();
+                    for possible_tod in allowed_tod.all_allowed() {
+                        // calculate the actual ToD this area will have
+                        // some areas force a specific ToD (due to the surface not being able to handle night)
+                        let actual_tod = possible_tod.with_forced(&other_area.allowed_tod);
+                        // if this area is already collected, no need to check the requirement again
+                        let area_end = other_area_key.area_localize(&actual_tod);
+                        if !inventory.check_area_tod(other_area_key, &actual_tod)
+                            && !new_areas.contains(&area_end)
+                        {
+                            // check if this area is reachable
+                            if exit_req.check_requirement_met(&inventory, possible_tod) {
+                                current_sphere.push((area_key.area_exit_to_psgw(exit).dbg_to_string(logic_key_mapper), entrance.dbg_to_string(logic_key_mapper)));
+                                new_areas.insert(area_end);
+                                is_done = false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        let mut new_items = Vec::new();
+        // collect items/events
+        for (area_key, allowed_tod) in inventory.areas.iter() {
+            // explore locations
+            let area = areas.get(area_key).unwrap();
+            for (check_name, check_req) in area.locations.iter() {
+                let check_key = CheckKey {
+                    area_key: area_key.clone(),
+                    check: check_name.clone(),
+                };
+                // if this location was already visited, don't collect it again
+                if !visited_locations.contains(&check_key) {
+                    for possible_tod in allowed_tod.all_allowed() {
+                        // if this location is reachable, collect it
+                        if check_req.check_requirement_met(&inventory, possible_tod) {
+                            visited_locations.insert(check_key.clone());
+                            if let Some(item) = placement.filled_checks.get(&check_key) {
+                                current_sphere.push((check_key.dbg_to_string(logic_key_mapper), item.name(logic_key_mapper).to_string()));
+                                new_items.push(item.clone());
+                                is_done = false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        for new_area in new_areas {
+            inventory.add_area_tod(&new_area.area_key, &new_area.local);
+        }
+        for item in new_items {
+            inventory.collect_item(item);
+        }
+        spheres.push(current_sphere);
+    }
+    spheres
 }
 
 pub fn get_first_unreachable_loc(
