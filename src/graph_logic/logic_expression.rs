@@ -4,13 +4,14 @@ use std::fmt::Write;
 
 use crate::options::RandomizerOptions;
 
-use super::logic_structs::{Inventory, LogicKey, LogicKeyMapper, TimeOfDay};
+use super::logic_structs::{AreaKey, Inventory, LogicKey, LogicKeyMapper, TimeOfDay};
 
 #[derive(Debug, Clone)]
 pub enum LogicElement {
     AndExpression(Vec<LogicElement>),
     OrExpression(Vec<LogicElement>),
     LogicKeyRequirement(LogicKey),
+    AreaKeyRequirement(AreaKey),
     LogicKeyCountRequirement(LogicKey, usize),
     FixedValue(bool),
     TimeOfDay(TimeOfDay),
@@ -332,6 +333,9 @@ impl LogicElement {
             LogicElement::LogicKeyRequirement(key) => {
                 return inventory.check_owned_item(key);
             }
+            LogicElement::AreaKeyRequirement(key) => {
+                return inventory.check_area_tod(key, tod);
+            }
             LogicElement::OrExpression(requirements) => {
                 // compute all for test
                 return requirements.iter().fold(false, |last, cur| {
@@ -368,6 +372,9 @@ impl LogicElement {
                     mapper.convert_to_string(key).unwrap()
                 )
                 .unwrap();
+            }
+            LogicElement::AreaKeyRequirement(key) => {
+                write!(s, "AreaKeyRequirement({})", key.name(mapper)).unwrap();
             }
             LogicElement::AndExpression(requirements) => {
                 write!(s, "AndExpression([").unwrap();

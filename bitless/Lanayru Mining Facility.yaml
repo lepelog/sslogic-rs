@@ -14,9 +14,9 @@ Lanayru Mining Facility:
 
         Second Room:
           map-exits:
-            Lanayru Mining Facility B - Hub Room: Nothing
+            Lanayru Mining Facility B - Hub Room (Hub): Nothing
           logic-exits:
-            First Key Locked Room: LMF Small Key x1
+            First Key Locked Room: Lanayru Mining Facility Small Key x1
             First West Room: Gust Bellows
 
         First Key Locked Room:
@@ -38,7 +38,7 @@ Lanayru Mining Facility:
             Gust Bellows: Can Blow Up Rocks here
             Chest inside Gust Bellows Room: Can Blow Up Rocks here
           map-exits:
-            Lanayru Mining Facility B - Near First Hub Room Chest: Can Blow Up Rocks here
+            Lanayru Mining Facility B - Near First Hub Room Chest (Hub 2): Can Blow Up Rocks here
         
         First West Room:
           locations:
@@ -53,7 +53,7 @@ Lanayru Mining Facility:
           locations:
             Chest after Armos Fight: Can Beat Room
           map-exits:
-            Lanayru Mining Facility B - West Hub: Can Beat Room
+            Lanayru Mining Facility B - West Hub (Hub W): Can Beat Room
 
     Lanayru Mining Facility B:
       stage: D300_1
@@ -72,7 +72,7 @@ Lanayru Mining Facility:
             Near Boss Door: Gust Bellows & Switch Activator
         Near Boss Door:
           map-exits:
-            Lanayru Mining Facility Boss - Main: LMF Boss Key & Switch Activator
+            Lanayru Mining Facility Boss - Main: Lanayru Mining Facility Boss Key & Switch Activator
           logic-exits:
             Inside LMF BK Room: Gust Bellows & Can Defeat Beamos
             After LMF BK Room: LMF - Minecart Jump Trick & (Bomb Bag | Beetle)

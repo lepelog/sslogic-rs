@@ -25,7 +25,6 @@ Sky:
             Bamboo Island Goddess Chest: Goddess Cube West of Earth Temple Entrance
             Goddess Chest on Island next to Bamboo Island: Goddess Cube near Mogma Turf Entrance
             Goddess Chest in Cave on Island Next to Bamboo Island: Goddess Cube in Secret Passageway in Desert & Water Scale
-            Northeast Island Goddess Chest behind Bombable Rocks: Goddess Cube at Lanayru Mines Entrance & Bomb Bag
 
             Chest in Breakable Boulder near Fun Fun Island: Spiral Charge
             Chest in Breakable Boulder near Lumpy Pumpkin: Spiral Charge
@@ -82,7 +81,6 @@ Sky:
         Outside Lumpy Pumpkin:
           locations:
             Crystal outside Lumpy Pumpkin: Nighttime
-            Crystal inside Lumpy Pumpkin: Nighttime
             Kina's Crystals: Pumpkin Carrying & Goddess Harp & Pick up Guld & Daytime
             Lumpy Pumpkin - Outside Goddess Chest: Initial Goddess Cube
           events:

@@ -40,7 +40,7 @@ Central Skyloft:
         
         Past Waterfall Cave:
           map-exits:
-            Sky - Field: Daytime
+            Sky - Field (Past Waterfall Cave): Daytime
             Waterfall Cave - Main (Lower): Nothing
           logic-exits:
             Waterfall Cave Crystals: Nothing

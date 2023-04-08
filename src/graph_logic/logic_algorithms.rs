@@ -15,10 +15,10 @@ pub enum FillError {
     NoValidLocationLeft(LogicKey),
 }
 
-pub fn place_entrances_decoupled<R: Rng>(
+pub fn place_entrances_decoupled<R: Rng, P: Placement>(
     rng: &mut R,
     areas: &HashMap<AreaKey, Area>,
-    placement: &mut Placement,
+    placement: &mut P,
     inventory: &Inventory,
     entrances_to_place: &mut Vec<Entrance>,
     exits_to_place: &mut Vec<Exit>,
@@ -56,7 +56,7 @@ pub fn place_entrances_decoupled<R: Rng>(
                 current_inventory.add_area_tod(&entrance.area, tod);
             }
         }
-        do_exploration(areas, &placement, &mut current_inventory);
+        do_exploration(areas, placement, &mut current_inventory);
         let selected_exit_index = 'exit_loop: loop {
             try_count += 1;
             let (exit_index, exit) = exit_iter
@@ -100,15 +100,15 @@ pub fn place_entrances_decoupled<R: Rng>(
         // fast remove, order is random anyways
         let placed_exit = exits_to_place.swap_remove(selected_exit_index);
         // println!("connecting <{}> to <{}>", placed_exit.dbg_to_string(logic_key_mapper), entrance_to_place.dbg_to_string(logic_key_mapper));
-        placement.connected_areas.insert(placed_exit, entrance_to_place);
+        placement.set_connected_area(placed_exit, entrance_to_place);
     }
     Ok(())
 }
 
-pub fn place_entrances_coupled<R: Rng>(
+pub fn place_entrances_coupled<R: Rng, P: Placement>(
     rng: &mut R,
     areas: &HashMap<AreaKey, Area>,
-    placement: &mut Placement,
+    placement: &mut P,
     inventory: &Inventory,
     // each entrance represents both exit and entrance from one side
     entrances_to_place: &mut Vec<Entrance>,
@@ -142,16 +142,12 @@ pub fn place_entrances_coupled<R: Rng>(
                 }
             }
             // temporarily connect entrances, will be reverted if this doesn't work out
-            placement
-                .connected_areas
-                .insert(side_1_exit.clone(), side_2_entrance.clone());
-            placement
-                .connected_areas
-                .insert(side_2_exit.clone(), side_1_entrance.clone());
+            placement.set_connected_area(side_1_exit.clone(), side_2_entrance.clone());
+            placement.set_connected_area(side_2_exit.clone(), side_1_entrance.clone());
             do_exploration(areas, placement, &mut current_inventory);
             if get_first_unreachable_loc(areas, &current_inventory).is_some() {
-                placement.connected_areas.remove(&side_1_exit);
-                placement.connected_areas.remove(&side_2_exit);
+                placement.remove_connected_area(&side_1_exit);
+                placement.remove_connected_area(&side_2_exit);
                 continue;
             } else {
                 break side_2_entrance_index;
@@ -162,18 +158,19 @@ pub fn place_entrances_coupled<R: Rng>(
     Ok(())
 }
 
-pub fn fill_assumed<R: Rng>(
+pub fn fill_assumed<R: Rng, P: Placement>(
     rng: &mut R,
     areas: &HashMap<AreaKey, Area>,
-    placement: &mut Placement,
+    placement: &mut P,
     inventory: &Inventory,
     locations_to_fill: &mut Vec<CheckKey>,
     items_to_place: &mut Vec<LogicKey>,
-) {
+) -> Result<(), LogicKey> {
     locations_to_fill.shuffle(rng);
     items_to_place.shuffle(rng);
+    let mut current_inventory = inventory.make_child();
     while let Some(item_to_place) = items_to_place.pop() {
-        let mut current_inventory = inventory.clone();
+        current_inventory.clear();
         // assume we have all items
         for item in items_to_place.iter() {
             current_inventory.collect_item(item.clone());
@@ -182,31 +179,49 @@ pub fn fill_assumed<R: Rng>(
         // also collects all placed items
         do_exploration(areas, placement, &mut current_inventory);
 
-        // look for the first reachable location in our shuffled list
-        let mut location_iter = locations_to_fill.iter().enumerate();
-        let found_idx = 'out: loop {
-            let (check_idx, CheckKey { area_key, check }) = location_iter.next().unwrap();
-            let area = areas.get(area_key).unwrap();
-
-            // check each time of day
-            for tod in TimeOfDay::ALL {
-                if area.allowed_tod.allows(&tod) && current_inventory.check_area_tod(area_key, &tod)
-                {
-                    let check_req = area.locations.get(check).unwrap();
-                    if check_req.check_requirement_met(&current_inventory, &tod) {
-                        break 'out check_idx;
-                    }
-                }
-            }
-        };
+        let found_idx = 0; //find_first_reachable(areas, &current_inventory, &locations_to_fill).ok_or_else(|| item_to_place.clone())?;
         let check = locations_to_fill.swap_remove(found_idx);
-        placement.filled_checks.insert(check, item_to_place);
+        placement.set_filled_check(check, item_to_place);
     }
+    Ok(())
 }
 
-pub fn do_exploration(
+// returns the first reachable location
+pub fn find_first_reachable<R: Rng, P: Placement>(
     areas: &HashMap<AreaKey, Area>,
-    placement: &Placement,
+    inventory: &Inventory,
+    locations_to_fill: &Vec<CheckKey>,
+) -> Option<usize> {
+    // look for the first reachable location in our shuffled list
+    let mut location_iter = locations_to_fill.iter().enumerate();
+    let found_idx = 'out: loop {
+        let (check_idx, CheckKey { area_key, check }) = location_iter.next()?;
+        let area = areas.get(area_key).unwrap();
+
+        // check each time of day
+        for tod in TimeOfDay::ALL {
+            if area.allowed_tod.allows(&tod) && inventory.check_area_tod(area_key, &tod) {
+                if area.check_location_req(check, inventory, &tod) {
+                    break 'out check_idx;
+                }
+            }
+        }
+    };
+    Some(found_idx)
+}
+
+// pub fn fill_plando<R: Rng, P: Placement>(
+//     rng: &mut R,
+//     areas: &HashMap<AreaKey, Area>,
+//     placement: &mut P,
+//     inventory: &Inventory,
+//     locations_to_fill: &mut Vec<CheckKey>,
+//     items_to_place: &mut Vec<LogicKey>,
+// )
+
+pub fn do_exploration<P: Placement>(
+    areas: &HashMap<AreaKey, Area>,
+    placement: &P,
     inventory: &mut Inventory,
 ) {
     let mut is_done = false;
@@ -237,9 +252,8 @@ pub fn do_exploration(
             // explore exits
             for (exit, exit_req) in area.exits.iter() {
                 // what area this actually leads to
-                if let Some(entrance) = placement
-                    .connected_areas
-                    .get(&area_key.area_exit_to_psgw(exit))
+                if let Some(entrance) =
+                    placement.get_connected_area(&area_key.area_exit_to_psgw(exit))
                 {
                     let other_area_key = &entrance.area;
                     let other_area = areas.get(other_area_key).unwrap();
@@ -280,7 +294,7 @@ pub fn do_exploration(
                         // if this location is reachable, collect it
                         if check_req.check_requirement_met(inventory, possible_tod) {
                             visited_locations.insert(check_key.clone());
-                            if let Some(item) = placement.filled_checks.get(&check_key) {
+                            if let Some(item) = placement.get_filled_check(&check_key) {
                                 // TODO: inventory was a nice idea, but we want to borrow this as
                                 // mutable while areas are borrowed as well
                                 collect_items(&mut inventory.items_events_counts, item.clone());
@@ -294,10 +308,10 @@ pub fn do_exploration(
     }
 }
 
-pub fn do_playthrough(
+pub fn do_playthrough<P: Placement>(
     areas: &HashMap<AreaKey, Area>,
     start_inventory: &Inventory,
-    placement: &Placement,
+    placement: &P,
     logic_key_mapper: &LogicKeyMapper,
 ) -> Vec<Vec<(String, String)>> {
     let mut spheres = Vec::new();
@@ -318,14 +332,20 @@ pub fn do_playthrough(
                 if !inventory.check_area_tod(area_key, &TimeOfDay::Day)
                     && !new_areas.contains(&day_area)
                 {
-                    current_sphere.push(("Sleep".to_string(), format!("{}, Day", area_key.name(logic_key_mapper))));
+                    current_sphere.push((
+                        "Sleep".to_string(),
+                        format!("{}, Day", area_key.name(logic_key_mapper)),
+                    ));
                     new_areas.insert(day_area);
                     is_done = false;
                 }
                 if !inventory.check_area_tod(area_key, &TimeOfDay::Night)
                     && !new_areas.contains(&night_area)
                 {
-                    current_sphere.push(("Sleep".to_string(), format!("{}, Night", area_key.name(logic_key_mapper))));
+                    current_sphere.push((
+                        "Sleep".to_string(),
+                        format!("{}, Night", area_key.name(logic_key_mapper)),
+                    ));
                     new_areas.insert(night_area);
                     is_done = false;
                 }
@@ -333,9 +353,8 @@ pub fn do_playthrough(
             // explore exits
             for (exit, exit_req) in area.exits.iter() {
                 // what area this actually leads to
-                if let Some(entrance) = placement
-                    .connected_areas
-                    .get(&area_key.area_exit_to_psgw(exit))
+                if let Some(entrance) =
+                    placement.get_connected_area(&area_key.area_exit_to_psgw(exit))
                 {
                     let other_area_key = &entrance.area;
                     let other_area = areas.get(other_area_key).unwrap();
@@ -350,7 +369,12 @@ pub fn do_playthrough(
                         {
                             // check if this area is reachable
                             if exit_req.check_requirement_met(&inventory, possible_tod) {
-                                current_sphere.push((area_key.area_exit_to_psgw(exit).dbg_to_string(logic_key_mapper), entrance.dbg_to_string(logic_key_mapper)));
+                                current_sphere.push((
+                                    area_key
+                                        .area_exit_to_psgw(exit)
+                                        .dbg_to_string(logic_key_mapper),
+                                    entrance.dbg_to_string(logic_key_mapper),
+                                ));
                                 new_areas.insert(area_end);
                                 is_done = false;
                             }
@@ -375,8 +399,11 @@ pub fn do_playthrough(
                         // if this location is reachable, collect it
                         if check_req.check_requirement_met(&inventory, possible_tod) {
                             visited_locations.insert(check_key.clone());
-                            if let Some(item) = placement.filled_checks.get(&check_key) {
-                                current_sphere.push((check_key.dbg_to_string(logic_key_mapper), item.name(logic_key_mapper).to_string()));
+                            if let Some(item) = placement.get_filled_check(&check_key) {
+                                current_sphere.push((
+                                    check_key.dbg_to_string(logic_key_mapper),
+                                    item.name(logic_key_mapper).to_string(),
+                                ));
                                 new_items.push(item.clone());
                                 is_done = false;
                             }

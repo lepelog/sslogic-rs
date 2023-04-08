@@ -42,7 +42,7 @@ Earth Temple:
           locations:
             Boss Key Chest: Nothing
           map-exits:
-            Earth Temple Boss - Main: ET Boss Key
+            Earth Temple Boss - Main: Earth Temple Boss Key
     
     Earth Temple Boss:
       stage: B200

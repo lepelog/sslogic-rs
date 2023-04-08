@@ -20,7 +20,7 @@ Skyview:
             Digging Spot in Crawlspace: Distance Activator & Water Scale & Digging Mitts
             Chest behind Two Eyes: Can Raise Water & Sword
           logic-exits:
-            Main Hub: Can Raise Water & SV Small Key x1
+            Main Hub: Can Raise Water & Skyview Small Key x1
         Main Hub:
           locations:
             Beetle: Distance Activator & (Sword | Water Scale)
@@ -33,7 +33,7 @@ Skyview:
             # A bomb knocks the Skulltula away. A skyward strike can knock it away too.
             # Both the Beetle and the bow can cut it down. There is no spider anymore in Skyview 2
             # also need to be able to get past the archers 
-            Boss Door Area: "SV Small Key x2 & (Sword | Bomb Bag)
+            Boss Door Area: "Skyview Small Key x2 & (Sword | Bomb Bag)
               & (Bomb Bag | Goddess Sword | Beetle | Bow | Water Scale)
               & (Long Range Skyward Strike | Hook Beetle | Bow)"
         Boss Door Area:
@@ -41,7 +41,7 @@ Skyview:
             Chest near Boss Door: Nothing
             Boss Key Chest: Distance Activator | Long Range Skyward Strike
           map-exits:
-            Skyview Boss - Main: SV Boss Key
+            Skyview Boss - Main: Skyview Boss Key
 
     Skyview Boss:
       stage: B100

@@ -104,7 +104,7 @@ Eldin Volcano:
           locations:
             Gossip Stone in Thrill Digger Cave: Nothing
           events:
-            High Rupee Farm: Digging Mitts
+            Can Play Thrill Digger: Digging Mitts
             # Thrill Digger Gossip Stone: Nothing
           map-exits:
             Eldin Volcano - Near Thrill Digger: Nothing

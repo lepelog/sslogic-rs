@@ -1,13 +1,19 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 use crate::options::RandomizerOptions;
 use rand::prelude::*;
 
 use super::{
-    logic_algorithms::{get_progress_item_list, place_entrances_decoupled, FillError, fill_assumed, do_playthrough},
+    logic_algorithms::{
+        do_playthrough, fill_assumed, get_progress_item_list, place_entrances_coupled,
+        place_entrances_decoupled, FillError,
+    },
     logic_expression::LogicElement,
-    logic_loader::{self, load_check_defs, specialize_for_options},
-    logic_structs::{Area, AreaKey, Inventory, LogicKeyMapper, Placement, TimeOfDay},
+    logic_loader::{self, load_check_defs, load_passageway_defs, specialize_for_options},
+    logic_structs::{
+        Area, AreaKey, BasePlacement, Inventory, LogicKeyMapper, Placement, RecursivePlacement,
+        TimeOfDay,
+    },
 };
 
 #[derive(Debug)]
@@ -48,10 +54,7 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
 
     let (mut areas, filled_checks) = logic_loader::do_parse(&mut mapper).unwrap();
 
-    let mut placement = Placement {
-        filled_checks,
-        connected_areas: HashMap::new(),
-    };
+    let mut placement = BasePlacement::new(HashMap::new(), filled_checks);
 
     // we should now have all the logic keys, remove the mut
     let mapper = mapper;
@@ -137,12 +140,9 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
 
     // remove items we start with
     for start_item in start_items.iter() {
-        progress_items.swap_remove(
-            progress_items
-                .iter()
-                .position(|itm| itm == start_item)
-                .unwrap(),
-        );
+        if let Some(pos) = progress_items.iter().position(|itm| itm == start_item) {
+            progress_items.swap_remove(pos);
+        }
     }
 
     // prepare entrance pool
@@ -155,15 +155,24 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
     let mut entrances_to_shuffle = Vec::new();
 
     let skyloft_stage = mpu("Skyloft");
-    let academy_stage = mpu("Knight Academy");
+
+    let passageway_defs = load_passageway_defs(&mapper).unwrap();
+
+    let mut psgw_set = HashSet::with_capacity(passageway_defs.len());
+
+    for psgw_def in passageway_defs.iter() {
+        if psgw_def.pswg_type.is_none() && !matches!(psgw_def.is_right_door, Some(true)) {
+            psgw_set.insert(psgw_def.to_stage_exit());
+        }
+    }
 
     for (area_key, area) in areas.iter() {
         for passageway in area.exits.keys() {
             let exit = area_key.area_exit_to_psgw(passageway);
-            // same stage is always vanilla
-            if area_key.stage == passageway.other_area.stage {
-            // if !(area_key.stage == academy_stage || passageway.other_area.stage == academy_stage) {
-            // if true {
+            // if it's in the definitions, it's shuffled
+            if !psgw_set.contains(&exit.to_stage_exit()) {
+                // if !(area_key.stage == academy_stage || passageway.other_area.stage == academy_stage) {
+                // if true {
                 placement
                     .connected_areas
                     .insert(exit.clone(), exit.to_entrance());
@@ -206,29 +215,63 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
     }
 
     // do place entrance
-    placement = loop {
-        let mut placement_copy = placement.clone();
-        let mut cloned_entrances_to_place = entrances_to_shuffle.clone();
-        let mut cloned_exits_to_place = exits_to_shuffle.clone();
-        if let Err(FillError::NoValidExitLeft(e)) = place_entrances_decoupled(
-            rng,
-            &areas,
-            &mut placement_copy,
-            &full_inventory,
-            &mut cloned_entrances_to_place,
-            &mut cloned_exits_to_place,
-            &mapper,
-        )
-        {
-            println!("entrance: {}", e.dbg_to_string(&mapper));
-            for exit in cloned_exits_to_place {
-                println!("exit: {}", exit.dbg_to_string(&mapper));
+    if false {
+        placement = loop {
+            let mut placement_copy = placement.clone();
+            let mut cloned_entrances_to_place = entrances_to_shuffle.clone();
+            let mut cloned_exits_to_place = exits_to_shuffle.clone();
+            if let Err(FillError::NoValidExitLeft(e)) = place_entrances_decoupled(
+                rng,
+                &areas,
+                &mut placement_copy,
+                &full_inventory,
+                &mut cloned_entrances_to_place,
+                &mut cloned_exits_to_place,
+                &mapper,
+            ) {
+                println!("entrance: {}", e.dbg_to_string(&mapper));
+                for exit in cloned_exits_to_place {
+                    println!("exit: {}", exit.dbg_to_string(&mapper));
+                }
+            } else {
+                break placement_copy;
             }
-        } else
-        {
-            break placement_copy;
+        };
+    } else {
+        let mut double_side_exits = Vec::new();
+        for entrance in entrances_to_shuffle {
+            if psgw_set.contains(&entrance.to_exit().to_stage_exit()) {
+                double_side_exits.push(entrance);
+            } else {
+                placement
+                    .connected_areas
+                    .insert(entrance.to_exit(), entrance);
+            }
         }
-    };
+        println!(
+            "{}",
+            mapper.dbg_areas(double_side_exits.iter().map(|e| e.area.clone()))
+        );
+        placement = loop {
+            let mut placement_copy = placement.clone();
+            let mut cloned_double_side_exits = double_side_exits.clone();
+            if let Err(FillError::NoValidExitLeft(e)) = place_entrances_coupled(
+                rng,
+                &areas,
+                &mut placement_copy,
+                &full_inventory,
+                &mut cloned_double_side_exits,
+                &mapper,
+            ) {
+                println!("entrance: {}", e.dbg_to_string(&mapper));
+                for exit in cloned_double_side_exits {
+                    println!("exit: {}", exit.dbg_to_string(&mapper));
+                }
+            } else {
+                break placement_copy;
+            }
+        };
+    }
 
     let mut locations_to_fill = Vec::new();
 
@@ -245,7 +288,31 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
     locations_to_fill.sort();
     progress_items.sort();
 
-    fill_assumed(rng, &areas, &mut placement, &mut start_inventory, &mut locations_to_fill, &mut progress_items);
+    let mut placement_overlay = RecursivePlacement::with_parent(&placement);
+
+    loop {
+        placement_overlay.clear();
+        let mut to_fill_copy = locations_to_fill.clone();
+        let mut items_copy = progress_items.clone();
+        if let Err(item) = fill_assumed(
+            rng,
+            &areas,
+            &mut placement_overlay,
+            &start_inventory,
+            &mut to_fill_copy,
+            &mut items_copy,
+        ) {
+            println!(
+                "couldn't place {} ",
+                mapper.convert_to_string(&item).unwrap()
+            );
+        } else {
+            locations_to_fill = to_fill_copy;
+            let tmp = placement_overlay.into_inner();
+            placement.consume_other(tmp);
+            break;
+        }
+    }
 
     for (check, item) in placement.filled_checks.iter() {
         println!("{:<70}: {}", check.check.name(&mapper), item.name(&mapper));
@@ -255,7 +322,7 @@ pub fn do_randomize<R: Rng>(rng: &mut R, opts: &RandomizerOptions) -> Result<(),
 
     for (idx, sphere) in playthrough.iter().enumerate() {
         println!("\n\nSphere {}:", idx);
-        for (a,b) in sphere.iter() {
+        for (a, b) in sphere.iter() {
             println!("{:<70}: {}", a, b);
         }
     }

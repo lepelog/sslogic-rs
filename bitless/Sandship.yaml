@@ -6,12 +6,12 @@ Sandship:
       areas:
         Deck:
           locations:
-            Bow: SS Small Key x2 & Sword
-            Boss Key Chest: SS Small Key x2 & Bow
+            Bow: Sandship Small Key x2 & Sword
+            Boss Key Chest: Sandship Small Key x2 & Bow
             Chest at the Stern: (Clawshots | Sandship - Mast Jump Trick) & Can Freely Change Sandship Temporality
             Chest before 4-Door Corridor: Can Freely Change Sandship Temporality & Bow
           events:
-            Can Freely Change Sandship Temporality: Bow & (Sword | SS Small Key x2)
+            Can Freely Change Sandship Temporality: Bow & (Sword | Sandship Small Key x2)
           map-exits:
             Sand Sea - Main: Nothing
           logic-exits:
@@ -23,7 +23,7 @@ Sandship:
           locations:
             Chest behind Combination Lock: (Gust Bellows | Sandship - No Combination Hint Trick) & Can Unlock Combination Lock
           map-exits:
-            Sandship Boss - Main: Can Freely Change Sandship Temporality & SS Boss Key
+            Sandship Boss - Main: Can Freely Change Sandship Temporality & Sandship Boss Key
           logic-exits:
             Sandship Brig: Bow & Sword & Whip
         

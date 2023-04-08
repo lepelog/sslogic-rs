@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::fs::{read_dir, File};
 use std::path::PathBuf;
 
@@ -7,7 +7,7 @@ use serde_yaml::{Mapping, Value};
 
 use crate::options::RandomizerOptions;
 
-use super::logic_structs::{AreaKey, CheckKey};
+use super::logic_structs::{AreaKey, CheckKey, StageExit};
 use super::{
     logic_expression::LogicElement,
     logic_structs::{AllowedToD, Area, LogicKey, LogicKeyMapper, PassagewayKey},
@@ -314,7 +314,7 @@ pub fn specialize_for_options(areas: &mut HashMap<AreaKey, Area>, options: &Rand
 
 #[derive(Deserialize)]
 #[serde(rename_all = "kebab-case")]
-pub struct PassagewayEntry {
+struct RawPassagewayEntry {
     pub stage: String,
     pub to_stage: String,
     pub disambiguation: Option<String>,
@@ -323,16 +323,56 @@ pub struct PassagewayEntry {
     pub pswg_type: Option<String>,
 }
 
-pub fn load_passageway_defs() -> Result<Vec<PassagewayEntry>, Box<dyn std::error::Error>> {
+pub struct PassagewayEntry {
+    pub stage: LogicKey,
+    pub to_stage: LogicKey,
+    pub disambiguation: Option<LogicKey>,
+    // maybe an enum works better here
+    pub is_right_door: Option<bool>,
+    pub pswg_type: Option<String>,
+}
+
+impl PassagewayEntry {
+    fn from_raw(entry: RawPassagewayEntry, mapper: &LogicKeyMapper) -> Self {
+        PassagewayEntry {
+            stage: mapper.map(&entry.stage),
+            to_stage: mapper.map(&entry.to_stage),
+            disambiguation: entry.disambiguation.map(|d| mapper.map(&d)),
+            is_right_door: entry.door.map(|d| d == "Right"),
+            pswg_type: entry.pswg_type,
+        }
+    }
+
+    pub fn to_stage_exit(&self) -> StageExit {
+        StageExit {
+            stage: self.stage.clone(),
+            to_stage: self.to_stage.clone(),
+            disambiguation: self.disambiguation.clone(),
+        }
+    }
+}
+
+pub fn load_passageway_defs(
+    mapper: &LogicKeyMapper,
+) -> Result<Vec<PassagewayEntry>, Box<dyn std::error::Error>> {
     let f = File::open("entrance_table2.yaml")?;
-    let result: Vec<PassagewayEntry> = serde_yaml::from_reader(f)?;
-    Ok(result)
+    let result: Vec<RawPassagewayEntry> = serde_yaml::from_reader(f)?;
+    Ok(result
+        .into_iter()
+        .map(|raw| PassagewayEntry::from_raw(raw, mapper))
+        .collect())
 }
 
 #[derive(Deserialize)]
 struct RawCheckEntry {
     #[serde(rename = "type")]
     types: String,
+}
+
+pub struct CheckEntry {
+    types: HashSet<String>,
+    region: LogicKey,
+    dungeon: Option<LogicKey>,
 }
 
 pub fn load_check_defs(
@@ -369,8 +409,8 @@ mod tests {
             logic_expression::LogicElement,
             logic_loader::specialize_for_options,
             logic_structs::{
-                Entrance, Exit, Inventory, LogicKey, LogicKeyMapper, PassagewayKey, Placement,
-                TimeOfDay,
+                BasePlacement, Entrance, Exit, Inventory, LogicKey, LogicKeyMapper, PassagewayKey,
+                Placement, TimeOfDay,
             },
         },
         options::RandomizerOptions,
@@ -485,15 +525,9 @@ mod tests {
 
         let mut rng = Pcg64::seed_from_u64(0);
 
-        let mut placement = Placement {
-            connected_areas: entrance_connections,
-            filled_checks: item_placement,
-        };
+        let mut placement = BasePlacement::new(entrance_connections, item_placement);
 
-        let mut inventory = Inventory {
-            areas: HashMap::new(),
-            items_events_counts: HashMap::new(),
-        };
+        let mut inventory = Inventory::default();
 
         // begin seach from central skyloft
         let skyloft_central = logic_key_mapper
@@ -567,32 +601,27 @@ mod tests {
         // find exits without entrance
         let mut logic_key_mapper = LogicKeyMapper::default();
         let (mut areas, mut item_placement) = do_parse(&mut logic_key_mapper).unwrap();
+        let mpu = |s| logic_key_mapper.convert_to_num_assuming_present(s).unwrap();
         let mut entrance_connections: HashMap<Exit, Entrance> = HashMap::new();
         let exits = get_exits(&areas);
 
         let mut seen_passageways = HashSet::new();
 
-        let passageway_defs = load_passageway_defs().unwrap();
+        let passageway_defs = load_passageway_defs(&logic_key_mapper).unwrap();
         let mut psgw_set = HashSet::new();
         for p in passageway_defs.iter() {
             if p.pswg_type.is_some() {
                 continue;
             }
             // ignore one set of doors for now
-            if p.door.as_ref().map_or(false, |d| d == "Right") {
+            if matches!(p.is_right_door, Some(true)) {
                 continue;
             }
-            let from_key = logic_key_mapper
-                .convert_to_num_assuming_present(&p.stage)
-                .unwrap();
-            let to_key = logic_key_mapper
-                .convert_to_num_assuming_present(&p.to_stage)
-                .unwrap();
-            let disambig = p
-                .disambiguation
-                .as_ref()
-                .map(|d| logic_key_mapper.convert_to_num_assuming_present(d).unwrap());
-            psgw_set.insert((from_key, to_key, disambig));
+            psgw_set.insert((
+                p.stage.clone(),
+                p.to_stage.clone(),
+                p.disambiguation.clone(),
+            ));
         }
 
         for exit in exits.iter() {
@@ -642,15 +671,9 @@ mod tests {
         // logic keys are stable though
         entrances_to_shuffle.sort();
 
-        let mut placement = Placement {
-            connected_areas: entrance_connections,
-            filled_checks: item_placement,
-        };
+        let mut placement = BasePlacement::new(entrance_connections, item_placement);
 
-        let mut inventory = Inventory {
-            areas: HashMap::new(),
-            items_events_counts: HashMap::new(),
-        };
+        let mut inventory = Inventory::default();
 
         // start search from central skyloft
         let skyloft_central = logic_key_mapper

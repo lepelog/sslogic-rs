@@ -14,7 +14,7 @@ Fire Sanctuary:
           locations:
             Chest in First Room: Can Defeat Bokoblins
           map-exits:
-            Fire Sanctuary B - First Outside Section: FS Small Key x1
+            Fire Sanctuary B - First Outside Section: Fire Sanctuary Small Key x1
 
         Pre Plats Area:
           locations:
@@ -24,7 +24,7 @@ Fire Sanctuary:
         
         In Front of Boss Door:
           map-exits:
-            Fire Sanctuary Boss - Main: FS Boss Key
+            Fire Sanctuary Boss - Main: Fire Sanctuary Boss Key
           logic-exits:
             Upper Staircase Room: Can Defeat Lezalfos & Clawshots
 
@@ -48,7 +48,7 @@ Fire Sanctuary:
           locations:
             Chest near First Trapped Mogma: Gust Bellows | Clawshots
           logic-exits:
-            Water Fruit Room: FS Small Key x2
+            Water Fruit Room: Fire Sanctuary Small Key x2
         Water Fruit Room:
           locations:
             First Chest in Water Fruit Room: Nothing

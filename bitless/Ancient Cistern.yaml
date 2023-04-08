@@ -12,10 +12,10 @@ Ancient Cistern:
           logic-exits:
             After Whip Hooks: Whip
             Behind Waterfall: Whip & Water Scale
-            Whip Chest Room: AC Small Key x2 & (Can Lower AC Statue | Can Defeat Stalmaster)
+            Whip Chest Room: Ancient Cistern Small Key x2 & (Can Lower AC Statue | Can Defeat Stalmaster)
             Main Basement: Can Lower AC Statue
             Spider Thread: Ancient Cistern - Cistern Clip Trick & Sword
-            Before Boss Door: AC Small Key x2 & Whip
+            Before Boss Door: Ancient Cistern Small Key x2 & Whip
         After Whip Hooks:
           locations:
             Chest after Whip Hooks: Nothing
@@ -30,7 +30,7 @@ Ancient Cistern:
           locations:
             Bokoblin: Whip
           logic-exits:
-            After AC Gutters: AC Small Key x2 & Water Scale
+            After AC Gutters: Ancient Cistern Small Key x2 & Water Scale
         After AC Gutters:
           logic-exits:
             After Whip Hooks: Nothing
@@ -52,7 +52,7 @@ Ancient Cistern:
             Before Boss Door: Whip
         Spider Thread:
           events:
-            Can Lower Ac Statue: Whip
+            Can Lower AC Statue: Whip
           logic-exits:
             Boss Key Chest Area: Nothing
             Main Basement: Nothing
@@ -61,7 +61,7 @@ Ancient Cistern:
             Boss Key Chest: Nothing
         Before Boss Door:
           map-exits:
-            Ancient Cistern Boss - Main: AC Boss Key
+            Ancient Cistern Boss - Main: Ancient Cistern Boss Key
     Ancient Cistern Boss:
       stage: B101
       areas:
