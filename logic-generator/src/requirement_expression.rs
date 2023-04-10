@@ -18,7 +18,7 @@ pub enum RequirementExpression {
 
 use std::collections::{HashMap, HashSet};
 use std::error::Error;
-use std::fmt::{Write, self};
+use std::fmt::{self, Write};
 use std::io;
 
 use crate::convert_to_upper_camel_case;
@@ -176,7 +176,10 @@ impl RequirementExpression {
         }
         // items
         if item_names.contains(s) {
-            return Ok(RequirementExpression::ItemCount(convert_to_upper_camel_case(s), 1));
+            return Ok(RequirementExpression::ItemCount(
+                convert_to_upper_camel_case(s),
+                1,
+            ));
         }
         if s.contains("Trick") || s.contains("Option") {
             return Ok(RequirementExpression::Option(s.to_string()));
@@ -271,11 +274,22 @@ impl RequirementExpression {
                     RequirementToD::Night => "Night",
                     RequirementToD::Any => "all()",
                 };
-                write!(w, "RequirementExpression::Area(Area::{}, TimeOfDay::{})", area, tod_name)
-            },
-            RequirementExpression::ItemCount(item, count) => write!(w, "RequirementExpression::Item(Item::{}, {})", item, count),
-            RequirementExpression::Event(e) => write!(w, "RequirementExpression::Event(Event::{e})"),
-            RequirementExpression::Option(o) => write!(w, "RequirementExpression::Fixed(true /*TODO option: {o} */)"),
+                write!(
+                    w,
+                    "RequirementExpression::Area(Area::{}, TimeOfDay::{})",
+                    area, tod_name
+                )
+            }
+            RequirementExpression::ItemCount(item, count) => {
+                write!(w, "RequirementExpression::Item(Item::{}, {})", item, count)
+            }
+            RequirementExpression::Event(e) => {
+                write!(w, "RequirementExpression::Event(Event::{e})")
+            }
+            RequirementExpression::Option(o) => write!(
+                w,
+                "RequirementExpression::Fixed(true /*TODO option: {o} */)"
+            ),
             RequirementExpression::And(expressions) => {
                 write!(w, "RequirementExpression::And(vec![")?;
                 for expr in expressions {
@@ -283,7 +297,7 @@ impl RequirementExpression {
                     write!(w, ",")?;
                 }
                 write!(w, "])")
-            },
+            }
             RequirementExpression::Or(expressions) => {
                 write!(w, "RequirementExpression::Or(vec![")?;
                 for expr in expressions {
@@ -291,7 +305,7 @@ impl RequirementExpression {
                     write!(w, ",")?;
                 }
                 write!(w, "])")
-            },
+            }
         }
     }
 

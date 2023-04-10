@@ -3,8 +3,8 @@ use std::marker::PhantomData;
 use bitflags::bitflags;
 
 use crate::{
-    items::{Item, COUNTED_ITEM_COUNT, SINGLE_ITEM_COUNT},
-    logic::{Area, Location, Stage, Event},
+    generated::items::{Item, COUNTED_ITEM_COUNT, SINGLE_ITEM_COUNT},
+    generated::logic::{Area, Event, Location, Stage},
 };
 
 bitflags! {
@@ -20,7 +20,7 @@ pub trait BitSetCompatible: Sized + Clone + Copy + Into<usize> + 'static {
     const ALL: &'static [Self];
 }
 
-#[derive(Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct BitSet<T: BitSetCompatible, const N: usize> {
     slots: [usize; N],
     _phantom: PhantomData<T>,
@@ -77,7 +77,7 @@ pub type LocationBitset = BitSet<Location, { Location::ALL.len() / usize::BITS a
 
 const SLOT_COUNT: usize = SINGLE_ITEM_COUNT / usize::BITS as usize + 1;
 
-#[derive(Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
 pub struct ItemCollection {
     slots: [usize; SLOT_COUNT],
     counted: [u8; COUNTED_ITEM_COUNT],
@@ -85,10 +85,7 @@ pub struct ItemCollection {
 
 impl ItemCollection {
     pub fn new() -> Self {
-        ItemCollection {
-            slots: Default::default(),
-            counted: Default::default(),
-        }
+        Default::default()
     }
     pub fn new_filled() -> Self {
         ItemCollection {

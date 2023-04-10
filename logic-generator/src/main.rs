@@ -11,7 +11,7 @@ use anyhow::Context;
 use heck::ToUpperCamelCase;
 use indexmap::IndexMap;
 use regex::Regex;
-use requirement_expression::RequirementExpression;
+use requirement_expression::{RequirementExpression, RequirementToD};
 use serde::Deserialize;
 
 mod requirement_expression;
@@ -461,21 +461,23 @@ fn print_locations<W: Write>(out: &mut W, locations: &[LocationEnumMember]) -> i
     Ok(())
 }
 
-fn print_events<W: Write>(out: &mut W, events: &BTreeMap<NameAndEnumName, Vec<(String, RequirementExpression)>>) -> io::Result<()> {
+fn print_events<W: Write>(
+    out: &mut W,
+    events: &BTreeMap<NameAndEnumName, Vec<(String, RequirementExpression)>>,
+) -> io::Result<()> {
     print_common(out, "Event", events.keys())?;
 
     writeln!(out, "impl Event {{")?;
 
     //
-    writeln!(out, "pub fn requirements(&self) -> &'static[RequirementKey] {{")?;
+    writeln!(
+        out,
+        "pub fn requirements(&self) -> &'static[RequirementKey] {{"
+    )?;
     writeln!(out, "match self {{")?;
 
     for (event_name, requirements) in events {
-        writeln!(
-            out,
-            "Event::{} => &[",
-            event_name.enum_name
-        )?;
+        writeln!(out, "Event::{} => &[", event_name.enum_name)?;
         for (requirement_name, _) in requirements {
             writeln!(out, "RequirementKey::{},", requirement_name)?;
         }
@@ -604,7 +606,7 @@ fn process_items() -> anyhow::Result<HashSet<String>> {
 
     println!("single: {}, counted: {}", single_count, counted_count);
 
-    let mut out = &mut File::create("../logic-generated/src/items.rs")?;
+    let mut out = &mut File::create("../logic-core/src/generated/items.rs")?;
     writeln!(out, "#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]")?;
     writeln!(out, "pub enum Item {{")?;
 
@@ -681,10 +683,13 @@ fn print_base_requirements<'a, W: Write>(
     out: &mut W,
     requirements: impl Iterator<Item = (&'a str, &'a RequirementExpression)> + Clone,
 ) -> io::Result<()> {
-    writeln!(out, "use std::collections::HashMap;")?;
-    writeln!(out, "use crate::{{items::Item,logic::{{Area, RequirementKey}},logic_static::TimeOfDay,requirements::RequirementExpression}};")?;
+    out.write_all(b"use std::collections::HashMap;\n")?;
+    out.write_all(b"use super::{items::Item,logic::{Area, RequirementKey, Event}};\n")?;
+    out.write_all(b"use crate::{logic_static::TimeOfDay,requirements::RequirementExpression};\n")?;
 
-    writeln!(out, "pub fn get_requirements() -> HashMap<RequirementKey, RequirementExpression> {{")?;
+    out.write_all(
+        b"pub fn get_requirements() -> HashMap<RequirementKey, RequirementExpression<'static>> {\n",
+    )?;
     writeln!(out, "HashMap::from([")?;
 
     for (name, req) in requirements {
@@ -729,7 +734,8 @@ fn main() -> anyhow::Result<()> {
     let mut exit_enums = Vec::new();
     let mut entrance_enums = Vec::new();
     let mut logic_exit_requirements = Vec::new();
-    let mut events: BTreeMap<NameAndEnumName, Vec<(String, RequirementExpression)>> = BTreeMap::new();
+    let mut events: BTreeMap<NameAndEnumName, Vec<(String, RequirementExpression)>> =
+        BTreeMap::new();
     // let mut exit_enums = Vec::new();
     // println!("{faron:?}");
     for (region_name, region) in regions.iter() {
@@ -771,7 +777,16 @@ fn main() -> anyhow::Result<()> {
                         &item_names,
                     )
                     .unwrap();
-                    local_macros.insert(macro_name.clone(), resolved_req);
+                    local_macros.insert(
+                        macro_name.clone(),
+                        RequirementExpression::And(vec![
+                            RequirementExpression::Area(
+                                area_name.enum_name.clone(),
+                                RequirementToD::Any,
+                            ),
+                            resolved_req,
+                        ]),
+                    );
                 }
 
                 for (logic_exit_area, req) in area.logic_exits.iter() {
@@ -788,7 +803,16 @@ fn main() -> anyhow::Result<()> {
                         &item_names,
                     )
                     .unwrap();
-                    logic_exit_requirements.push((requirement_name.clone(), resolved_req));
+                    logic_exit_requirements.push((
+                        requirement_name.clone(),
+                        RequirementExpression::And(vec![
+                            RequirementExpression::Area(
+                                area_name.enum_name.clone(),
+                                RequirementToD::Any,
+                            ),
+                            resolved_req,
+                        ]),
+                    ));
                     let other_area_name = format!(
                         "{}_{}",
                         stage_name.enum_name,
@@ -868,11 +892,17 @@ fn main() -> anyhow::Result<()> {
                         exit_enums.push(ExitEnumMember {
                             name: exit_name,
                             area: area_name.enum_name.clone(),
-                            requirement: resolved_req,
+                            requirement: RequirementExpression::And(vec![
+                                RequirementExpression::Area(
+                                    area_name.enum_name.clone(),
+                                    RequirementToD::Any,
+                                ),
+                                resolved_req,
+                            ]),
                         });
                         entrance_enums.push(EntranceEnumMember {
                             name: entrance_name,
-                            area: area_name.enum_name.clone(),
+                            area: other_area_enum_name.clone(),
                         });
                     }
                     // println!("{exit_name}");
@@ -903,7 +933,13 @@ fn main() -> anyhow::Result<()> {
                     locations.push(location_name.enum_name.clone());
                     location_enums.push(LocationEnumMember {
                         name: location_name,
-                        requirement: resolved_req,
+                        requirement: RequirementExpression::And(vec![
+                            RequirementExpression::Area(
+                                area_name.enum_name.clone(),
+                                RequirementToD::Any,
+                            ),
+                            resolved_req,
+                        ]),
                         area: area_name.enum_name.clone(),
                     });
                 }
@@ -919,10 +955,16 @@ fn main() -> anyhow::Result<()> {
                         &item_names,
                     )
                     .unwrap();
-                    events
-                        .entry(event_name)
-                        .or_default()
-                        .push((area_local_event_name, resolved_req));
+                    events.entry(event_name).or_default().push((
+                        area_local_event_name,
+                        RequirementExpression::And(vec![
+                            RequirementExpression::Area(
+                                area_name.enum_name.clone(),
+                                RequirementToD::Any,
+                            ),
+                            resolved_req,
+                        ]),
+                    ));
                 }
 
                 // area_names.push(area_enum_name_with_stage.clone());
@@ -966,7 +1008,7 @@ fn main() -> anyhow::Result<()> {
         });
     }
 
-    let mut out = File::create("../logic-generated/src/logic.rs")?;
+    let mut out = File::create("../logic-core/src/generated/logic.rs")?;
     writeln!(&mut out, "#![allow(non_camel_case_types)]")?;
     writeln!(
         &mut out,
@@ -1005,7 +1047,8 @@ fn main() -> anyhow::Result<()> {
     //     }
     // }
     print_requirements(&mut out, requirements.clone())?;
-    let mut out_requirements = File::create("../logic-generated/src/generated_requirements.rs")?;
+    let mut out_requirements =
+        File::create("../logic-core/src/generated/generated_requirements.rs")?;
     print_base_requirements(&mut out_requirements, requirements)?;
     print_exits(&mut out, &exit_enums)?;
     print_entrances(&mut out, &entrance_enums)?;
