@@ -4,7 +4,7 @@ mod logic_static;
 mod requirements;
 mod options;
 
-pub use explorer::{Explorer, Inventory, Placement};
+pub use explorer::{Explorer, Inventory, Placement, collect_spheres};
 pub use generated::{generated_requirements::get_requirements, items::Item, logic::{
     Area, Entrance, Exit, Event, Location, Region, RequirementKey, Stage
 }};

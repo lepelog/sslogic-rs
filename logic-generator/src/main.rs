@@ -123,6 +123,7 @@ struct LocationEnumMember {
 struct ExitEnumMember {
     name: NameAndEnumName,
     area: String,
+    vanilla_entrance: String,
     requirement: RequirementExpression,
 }
 
@@ -506,6 +507,18 @@ fn print_exits<W: Write>(out: &mut W, exits: &[ExitEnumMember]) -> io::Result<()
 
     writeln!(out, "}}")?;
     writeln!(out, "}}")?;
+
+    //
+    writeln!(out, "pub fn vanilla_entrance(&self) -> Entrance {{")?;
+    writeln!(out, "match self {{")?;
+
+    for exit in exits {
+        writeln!(out, "Exit::{} => Entrance::{},", exit.name.enum_name, exit.vanilla_entrance)?;
+    }
+
+    writeln!(out, "}}")?;
+    writeln!(out, "}}")?;
+
 
     //
     writeln!(out, "pub fn requirement_key(&self) -> RequirementKey {{")?;
@@ -892,6 +905,7 @@ fn main() -> anyhow::Result<()> {
                         exit_enums.push(ExitEnumMember {
                             name: exit_name,
                             area: area_name.enum_name.clone(),
+                            vanilla_entrance: entrance_name.enum_name.clone(),
                             requirement: RequirementExpression::And(vec![
                                 RequirementExpression::Area(
                                     area_name.enum_name.clone(),

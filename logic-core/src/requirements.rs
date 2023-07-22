@@ -48,8 +48,8 @@ impl<'a> RequirementExpression<'a> {
     }
 }
 
-const IMPOSSIBLE: RequirementExpression = RequirementExpression::Fixed(false);
-const NOTHING: RequirementExpression = RequirementExpression::Fixed(true);
+pub const IMPOSSIBLE: RequirementExpression = RequirementExpression::Fixed(false);
+pub const NOTHING: RequirementExpression = RequirementExpression::Fixed(true);
 
 pub struct Requirements<'a> {
     parent: Option<&'a Requirements<'a>>,

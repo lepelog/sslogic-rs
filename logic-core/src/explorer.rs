@@ -56,6 +56,7 @@ impl Inventory {
 #[derive(Clone)]
 pub struct Placement {
     pub initial_items: HashMap<Item, usize>,
+    pub initial_events: EventBitset,
     pub initial_entrance: Option<(Entrance, TimeOfDay)>,
     pub locations: HashMap<Location, Item>,
     pub connections: HashMap<Exit, Entrance>,
@@ -67,6 +68,7 @@ impl Placement {
         Placement {
             connections: Default::default(),
             initial_entrance: None,
+            initial_events: Default::default(),
             initial_items: Default::default(),
             locations: Default::default(),
             rev_connections: Default::default(),
@@ -98,6 +100,19 @@ impl Placement {
         // TODO: maybe should be an error instead
         assert!(prev.is_none());
     }
+
+    pub fn get_initial_inventory(&self) -> Inventory {
+        let mut inventory = Inventory::default();
+        inventory.events.clone_from(&self.initial_events);
+        if let Some((entrance, tod)) = self.initial_entrance {
+            inventory.insert_area_tod(entrance.area(), tod);
+        }
+        for (item, count) in &self.initial_items {
+            // TODO: clamp instead of unwrap
+            inventory.insert_items(*item, (*count).try_into().unwrap());
+        }
+        inventory
+    }
 }
 
 #[derive(Clone)]
@@ -115,15 +130,8 @@ impl<'a> Explorer<'a> {
         placement: &'a Placement,
         options: &'a Options,
     ) -> Self {
-        let mut inventory = Inventory::default();
-        for (item, count) in placement.initial_items.iter() {
-            inventory.insert_items(*item, *count as u8);
-        }
-        if let Some((entrance, tod)) = placement.initial_entrance {
-            inventory.insert_area_tod(entrance.area(), tod);
-        }
         Explorer {
-            inventory,
+            inventory: placement.get_initial_inventory(),
             collected_locations: Default::default(),
             requirements,
             placement,
@@ -140,92 +148,11 @@ impl<'a> Explorer<'a> {
     }
 
     fn explore_areas(&mut self) -> bool {
-        let mut did_change = false;
-        // check, if we can reach a new area
-        for &area in Area::ALL {
-            let already_reached_tod = self.inventory.get_area_tod(area);
-            let possible_tod = area.possible_tod();
-            if already_reached_tod.contains(possible_tod) {
-                // this area is already fully accessible, no need to check it further
-                continue;
-            }
+        explore_areas(self.requirements, self.placement, self.options, &mut self.inventory)
+    }
 
-            // try to sleep
-            if !already_reached_tod.is_empty() && area.can_sleep() {
-                self.inventory.reachable_areas_day.insert(area);
-                self.inventory.reachable_areas_night.insert(area);
-                did_change = true;
-                // we now have reached everything possible, no need to check more
-                continue;
-            }
-
-            // check all entrances to this area
-            for entrance in area.entrances() {
-                if let Some(exit) = self.placement.rev_connections.get(&entrance) {
-                    // we check this area for both ToD, to account for forced ToD changes
-                    // if the area we're currently checking has a forced ToD, we don't care what ToD
-                    // the exit is taken
-                    if !possible_tod.is_all() {
-                        // ToD is forced
-                        // check if this area can be entered, ToD of the previous area doesn't matter
-                        if self.requirements.check(
-                            exit.requirement_key(),
-                            &self.inventory,
-                            self.options,
-                            TimeOfDay::all(),
-                        ) {
-                            self.inventory.insert_area_tod(area, possible_tod);
-                            did_change = true;
-                        }
-                    } else {
-                        // ToD is not forced
-                        // check for both day and night if the exit can be taken
-                        for tod in [TimeOfDay::Day, TimeOfDay::Night] {
-                            // only check logic if the tod isn't already reached
-                            if !already_reached_tod.contains(tod) {
-                                if self.requirements.check(
-                                    exit.requirement_key(),
-                                    &self.inventory,
-                                    self.options,
-                                    tod,
-                                ) {
-                                    // We might be able to save another area collection iteration by trying
-                                    // to sleep immediately
-                                    if area.can_sleep() {
-                                        self.inventory.insert_area_tod(area, TimeOfDay::all());
-                                    } else {
-                                        self.inventory.insert_area_tod(area, tod);
-                                    }
-                                    did_change = true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            for (_exit_area, req_key) in area.logic_entrances() {
-                // ToD is not forced
-                // check for both day and night if the exit can be taken
-                for tod in [TimeOfDay::Day, TimeOfDay::Night] {
-                    // only check logic if the tod isn't already reached
-                    if !already_reached_tod.contains(tod) {
-                        if self
-                            .requirements
-                            .check(*req_key, &self.inventory, self.options, tod)
-                        {
-                            if area.can_sleep() {
-                                self.inventory.insert_area_tod(area, TimeOfDay::all());
-                            } else {
-                                self.inventory.insert_area_tod(area, tod);
-                            }
-                            did_change = true;
-                        }
-                    }
-                }
-            }
-        }
-        did_change
+    fn collect_events(&mut self) -> bool {
+        collect_events(self.requirements, self.options, &mut self.inventory)
     }
 
     fn collect_items(&mut self) -> bool {
@@ -248,6 +175,13 @@ impl<'a> Explorer<'a> {
         did_change
     }
 
+    fn explore(&mut self) -> bool {
+        let mut explored_new = self.explore_areas();
+        explored_new |= self.collect_items();
+        explored_new |= self.collect_events();
+        explored_new
+    }
+
     pub fn can_reach(&mut self, location: Location) -> bool {
         loop {
             if self.requirements.check(
@@ -258,14 +192,168 @@ impl<'a> Explorer<'a> {
             ) {
                 return true;
             }
-            let explored_new = self.explore_areas();
-            let collected_new = self.collect_items();
-            if !explored_new && !collected_new {
+            if !self.explore() {
                 // nothing new found, check is unreachable
                 return false;
             }
         }
     }
+}
+
+#[derive(Clone)]
+pub struct SphereExplorer<'a> {
+    pub inventory: Inventory,
+    pub collected_locations: LocationBitset,
+    spheres: Vec<Vec<(Location, Item)>>,
+    requirements: &'a Requirements<'a>,
+    placement: &'a Placement,
+    options: &'a Options,
+}
+
+pub fn collect_events(requirements: &Requirements<'_>, options: &Options, inventory: &mut Inventory) -> bool {
+    let mut did_change = false;
+    'outer: for event in Event::ALL {
+        if !inventory.has_event(*event) {
+            for requirement in event.requirements() {
+                if requirements.check(*requirement, &inventory, options, TimeOfDay::all()) {
+                    inventory.insert_event(*event);
+                    did_change = true;
+                    continue 'outer;
+                }
+            }
+        }
+    }
+    did_change
+}
+
+pub fn explore_areas(requirements: &Requirements<'_>, placement: &Placement, options: &Options, inventory: &mut Inventory) -> bool {
+    let mut did_change = false;
+    for &area in Area::ALL {
+        let already_reached_tod = inventory.get_area_tod(area);
+        let possible_tod = area.possible_tod();
+        if already_reached_tod.contains(possible_tod) {
+            // this area is already fully accessible, no need to check it further
+            continue;
+        }
+
+        // try to sleep
+        if !already_reached_tod.is_empty() && area.can_sleep() {
+            inventory.reachable_areas_day.insert(area);
+            inventory.reachable_areas_night.insert(area);
+            did_change = true;
+            // we now have reached everything possible, no need to check more
+            continue;
+        }
+
+        // check all entrances to this area
+        for entrance in area.entrances() {
+            if let Some(exit) = placement.rev_connections.get(&entrance) {
+                // we check this area for both ToD, to account for forced ToD changes
+                // if the area we're currently checking has a forced ToD, we don't care what ToD
+                // the exit is taken
+                if !possible_tod.is_all() {
+                    // ToD is forced
+                    // check if this area can be entered, ToD of the previous area doesn't matter
+                    if requirements.check(
+                        exit.requirement_key(),
+                        &inventory,
+                        options,
+                        TimeOfDay::all(),
+                    ) {
+                        inventory.insert_area_tod(area, possible_tod);
+                        did_change = true;
+                    }
+                } else {
+                    // ToD is not forced
+                    // check for both day and night if the exit can be taken
+                    for tod in [TimeOfDay::Day, TimeOfDay::Night] {
+                        // only check logic if the tod isn't already reached
+                        if !already_reached_tod.contains(tod) {
+                            if requirements.check(
+                                exit.requirement_key(),
+                                &inventory,
+                                options,
+                                tod,
+                            ) {
+                                // We might be able to save another area collection iteration by trying
+                                // to sleep immediately
+                                if area.can_sleep() {
+                                    inventory.insert_area_tod(area, TimeOfDay::all());
+                                } else {
+                                    inventory.insert_area_tod(area, tod);
+                                }
+                                did_change = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        for (_exit_area, req_key) in area.logic_entrances() {
+            // ToD is not forced
+            // check for both day and night if the exit can be taken
+            for tod in [TimeOfDay::Day, TimeOfDay::Night] {
+                // only check logic if the tod isn't already reached
+                if !already_reached_tod.contains(tod) {
+                    if requirements
+                        .check(*req_key, &inventory, options, tod)
+                    {
+                        if area.can_sleep() {
+                            inventory.insert_area_tod(area, TimeOfDay::all());
+                        } else {
+                            inventory.insert_area_tod(area, tod);
+                        }
+                        did_change = true;
+                    }
+                }
+            }
+        }
+    }
+    did_change
+}
+
+pub fn collect_spheres(requirements: &Requirements<'_>, placement: &Placement, options: &Options) -> Vec<Vec<(Location, Item)>> {
+    let mut inventory = placement.get_initial_inventory();
+    let mut collected_locations = LocationBitset::new();
+
+    let mut spheres = Vec::new();
+    let mut overall_did_change = true;
+    while overall_did_change {
+        overall_did_change = false;
+        let mut cur_sphere = Vec::new();
+        // fully explore areas
+        while explore_areas(requirements, placement, options, &mut inventory) {
+            overall_did_change = true;
+        }
+        // fully collect events
+        while collect_events(requirements, options, &mut inventory) {
+            overall_did_change = true;
+        }
+        // all locations/item reachable now are the current sphere
+        for (location, item) in &placement.locations {
+            // only consider new, reachable locations
+            if !collected_locations.has(*location)
+                && requirements.check(
+                    location.requirement_key(),
+                    &inventory,
+                    options,
+                    TimeOfDay::all(),
+                )
+            {
+                collected_locations.insert(*location);
+                cur_sphere.push((*location, *item));
+            }
+        }
+        if !cur_sphere.is_empty() {
+            overall_did_change = true;
+            for (_, item) in &cur_sphere {
+                inventory.insert_item(*item);
+            }
+            spheres.push(cur_sphere);
+        }
+    }
+    spheres
 }
 
 enum PlacementRestrictionPrio {

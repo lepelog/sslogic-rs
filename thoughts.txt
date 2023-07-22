@@ -1,0 +1,7 @@
+- progress locations are purely determined by settings and progress dungeons
+- items can either be progress or nonprogress
+ - all progress items are always in progress locations
+ - an item can also be marked as "relevant", which means it's nonprogress but only appears in progress locations
+- we need to determine ER (leave out for now, keep vanilla)
+- we need to separate the progress items from the nonprogress items
+ - every item that doesn't have the ability to unlock a location
