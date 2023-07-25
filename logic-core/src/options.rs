@@ -34,11 +34,11 @@ pub enum RandomizeEntrances {
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum RupoorMode {
     None,
-    RequiredDungeonsSeparately,
-    AllDungeons,
-    AllDungeonsSkyKeep,
+    Added,
+    Insanity,
 }
 
+#[derive(Debug, Clone)]
 pub struct Options {
     pub starting_tablet_count: u8,
     pub open_thunderhead: bool,

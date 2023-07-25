@@ -1,14 +1,17 @@
 use std::{
     collections::{HashMap, HashSet},
     fs::File,
+    iter::repeat,
 };
 
 use env_logger::Target;
 use error::PlacementError;
 use log::{debug, info};
 use logic_core::{
-    collect_spheres, get_requirements, BitSetCompatible, Entrance, Event, Exit, Explorer, Item,
-    Location, Options, Placement, Region, Requirements, Stage, TimeOfDay,
+    collect_spheres, get_requirements,
+    options::{LmfStartState, Options, RandomizeEntrances, StartingSword, TriforceShuffle},
+    BitSetCompatible, Entrance, Event, Exit, Explorer, Item, Location, Placement, Region,
+    Requirements, Stage, TimeOfDay,
 };
 use plando::PlandoEntries;
 use rand::{random, rngs::OsRng, seq::SliceRandom, Rng, SeedableRng};
@@ -22,6 +25,60 @@ use crate::{
 mod error;
 mod item_pools;
 mod plando;
+
+const DUNGEON_END_CHECKS: [Location; 6] = [
+    Location::Skyview_RubyTablet,
+    Location::EarthTemple_AmberTablet,
+    Location::LanayruMiningFacility_GoddessHarp,
+    Location::AncientCistern_FaroresFlame,
+    Location::Sandship_NayrusFlame,
+    Location::FireSanctuary_DinsFlame,
+];
+
+pub fn random_options<R: Rng>(rng: &mut R) -> Options {
+    Options {
+        starting_tablet_count: rng.gen_range(0..=3),
+        open_thunderhead: rng.gen(),
+        starting_sword: *[
+            StartingSword::Swordless,
+            StartingSword::PracticeSword,
+            StartingSword::GoddessSword,
+            StartingSword::GoddessLongsword,
+            StartingSword::GoddessWhiteSword,
+            StartingSword::MasterSword,
+            // StartingSword::TrueMasterSword,
+        ]
+        .choose(rng)
+        .unwrap(),
+        required_dungeon_count: rng.gen_range(0..6),
+        imp2_skip: rng.gen(),
+        empty_unrequired_dungeons: rng.gen(),
+        triforce_required: rng.gen(),
+        triforce_shuffle: *[
+            TriforceShuffle::Vanilla,
+            TriforceShuffle::SkyKeep,
+            TriforceShuffle::Anywhere,
+        ]
+        .choose(rng)
+        .unwrap(),
+        randomize_entrances: *[
+            RandomizeEntrances::None,
+            RandomizeEntrances::AllDungeons,
+            RandomizeEntrances::AllDungeonsSkyKeep,
+            RandomizeEntrances::RequiredDungeonsSeparately,
+        ]
+        .choose(rng)
+        .unwrap(),
+        lmf_start_state: *[
+            LmfStartState::Nodes,
+            LmfStartState::MainNode,
+            LmfStartState::Open,
+        ]
+        .choose(rng)
+        .unwrap(),
+        beedles_shop_vanilla: rng.gen(),
+    }
+}
 
 pub fn assumed_fill<R: Rng>(
     rng: &mut R,
@@ -80,10 +137,50 @@ pub fn flat_count_map<I: Copy>(counts: &HashMap<I, u8>) -> Vec<I> {
 
 fn get_plando_entries(options: &Options) -> PlandoEntries {
     let mut entries = PlandoEntries::default();
-    let VANILLA_SHOP = [(Item::ProgressiveBugNet, Location::Beedle_50RupeeItem)];
-    for (item, loc) in VANILLA_SHOP {
-        entries.add_fixed("Vanilla Shop", item, loc);
+    if options.beedles_shop_vanilla {
+        let VANILLA_SHOP = [(Item::ProgressiveBugNet, Location::Beedle_50RupeeItem)];
+        for (item, loc) in VANILLA_SHOP {
+            entries.add_fixed("Vanilla Shop", item, loc);
+        }
     }
+
+    let sword_count = match options.starting_sword {
+        StartingSword::Swordless => 0,
+        StartingSword::PracticeSword => 1,
+        StartingSword::GoddessSword => 2,
+        StartingSword::GoddessLongsword => 3,
+        StartingSword::GoddessWhiteSword => 4,
+        StartingSword::MasterSword => 5,
+        StartingSword::TrueMasterSword => 6,
+    };
+
+    entries.push(PlandoEntry {
+        name: "startsword",
+        min_count: sword_count,
+        max_count: sword_count,
+        items: repeat((Item::ProgressiveSword, 1))
+            .take(sword_count)
+            .collect(),
+        locations: repeat((LocationOrStart::Start, 1))
+            .take(sword_count)
+            .collect(),
+    });
+
+    let tab_count = options.starting_tablet_count.into();
+
+    entries.push(PlandoEntry {
+        name: "start tab",
+        min_count: tab_count,
+        max_count: tab_count,
+        items: vec![
+            (Item::EmeraldTablet, 1),
+            (Item::RubyTablet, 1),
+            (Item::AmberTablet, 1),
+        ],
+        locations: repeat((LocationOrStart::Start, 1))
+            .take(tab_count)
+            .collect(),
+    });
 
     let crystal_checks = [
         Location::Sky_CrystalInsideLumpyPumpkin,
@@ -133,56 +230,62 @@ fn get_plando_entries(options: &Options) -> PlandoEntries {
         let dungeon_locations = Location::ALL
             .iter()
             .filter(|loc| loc.area().stage().region() == *region)
+            .filter(|loc| !DUNGEON_END_CHECKS.contains(loc))
             .cloned();
         entries.add_area_restricted("dungeon", item.clone(), dungeon_locations, *count);
     }
 
+    // entries.push(PlandoEntry {
+    //     name: "stuff",
+    //     min_count: 6,
+    //     max_count: 6,
+    //     items: vec![
+    //         (Item::ProgressiveBeetle, 1),
+    //         (Item::BombBag, 1),
+    //         (Item::GustBellows, 1),
+    //         (Item::Whip, 1),
+    //         (Item::ProgressiveBow, 1),
+    //         (Item::ProgressiveMitts, 1),
+    //     ],
+    //     locations: vec![
+    //         (Location::Skyview_Beetle.into(), 1),
+    //         (Location::EarthTemple_BombBag.into(), 1),
+    //         (Location::LanayruMiningFacility_GustBellows.into(), 1),
+    //         (Location::AncientCistern_Whip.into(), 1),
+    //         (Location::Sandship_Bow.into(), 1),
+    //         (Location::FireSanctuary_MogmaMitts.into(), 1),
+    //     ],
+    // });
+
+    // entries.push(PlandoEntry {
+    //     name: "stuff2",
+    //     min_count: 2,
+    //     max_count: 2,
+    //     items: vec![(Item::ProgressiveBow, 1), (Item::ProgressiveBow, 1)],
+    //     locations: vec![
+    //         (Location::KnightAcademy_FledgesGift.into(), 1),
+    //         (Location::KnightAcademy_OwlansGift.into(), 1),
+    //     ],
+    // });
+
     entries.push(PlandoEntry {
-        name: "stuff",
-        min_count: 6,
+        name: "heh",
+        min_count: 1,
+        max_count: 1,
+        items: vec![(Item::ProgressiveSword, 1)],
+        locations: vec![(Location::Thunderhead_IsleOfSongsDinsPower.into(), 1)],
+    });
+
+    entries.push(PlandoEntry {
+        name: "End Sword",
+        min_count: 0,
         max_count: 6,
-        items: vec![
-            (Item::ProgressiveBeetle, 1),
-            (Item::BombBag, 1),
-            (Item::GustBellows, 1),
-            (Item::Whip, 1),
-            (Item::ProgressiveBow, 1),
-            (Item::ProgressiveMitts, 1),
-        ],
-        locations: vec![
-            (Location::Skyview_Beetle.into(), 1),
-            (Location::EarthTemple_BombBag.into(), 1),
-            (Location::LanayruMiningFacility_GustBellows.into(), 1),
-            (Location::AncientCistern_Whip.into(), 1),
-            (Location::Sandship_Bow.into(), 1),
-            (Location::FireSanctuary_MogmaMitts.into(), 1),
-        ],
+        items: repeat((Item::ProgressiveSword, 1)).take(6).collect(),
+        locations: DUNGEON_END_CHECKS
+            .into_iter()
+            .map(|c| (c.into(), 1))
+            .collect(),
     });
-
-    entries.push(PlandoEntry {
-        name: "stuff2",
-        min_count: 2,
-        max_count: 2,
-        items: vec![(Item::ProgressiveBow, 1), (Item::ProgressiveBow, 1)],
-        locations: vec![
-            (Location::KnightAcademy_FledgesGift.into(), 1),
-            (Location::KnightAcademy_OwlansGift.into(), 1),
-        ],
-    });
-
-    entries.add_area_restricted(
-        "End Sword",
-        Item::ProgressiveSword,
-        [
-            Location::Skyview_RubyTablet,
-            Location::EarthTemple_AmberTablet,
-            Location::LanayruMiningFacility_GoddessHarp,
-            Location::AncientCistern_FaroresFlame,
-            Location::Sandship_NayrusFlame,
-            Location::FireSanctuary_DinsFlame,
-        ],
-        5,
-    );
 
     entries
 }
@@ -201,7 +304,7 @@ fn do_randomize<R: Rng>(
     let start_entrance = *Entrance::ALL.choose(rng).unwrap();
     // let start_entrance = Entrance::KnightAcademy_From_Skyloft_Chimney;
     debug!("starting at {:?}", start_entrance);
-    placement.initial_entrance = Some((start_entrance, TimeOfDay::Night));
+    placement.initial_entrance = Some((start_entrance, TimeOfDay::Day));
     for exit in Exit::ALL {
         placement.connect(exit.vanilla_entrance(), *exit);
     }
@@ -252,7 +355,9 @@ fn main() {
     info!("seed: {seed}");
     let mut rng = Pcg64::seed_from_u64(seed);
     let requirements = Requirements::new_from_map(get_requirements());
-    let options = Options::new();
+    let options = random_options(&mut rng);
+
+    println!("{:?}", options);
 
     let mut try_num = 0;
     let placement = loop {
@@ -281,4 +386,12 @@ fn main() {
         }
     }
     println!("failures: {try_num}");
+    for (place, item) in placement.locations.iter() {
+        if *item == Item::ProgressiveSword
+            && !DUNGEON_END_CHECKS.contains(place)
+            && *place != Location::Thunderhead_IsleOfSongsDinsPower
+        {
+            println!("OH NO: {:?}", place);
+        }
+    }
 }

@@ -5,7 +5,7 @@ use std::{
 };
 
 use log::debug;
-use logic_core::{Explorer, Item, Location, Options, Placement, Requirements};
+use logic_core::{options::Options, Explorer, Item, Location, Placement, Requirements};
 use rand::{seq::SliceRandom, Rng};
 
 use crate::error::PlacementError;
@@ -100,7 +100,21 @@ pub fn do_plando<R: Rng>(
     items: &mut HashMap<Item, u8>,
 ) -> Result<(), PlacementError> {
     // this makes sure that entries with the same item * locations length are after another, but random
+    fn rate_entry(entry: &PlandoEntry) -> usize {
+        if entry.items.len() == 1 && entry.locations.len() == 1 {
+            return 2; // highest prio
+        } else if entry
+            .locations
+            .iter()
+            .all(|(loc, _)| *loc == LocationOrStart::Start)
+        {
+            return 1; // then startitems
+        } else {
+            return 0;
+        }
+    }
     entries.shuffle(rng);
+    entries.sort_by(|a, b| rate_entry(a).cmp(&rate_entry(b)));
     // entries.sort_by(|a, b| {
     //     (a.items.len() * a.locations.len())
     //         .cmp(&(b.items.len() * b.locations.len()))
@@ -110,13 +124,13 @@ pub fn do_plando<R: Rng>(
     while let Some(mut entry) = entries.pop() {
         // debug!("Processing {entry:?}");
         debug!("Processing {}", entry.name);
-        entry
-            .items
-            .retain(|(item, _)| items.get(item).map_or(false, |count| *count > 0));
-        entry
-            .locations
-            .retain(|(loc, _)| loc.is_start_or_else(|loc| locations.contains(&loc)));
         for placed_count in 0..entry.max_count {
+            entry
+                .items
+                .retain(|(item, _)| items.get(item).map_or(false, |count| *count > 0));
+            entry
+                .locations
+                .retain(|(loc, _)| loc.is_start_or_else(|loc| locations.contains(&loc)));
             let combination_count = entry.items.len() * entry.locations.len();
             let mut possible_combinations = Vec::with_capacity(combination_count);
             for (item_to_place, item_weight) in &entry.items {

@@ -7,7 +7,7 @@ use crate::{
         AreaBitset, BitSetCompatible, EventBitset, ItemCollection, LocationBitset, TimeOfDay,
     },
     requirements::Requirements,
-    Options,
+    options::Options,
 };
 
 #[derive(Debug, Clone, Default)]
