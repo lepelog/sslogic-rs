@@ -67,7 +67,7 @@ impl Options {
             triforce_shuffle: TriforceShuffle::Anywhere,
             randomize_entrances: RandomizeEntrances::None,
             lmf_start_state: LmfStartState::Nodes,
-            beedles_shop_vanilla: false
+            beedles_shop_vanilla: false,
         }
     }
 }

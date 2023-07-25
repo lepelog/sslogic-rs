@@ -1,12 +1,16 @@
-use std::{collections::{HashMap, HashSet}, fs::File};
+use std::{
+    collections::{HashMap, HashSet},
+    fs::File,
+};
 
 use env_logger::Target;
 use error::PlacementError;
-use log::{info, debug};
+use log::{debug, info};
 use logic_core::{
     collect_spheres, get_requirements, BitSetCompatible, Entrance, Event, Exit, Explorer, Item,
-    Location, Options, Placement, Requirements, Stage, TimeOfDay, Region,
+    Location, Options, Placement, Region, Requirements, Stage, TimeOfDay,
 };
+use plando::PlandoEntries;
 use rand::{random, rngs::OsRng, seq::SliceRandom, Rng, SeedableRng};
 use rand_pcg::Pcg64;
 
@@ -15,9 +19,9 @@ use crate::{
     plando::{do_plando, LocationOrStart, PlandoEntry},
 };
 
+mod error;
 mod item_pools;
 mod plando;
-mod error;
 
 pub fn assumed_fill<R: Rng>(
     rng: &mut R,
@@ -74,14 +78,12 @@ pub fn flat_count_map<I: Copy>(counts: &HashMap<I, u8>) -> Vec<I> {
     result
 }
 
-fn get_plando_entries(options: &Options) -> Vec<PlandoEntry> {
-    let mut entries = Vec::new();
-    entries.push(PlandoEntry {
-        name: "Vanilla Shop",
-        count: 1,
-        items: vec![(Item::ProgressiveBugNet, 1)],
-        locations: vec![(Location::Beedle_50RupeeItem.into(), 1)],
-    });
+fn get_plando_entries(options: &Options) -> PlandoEntries {
+    let mut entries = PlandoEntries::default();
+    let VANILLA_SHOP = [(Item::ProgressiveBugNet, Location::Beedle_50RupeeItem)];
+    for (item, loc) in VANILLA_SHOP {
+        entries.add_fixed("Vanilla Shop", item, loc);
+    }
 
     let crystal_checks = [
         Location::Sky_CrystalInsideLumpyPumpkin,
@@ -102,15 +104,23 @@ fn get_plando_entries(options: &Options) -> Vec<PlandoEntry> {
     ];
 
     for crystal_check in crystal_checks {
-        entries.push(PlandoEntry { name: "crystal", count: 1, items: vec![(Item::GratitudeCrystal, 1)], locations: vec![(crystal_check.into(), 1)] });
+        entries.add_fixed("crystal", Item::GratitudeCrystal, crystal_check);
     }
 
     for (region, item, count) in &[
         (Region::Skyview, Item::SkyviewSmallKey, 2),
         (Region::Skyview, Item::SkyviewBossKey, 1),
         (Region::EarthTemple, Item::EarthTempleBossKey, 1),
-        (Region::LanayruMiningFacility, Item::LanayruMiningFacilitySmallKey, 1),
-        (Region::LanayruMiningFacility, Item::LanayruMiningFacilityBossKey, 1),
+        (
+            Region::LanayruMiningFacility,
+            Item::LanayruMiningFacilitySmallKey,
+            1,
+        ),
+        (
+            Region::LanayruMiningFacility,
+            Item::LanayruMiningFacilityBossKey,
+            1,
+        ),
         (Region::AncientCistern, Item::AncientCisternSmallKey, 2),
         (Region::AncientCistern, Item::AncientCisternBossKey, 1),
         (Region::Sandship, Item::SandshipSmallKey, 2),
@@ -123,19 +133,14 @@ fn get_plando_entries(options: &Options) -> Vec<PlandoEntry> {
         let dungeon_locations = Location::ALL
             .iter()
             .filter(|loc| loc.area().stage().region() == *region)
-            .map(|loc| (LocationOrStart::Location(*loc), 1))
-            .collect();
-        entries.push(PlandoEntry {
-            name: "dungeon",
-            count: *count,
-            items: vec![(*item, 1)],
-            locations: dungeon_locations,
-        });
+            .cloned();
+        entries.add_area_restricted("dungeon", item.clone(), dungeon_locations, *count);
     }
 
     entries.push(PlandoEntry {
         name: "stuff",
-        count: 6,
+        min_count: 6,
+        max_count: 6,
         items: vec![
             (Item::ProgressiveBeetle, 1),
             (Item::BombBag, 1),
@@ -155,23 +160,38 @@ fn get_plando_entries(options: &Options) -> Vec<PlandoEntry> {
     });
 
     entries.push(PlandoEntry {
-        name: "End Sword",
-        count: 5,
-        items: vec![(Item::ProgressiveSword, 1)],
+        name: "stuff2",
+        min_count: 2,
+        max_count: 2,
+        items: vec![(Item::ProgressiveBow, 1), (Item::ProgressiveBow, 1)],
         locations: vec![
-            (Location::Skyview_RubyTablet.into(), 1),
-            (Location::EarthTemple_AmberTablet.into(), 1),
-            (Location::LanayruMiningFacility_GoddessHarp.into(), 1),
-            (Location::AncientCistern_FaroresFlame.into(), 1),
-            (Location::Sandship_NayrusFlame.into(), 1),
-            (Location::FireSanctuary_DinsFlame.into(), 1),
+            (Location::KnightAcademy_FledgesGift.into(), 1),
+            (Location::KnightAcademy_OwlansGift.into(), 1),
         ],
     });
+
+    entries.add_area_restricted(
+        "End Sword",
+        Item::ProgressiveSword,
+        [
+            Location::Skyview_RubyTablet,
+            Location::EarthTemple_AmberTablet,
+            Location::LanayruMiningFacility_GoddessHarp,
+            Location::AncientCistern_FaroresFlame,
+            Location::Sandship_NayrusFlame,
+            Location::FireSanctuary_DinsFlame,
+        ],
+        5,
+    );
 
     entries
 }
 
-fn do_randomize<R: Rng>(rng: &mut R, requirements: &Requirements<'_>, options: &Options) -> Result<Placement, PlacementError> {
+fn do_randomize<R: Rng>(
+    rng: &mut R,
+    requirements: &Requirements<'_>,
+    options: &Options,
+) -> Result<Placement, PlacementError> {
     let mut placement = Placement::new();
     placement.initial_events.insert(Event::SealedGroundsStatue);
     placement.initial_events.insert(Event::EldinEntranceStatue);
@@ -233,11 +253,12 @@ fn main() {
     let mut rng = Pcg64::seed_from_u64(seed);
     let requirements = Requirements::new_from_map(get_requirements());
     let options = Options::new();
-    
+
     let mut try_num = 0;
     let placement = loop {
-        if try_num > 100 {
+        if try_num > 1000 {
             log::error!("could not find placement at all!");
+            return;
         }
         debug!("Try {try_num}");
         try_num += 1;
@@ -259,4 +280,5 @@ fn main() {
             );
         }
     }
+    println!("failures: {try_num}");
 }

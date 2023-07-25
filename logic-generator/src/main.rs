@@ -513,12 +513,15 @@ fn print_exits<W: Write>(out: &mut W, exits: &[ExitEnumMember]) -> io::Result<()
     writeln!(out, "match self {{")?;
 
     for exit in exits {
-        writeln!(out, "Exit::{} => Entrance::{},", exit.name.enum_name, exit.vanilla_entrance)?;
+        writeln!(
+            out,
+            "Exit::{} => Entrance::{},",
+            exit.name.enum_name, exit.vanilla_entrance
+        )?;
     }
 
     writeln!(out, "}}")?;
     writeln!(out, "}}")?;
-
 
     //
     writeln!(out, "pub fn requirement_key(&self) -> RequirementKey {{")?;

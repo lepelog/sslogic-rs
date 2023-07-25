@@ -6,7 +6,8 @@ use crate::{
     logic_static::{
         AreaBitset, BitSetCompatible, EventBitset, ItemCollection, LocationBitset, TimeOfDay,
     },
-    requirements::{Requirements}, Options,
+    requirements::Requirements,
+    Options,
 };
 
 #[derive(Debug, Clone, Default)]
@@ -148,7 +149,12 @@ impl<'a> Explorer<'a> {
     }
 
     fn explore_areas(&mut self) -> bool {
-        explore_areas(self.requirements, self.placement, self.options, &mut self.inventory)
+        explore_areas(
+            self.requirements,
+            self.placement,
+            self.options,
+            &mut self.inventory,
+        )
     }
 
     fn collect_events(&mut self) -> bool {
@@ -210,7 +216,11 @@ pub struct SphereExplorer<'a> {
     options: &'a Options,
 }
 
-pub fn collect_events(requirements: &Requirements<'_>, options: &Options, inventory: &mut Inventory) -> bool {
+pub fn collect_events(
+    requirements: &Requirements<'_>,
+    options: &Options,
+    inventory: &mut Inventory,
+) -> bool {
     let mut did_change = false;
     'outer: for event in Event::ALL {
         if !inventory.has_event(*event) {
@@ -226,7 +236,12 @@ pub fn collect_events(requirements: &Requirements<'_>, options: &Options, invent
     did_change
 }
 
-pub fn explore_areas(requirements: &Requirements<'_>, placement: &Placement, options: &Options, inventory: &mut Inventory) -> bool {
+pub fn explore_areas(
+    requirements: &Requirements<'_>,
+    placement: &Placement,
+    options: &Options,
+    inventory: &mut Inventory,
+) -> bool {
     let mut did_change = false;
     for &area in Area::ALL {
         let already_reached_tod = inventory.get_area_tod(area);
@@ -269,12 +284,8 @@ pub fn explore_areas(requirements: &Requirements<'_>, placement: &Placement, opt
                     for tod in [TimeOfDay::Day, TimeOfDay::Night] {
                         // only check logic if the tod isn't already reached
                         if !already_reached_tod.contains(tod) {
-                            if requirements.check(
-                                exit.requirement_key(),
-                                &inventory,
-                                options,
-                                tod,
-                            ) {
+                            if requirements.check(exit.requirement_key(), &inventory, options, tod)
+                            {
                                 // We might be able to save another area collection iteration by trying
                                 // to sleep immediately
                                 if area.can_sleep() {
@@ -296,9 +307,7 @@ pub fn explore_areas(requirements: &Requirements<'_>, placement: &Placement, opt
             for tod in [TimeOfDay::Day, TimeOfDay::Night] {
                 // only check logic if the tod isn't already reached
                 if !already_reached_tod.contains(tod) {
-                    if requirements
-                        .check(*req_key, &inventory, options, tod)
-                    {
+                    if requirements.check(*req_key, &inventory, options, tod) {
                         if area.can_sleep() {
                             inventory.insert_area_tod(area, TimeOfDay::all());
                         } else {
@@ -313,7 +322,11 @@ pub fn explore_areas(requirements: &Requirements<'_>, placement: &Placement, opt
     did_change
 }
 
-pub fn collect_spheres(requirements: &Requirements<'_>, placement: &Placement, options: &Options) -> Vec<Vec<(Location, Item)>> {
+pub fn collect_spheres(
+    requirements: &Requirements<'_>,
+    placement: &Placement,
+    options: &Options,
+) -> Vec<Vec<(Location, Item)>> {
     let mut inventory = placement.get_initial_inventory();
     let mut collected_locations = LocationBitset::new();
 

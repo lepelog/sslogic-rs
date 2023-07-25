@@ -4,7 +4,8 @@ use crate::{
     explorer::Inventory,
     generated::items::{self, Item},
     generated::logic::{self, Area, Event, Location, RequirementKey},
-    logic_static::TimeOfDay, options::{Options, LmfStartState},
+    logic_static::TimeOfDay,
+    options::{LmfStartState, Options},
 };
 
 fn lmf_is_open(options: &Options) -> bool {

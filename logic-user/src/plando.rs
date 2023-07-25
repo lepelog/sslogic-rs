@@ -1,4 +1,8 @@
-use std::collections::{HashMap, HashSet};
+use std::{
+    collections::{HashMap, HashSet},
+    iter::repeat,
+    ops::{Deref, DerefMut},
+};
 
 use log::debug;
 use logic_core::{Explorer, Item, Location, Options, Placement, Requirements};
@@ -11,7 +15,7 @@ pub enum ItemOrVacant {
     Vacant,
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum LocationOrStart {
     Location(Location),
     Start,
@@ -35,9 +39,55 @@ impl LocationOrStart {
 #[derive(Debug, Clone)]
 pub struct PlandoEntry {
     pub name: &'static str,
-    pub count: usize,
+    pub min_count: usize,
+    pub max_count: usize,
     pub items: Vec<(Item, u8)>,
     pub locations: Vec<(LocationOrStart, u8)>,
+}
+
+#[derive(Debug, Default)]
+pub struct PlandoEntries(Vec<PlandoEntry>);
+
+impl Deref for PlandoEntries {
+    type Target = Vec<PlandoEntry>;
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+impl DerefMut for PlandoEntries {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+
+impl PlandoEntries {
+    pub fn add_fixed(&mut self, name: &'static str, item: Item, location: Location) {
+        self.push(PlandoEntry {
+            name,
+            min_count: 1,
+            max_count: 1,
+            items: vec![(item, 1)],
+            locations: vec![(location.into(), 1)],
+        });
+    }
+
+    pub fn add_area_restricted(
+        &mut self,
+        name: &'static str,
+        item: Item,
+        locations: impl IntoIterator<Item = Location>,
+        count: usize,
+    ) {
+        let locations = locations.into_iter().map(|loc| (loc.into(), 1)).collect();
+        self.push(PlandoEntry {
+            name,
+            min_count: count,
+            max_count: count,
+            items: repeat((item, 1)).take(count).collect(),
+            locations,
+        });
+    }
 }
 
 pub fn do_plando<R: Rng>(
@@ -48,22 +98,25 @@ pub fn do_plando<R: Rng>(
     options: &Options,
     locations: &mut HashSet<Location>,
     items: &mut HashMap<Item, u8>,
-) -> Result<(), PlacementError>{
+) -> Result<(), PlacementError> {
     // this makes sure that entries with the same item * locations length are after another, but random
     entries.shuffle(rng);
-    entries.sort_by(|a, b| {
-        (a.items.len() * a.locations.len()).cmp(&(b.items.len() * b.locations.len())).reverse()
-    });
+    // entries.sort_by(|a, b| {
+    //     (a.items.len() * a.locations.len())
+    //         .cmp(&(b.items.len() * b.locations.len()))
+    //         .reverse()
+    // });
 
     while let Some(mut entry) = entries.pop() {
-        debug!("Processing {entry:?}");
-        for i in 0..entry.count {
-            entry
-                .items
-                .retain(|(item, _)| items.get(item).map_or(false, |count| *count > 0));
-            entry
-                .locations
-                .retain(|(loc, _)| loc.is_start_or_else(|loc| locations.contains(&loc)));
+        // debug!("Processing {entry:?}");
+        debug!("Processing {}", entry.name);
+        entry
+            .items
+            .retain(|(item, _)| items.get(item).map_or(false, |count| *count > 0));
+        entry
+            .locations
+            .retain(|(loc, _)| loc.is_start_or_else(|loc| locations.contains(&loc)));
+        for placed_count in 0..entry.max_count {
             let combination_count = entry.items.len() * entry.locations.len();
             let mut possible_combinations = Vec::with_capacity(combination_count);
             for (item_to_place, item_weight) in &entry.items {
@@ -79,9 +132,8 @@ pub fn do_plando<R: Rng>(
                     explorer.inventory.insert_items(*item, count);
                 }
                 for (loc_or_start, loc_weight) in &entry.locations {
-                    if loc_or_start.is_start_or_else(|loc_to_fill| {
-                        explorer.can_reach(loc_to_fill)
-                    }) {
+                    if loc_or_start.is_start_or_else(|loc_to_fill| explorer.can_reach(loc_to_fill))
+                    {
                         possible_combinations.push((
                             *loc_or_start,
                             *item_to_place,
@@ -99,6 +151,20 @@ pub fn do_plando<R: Rng>(
                 possible_combinations.choose_weighted(rng, |(_, _, weight)| *weight)
             {
                 debug!("place {:?} at {:?}", item_to_place, loc_to_fill);
+                // remove now filled location and item from entry
+                let item_pos = entry
+                    .items
+                    .iter()
+                    .position(|i| i.0 == *item_to_place)
+                    .unwrap();
+                entry.items.swap_remove(item_pos);
+                let loc_pos = entry
+                    .locations
+                    .iter()
+                    .position(|l| l.0 == *loc_to_fill)
+                    .unwrap();
+                entry.locations.swap_remove(loc_pos);
+                // remove now filled location and item from pool
                 *items.get_mut(item_to_place).unwrap() -= 1;
                 match loc_to_fill {
                     LocationOrStart::Start => {
@@ -109,8 +175,15 @@ pub fn do_plando<R: Rng>(
                         placement.locations.insert(*loc, *item_to_place);
                     }
                 }
+            } else if placed_count >= entry.min_count {
+                debug!("Encountered placement error, but min is reached, continuing");
+                break;
             } else {
                 debug!("Encountered placement error, aborting plando placement");
+                debug!(
+                    "remaining items: {:?}, remaining locations: {:?}",
+                    entry.items, entry.locations
+                );
                 return Err(PlacementError::PlandoNoLocation);
             }
         }

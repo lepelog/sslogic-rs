@@ -1,8 +1,11 @@
+use super::{
+    items::Item,
+    logic::{Area, Event, RequirementKey},
+};
+use crate::{logic_static::TimeOfDay, requirements::RequirementExpression};
 use std::collections::HashMap;
-use super::{items::Item,logic::{Area, RequirementKey, Event}};
-use crate::{logic_static::TimeOfDay,requirements::RequirementExpression};
 pub fn get_requirements() -> HashMap<RequirementKey, RequirementExpression<'static>> {
-HashMap::from([
+    HashMap::from([
 (RequirementKey::AncientCistern_AfterAcGutters_To_AfterWhipHooks,RequirementExpression::And(vec![RequirementExpression::Area(Area::AncientCistern_AfterAcGutters, TimeOfDay::all()),RequirementExpression::Fixed(true),])),
 (RequirementKey::AncientCistern_AfterAcGutters_To_MainRoomVines,RequirementExpression::And(vec![RequirementExpression::Area(Area::AncientCistern_AfterAcGutters, TimeOfDay::all()),RequirementExpression::And(vec![RequirementExpression::Item(Item::WaterScale, 1),RequirementExpression::Item(Item::Whip, 1),]),])),
 (RequirementKey::AncientCistern_AfterWhipHooks_To_MainRoomVines,RequirementExpression::And(vec![RequirementExpression::Area(Area::AncientCistern_AfterWhipHooks, TimeOfDay::all()),RequirementExpression::Item(Item::Clawshots, 1),])),
@@ -668,4 +671,5 @@ HashMap::from([
 (RequirementKey::EldinVolcano_VolcanoAscent_VolcanoAscentStatue,RequirementExpression::And(vec![RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent, TimeOfDay::all()),RequirementExpression::Fixed(true),])),
 (RequirementKey::EldinVolcano_PreMogmaTurf_VolcanoEastStatue,RequirementExpression::And(vec![RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf, TimeOfDay::all()),RequirementExpression::Fixed(true),])),
 (RequirementKey::LanayruDesert_SandOasis_WestDesertStatue,RequirementExpression::And(vec![RequirementExpression::Area(Area::LanayruDesert_SandOasis, TimeOfDay::all()),RequirementExpression::Fixed(true),])),
-])}
+])
+}
