@@ -6,8 +6,9 @@ use crate::{
     logic_static::{
         AreaBitset, BitSetCompatible, EventBitset, ItemCollection, LocationBitset, TimeOfDay,
     },
-    requirements::Requirements,
     options::Options,
+    requirements::Requirements,
+    RequirementKey,
 };
 
 #[derive(Debug, Clone, Default)]
@@ -189,13 +190,15 @@ impl<'a> Explorer<'a> {
     }
 
     pub fn can_reach(&mut self, location: Location) -> bool {
+        self.can_reach_requirement(location.requirement_key())
+    }
+
+    pub fn can_reach_requirement(&mut self, req: RequirementKey) -> bool {
         loop {
-            if self.requirements.check(
-                location.requirement_key(),
-                &self.inventory,
-                self.options,
-                TimeOfDay::all(),
-            ) {
+            if self
+                .requirements
+                .check(req, &self.inventory, self.options, TimeOfDay::all())
+            {
                 return true;
             }
             if !self.explore() {

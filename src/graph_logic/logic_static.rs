@@ -85,7 +85,13 @@ impl LogicStatic {
     pub fn get_area(&self, area_key: AreaKey) -> &Area {
         let stage = self.get_stage(area_key.stage);
         let Some(area) = stage.areas.get(&area_key.area) else {
-            panic!("Could not find area {} in stage {}", self.mapper.convert_to_string(&area_key.area).unwrap_or("INVALID"), stage.name);
+            panic!(
+                "Could not find area {} in stage {}",
+                self.mapper
+                    .convert_to_string(&area_key.area)
+                    .unwrap_or("INVALID"),
+                stage.name
+            );
         };
         area
     }
@@ -95,7 +101,12 @@ impl LogicStatic {
     /// panics if the stage doesn't exist, which should really not happen
     pub fn get_stage(&self, stage_key: LogicKey) -> &Stage {
         let Some(stage) = self.stages.get(&stage_key) else {
-            panic!("Could not find stage by key: {}", self.mapper.convert_to_string(&stage_key).unwrap_or("INVALID"));
+            panic!(
+                "Could not find stage by key: {}",
+                self.mapper
+                    .convert_to_string(&stage_key)
+                    .unwrap_or("INVALID")
+            );
         };
         stage
     }
@@ -119,7 +130,13 @@ impl LogicStatic {
             .convert_to_num_assuming_present(area_name)
             .map_err(|name| KeyLookupError::NotFound("Area", name.to_string()))?;
         let Some(area) = stage.areas.get(&area_key) else {
-            panic!("Could not find area {} in stage {}", self.mapper.convert_to_string(&area_key).unwrap_or("INVALID"), stage.name);
+            panic!(
+                "Could not find area {} in stage {}",
+                self.mapper
+                    .convert_to_string(&area_key)
+                    .unwrap_or("INVALID"),
+                stage.name
+            );
         };
         Ok(area)
     }

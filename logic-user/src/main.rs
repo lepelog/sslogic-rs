@@ -11,20 +11,38 @@ use logic_core::{
     collect_spheres, get_requirements,
     options::{LmfStartState, Options, RandomizeEntrances, StartingSword, TriforceShuffle},
     BitSetCompatible, Entrance, Event, Exit, Explorer, Item, Location, Placement, Region,
-    Requirements, Stage, TimeOfDay,
+    Requirements, Stage, TimeOfDay, AreaBitset,
 };
-use plando::PlandoEntries;
-use rand::{random, rngs::OsRng, seq::SliceRandom, Rng, SeedableRng};
+use plando::{PlacementEntryErrorHandling, PlandoEntries};
+use rand::{
+    random,
+    rngs::OsRng,
+    seq::{IteratorRandom, SliceRandom},
+    Rng, SeedableRng,
+};
 use rand_pcg::Pcg64;
+use util::sample_stable;
 
 use crate::{
+    hints::calc_sots_path,
     item_pools::{add_item_pool, PROGRESS_ITEMS},
     plando::{do_plando, LocationOrStart, PlandoEntry},
 };
 
 mod error;
+mod hints;
 mod item_pools;
 mod plando;
+mod util;
+
+const POTENTIALLY_REQUIRED_DUNGEONS: [Region; 6] = [
+    Region::Skyview,
+    Region::EarthTemple,
+    Region::LanayruMiningFacility,
+    Region::AncientCistern,
+    Region::Sandship,
+    Region::FireSanctuary,
+];
 
 const DUNGEON_END_CHECKS: [Location; 6] = [
     Location::Skyview_RubyTablet,
@@ -87,6 +105,9 @@ pub fn assumed_fill<R: Rng>(
     options: &Options,
     locations: &mut Vec<Location>,
     items: &mut Vec<Item>,
+    // TODO: consider these
+    progress_locations: &HashSet<Location>,
+    progress_items: &HashSet<Item>,
 ) -> Result<(), PlacementError> {
     locations.shuffle(rng);
     items.shuffle(rng);
@@ -135,12 +156,19 @@ pub fn flat_count_map<I: Copy>(counts: &HashMap<I, u8>) -> Vec<I> {
     result
 }
 
-fn get_plando_entries(options: &Options) -> PlandoEntries {
+// TODO: plando
+pub fn randomize_required_dungeons<R: Rng>(rng: &mut R, count: u8) -> Vec<Region> {
+    sample_stable(rng, &POTENTIALLY_REQUIRED_DUNGEONS, count.into())
+        .cloned()
+        .collect()
+}
+
+fn get_plando_entries(options: &Options, required_dungeons: &Vec<Region>) -> PlandoEntries {
     let mut entries = PlandoEntries::default();
     if options.beedles_shop_vanilla {
         let VANILLA_SHOP = [(Item::ProgressiveBugNet, Location::Beedle_50RupeeItem)];
         for (item, loc) in VANILLA_SHOP {
-            entries.add_fixed("Vanilla Shop", item, loc);
+            entries.add_fixed("Vanilla Shop", item, loc, true);
         }
     }
 
@@ -154,24 +182,23 @@ fn get_plando_entries(options: &Options) -> PlandoEntries {
         StartingSword::TrueMasterSword => 6,
     };
 
-    entries.push(PlandoEntry {
+    entries.push(PlandoEntry::Flex {
         name: "startsword",
-        min_count: sword_count,
-        max_count: sword_count,
+        count: sword_count,
         items: repeat((Item::ProgressiveSword, 1))
             .take(sword_count)
             .collect(),
         locations: repeat((LocationOrStart::Start, 1))
             .take(sword_count)
             .collect(),
+        is_plando: false,
     });
 
     let tab_count = options.starting_tablet_count.into();
 
-    entries.push(PlandoEntry {
+    entries.push(PlandoEntry::Flex {
         name: "start tab",
-        min_count: tab_count,
-        max_count: tab_count,
+        count: tab_count,
         items: vec![
             (Item::EmeraldTablet, 1),
             (Item::RubyTablet, 1),
@@ -180,6 +207,7 @@ fn get_plando_entries(options: &Options) -> PlandoEntries {
         locations: repeat((LocationOrStart::Start, 1))
             .take(tab_count)
             .collect(),
+        is_plando: false,
     });
 
     let crystal_checks = [
@@ -201,7 +229,7 @@ fn get_plando_entries(options: &Options) -> PlandoEntries {
     ];
 
     for crystal_check in crystal_checks {
-        entries.add_fixed("crystal", Item::GratitudeCrystal, crystal_check);
+        entries.add_fixed("crystal", Item::GratitudeCrystal, crystal_check, false);
     }
 
     for (region, item, count) in &[
@@ -268,23 +296,23 @@ fn get_plando_entries(options: &Options) -> PlandoEntries {
     //     ],
     // });
 
-    entries.push(PlandoEntry {
+    entries.push(PlandoEntry::Flex {
         name: "heh",
-        min_count: 1,
-        max_count: 1,
+        count: 1,
         items: vec![(Item::ProgressiveSword, 1)],
         locations: vec![(Location::Thunderhead_IsleOfSongsDinsPower.into(), 1)],
+        is_plando: true,
     });
 
-    entries.push(PlandoEntry {
+    entries.push(PlandoEntry::Flex {
         name: "End Sword",
-        min_count: 0,
-        max_count: 6,
+        count: 5,
         items: repeat((Item::ProgressiveSword, 1)).take(6).collect(),
         locations: DUNGEON_END_CHECKS
             .into_iter()
             .map(|c| (c.into(), 1))
             .collect(),
+        is_plando: false,
     });
 
     entries
@@ -295,6 +323,7 @@ fn do_randomize<R: Rng>(
     requirements: &Requirements<'_>,
     options: &Options,
 ) -> Result<Placement, PlacementError> {
+    let required_dungeons = randomize_required_dungeons(rng, options.required_dungeon_count);
     let mut placement = Placement::new();
     placement.initial_events.insert(Event::SealedGroundsStatue);
     placement.initial_events.insert(Event::EldinEntranceStatue);
@@ -302,16 +331,25 @@ fn do_randomize<R: Rng>(
         .initial_events
         .insert(Event::LanayruMineEntryStatue);
     let start_entrance = *Entrance::ALL.choose(rng).unwrap();
-    // let start_entrance = Entrance::KnightAcademy_From_Skyloft_Chimney;
-    debug!("starting at {:?}", start_entrance);
-    placement.initial_entrance = Some((start_entrance, TimeOfDay::Day));
+    // let start_entrance = Entrance::LanayruMiningFacilityB_From_LanayruMiningFacilityA_HubW;
+    let start_tod = start_entrance
+        .area()
+        .possible_tod()
+        .iter()
+        .choose(rng)
+        .unwrap();
+    debug!("starting at {:?} at {:?}", start_entrance, start_tod);
+    placement.initial_entrance = Some((start_entrance, start_tod));
     for exit in Exit::ALL {
         placement.connect(exit.vanilla_entrance(), *exit);
     }
     let mut locations: HashSet<Location> = Location::ALL.iter().cloned().collect();
     let mut items: HashMap<Item, u8> = PROGRESS_ITEMS.iter().cloned().collect();
 
-    let mut entries = get_plando_entries(options);
+    let mut entries = get_plando_entries(options, &required_dungeons);
+
+    let progress_locations = locations.clone();
+    let progress_items = items.keys().cloned().collect();
 
     do_plando(
         rng,
@@ -321,6 +359,10 @@ fn do_randomize<R: Rng>(
         &options,
         &mut locations,
         &mut items,
+        &mut HashSet::new(),
+        &mut HashSet::new(),
+        &progress_locations,
+        &progress_items,
     )?;
     let mut locations: Vec<_> = locations.iter().cloned().collect();
     locations.sort_unstable_by_key(|l| *l as usize);
@@ -334,6 +376,8 @@ fn do_randomize<R: Rng>(
         &options,
         &mut locations,
         &mut items,
+        &progress_locations,
+        &progress_items,
     )?;
     junk_fill(
         rng,
@@ -355,7 +399,9 @@ fn main() {
     info!("seed: {seed}");
     let mut rng = Pcg64::seed_from_u64(seed);
     let requirements = Requirements::new_from_map(get_requirements());
-    let options = random_options(&mut rng);
+    let mut options = random_options(&mut rng);
+
+    options.starting_sword = StartingSword::GoddessSword;
 
     println!("{:?}", options);
 
@@ -386,12 +432,13 @@ fn main() {
         }
     }
     println!("failures: {try_num}");
-    for (place, item) in placement.locations.iter() {
-        if *item == Item::ProgressiveSword
-            && !DUNGEON_END_CHECKS.contains(place)
-            && *place != Location::Thunderhead_IsleOfSongsDinsPower
-        {
-            println!("OH NO: {:?}", place);
-        }
-    }
+    calc_sots_path(&requirements, &placement, &options);
+    // for (place, item) in placement.locations.iter() {
+    //     if *item == Item::ProgressiveSword
+    //         && !DUNGEON_END_CHECKS.contains(place)
+    //         && *place != Location::Thunderhead_IsleOfSongsDinsPower
+    //     {
+    //         println!("OH NO: {:?}", place);
+    //     }
+    // }
 }
