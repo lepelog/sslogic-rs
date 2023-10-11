@@ -419,6 +419,24 @@ fn print_areas<W: Write>(
     writeln!(out, "}}")?;
     writeln!(out, "}}")?;
 
+    //
+    writeln!(
+        out,
+        "pub fn locations(&self) -> &'static [Location] {{"
+    )?;
+    writeln!(out, "match self {{")?;
+
+    for area in areas {
+        writeln!(out, "Area::{} => &[", area.name.enum_name)?;
+        for (location) in area.locations.iter() {
+            writeln!(out, "Location::{},", location)?;
+        }
+        writeln!(out, "],")?;
+    }
+
+    writeln!(out, "}}")?;
+    writeln!(out, "}}")?;
+
     writeln!(out, "}}")?;
     Ok(())
 }
@@ -984,7 +1002,7 @@ fn main() -> anyhow::Result<()> {
                     ));
                 }
 
-                // area_names.push(area_enum_name_with_stage.clone());
+                area_names.push(area_name.enum_name.clone());
                 if area.can_sleep && area.force_tod.is_some() {
                     panic!(
                         "that doesn't make sense: can_sleep = true, but forced ToD in {}",

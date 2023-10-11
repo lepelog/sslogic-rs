@@ -318,6 +318,22 @@ fn get_plando_entries(options: &Options, required_dungeons: &Vec<Region>) -> Pla
     entries
 }
 
+fn get_progress_locations(options: &Options, required_dungeons: &[Region]) -> HashSet<Location> {
+    let mut progress_locations: HashSet<Location> = Location::ALL.iter().cloned().collect();
+    if options.empty_unrequired_dungeons {
+        for dungeon in POTENTIALLY_REQUIRED_DUNGEONS.iter().filter(|d| !required_dungeons.contains(d)) {
+            for stage in dungeon.stages() {
+                for area in stage.areas() {
+                    for location in area.locations() {
+                        progress_locations.remove(location);
+                    }
+                } 
+            }
+        }
+    }
+    progress_locations
+}
+
 fn do_randomize<R: Rng>(
     rng: &mut R,
     requirements: &Requirements<'_>,
@@ -348,6 +364,7 @@ fn do_randomize<R: Rng>(
 
     let mut entries = get_plando_entries(options, &required_dungeons);
 
+    // let progress_locations = get_progress_locations(options, &required_dungeons);
     let progress_locations = locations.clone();
     let progress_items = items.keys().cloned().collect();
 
@@ -401,7 +418,8 @@ fn main() {
     let requirements = Requirements::new_from_map(get_requirements());
     let mut options = random_options(&mut rng);
 
-    options.starting_sword = StartingSword::GoddessSword;
+    // options.starting_sword = StartingSword::GoddessSword;
+    options.empty_unrequired_dungeons = true;
 
     println!("{:?}", options);
 
