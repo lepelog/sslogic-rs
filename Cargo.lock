@@ -226,13 +226,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "logic-simplificator"
-version = "0.1.0"
-dependencies = [
- "rand",
-]
-
-[[package]]
 name = "logic-user"
 version = "0.1.0"
 dependencies = [
