@@ -10,8 +10,8 @@ use log::{debug, info};
 use logic_core::{
     collect_spheres, get_requirements,
     options::{LmfStartState, Options, RandomizeEntrances, StartingSword, TriforceShuffle},
-    BitSetCompatible, Entrance, Event, Exit, Explorer, Item, Location, Placement, Region,
-    Requirements, Stage, TimeOfDay, AreaBitset,
+    AreaBitset, BitSetCompatible, Entrance, Event, Exit, Explorer, Item, Location, Placement,
+    Region, Requirements, Stage, TimeOfDay,
 };
 use plando::{PlacementEntryErrorHandling, PlandoEntries};
 use rand::{
@@ -321,13 +321,16 @@ fn get_plando_entries(options: &Options, required_dungeons: &Vec<Region>) -> Pla
 fn get_progress_locations(options: &Options, required_dungeons: &[Region]) -> HashSet<Location> {
     let mut progress_locations: HashSet<Location> = Location::ALL.iter().cloned().collect();
     if options.empty_unrequired_dungeons {
-        for dungeon in POTENTIALLY_REQUIRED_DUNGEONS.iter().filter(|d| !required_dungeons.contains(d)) {
+        for dungeon in POTENTIALLY_REQUIRED_DUNGEONS
+            .iter()
+            .filter(|d| !required_dungeons.contains(d))
+        {
             for stage in dungeon.stages() {
                 for area in stage.areas() {
                     for location in area.locations() {
                         progress_locations.remove(location);
                     }
-                } 
+                }
             }
         }
     }
@@ -363,6 +366,13 @@ fn do_randomize<R: Rng>(
     let mut items: HashMap<Item, u8> = PROGRESS_ITEMS.iter().cloned().collect();
 
     let mut entries = get_plando_entries(options, &required_dungeons);
+
+    // TODO: also ban areas, so that entrances to it are nonprogress
+    // separate step, banning stuff
+    // options: banning entire regions, stages, areas, locations
+    // cascades down, areas ban all entrances to them
+    // this is actually interesting for full ER, because if not all checks need to be reachable
+    // that also means that banned areas can be inacessible
 
     // let progress_locations = get_progress_locations(options, &required_dungeons);
     let progress_locations = locations.clone();

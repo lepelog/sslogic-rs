@@ -18,7 +18,7 @@ Knight Academy - Sparring Hall Chest:
   Paths:
     - stage/F009r/r0/l0/TBox/66
 Central Skyloft - Potion Lady's Gift:
-  original item: Bottle
+  original item: Empty Bottle
   type: skyloft, free gift
   Paths:
     - event/106-DrugStore/44
@@ -86,16 +86,16 @@ Knight Academy - In Zelda's Closet:
   Paths:
     - stage/F001r/r6/l0/chest/32 #sceneflag
 Central Skyloft - Item in Bird Nest:
-  original item: Baby's Rattle
+  original item: Baby Rattle
   type: skyloft, freestanding
   Paths:
     - stage/F000/r0/l0/Item/13
 Central Skyloft - Parrow's Gift:
-  original item: Bottle
+  original item: Empty Bottle
   type: skyloft, free gift, short
   Paths:
     - event/115-Town2/230 # mushroom spores
-    - event/115-Town2/733 # Bottle
+    - event/115-Town2/733 # Empty Bottle
     - oarc/F000/l0
     - oarc/F005r/l0
 Knight Academy - Cawlin's Letter:
@@ -259,7 +259,7 @@ Beedle - Third 100 Rupee Item: # to make not too much farming at the start neces
   Paths:
     - ShpSmpl/18
 Beedle - 50 Rupee Item:
-  original item: Bug Net
+  original item: Progressive Bug Net
   type: skyloft, beedle, cheap
   Paths:
     - ShpSmpl/25
@@ -477,7 +477,7 @@ Thunderhead - Bug Heaven Goddess Chest:
   Paths:
     - stage/F023/r0/l0/TBox/88
 Thunderhead - First Goddess Chest on Mogma Mitts Island:
-  original item: Bottle
+  original item: Empty Bottle
   type: thunderhead, goddess, summit goddess
   Paths:
     - stage/F023/r0/l0/TBox/77
@@ -493,7 +493,7 @@ Thunderhead - Bug Heaven - 10 Bugs in 3 Minutes:
     - event/116-InsectGame/69
     - oarc/F023/l0
 Thunderhead - Song from Levias:
-  original item: Song of the Hero
+  original item: Rupoor # really: Song of the Hero
   type: thunderhead, sky, scrapper, combat, song
   Paths:
     - event/120-Nushi/give item after levias
@@ -516,7 +516,7 @@ Thunderhead - Isle of Songs - Din's Power:
 
 
 Sealed Grounds - Chest inside Sealed Temple:
-  original item: Revitalizing Potion
+  original item: Empty Bottle # really Revitalizing Potion
   type: faron, miscellaneous
   Paths:
     - stage/F402/r2/l0/TBox/64
@@ -552,7 +552,7 @@ Faron Woods - Item on Tree:
   Paths:
     - stage/F100/r0/l0/Item/68
 Faron Woods - Slingshot:
-  original item: Slingshot
+  original item: Progressive Slingshot
   type: faron, long, combat #because of the Lopsa Bokoblin fight, this is a combat reward
   Paths:
     - event/200-Forest/595
@@ -692,7 +692,7 @@ Volcano Summit - Small Chest in Volcano Summit:
   Paths:
     - stage/F201_1/r0/l0/TBox/72
 Volcano Summit - Boko Base Pouch Chest:
-  original item: Pouch & extra items
+  original item: Rupoor # really: Pouch & extra items
   type: eldin, miscellaneous
   Paths:
     - stage/F201_1/r0/l0/TBox/71
@@ -869,17 +869,17 @@ Lanayru Sand Sea - Pirate Stronghold - Third Chest:
 
 
 Skyview - Chest on Tree Branch:
-  original item: SV Map
+  original item: Skyview Map
   type: faron, dungeon
   Paths:
     - stage/D100/r2/l0/TBox/64
 Skyview - Digging Spot in Crawlspace:
-  original item: SV Small Key
+  original item: Skyview Small Key
   type: faron, dungeon, digging
   Paths:
     - stage/D100/r4/l0/Soil/15
 Skyview - Chest behind Two Eyes:
-  original item: SV Small Key
+  original item: Skyview Small Key
   type: faron, dungeon
   Paths:
     - stage/D100/r4/l0/TBox/67
@@ -895,7 +895,7 @@ Skyview - Item behind Bars:
   Paths:
     - stage/D100/r5/l0/Item/103
 Skyview - Chest behind Three Eyes:
-  original item: SV Small Key
+  original item: Skyview Small Key
   type: faron, dungeon
   Paths:
     - stage/D100/r7/l0/TBox/68
@@ -905,7 +905,7 @@ Skyview - Chest near Boss Door:
   Paths:
     - stage/D100/r9/l0/TBox/70
 Skyview - Boss Key Chest:
-  original item: SV Boss Key
+  original item: Skyview Boss Key
   type: faron, dungeon
   Paths:
     - stage/D100/r9/l0/TBox/66
@@ -943,7 +943,7 @@ Earth Temple - Chest Left of Main Room Bridge:
   Paths:
     - stage/D200/r1/l0/TBox/70
 Earth Temple - Chest in West Room:
-  original item: ET Map
+  original item: Earth Temple Map
   type: eldin, dungeon
   Paths:
     - stage/D200/r0/l0/TBox/64
@@ -964,7 +964,7 @@ Earth Temple - Chest Guarded by Lizalfos:
   Paths:
     - stage/D200/r1/l0/TBox/67
 Earth Temple - Boss Key Chest:
-  original item: ET Boss Key
+  original item: Earth Temple Boss Key
   type: eldin, dungeon
   Paths:
     - stage/D200/r4/l0/TBox/68
@@ -990,7 +990,7 @@ Lanayru Mining Facility - Chest behind Bars:
   Paths:
     - stage/D300/r0/l0/TBox/64
 Lanayru Mining Facility - First Chest in Hub Room:
-  original item: LMF Small Key
+  original item: Lanayru Mining Facility Small Key
   type: lanayru, dungeon
   Paths:
     - stage/D300_1/r5/l0/TBox/70
@@ -1015,7 +1015,7 @@ Lanayru Mining Facility - Chest in First West Room:
   Paths:
     - stage/D300/r3/l0/TBox/66
 Lanayru Mining Facility - Chest after Armos Fight:
-  original item: LMF Map
+  original item: Lanayru Mining Facility Map
   type: lanayru, dungeon
   Paths:
     - stage/D300/r6/l0/TBox/69
@@ -1031,7 +1031,7 @@ Lanayru Mining Facility - Chest in Spike Maze:
   Paths:
     - stage/D300_1/r7/l0/TBox/73
 Lanayru Mining Facility - Boss Key Chest:
-  original item: LMF Boss Key
+  original item: Lanayru Mining Facility Boss Key
   type: lanayru, dungeon
   Paths:
     - stage/D300_1/r8/l0/TBox/71
@@ -1056,7 +1056,7 @@ Lanayru Mining Facility - Goddess Harp:
     - oarc/F300_5/l0
 
 Ancient Cistern - Chest in East Part:
-  original item: AC Small Key
+  original item: Ancient Cistern Small Key
   type: faron, dungeon
   Paths:
     - stage/D101/r1/l0/TBox/67
@@ -1066,7 +1066,7 @@ Ancient Cistern - Whip:
   Paths:
     - stage/D101/r7/l0/TBox/69
 Ancient Cistern - Chest after Whip Hooks:
-  original item: AC Map
+  original item: Ancient Cistern Map
   type: faron, dungeon
   Paths:
     - stage/D101/r0/l0/TBox/65
@@ -1081,12 +1081,12 @@ Ancient Cistern - Chest behind the Waterfall:
   Paths:
     - stage/D101/r3/l0/TBox/84
 Ancient Cistern - Bokoblin:
-  original item: AC Small Key
+  original item: Ancient Cistern Small Key
   type: faron, dungeon
   Paths:
     - stage/D101/r4/l0/EBc/0xFC00
 Ancient Cistern - Boss Key Chest:
-  original item: AC Boss Key
+  original item: Ancient Cistern Boss Key
   type: faron, dungeon
   Paths:
     - stage/D101/r4/l0/TBox/68
@@ -1106,12 +1106,12 @@ Ancient Cistern - Farore's Flame:
     - oarc/B101_1/l0
 
 Sandship - Chest behind Combination Lock:
-  original item: SS Small Key
+  original item: Sandship Small Key
   type: lanayru, dungeon
   Paths:
     - stage/D301/r10/l0/TBox/69
 Sandship - Bow:
-  original item: Bow
+  original item: Progressive Bow
   type: lanayru, dungeon
   Paths:
     - stage/D301/r15/l0/TBox/72
@@ -1121,7 +1121,7 @@ Sandship - Chest at the Stern:
   Paths:
     - stage/D301/r0/l0/TBox/127
 Sandship - Chest before 4-Door Corridor:
-  original item: SS Map
+  original item: Sandship Map
   type: lanayru, dungeon
   Paths:
     - stage/D301/r3/l0/TBox/71
@@ -1151,13 +1151,13 @@ Sandship - Treasure Room Fifth Chest:
   Paths:
     - stage/D301/r9/l0/TBox/68
 Sandship - Robot in Brig's Reward:
-  original item: SS Small Key
+  original item: Sandship Small Key
   type: lanayru, dungeon
   Paths:
     - event/401-DesertD2/14
     - oarc/D301/l4
 Sandship - Boss Key Chest:
-  original item: SS Boss Key
+  original item: Sandship Boss Key
   type: lanayru, dungeon
   Paths:
     - stage/D301/r14/l3/TBox/73
@@ -1177,7 +1177,7 @@ Sandship - Nayru's Flame:
 
 
 Fire Sanctuary - Chest in First Room:
-  original item: FS Small Key
+  original item: Fire Sanctuary Small Key
   type: eldin, dungeon
   Paths:
     - stage/D201/r0/l0/TBox/64
@@ -1187,7 +1187,7 @@ Fire Sanctuary - Chest in Second Room:
   Paths:
     - stage/D201_1/r1/l0/TBox/74
 Fire Sanctuary - Chest near First Trapped Mogma:
-  original item: FS Small Key
+  original item: Fire Sanctuary Small Key
   type: eldin, dungeon
   Paths:
     - stage/D201_1/r5/l0/TBox/69
@@ -1207,19 +1207,19 @@ Fire Sanctuary - Mogma Mitts:
   Paths:
     - stage/D201_1/r5/l0/TBox/68
 Fire Sanctuary - Chest on Balcony:
-  original item: Bottle
+  original item: Empty Bottle
   type: eldin, dungeon
   Paths:
     - stage/D201_1/r6/l0/TBox/70
     - stage/D201/r6/l0/TBox/70
 Fire Sanctuary - Chest after Second Trapped Mogma:
-  original item: FS Map
+  original item: Fire Sanctuary Map
   type: eldin, dungeon
   Paths:
     - stage/D201_1/r2/l0/TBox/65
     - stage/D201/r2/l0/TBox/65
 Fire Sanctuary - Chest after Bombable Wall:
-  original item: FS Small Key
+  original item: Fire Sanctuary Small Key
   type: eldin, dungeon
   Paths:
     - stage/D201_1/r11/l0/TBox/71
@@ -1234,7 +1234,7 @@ Fire Sanctuary - Chest in Staircase Room:
   Paths:
     - stage/D201/r9/l0/TBox/75
 Fire Sanctuary - Boss Key Chest:
-  original item: FS Boss Key
+  original item: Fire Sanctuary Boss Key
   type: eldin, dungeon
   Paths:
     - stage/D201/r4/l0/TBox/67
@@ -1310,26 +1310,26 @@ Fire Sanctuary - Din's Flame:
 
 
 Sky Keep - First Chest:
-  original item: SK Map
+  original item: Sky Keep Map
   type: skyloft, dungeon
   Paths:
     - stage/D003_7/r0/l0/TBox/64
 Sky Keep - Chest after Dreadfuse:
-  original item: SK Small Key
+  original item: Sky Keep Small Key
   type: skyloft, dungeon
   Paths:
     - stage/D003_6/r0/l0/TBox/65
-#Sky Keep - Triforce of Wisdom
+# Sky Keep - Triforce of Wisdom:
 #   original item: Triforce of Wisdom
 #   type: skyloft, dungeon
 #   Paths:
 #    - stage/D003_8.json
-#Sky Keep - Triforce of Power
+# Sky Keep - Triforce of Power:
 #   original item: Triforce of Power
 #   type: skyloft, dungeon
 #   Paths:
 #    - stage/D003_8.json
-#Sky Keep - Triforce of Courage
+# Sky Keep - Triforce of Courage:
 #   original item: Triforce of Courage
 #   type: skyloft, dungeon
 #   Paths:

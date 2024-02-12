@@ -420,10 +420,7 @@ fn print_areas<W: Write>(
     writeln!(out, "}}")?;
 
     //
-    writeln!(
-        out,
-        "pub fn locations(&self) -> &'static [Location] {{"
-    )?;
+    writeln!(out, "pub fn locations(&self) -> &'static [Location] {{")?;
     writeln!(out, "match self {{")?;
 
     for area in areas {

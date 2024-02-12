@@ -843,30 +843,30 @@
     room: 0
     index: 26
 # night only so prevent problems here
-# - stage: Skyloft
-#   to-stage: Beedle's Shop
-#   disambiguation: Night
-#   orig:
-#     stage: F002r
-#     room: 0
-#     layer: 0
-#     entrance: 0
-#   scens:
-#   - stage: F020
-#     room: 0
-#     index: 14
-# - stage: Beedle's Shop
-#   to-stage: Sky
-#   disambiguation: Night
-#   orig:
-#     stage: F020
-#     room: 0
-#     layer: 4
-#     entrance: 0
-#   scens:
-#   - stage: F002r
-#     room: 0
-#     index: 2
+- stage: Skyloft
+  to-stage: Beedle's Shop
+  disambiguation: Night
+  orig:
+    stage: F002r
+    room: 0
+    layer: 0
+    entrance: 0
+  scens:
+  - stage: F020
+    room: 0
+    index: 14
+- stage: Beedle's Shop
+  to-stage: Sky
+  disambiguation: Night
+  orig:
+    stage: F020
+    room: 0
+    layer: 4
+    entrance: 0
+  scens:
+  - stage: F002r
+    room: 0
+    index: 2
 - stage: Sky
   to-stage: Lumpy Pumpkin
   disambiguation: South

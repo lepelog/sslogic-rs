@@ -19,4 +19,4 @@ rand_pcg = "0.3.1"
 thiserror = "1.0.40"
 
 [workspace]
-members = [".", "logic-generator", "logic-core", "logic-simplificator", "logic-user"]
+members = [".", "logic-generator", "logic-core", "logic-simplificator", "logic-user", "runtime-logic"]

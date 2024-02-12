@@ -26,8 +26,10 @@ Sealed Grounds:
         Main:
           events:
             # will be filled in later
+            Sword Requirement Met: Nothing
             Beat Required Dungeons: Nothing
-            Start Imprisoned 2: Raise GoT & Beat Required Dungeons #& Sword Requirement Met
+
+            Start Imprisoned 2: Raise GoT & Beat Required Dungeons & Sword Requirement Met
             Raise GoT: Goddess Harp
           locations:
             Chest inside Sealed Temple: Nothing
@@ -41,6 +43,9 @@ Sealed Grounds:
       stage: F404
       areas:
         Main:
+          events:
+            Triforces Collected: Nothing
+            Beat Demise: Triforces Collected
           locations:
             Zelda's Blessing: Nothing
 

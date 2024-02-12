@@ -1,213 +1,232 @@
 - id: 2
   name: Green Rupee
-  oarc: null
+  oarc: []
   getarcname: GetRupee
   getmodelname: GetRupee
   type: Consumable
 - id: 3
   name: Blue Rupee
-  oarc: null
+  oarc: []
   getarcname: GetRupee
   getmodelname: GetRupee
   type: Consumable
 - id: 4
   name: Red Rupee
-  oarc: null
+  oarc: []
   getarcname: GetRupee
   getmodelname: GetRupee
   type: Consumable
 # - id: 9
 #   name: Goddess White Sword
-#   oarc: null
+#   oarc: []
 - id: 10
   name: Progressive Sword
-  oarc: GetSwordA
+  oarc:
+    - GetSwordA
   getarcname: GetSwordA
   getmodelname: GetSwordA
   type: Counted
 # - id: 11
 #   name: Goddess Sword
-#   oarc: null
+#   oarc: []
 # - id: 12
 #   name: Goddess Longsword
-#   oarc: null
+#   oarc: []
 # - id: 13
 #   name: Master Sword
-#   oarc: null
+#   oarc: []
 # - id: 14
 #   name: True Master Sword
-#   oarc: null
+#   oarc: []
 - id: 16
   name: Goddess Harp
-  oarc: GetHarp
+  oarc:
+    - GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   type: Single
 - id: 19
   name: Progressive Bow
-  oarc: GetBowA
+  oarc:
+    - GetBowA
   getarcname: GetBowA
   getmodelname: GetBowA
   type: Single
 - id: 20
   name: Clawshots
-  oarc: GetHookShot
+  oarc:
+    - GetHookShot
   getarcname: GetHookShot
   getmodelname: GetHookShot
   type: Single
 - id: 21
   name: Spiral Charge
-  oarc: GetBirdStatue
+  oarc:
+    - GetBirdStatue
   getarcname: GetBirdStatue
   getmodelname: GetBirdStatue
   type: Single
 - id: 25
   name: Ancient Cistern Boss Key
-  oarc: GetKeyBoss2A
+  oarc:
+    - GetKeyBoss2A
   shuffle: Dungeon
   getarcname: GetKeyBoss2A
   getmodelname: GetKeyBoss2A
   type: Single
 - id: 26
   name: Fire Sanctuary Boss Key
-  oarc: GetKeyBoss2B
+  oarc:
+    - GetKeyBoss2B
   shuffle: Dungeon
   getarcname: GetKeyBoss2B
   getmodelname: GetKeyBoss2B
   type: Single
 - id: 27
   name: Sandship Boss Key
-  oarc: GetKeyBoss2C
+  oarc:
+    - GetKeyBoss2C
   shuffle: Dungeon
   getarcname: GetKeyBoss2C
   getmodelname: GetKeyBoss2C
   type: Single
 - id: 28
   name: Key Piece
-  oarc: GetKeyKakera
+  oarc:
+    - GetKeyKakera
   getarcname: GetKeyKakera
   getmodelname: GetKeyKakeraA
   type: Counted
 - id: 29
   name: Skyview Boss Key
-  oarc: GetKeyBossA
+  oarc:
+    - GetKeyBossA
   shuffle: Dungeon
   getarcname: GetKeyBossA
   getmodelname: GetKeyBossA
   type: Single
 - id: 30
   name: Earth Temple Boss Key
-  oarc: GetKeyBossB
+  oarc:
+    - GetKeyBossB
   shuffle: Dungeon
   getarcname: GetKeyBossB
   getmodelname: GetKeyBossB
   type: Single
 - id: 31
   name: Lanayru Mining Facility Boss Key
-  oarc: GetKeyBossC
+  oarc:
+    - GetKeyBossC
   shuffle: Dungeon
   getarcname: GetKeyBossC
   getmodelname: GetKeyBossC
   type: Single
 - id: 32
   name: Silver Rupee
-  oarc: null
+  oarc: []
   getarcname: GetRupee
   getmodelname: GetRupee
   type: Consumable
 - id: 33
   name: Gold Rupee
-  oarc: null
+  oarc: []
   getarcname: GetRupee
   getmodelname: GetRupee
   type: Consumable
 - id: 34
   name: Rupoor
-  oarc: null
+  oarc: []
   getarcname: GetRupee
   getmodelname: GetRupee
   type: Consumable
 - id: 35
   name: Gratitude Crystal Pack
-  oarc: null
+  oarc: []
   getarcname: GetGenki
   getmodelname: GetGenki
   type: Counted
 - id: 40
-  name: Bombs 5
-  oarc: null
+  name: 5 Bombs
+  oarc: []
   getarcname: GetBombSet
   getmodelname: GetBombSet
   type: Consumable
 - id: 41
-  name: Bombs 10
-  oarc: null
+  name: 10 Bombs
+  oarc: []
   getarcname: GetBombSet
   getmodelname: GetBombSet
   type: Consumable
 - id: 48
   name: Gratitude Crystal
-  oarc: null
+  oarc: []
   getarcname: GetGenki
   getmodelname: GetGenki
   type: Counted
 - id: 49
   name: Gust Bellows
-  oarc: GetVacuum
+  oarc:
+    - GetVacuum
   getarcname: GetVacuum
   getmodelname: GetVacuum
   type: Single
 - id: 52
   name: Progressive Slingshot
-  oarc: GetPachinkoA
+  oarc:
+    - GetPachinkoA
   getarcname: GetPachinkoA
   getmodelname: GetPachinkoA
   type: Single
 - id: 53
   name: Progressive Beetle
-  oarc: GetBeetleA
+  oarc:
+    - GetBeetleA
   getarcname: GetBeetleA
   getmodelname: GetBeetleA
   type: Counted
 - id: 56
   name: Progressive Mitts
-  oarc: GetMoleGloveA
+  oarc:
+    - GetMoleGloveA
   getarcname: GetMoleGloveA
   getmodelname: GetMoleGloveA
   type: Counted
 - id: 60
   name: Deku Seeds 10
-  oarc: null
+  oarc: []
   getarcname: GetSeedSet
   getmodelname: GetSeedSet
   type: Consumable
 - id: 63
   name: Semi Rare Treasure
-  oarc: null
+  oarc: []
   getarcname: GetSozaiL
   getmodelname: GetSozaiL
   type: Consumable
 - id: 64
   name: Rare Treasure
-  oarc: null
+  oarc: []
   getarcname: GetSozaiP
   getmodelname: GetSozaiP
   type: Consumable
 - id: 68
   name: Water Scale
-  oarc: GetUroko
+  oarc:
+    - GetUroko
   getarcname: GetUroko
   getmodelname: GetUroko
   type: Single
 - id: 70
   name: Bug Medal
-  oarc: GetMedal
+  oarc:
+    - GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalReturn
   type: Consumable
 - id: 71
   name: Progressive Bug Net
-  oarc: GetNetA
+  oarc:
+    - GetNetA
   getarcname: GetNetA
   getmodelname: GetNetA
   type: Counted
@@ -228,7 +247,8 @@
 #   oarc: GetBowC
 - id: 92
   name: Bomb Bag
-  oarc: GetBombBag
+  oarc:
+    - GetBombBag
   getarcname: GetBombBag
   getmodelname: GetBombBag
   type: Single
@@ -242,7 +262,7 @@
   type: Consumable
 - id: 94
   name: Heart Piece
-  oarc: null
+  oarc: []
   getarcname: GetHeartKakera
   getmodelname: GetHeartKakera
   type: Consumable
@@ -272,7 +292,8 @@
   type: Single
 - id: 98
   name: Sea Chart
-  oarc: GetMapSea
+  oarc:
+    - GetMapSea
   getarcname: GetMapSea
   getmodelname: GetMapSea
   type: Single
@@ -281,31 +302,36 @@
 #   oarc: GetMoleGloveB
 - id: 100
   name: Heart Medal
-  oarc: GetMedal
+  oarc:
+    - GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalHeart
   type: Consumable
 - id: 101
   name: Rupee Medal
-  oarc: GetMedal
+  oarc:
+    - GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalLucky
   type: Consumable
 - id: 102
   name: Treasure Medal
-  oarc: GetMedal
+  oarc:
+    - GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalHunter # TODO double check
   type: Consumable
 - id: 103
   name: Potion Medal
-  oarc: GetMedal
+  oarc:
+    - GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalDurable
   type: Consumable
 - id: 104
   name: Cursed Medal
-  oarc: GetMedal
+  oarc:
+    - GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalDemon
   type: Consumable
@@ -314,7 +340,8 @@
 #   oarc: GetPachinkoB
 - id: 108
   name: Progressive Wallet # Medium Wallet
-  oarc: GetPurseB
+  oarc:
+    - GetPurseB
   getarcname: GetPurseB
   getmodelname: GetPurseB
   type: Counted
@@ -329,7 +356,8 @@
 #   oarc: GetPurseE
 - id: 112
   name: Progressive Pouch
-  oarc: GetPouchA
+  oarc:
+    - GetPouchA
   getarcname: GetPouchA
   getmodelname: GetPorchA # yea, that's a typo in the game
   type: Single
@@ -338,49 +366,57 @@
 #  oarc: GetPouchB
 - id: 114
   name: Life Medal
-  oarc: GetMedal
+  oarc:
+    - GetMedal
   getarcname: GetMedal
   getmodelname: GetMedalLife
   type: Consumable
 - id: 116
   name: Wooden Shield
-  oarc: GetShieldWood
+  oarc:
+    - GetShieldWood
   getarcname: GetShieldWood
   getmodelname: GetShieldWood
   type: Consumable
 - id: 125
   name: Hylian Shield
-  oarc: GetShieldHylia
+  oarc:
+    - GetShieldHylia
   getarcname: GetShieldHylia
   getmodelname: GetShieldHylia
   type: Consumable
 - id: 128
   name: Small Seed Satchel
-  oarc: GetSpareSeedA # TODO upgrades?
+  oarc:
+    - GetSpareSeedA # TODO upgrades?
   getarcname: GetSpareSeedA
   getmodelname: GetSpareSeedA
   type: Consumable
 - id: 131
   name: Small Quiver
-  oarc: GetSpareQuiverA # TODO upgrades?
+  oarc:
+    - GetSpareQuiverA # TODO upgrades?
   getarcname: GetSpareQuiverA
   getmodelname: GetSpareQuiverA
   type: Consumable
 - id: 134
   name: Small Bomb Bag
-  oarc: GetSpareBombBagA # TODO upgrades?
+  oarc:
+    - GetSpareBombBagA # TODO upgrades?
   getarcname: GetSpareBombBagA
   getmodelname: GetSpareBombBagA
   type: Consumable
 - id: 137
   name: Whip
-  oarc: GetWhip
+  oarc:
+    - GetWhip
   getarcname: GetWhip
   getmodelname: GetWhip
   type: Single
 - id: 138
   name: Fireshield Earrings
-  oarc: GetEarring
+  oarc:
+    - GetEarring
   getarcname: GetEarring
   getmodelname: GetEarring
   type: Single
@@ -389,19 +425,21 @@
 #   oarc: GetNetB
 - id: 153
   name: Empty Bottle
-  oarc: null
+  oarc: []
   getarcname: GetBottleEmpty
   getmodelname: GetBottleEmpty
   type: Single
 - id: 158
   name: Cawlin's Letter
-  oarc: GetKobunALetter
+  oarc:
+    - GetKobunALetter
   getarcname: GetKobunALetter
   getmodelname: GetKobunALetter
   type: Single
 - id: 159
   name: Horned Colossus Beetle
-  oarc: GetTerryCage
+  oarc:
+    - GetTerryCage
   getarcname: GetTerryCage
   getmodelname: GetTerryCage
   type: Single
@@ -415,109 +453,122 @@
   type: Single
 - id: 163
   name: Tumbleweed
-  oarc: GetSozaiC
+  oarc:
+    - GetSozaiC
   getarcname: GetSozaiC
   getmodelname: GetSozaiC
   type: Consumable
 - id: 165
   name: Eldin Ore
-  oarc: null # Is in objectPack
+  oarc: [] # Is in objectPack
   getarcname: GetSozaiE
   getmodelname: GetSozaiE
   type: Consumable
 - id: 168
   name: Dusk Relic
-  oarc: GetSozaiH
+  oarc:
+    - GetSozaiH
   getarcname: GetSozaiH
   getmodelname: GetSozaiH
   type: Consumable
 - id: 171
   name: Monster Horn
-  oarc: null
+  oarc: []
   getarcname: GetSozaiL
   getmodelname: GetSozaiL
   type: Consumable
 - id: 173
   name: Evil Crystal
-  oarc: null
+  oarc: []
   getarcname: GetSozaiM
   getmodelname: GetSozaiM
   type: Consumable
 - id: 175
   name: Golden Skull
-  oarc: null
+  oarc: []
   getarcname: GetSozaiO
   getmodelname: GetSozaiO
   type: Consumable
 - id: 176
   name: Goddess Plume
-  oarc: null
+  oarc: []
   getarcname: GetSozaiP
   getmodelname: GetSozaiP
   type: Consumable
 - id: 177
   name: Emerald Tablet
-  oarc: GetSekibanMapA
+  oarc:
+    - GetSekibanMapA
   getarcname: GetSekibanMapA
   getmodelname: SekibanMapA
   type: Single
 - id: 178
   name: Ruby Tablet
-  oarc: GetSekibanMapB
+  oarc:
+    - GetSekibanMapB
   getarcname: GetSekibanMapB
   getmodelname: SekibanMapB
   type: Single
 - id: 179
   name: Amber Tablet
-  oarc: GetSekibanMapC
+  oarc:
+    - GetSekibanMapC
   getarcname: GetSekibanMapC
   getmodelname: SekibanMapC
   type: Single
 - id: 180
   name: Stone of Trials
-  oarc: GetSirenKey
+  oarc:
+    - GetSirenKey
   getarcname: GetSirenKey
   getmodelname: GetSirenKey
   type: Single
 - id: 186
   name: Ballad of the Goddess
-  oarc: GetHarp
+  oarc:
+    - GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   type: Single
 - id: 187
   name: Farore's Courage
-  oarc: GetHarp
+  oarc:
+    - GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   type: Single
 - id: 188
   name: Nayru's Wisdom
-  oarc: GetHarp
+  oarc:
+    - GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   type: Single
 - id: 189
   name: Din's Power
-  oarc: GetHarp
+  oarc:
+    - GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   type: Single
 - id: 190
   name: Faron Song of the Hero Part
-  oarc: GetHarp
+  oarc:
+    - GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   type: Single
 - id: 191
   name: Eldin Song of the Hero Part
-  oarc: GetHarp
+  oarc:
+    - GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   type: Single
 - id: 192
   name: Lanayru Song of the Hero Part
-  oarc: GetHarp
+  oarc:
+    - GetHarp
   getarcname: GetHarp
   getmodelname: GetHarp
   type: Single
@@ -526,104 +577,107 @@
 #   oarc: GetHarp
 - id: 197
   name: Life Tree Seedling
-  oarc: GetSeedLife
+  oarc:
+    - GetSeedLife
   getarcname: GetSeedLife
   getmodelname: GetSeedLife
   type: Single
 - id: 198
   name: Life Tree Fruit
-  oarc: GetFruitB
+  oarc:
+    - GetFruitB
   getarcname: GetFruitB
   getmodelname: GetFruitB
   type: Single
 - id: 199
   name: Extra Wallet
-  oarc: GetSparePurse
+  oarc:
+    - GetSparePurse
   getarcname: GetSparePurse
   getmodelname: GetSparePurse
   type: Counted
 # start rando custom items
 - id: 200
   name: Skyview Small Key
-  oarc: null
+  oarc: []
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   type: Counted
 - id: 201
   name: Lanayru Mining Facility Small Key
-  oarc: null
+  oarc: []
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   type: Counted
 - id: 202
   name: Ancient Cistern Small Key
-  oarc: null
+  oarc: []
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   type: Counted
 - id: 203
   name: Fire Sanctuary Small Key
-  oarc: null
+  oarc: []
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   type: Counted
 - id: 204
   name: Sandship Small Key
-  oarc: null
+  oarc: []
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   type: Counted
 - id: 205
   name: Sky Keep Small Key
-  oarc: null
+  oarc: []
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   type: Counted
 - id: 206
-  name: Lanayru Caves Small Key
-  oarc: null
+  name: LanayruCaves Small Key
+  oarc: []
   getarcname: GetKeySmall
   getmodelname: GetKeySmallNormal
   type: Counted
 - id: 207
   name: Skyview Map
-  oarc: null
+  oarc: []
   getarcname: GetMap
   getmodelname: GetMap
   type: Consumable
 - id: 208
   name: Earth Temple Map
-  oarc: null
+  oarc: []
   getarcname: GetMap
   getmodelname: GetMap
   type: Consumable
 - id: 209
   name: Lanayru Mining Facility Map
-  oarc: null
+  oarc: []
   getarcname: GetMap
   getmodelname: GetMap
   type: Consumable
 - id: 210
   name: Ancient Cistern Map
-  oarc: null
+  oarc: []
   getarcname: GetMap
   getmodelname: GetMap
   type: Consumable
 - id: 211
   name: Fire Sanctuary Map
-  oarc: null
+  oarc: []
   getarcname: GetMap
   getmodelname: GetMap
   type: Consumable
 - id: 212
   name: Sandship Map
-  oarc: null
+  oarc: []
   getarcname: GetMap
   getmodelname: GetMap
   type: Consumable
 - id: 213
   name: Sky Keep Map
-  oarc: null
+  oarc: []
   getarcname: GetMap
   getmodelname: GetMap
   type: Consumable

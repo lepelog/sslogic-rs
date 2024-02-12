@@ -134,8 +134,8 @@ Knight Academy:
             In Zelda's Closet: Unlocked Zelda's Room
             Fledge's Crystals: Endurance Potion & Nighttime
           map-exits:
-            Skyloft - Outside Goddess Statue (Upper Doors): Nothing
-            Skyloft - Outside Goddess Statue (Lower Doors): Daytime
+            Skyloft - Outside Goddess Statue (Upper): Nothing
+            Skyloft - Outside Goddess Statue (Lower): Daytime
 
         Above Zelda's Room:
           logic-exits:
@@ -152,8 +152,8 @@ Knight Academy:
             Chest near Goddess Statue: Nothing
             Pumpkin Archery - 600 Points: Bow & Daytime
           map-exits:
-            Knight Academy - Main (Upper Doors): Nothing
-            Knight Academy - Main (Lower Doors): Daytime
+            Knight Academy - Main (Upper): Nothing
+            Knight Academy - Main (Lower): Daytime
             Knight Academy - Above Zelda's Room (Chimney): Clawshots
             Inside Goddess Statue - Main: Nothing
             Sparring Hall - Main: Nothing

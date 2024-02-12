@@ -141,6 +141,28 @@ impl PlandoEntries {
     }
 }
 
+/// The algorithm works as follows:
+/// 
+/// first, all plando entries (this also includes entries from settings) are shuffled, but fixed placements get the top spot,
+/// then plando placements with only one combinations, then startitems and then the rest
+/// 
+/// 1. fixed placements (1 combination)
+/// 2. startitems
+/// 3. rest
+/// 
+/// then every entry gets processed, all possible item/location combinations are checked if the logic works and then chosen by the weight
+/// 
+/// if the entry is not possible because another setting (non plando) occupies a locations (for example a key could be in the place of a locations where a sword is placed)
+/// or already placed an item (I can't think of a scenario here), then that's an error and we try again
+/// 
+/// startitems are an exception, if they lead to an error (and really only if all items are either placed by this setting or startitems) then just fill the locations normally
+/// for fixed locations there is also the option to mark the spot as "vacant", so to act as if the check was already obtained
+/// 
+/// as soon as an item should be placed that is "tainted" (placed by another setting, again, this isn't anywhere in current logic), error
+/// as soon as a location is already filled and "tainted" (filled by another setting, "another" is redundant because if this setting filled it, it wouldn't try to fill it again)
+///  we error out, because there is a setting conflict
+/// struct WeightedItem
+
 pub fn do_plando<R: Rng>(
     rng: &mut R,
     entries: &mut Vec<PlandoEntry>,
@@ -278,17 +300,13 @@ pub fn do_plando<R: Rng>(
                             entry_items, entry_locations
                         );
                         return Err(PlacementError::PlandoNoLocation);
-                    },
+                    }
                     PlacementEntryErrorHandling::Ignore => {
-                        debug!(
-                            "No item or location left, continuing anyways"
-                        );
+                        debug!("No item or location left, continuing anyways");
                         break;
-                    },
+                    }
                     PlacementEntryErrorHandling::Vacant => {
-                        debug!(
-                            "No item or location left, marking location as vacant"
-                        );
+                        debug!("No item or location left, marking location as vacant");
                         for loc in unplaced_locations.iter().filter_map(|(l, _)| l.loc()) {
                             // TODO actually implement
                             placement.set_location(*loc, Item::GreenRupee);
