@@ -30,6 +30,8 @@ mod plando;
 mod requirements;
 mod structure;
 mod util;
+mod generated;
+mod dumper;
 
 pub fn assumed_fill<R: Rng>(
     rng: &mut R,

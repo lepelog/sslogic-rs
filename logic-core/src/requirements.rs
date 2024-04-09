@@ -2,9 +2,8 @@ use std::collections::HashMap;
 
 use crate::{
     explorer::Inventory,
-    generated::items::{self, Item},
-    generated::logic::{self, Area, Event, Location, RequirementKey},
-    logic_static::TimeOfDay,
+    generated::{items::{self, Item}, logic::{self, Area, Event, Location}},
+    logic_static::{RequirementKey, TimeOfDay},
     options::{LmfStartState, Options},
 };
 

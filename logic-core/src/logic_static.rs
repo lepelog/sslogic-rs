@@ -3,8 +3,7 @@ use std::{marker::PhantomData, sync::atomic::AtomicUsize};
 use bitflags::bitflags;
 
 use crate::{
-    generated::items::{Item, COUNTED_ITEM_COUNT, SINGLE_ITEM_COUNT},
-    generated::logic::{Area, Event, Location, Stage},
+    generated::{items::{Item, COUNTED_ITEM_COUNT, SINGLE_ITEM_COUNT}, logic::{Area, Event, Location, Stage}}, Entrance, Exit
 };
 
 bitflags! {
@@ -123,5 +122,135 @@ impl ItemCollection {
             let shift = item_num % usize::BITS as usize;
             (self.slots[slot] & (1 << shift) != 0).into()
         }
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub enum DoorConnection<T: Copy> {
+    No,
+    Left(T),
+    Right(T),
+}
+
+impl<T: Copy> DoorConnection<T> {
+    pub fn is_no(&self) -> bool {
+        matches!(self, DoorConnection::No)
+    }
+    pub fn has_left_neighbor(&self) -> bool {
+        matches!(self, DoorConnection::Left(_))
+    }
+    pub fn has_right_neighbor(&self) -> bool {
+        matches!(self, DoorConnection::Right(_))
+    }
+    pub fn get_left_neighbor(&self) -> Option<T> {
+        match self {
+            DoorConnection::Left(val) => Some(*val),
+            _ => None,
+        }
+    }
+    pub fn get_right_neighbor(&self) -> Option<T> {
+        match self {
+            DoorConnection::Right(val) => Some(*val),
+            _ => None,
+        }
+    }
+    pub fn is_left_door(&self) -> bool {
+        self.has_right_neighbor()
+    }
+    pub fn is_right_door(&self) -> bool {
+        self.has_left_neighbor()
+    }
+    pub fn is_opposite<U: Copy>(&self, other: DoorConnection<U>) -> bool {
+        match (self, other) {
+            (DoorConnection::No, DoorConnection::No) => true,
+            (DoorConnection::Left(_), DoorConnection::Right(_)) => true,
+            (DoorConnection::Right(_), DoorConnection::Left(_)) => true,
+            _ => false,
+        }
+    }
+    pub fn is_same<U: Copy>(&self, other: DoorConnection<U>) -> bool {
+        match (self, other) {
+            (DoorConnection::No, DoorConnection::No) => true,
+            (DoorConnection::Left(_), DoorConnection::Left(_)) => true,
+            (DoorConnection::Right(_), DoorConnection::Right(_)) => true,
+            _ => false,
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+pub enum RequirementKey {
+    Location(Location),
+    Exit(Exit),
+    Event(Event),
+    LogicExit { from: Area, to: Area },
+}
+
+impl Location {
+    pub fn requirement_key(&self) -> RequirementKey {
+        RequirementKey::Location(*self)
+    }
+}
+
+impl Exit {
+    pub fn requirement_key(&self) -> RequirementKey {
+        RequirementKey::Exit(*self)
+    }
+}
+
+impl Event {
+    pub fn requirement_key(&self) -> RequirementKey {
+        RequirementKey::Event(*self)
+    }
+}
+
+impl Area {
+    pub fn stage(&self) -> Stage {
+        self.get().stage
+    }
+    pub fn possible_tod(&self) -> TimeOfDay {
+        self.get().possible_tod
+    }
+    pub fn can_sleep(&self) -> bool {
+        self.get().can_sleep
+    }
+    pub fn exits(&self) -> &'static [Exit] {
+        self.get().exits
+    }
+    pub fn entrances(&self) -> &'static [Entrance] {
+        self.get().entrances
+    }
+    pub fn logic_exit_areas(&self) -> &'static [Area] {
+        self.get().logic_exit_areas
+    }
+    pub fn logic_entrance_areas(&self) -> &'static [Area] {
+        self.get().logic_entrance_areas
+    }
+    pub fn locations(&self) -> &'static [Location] {
+        self.get().locations
+    }
+    pub fn logic_exits(&self) -> impl Iterator<Item = (Area, RequirementKey)> + '_ {
+        self.logic_exit_areas().iter().map(|to_area| (*to_area, RequirementKey::LogicExit { from: *self, to: *to_area }))
+    }
+    pub fn logic_entrances(&self) -> impl Iterator<Item = (Area, RequirementKey)> + '_ {
+        self.logic_entrance_areas().iter().map(|from_area| (*from_area, RequirementKey::LogicExit { from: *from_area, to: *self }))
+    }
+}
+
+impl Exit {
+    pub fn disambiguation(&self) -> Option<&'static str> {
+        self.get().disambiguation
+    }
+    pub fn vanilla_entrance(&self) -> Entrance {
+        self.get().vanilla_entrance
+    }
+    pub fn coupled_entrance(&self) -> Option<Entrance> {
+        self.get().coupled_entrance
+    }
+    pub fn to(&self) -> Area {
+        self.get().to
+    }
+    pub fn door_connection(&self) -> DoorConnection<Exit> {
+        self.get().door_connection
     }
 }

@@ -26,6 +26,12 @@ pub enum TimeOfDay {
     Night,
 }
 
+#[derive(Debug, Deserialize, Clone, Copy)]
+pub enum Door {
+    Left,
+    Right,
+}
+
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct Area {
@@ -61,15 +67,47 @@ pub struct Region {
     stages: BTreeMap<String, Stage>,
 }
 
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "kebab-case")]
+pub struct OrigEntrance {
+  stage: String,
+  room: u8,
+  layer: u8,
+  entrance: u8,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "kebab-case")]
+pub struct ScenEntry {
+    stage: String,
+    room: u8,
+    index: u8,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "kebab-case")]
+pub struct EntranceTableEntry {
+    stage: String,
+    to_stage: String,
+    disambiguation: Option<String>,
+    door: Option<Door>,
+    orig: OrigEntrance,
+    scens: Vec<ScenEntry>,
+}
+
 //
 // END yaml stuff
 //
 
 pub fn convert_to_upper_camel_case(s: &str) -> String {
-    s.chars()
+    let mut result = s.chars()
         .filter(|c| *c != '\'')
         .collect::<String>()
-        .to_upper_camel_case()
+        .to_upper_camel_case();
+    if result.as_bytes()[0].is_ascii_digit() {
+        result.insert(0, 'X');
+    }
+    result
 }
 
 //
@@ -96,7 +134,7 @@ struct AreaEnumMember {
     stage: String,
     force_tod: Option<TimeOfDay>,
     can_sleep: bool,
-    logic_exits: Vec<(String, String)>,
+    logic_exits: Vec<String>,
     locations: Vec<String>,
     exits: Vec<String>,
 }
@@ -111,7 +149,7 @@ struct StageEnumMember {
 struct RegionEnumMember {
     name: NameAndEnumName,
     force_tod: Option<TimeOfDay>,
-    stages: Vec<String>,
+    areas: Vec<String>,
 }
 
 struct LocationEnumMember {
@@ -123,7 +161,14 @@ struct LocationEnumMember {
 struct ExitEnumMember {
     name: NameAndEnumName,
     area: String,
+    to: String,
+    disambiguation: Option<String>,
+    // entrance enum
     vanilla_entrance: String,
+    // entrance enum
+    maybe_coupled_entrance: String,
+    // exit enum
+    door_connection: Option<String>,
     requirement: RequirementExpression,
 }
 
@@ -189,13 +234,13 @@ fn print_regions<W: Write>(out: &mut W, regions: &[RegionEnumMember]) -> io::Res
     writeln!(out, "impl Region {{")?;
 
     //
-    writeln!(out, "pub fn stages(&self) -> &'static [Stage] {{")?;
+    writeln!(out, "pub fn areas(&self) -> &'static [Area] {{")?;
     writeln!(out, "match self {{")?;
 
     for region in regions {
         writeln!(out, "Region::{} => &[", region.name.enum_name)?;
-        for stage in &region.stages {
-            writeln!(out, "Stage::{},", stage)?;
+        for area in &region.areas {
+            writeln!(out, "Area::{},", area)?;
         }
         writeln!(out, "],")?;
     }
@@ -278,157 +323,83 @@ fn print_areas<W: Write>(
     out: &mut W,
     areas: &[AreaEnumMember],
     entrances: &BTreeMap<String, BTreeMap<String, ()>>,
-    logic_entrances: &BTreeMap<String, BTreeMap<String, String>>,
+    logic_entrances: &BTreeMap<String, BTreeMap<String, ()>>,
 ) -> io::Result<()> {
     print_common(out, "Area", areas.iter().map(|r| &r.name))?;
+
+    writeln!(out, "pub struct AreaVal {{
+        pub stage: Stage,
+        pub possible_tod: TimeOfDay,
+        pub can_sleep: bool,
+        pub exits: &'static [Exit],
+        pub entrances: &'static [Entrance],
+        pub logic_entrance_areas: &'static [Area],
+        pub logic_exit_areas: &'static [Area],
+        pub locations: &'static [Location],
+    }}")?;
 
     writeln!(out, "impl Area {{")?;
 
     //
-    writeln!(out, "pub fn stage(&self) -> Stage {{")?;
+    writeln!(out, "pub fn get(&self) -> &'static AreaVal {{")?;
     writeln!(out, "match self {{")?;
 
     for area in areas {
-        writeln!(
-            out,
-            "Area::{} => Stage::{},",
-            area.name.enum_name, area.stage
-        )?;
-    }
-
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
-
-    //
-    writeln!(out, "pub fn possible_tod(&self) -> TimeOfDay {{")?;
-    writeln!(out, "match self {{")?;
-
-    for area in areas {
-        if let Some(tod) = area.force_tod {
-            writeln!(
-                out,
-                "Area::{} => TimeOfDay::{:?},",
-                area.name.enum_name, tod
-            )?;
-        } else {
-            writeln!(out, "Area::{} => TimeOfDay::Both,", area.name.enum_name)?;
-        }
-    }
-
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
-
-    //
-    writeln!(out, "pub fn can_sleep(&self) -> bool {{")?;
-    writeln!(out, "match self {{")?;
-
-    for area in areas {
-        writeln!(out, "Area::{} => {},", area.name.enum_name, area.can_sleep)?;
-    }
-
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
-
-    //
-    writeln!(out, "pub fn exits(&self) -> &'static [Exit] {{")?;
-    writeln!(out, "match self {{")?;
-
-    for area in areas {
-        writeln!(out, "Area::{} => &[", area.name.enum_name)?;
+        let tod = match area.force_tod {
+            Some(TimeOfDay::Day) => "Day",
+            Some(TimeOfDay::Night) => "Night",
+            None => "Both",
+        };
+        use std::fmt::Write;
+        let mut exits = String::new();
         for exit in &area.exits {
-            writeln!(out, "Exit::{},", exit)?;
+            writeln!(exits, "Exit::{},", exit).unwrap();
         }
-        writeln!(out, "],")?;
-    }
-
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
-
-    // //
-    // writeln!(out, "pub fn exits(&self) -> impl Iterator<Item = Exit> + '_ {{")?;
-    // writeln!(
-    //     out,
-    //     "self.exit_areas().iter().map(|other| Exit {{ from: *self, to: *other }})"
-    // )?;
-    // writeln!(out, "}}")?;
-
-    //
-    writeln!(out, "pub fn entrances(&self) -> &'static [Entrance] {{")?;
-    writeln!(out, "match self {{")?;
-
-    for area in areas {
-        writeln!(out, "Area::{} => &[", area.name.enum_name)?;
+        
+        let mut entrances_str = String::new();
         if let Some(entrances) = entrances.get(&area.name.enum_name) {
             for entrance in entrances.keys() {
-                writeln!(out, "Entrance::{},", entrance)?;
+                writeln!(entrances_str, "Entrance::{},", entrance).unwrap();
             }
         }
-        writeln!(out, "],")?;
-    }
 
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
+        let mut logic_exits = String::new();
+        for area in &area.logic_exits {
+            writeln!(logic_exits, "Area::{},", area).unwrap();
+        }
 
-    // //
-    // writeln!(out, "pub fn entrances(&self) -> impl Iterator<Item = Entrance> + '_ {{")?;
-    // writeln!(
-    //     out,
-    //     "self.entrance_areas().iter().map(|area| Entrance {{ from: *area, to: *self }})"
-    // )?;
-    // writeln!(out, "}}")?;
-
-    //
-    writeln!(
-        out,
-        "pub fn logic_entrances(&self) -> &'static [(Area, RequirementKey)] {{"
-    )?;
-    writeln!(out, "match self {{")?;
-
-    for area in areas {
-        writeln!(out, "Area::{} => &[", area.name.enum_name)?;
-        if let Some(entrance_areas) = logic_entrances.get(&area.name.enum_name) {
-            for (entrance_area, req_key) in entrance_areas.iter() {
-                writeln!(
-                    out,
-                    "(Area::{}, RequirementKey::{}),",
-                    entrance_area, req_key
-                )?;
+        let mut logic_entrances_str = String::new();
+        if let Some(entrances) = logic_entrances.get(&area.name.enum_name) {
+            for area in entrances.keys() {
+                writeln!(logic_entrances_str, "Area::{},", area).unwrap();
             }
         }
-        writeln!(out, "],")?;
-    }
-
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
-
-    //
-    writeln!(
-        out,
-        "pub fn logic_exits(&self) -> &'static [(Area, RequirementKey)] {{"
-    )?;
-    writeln!(out, "match self {{")?;
-
-    for area in areas {
-        writeln!(out, "Area::{} => &[", area.name.enum_name)?;
-        for (exit_area, req_key) in area.logic_exits.iter() {
-            writeln!(out, "(Area::{}, RequirementKey::{}),", exit_area, req_key)?;
+        let mut locations = String::new();
+        for location in &area.locations {
+            writeln!(locations, "Location::{},", location).unwrap();
         }
-        writeln!(out, "],")?;
-    }
-
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
-
-    //
-    writeln!(out, "pub fn locations(&self) -> &'static [Location] {{")?;
-    writeln!(out, "match self {{")?;
-
-    for area in areas {
-        writeln!(out, "Area::{} => &[", area.name.enum_name)?;
-        for (location) in area.locations.iter() {
-            writeln!(out, "Location::{},", location)?;
-        }
-        writeln!(out, "],")?;
+        writeln!(
+            out,
+            "Area::{} => &AreaVal {{
+                stage: Stage::{},
+                possible_tod: TimeOfDay::{},
+                can_sleep: {},
+                exits: & [{}],
+                entrances: & [{}],
+                logic_exit_areas: & [{}],
+                logic_entrance_areas: & [{}],
+                locations: &[{}],
+            }},",
+            area.name.enum_name,
+            area.stage,
+            tod,
+            area.can_sleep,
+            exits,
+            entrances_str,
+            logic_exits,
+            logic_entrances_str,
+            locations,
+        )?;
     }
 
     writeln!(out, "}}")?;
@@ -458,57 +429,30 @@ fn print_locations<W: Write>(out: &mut W, locations: &[LocationEnumMember]) -> i
     writeln!(out, "}}")?;
     writeln!(out, "}}")?;
 
-    //
-    writeln!(out, "pub fn requirement_key(&self) -> RequirementKey {{")?;
-    writeln!(out, "match self {{")?;
-
-    for location in locations {
-        writeln!(
-            out,
-            "Location::{} => RequirementKey::{},",
-            location.name.enum_name, location.name.enum_name
-        )?;
-    }
-
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
-
     writeln!(out, "}}")?;
     Ok(())
 }
 
 fn print_events<W: Write>(
     out: &mut W,
-    events: &BTreeMap<NameAndEnumName, Vec<(String, RequirementExpression)>>,
+    events: &BTreeMap<NameAndEnumName, RequirementExpression>,
 ) -> io::Result<()> {
     print_common(out, "Event", events.keys())?;
 
-    writeln!(out, "impl Event {{")?;
-
-    //
-    writeln!(
-        out,
-        "pub fn requirements(&self) -> &'static[RequirementKey] {{"
-    )?;
-    writeln!(out, "match self {{")?;
-
-    for (event_name, requirements) in events {
-        writeln!(out, "Event::{} => &[", event_name.enum_name)?;
-        for (requirement_name, _) in requirements {
-            writeln!(out, "RequirementKey::{},", requirement_name)?;
-        }
-        writeln!(out, "],")?;
-    }
-
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
-
-    writeln!(out, "}}")?;
     Ok(())
 }
 
-fn print_exits<W: Write>(out: &mut W, exits: &[ExitEnumMember]) -> io::Result<()> {
+fn print_exits<W: Write>(out: &mut W, exits: &[ExitEnumMember], entrances: &[EntranceEnumMember]) -> io::Result<()> {
     print_common(out, "Exit", exits.iter().map(|l| &l.name))?;
+
+    writeln!(out, "pub struct ExitVal {{
+        pub area: Area,
+        pub to: Area,
+        pub disambiguation: Option<&'static str>,
+        pub vanilla_entrance: Entrance,
+        pub coupled_entrance: Option<Entrance>,
+        pub door_connection: DoorConnection<Exit>,
+    }}")?;
 
     writeln!(out, "impl Exit {{")?;
 
@@ -524,30 +468,32 @@ fn print_exits<W: Write>(out: &mut W, exits: &[ExitEnumMember]) -> io::Result<()
     writeln!(out, "}}")?;
 
     //
-    writeln!(out, "pub fn vanilla_entrance(&self) -> Entrance {{")?;
+    writeln!(out, "pub fn get(&self) -> &'static ExitVal {{")?;
     writeln!(out, "match self {{")?;
 
     for exit in exits {
         writeln!(
             out,
-            "Exit::{} => Entrance::{},",
-            exit.name.enum_name, exit.vanilla_entrance
-        )?;
-    }
-
-    writeln!(out, "}}")?;
-    writeln!(out, "}}")?;
-
-    //
-    writeln!(out, "pub fn requirement_key(&self) -> RequirementKey {{")?;
-    writeln!(out, "match self {{")?;
-
-    for exit in exits {
-        writeln!(
-            out,
-            "Exit::{} => RequirementKey::{},",
-            exit.name.enum_name, exit.name.enum_name
-        )?;
+            "Exit::{} => &ExitVal {{
+                area: Area::{},
+                to: Area::{},
+                vanilla_entrance: Entrance::{},", exit.name.enum_name, exit.area, exit.to, exit.vanilla_entrance)?;
+        if let Some(d) = exit.disambiguation.as_ref() {
+            writeln!(out, "disambiguation: Some(\"{d}\"),")?;
+        } else {
+            writeln!(out, "disambiguation: None,")?;
+        }
+        if let Some(entrance) = entrances.iter().find(|entrance| exit.maybe_coupled_entrance == entrance.name.name) {
+            writeln!(out, "coupled_entrance: Some(Entrance::{}),", entrance.name.enum_name)?;
+        } else {
+            writeln!(out, "coupled_entrance: None,")?;
+        }
+        if let Some(dc) = exit.door_connection.as_ref() {
+            writeln!(out, "door_connection: DoorConnection::{dc},")?;
+        } else {
+            writeln!(out, "door_connection: DoorConnection::No,")?;
+        }
+        writeln!(out, "}},")?;
     }
 
     writeln!(out, "}}")?;
@@ -604,6 +550,11 @@ fn parse_macro_file(
     Ok(macros)
 }
 
+fn parse_entrance_table() -> anyhow::Result<Vec<EntranceTableEntry>> {
+    let reader = BufReader::new(File::open("../entrance_table2.yaml").context("entrance_table2.yaml")?);
+    serde_yaml::from_reader(reader).context("entrance_table")
+}
+
 #[derive(Debug, Clone, Copy, Deserialize, PartialEq, Eq, PartialOrd, Ord)]
 enum ItemKind {
     Single,
@@ -622,7 +573,7 @@ struct ItemYamlEntry {
 }
 
 fn process_items() -> anyhow::Result<HashSet<String>> {
-    let reader = BufReader::new(File::open(format!("items.yaml"))?);
+    let reader = BufReader::new(File::open("items.yaml")?);
     let mut raw_items: Vec<ItemYamlEntry> = serde_yaml::from_reader(reader)?;
     raw_items.sort_by_key(|i| i.r#type);
 
@@ -637,7 +588,7 @@ fn process_items() -> anyhow::Result<HashSet<String>> {
 
     println!("single: {}, counted: {}", single_count, counted_count);
 
-    let mut out = &mut File::create("../logic-core/src/generated/items.rs")?;
+    let out = &mut File::create("../logic-core/src/generated/items.rs")?;
     writeln!(out, "#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]")?;
     writeln!(out, "pub enum Item {{")?;
 
@@ -684,39 +635,13 @@ fn process_items() -> anyhow::Result<HashSet<String>> {
     Ok(names)
 }
 
-fn print_requirements<'a, W: Write>(
-    out: &mut W,
-    requirements: impl Iterator<Item = (&'a str, &'a RequirementExpression)> + Clone,
-) -> io::Result<()> {
-    writeln!(out, "#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]")?;
-    writeln!(out, "pub enum RequirementKey {{")?;
-
-    // print enum
-    for (name, _) in requirements.clone() {
-        writeln!(out, "{},", name)?;
-    }
-    writeln!(out, "}}")?;
-
-    writeln!(out, "impl RequirementKey {{")?;
-    writeln!(out, "pub const ALL: &'static [RequirementKey] = &[")?;
-
-    for (name, _) in requirements.clone() {
-        writeln!(out, "RequirementKey::{},", name)?;
-    }
-    writeln!(out, "];")?;
-
-    writeln!(out, "}}")?;
-
-    Ok(())
-}
-
 fn print_base_requirements<'a, W: Write>(
     out: &mut W,
-    requirements: impl Iterator<Item = (&'a str, &'a RequirementExpression)> + Clone,
+    requirements: impl Iterator<Item = (String, &'a RequirementExpression)> + Clone,
 ) -> io::Result<()> {
     out.write_all(b"use std::collections::HashMap;\n")?;
-    out.write_all(b"use super::{items::Item,logic::{Area, RequirementKey, Event}};\n")?;
-    out.write_all(b"use crate::{logic_static::TimeOfDay,requirements::RequirementExpression};\n")?;
+    out.write_all(b"use super::{items::Item,logic::{Area, Exit, Event, Location}};\n")?;
+    out.write_all(b"use crate::{logic_static::TimeOfDay,requirements::RequirementExpression, RequirementKey};\n")?;
 
     out.write_all(
         b"pub fn get_requirements() -> HashMap<RequirementKey, RequirementExpression<'static>> {\n",
@@ -724,7 +649,7 @@ fn print_base_requirements<'a, W: Write>(
     writeln!(out, "HashMap::from([")?;
 
     for (name, req) in requirements {
-        write!(out, "(RequirementKey::{},", name)?;
+        write!(out, "({},", name)?;
         req.write_reqs(out)?;
         writeln!(out, "),")?;
     }
@@ -734,6 +659,8 @@ fn print_base_requirements<'a, W: Write>(
 
 fn main() -> anyhow::Result<()> {
     let item_names = process_items()?;
+
+    let entrance_table = parse_entrance_table()?;
 
     let macros = parse_macro_file(&item_names)?;
 
@@ -755,8 +682,8 @@ fn main() -> anyhow::Result<()> {
 
     // area: list of entrances (written as area)
     let mut entrances: BTreeMap<String, BTreeMap<String, ()>> = BTreeMap::new();
-    // exit_area_name: (entrance_area_name: requirement_key_name)
-    let mut logic_entrances: BTreeMap<String, BTreeMap<String, String>> = BTreeMap::new();
+    // exit_area_name: (entrance_area_name)
+    let mut logic_entrances: BTreeMap<String, BTreeMap<String, ()>> = BTreeMap::new();
 
     let mut area_enums = Vec::new();
     let mut stage_enums = Vec::new();
@@ -765,7 +692,7 @@ fn main() -> anyhow::Result<()> {
     let mut exit_enums = Vec::new();
     let mut entrance_enums = Vec::new();
     let mut logic_exit_requirements = Vec::new();
-    let mut events: BTreeMap<NameAndEnumName, Vec<(String, RequirementExpression)>> =
+    let mut events: BTreeMap<NameAndEnumName,RequirementExpression> =
         BTreeMap::new();
     // let mut exit_enums = Vec::new();
     // println!("{faron:?}");
@@ -774,7 +701,7 @@ fn main() -> anyhow::Result<()> {
         // println!("{}: {:?}", region_name, region.force_tod);
         let region_name = NameAndEnumName::from_name(region_name);
 
-        let mut stage_names = Vec::new();
+        let mut region_area_names = Vec::new();
         for (stage_name, stage) in region.stages.iter() {
             let stage_force_tod = stage.force_tod.or(region_force_tod);
 
@@ -795,7 +722,7 @@ fn main() -> anyhow::Result<()> {
 
                 let mut locations = Vec::new();
                 let mut exits = Vec::new();
-                // (other_area_name, requirement_key_name)
+                // other_area_name
                 let mut logic_exits = Vec::new();
 
                 let mut local_macros = HashMap::new();
@@ -822,8 +749,9 @@ fn main() -> anyhow::Result<()> {
 
                 for (logic_exit_area, req) in area.logic_exits.iter() {
                     let requirement_name = format!(
-                        "{}_To_{}",
+                        "RequirementKey::LogicExit{{ from: Area::{}, to: Area::{}_{}}}",
                         area_name.enum_name,
+                        stage_name.enum_name,
                         convert_to_upper_camel_case(logic_exit_area)
                     );
 
@@ -849,11 +777,11 @@ fn main() -> anyhow::Result<()> {
                         stage_name.enum_name,
                         convert_to_upper_camel_case(logic_exit_area)
                     );
-                    logic_exits.push((other_area_name.clone(), requirement_name.clone()));
+                    logic_exits.push(other_area_name.clone());
                     logic_entrances
                         .entry(other_area_name)
                         .or_default()
-                        .insert(area_name.enum_name.clone(), requirement_name);
+                        .insert(area_name.enum_name.clone(), ());
                 }
 
                 for (exit_name, exit_req) in area.map_exits.iter() {
@@ -877,6 +805,9 @@ fn main() -> anyhow::Result<()> {
                         );
                         let mut full_entrance_name =
                             format!("{} (from {})", other_stagename, stage_name.name,);
+                        // this entrance might not actually exist, that will be checked later
+                        let mut full_coupled_entrance_name =
+                            format!("{} (from {})", stage_name.name, other_stagename,);
                         if let Some(disambiguation) = disambiguation {
                             use std::fmt::Write;
                             write!(
@@ -891,6 +822,7 @@ fn main() -> anyhow::Result<()> {
                             )?;
                             write!(&mut full_exit_name, " ({})", disambiguation)?;
                             write!(&mut full_entrance_name, " ({})", disambiguation)?;
+                            write!(&mut full_coupled_entrance_name, " ({})", disambiguation)?;
                         }
 
                         let other_area_enum_name = format!(
@@ -920,9 +852,18 @@ fn main() -> anyhow::Result<()> {
                         )
                         .unwrap();
 
+                        // n is probably low enough for quadratic complexity
+                        let matching_exits: Vec<_> = entrance_table.iter().filter(|entry| {
+                            entry.stage == stage_name.enum_name && entry.to_stage == other_stagename
+                        }).collect();
+
                         exit_enums.push(ExitEnumMember {
                             name: exit_name,
                             area: area_name.enum_name.clone(),
+                            to: other_area_enum_name.clone(),
+                            disambiguation: disambiguation.map(|d| d.to_string()),
+                            maybe_coupled_entrance: full_coupled_entrance_name,
+                            door_connection: None,
                             vanilla_entrance: entrance_name.enum_name.clone(),
                             requirement: RequirementExpression::And(vec![
                                 RequirementExpression::Area(
@@ -978,8 +919,6 @@ fn main() -> anyhow::Result<()> {
 
                 for (event_name, event_req) in area.events.iter() {
                     let event_name = NameAndEnumName::from_name(event_name);
-                    let area_local_event_name =
-                        format!("{}_{}", area_name.enum_name, event_name.enum_name);
                     let resolved_req = RequirementExpression::parse(
                         event_req,
                         Some(&area_name.enum_name),
@@ -987,19 +926,32 @@ fn main() -> anyhow::Result<()> {
                         &item_names,
                     )
                     .unwrap();
-                    events.entry(event_name).or_default().push((
-                        area_local_event_name,
-                        RequirementExpression::And(vec![
-                            RequirementExpression::Area(
-                                area_name.enum_name.clone(),
-                                RequirementToD::Any,
-                            ),
-                            resolved_req,
-                        ]),
-                    ));
+                    let full_requirement = RequirementExpression::And(vec![
+                        RequirementExpression::Area(
+                            area_name.enum_name.clone(),
+                            RequirementToD::Any,
+                        ),
+                        resolved_req,
+                    ]);
+                    // build the combined event requirements; if it already exists, add it to the OR chain
+                    match events.entry(event_name) {
+                        std::collections::btree_map::Entry::Occupied(mut existing_req) => {
+                            match existing_req.get_mut() {
+                                RequirementExpression::Or(variants) => variants.push(full_requirement),
+                                req_ref => {
+                                    let new_requirement = RequirementExpression::Or(vec![req_ref.clone(), full_requirement]);
+                                    existing_req.insert(new_requirement);
+                                },
+                            }
+                        },
+                        std::collections::btree_map::Entry::Vacant(entry) => {
+                            entry.insert(full_requirement);
+                        }
+                    }
                 }
 
                 area_names.push(area_name.enum_name.clone());
+                region_area_names.push(area_name.enum_name.clone());
                 if area.can_sleep && area.force_tod.is_some() {
                     panic!(
                         "that doesn't make sense: can_sleep = true, but forced ToD in {}",
@@ -1016,7 +968,6 @@ fn main() -> anyhow::Result<()> {
                     exits,
                 });
             }
-            stage_names.push(stage_name.enum_name.clone());
 
             // TODO: skyloft being in 3 regions makes things dumb
             if stage_name.enum_name == "Skyloft"
@@ -1035,7 +986,7 @@ fn main() -> anyhow::Result<()> {
         }
         region_enums.push(RegionEnumMember {
             name: region_name,
-            stages: stage_names,
+            areas: region_area_names,
             force_tod: region_force_tod,
         });
     }
@@ -1044,7 +995,7 @@ fn main() -> anyhow::Result<()> {
     writeln!(&mut out, "#![allow(non_camel_case_types)]")?;
     writeln!(
         &mut out,
-        "use crate::logic_static::{{TimeOfDay, BitSetCompatible}};"
+        "use crate::logic_static::{{TimeOfDay, BitSetCompatible, DoorConnection}};"
     )?;
 
     print_regions(&mut out, &region_enums)?;
@@ -1056,18 +1007,18 @@ fn main() -> anyhow::Result<()> {
     // make an iterator of (name, requirement) out of everything that needs logical requirements
     let requirements = logic_exit_requirements
         .iter()
-        .map(|(s, r)| (s.as_str(), r))
+        .map(|(s, r)| (s.clone(), r))
         .chain(
             location_enums
                 .iter()
-                .map(|l| (l.name.enum_name.as_str(), &l.requirement)),
+                .map(|l| (format!("RequirementKey::Location(Location::{})", l.name.enum_name), &l.requirement)),
         )
         .chain(
             exit_enums
                 .iter()
-                .map(|e| (e.name.enum_name.as_str(), &e.requirement)),
+                .map(|e| (format!("RequirementKey::Exit(Exit::{})", e.name.enum_name), &e.requirement)),
         )
-        .chain(events.values().flatten().map(|(s, r)| (s.as_str(), r)));
+        .chain(events.iter().map(|(s, r)| (format!("RequirementKey::Event(Event::{})", s.enum_name), r)));
     // make sure all events exist
     let mut all_events = HashSet::new();
     for (name, requirement) in requirements.clone() {
@@ -1078,11 +1029,10 @@ fn main() -> anyhow::Result<()> {
     //         println!("{event}");
     //     }
     // }
-    print_requirements(&mut out, requirements.clone())?;
     let mut out_requirements =
         File::create("../logic-core/src/generated/generated_requirements.rs")?;
     print_base_requirements(&mut out_requirements, requirements)?;
-    print_exits(&mut out, &exit_enums)?;
+    print_exits(&mut out, &exit_enums, &entrance_enums)?;
     print_entrances(&mut out, &entrance_enums)?;
 
     Ok(())

@@ -11,9 +11,9 @@ pub fn calc_sots_path(requirements: &Requirements, placement: &Placement, option
         placement,
         options,
         &[
-            RequirementKey::SealedGrounds_ZeldasBlessing,
-            RequirementKey::Skyview_GhirahimHeartContainer,
-            RequirementKey::EarthTemple_ScalderaHeartContainer,
+            Location::SealedGrounds_ZeldasBlessing.requirement_key(),
+            Location::Skyview_GhirahimHeartContainer.requirement_key(),
+            Location::EarthTemple_ScalderaHeartContainer.requirement_key(),
         ],
     );
     for (req, requirements) in result.iter() {

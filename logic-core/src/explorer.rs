@@ -225,14 +225,12 @@ pub fn collect_events(
     inventory: &mut Inventory,
 ) -> bool {
     let mut did_change = false;
-    'outer: for event in Event::ALL {
+    for event in Event::ALL {
         if !inventory.has_event(*event) {
-            for requirement in event.requirements() {
-                if requirements.check(*requirement, &inventory, options, TimeOfDay::all()) {
-                    inventory.insert_event(*event);
-                    did_change = true;
-                    continue 'outer;
-                }
+            if requirements.check(event.requirement_key(), &inventory, options, TimeOfDay::all()) {
+                inventory.insert_event(*event);
+                did_change = true;
+                continue;
             }
         }
     }
@@ -310,7 +308,7 @@ pub fn explore_areas(
             for tod in [TimeOfDay::Day, TimeOfDay::Night] {
                 // only check logic if the tod isn't already reached
                 if !already_reached_tod.contains(tod) {
-                    if requirements.check(*req_key, &inventory, options, tod) {
+                    if requirements.check(req_key, &inventory, options, tod) {
                         if area.can_sleep() {
                             inventory.insert_area_tod(area, TimeOfDay::all());
                         } else {

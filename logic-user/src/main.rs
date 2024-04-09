@@ -166,7 +166,7 @@ pub fn randomize_required_dungeons<R: Rng>(rng: &mut R, count: u8) -> Vec<Region
 fn get_plando_entries(options: &Options, required_dungeons: &Vec<Region>) -> PlandoEntries {
     let mut entries = PlandoEntries::default();
     if options.beedles_shop_vanilla {
-        let VANILLA_SHOP = [(Item::ProgressiveBugNet, Location::Beedle_50RupeeItem)];
+        let VANILLA_SHOP = [(Item::ProgressiveBugNet, Location::Beedle_X50RupeeItem)];
         for (item, loc) in VANILLA_SHOP {
             entries.add_fixed("Vanilla Shop", item, loc, true);
         }
@@ -325,11 +325,9 @@ fn get_progress_locations(options: &Options, required_dungeons: &[Region]) -> Ha
             .iter()
             .filter(|d| !required_dungeons.contains(d))
         {
-            for stage in dungeon.stages() {
-                for area in stage.areas() {
-                    for location in area.locations() {
-                        progress_locations.remove(location);
-                    }
+            for area in dungeon.areas() {
+                for location in area.locations() {
+                    progress_locations.remove(location);
                 }
             }
         }
