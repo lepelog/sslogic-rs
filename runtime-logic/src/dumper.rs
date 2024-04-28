@@ -582,13 +582,14 @@ pub fn dump(
         }
     ));
 
+    let mut item_values: Vec<_> = ctx.items.values().collect();
+    item_values.sort_unstable_by_key(|item| item.id);
+
     // dump items
-    let item_idents: Vec<_> = ctx
-        .items
-        .values()
+    let item_idents: Vec<_> = item_values.iter()
         .map(|item| Ident::new(&item.ident, Span::call_site()))
         .collect();
-    let item_cases = ctx.items.values().map(|item| {
+    let item_cases = item_values.iter().map(|item| {
         let name = &item.name;
         let id = item.id.0;
         let ident = Ident::new(&item.ident, Span::call_site());
@@ -710,8 +711,11 @@ pub fn dump(
         }
     ));
 
+    let mut sorted_reqs: Vec<_> = requirements.iter().collect();
+    sorted_reqs.sort_unstable_by_key(|(key, _)| *key);
+
     // dump logic
-    let logic_exprs = requirements
+    let logic_exprs = sorted_reqs
         .iter()
         .map(|(req_key, requirement)| {
             let key_expr = match req_key {

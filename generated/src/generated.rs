@@ -12584,95 +12584,95 @@ pub struct EventDef {
 }
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum Event {
-    PickUpLeviasSoup,
-    GoddessCubeOnEastGreatTreeWithRope,
-    ActivateWaterNode,
-    CanPlayThrillDigger,
-    ForestTempleStatue,
-    GoddessCubeNearHookBeetleFight,
-    LanayruMineEntryStatue,
-    GoddessCubeInSecretPassagewayInDesert,
-    GoddessCubeAtLanayruMinesEntrance,
-    GoddessCubeEastOfEarthTempleEntrance,
-    BeatDemise,
-    GoddessCubeInLakeFloria,
-    GoddessCubeAtEldinEntrance,
-    GoddessCubeNearMogmaTurfEntrance,
-    CanFreelyChangeSandshipTemporality,
-    OpenedShed,
-    GoddessCubeInSandOasis,
-    GoddessCubeInSkyviewSpring,
-    OpenSharkhead,
-    GoddessCubeInSummitWaterfall,
-    DeepWoodsStatue,
-    TriforcesCollected,
-    EndurancePotion,
-    CanBeatLanayruMiningFacility,
-    RaiseGoT,
-    SaveOrielle,
-    TalkToYerbal,
-    WestDesertStatue,
-    PumpkinCarrying,
-    GoddessCubeNearFsEntrance,
-    GoddessCubeOnWestGreatTreeNearExit,
-    CanSellTreasures,
-    GoddessCubeAtRideNearTempleOfTime,
-    GreatTreeStatue,
-    ActivateLightningNode,
-    TalkToOrielle,
-    RetrieveOolo,
-    VolcanoAscentStatue,
-    DefeatImprisoned2,
-    UnlockedZeldasRoom,
-    GoddessCubeInMogmaTurf,
-    RetrieveCrystalBall,
-    RaiseLanayruMiningFacility,
-    EldinEntranceStatue,
-    BehindTheTempleStatue,
-    SealedGroundsStatue,
-    CanPlayCleanCut,
-    CanRetrievePartyWheel,
-    GoddessCubeInAncientHarbour,
-    CanBeatSkyKeep,
-    CanBeatEarthTemple,
-    TalkToPeatriceInBazaar,
-    DeliveredHotSoup,
-    GoddessCubeInSkippersRetreat,
-    GoddessCubeInDeepWoods,
-    StartImprisoned2,
-    SwordRequirementMet,
-    GoddessCubeInEldinSlide,
-    LumpyPumpkinQuestStart,
-    GoddessCubeInFloriaWaterfall,
-    ActivateSkyviewGoddessWall,
-    GoddessCubeOnTopOfSkyview,
-    CanBeatSandship,
-    FloriaWaterfallStatue,
-    InitialGoddessCube,
-    ViewingPlatformStatue,
-    GoddessCubeOnEastGreatTreeWithClawshotsTarget,
-    GoddessCubeWestOfEarthTempleEntrance,
-    HighRupeeFarm,
-    CanBeatSkyview,
-    NorthDesertStatue,
-    CanBeatAncientCistern,
-    VolcanoEastStatue,
-    DesertEntranceStatue,
-    DefeatedShipyardMolderach,
-    GoddessCubeInPirateStronghold,
-    PickUpGuld,
-    BeatRequiredDungeons,
-    TempleEntranceStatue,
-    FaronWoodsEntryStatue,
-    InTheWoodsStatue,
-    LakeFloriaStatue,
-    GoddessCubeInsideVolcanoSummit,
-    InsideTheVolcanoStatue,
-    LanayruDesertDungeonBeaten,
-    CanLowerAcStatue,
     ActivateFireNode,
-    StoneCacheStatue,
+    ActivateLightningNode,
+    ActivateSkyviewGoddessWall,
+    ActivateWaterNode,
+    BeatDemise,
+    BeatRequiredDungeons,
+    BehindTheTempleStatue,
+    CanBeatAncientCistern,
+    CanBeatEarthTemple,
     CanBeatFireSanctuary,
+    CanBeatLanayruMiningFacility,
+    CanBeatSandship,
+    CanBeatSkyKeep,
+    CanBeatSkyview,
+    CanFreelyChangeSandshipTemporality,
+    CanLowerAcStatue,
+    CanPlayCleanCut,
+    CanPlayThrillDigger,
+    CanRetrievePartyWheel,
+    CanSellTreasures,
+    DeepWoodsStatue,
+    DefeatImprisoned2,
+    DefeatedShipyardMolderach,
+    DeliveredHotSoup,
+    DesertEntranceStatue,
+    EldinEntranceStatue,
+    EndurancePotion,
+    FaronWoodsEntryStatue,
+    FloriaWaterfallStatue,
+    ForestTempleStatue,
+    GoddessCubeEastOfEarthTempleEntrance,
+    GoddessCubeWestOfEarthTempleEntrance,
+    GoddessCubeAtEldinEntrance,
+    GoddessCubeAtLanayruMinesEntrance,
+    GoddessCubeAtRideNearTempleOfTime,
+    GoddessCubeInAncientHarbour,
+    GoddessCubeInDeepWoods,
+    GoddessCubeInEldinSlide,
+    GoddessCubeInFloriaWaterfall,
+    GoddessCubeInLakeFloria,
+    GoddessCubeInMogmaTurf,
+    GoddessCubeInPirateStronghold,
+    GoddessCubeInSandOasis,
+    GoddessCubeInSecretPassagewayInDesert,
+    GoddessCubeInSkippersRetreat,
+    GoddessCubeInSkyviewSpring,
+    GoddessCubeInSummitWaterfall,
+    GoddessCubeInsideVolcanoSummit,
+    GoddessCubeNearFsEntrance,
+    GoddessCubeNearHookBeetleFight,
+    GoddessCubeNearMogmaTurfEntrance,
+    GoddessCubeOnEastGreatTreeWithClawshotsTarget,
+    GoddessCubeOnEastGreatTreeWithRope,
+    GoddessCubeOnWestGreatTreeNearExit,
+    GoddessCubeOnTopOfSkyview,
+    GreatTreeStatue,
+    HighRupeeFarm,
+    InTheWoodsStatue,
+    InitialGoddessCube,
+    InsideTheVolcanoStatue,
+    LakeFloriaStatue,
+    LanayruDesertDungeonBeaten,
+    LanayruMineEntryStatue,
+    LumpyPumpkinQuestStart,
+    NorthDesertStatue,
+    OpenSharkhead,
+    OpenedShed,
+    PickUpGuld,
+    PickUpLeviasSoup,
+    PumpkinCarrying,
+    RaiseGoT,
+    RaiseLanayruMiningFacility,
+    RetrieveCrystalBall,
+    RetrieveOolo,
+    SaveOrielle,
+    SealedGroundsStatue,
+    StartImprisoned2,
+    StoneCacheStatue,
+    SwordRequirementMet,
+    TalkToOrielle,
+    TalkToPeatriceInBazaar,
+    TalkToYerbal,
+    TempleEntranceStatue,
+    TriforcesCollected,
+    UnlockedZeldasRoom,
+    ViewingPlatformStatue,
+    VolcanoAscentStatue,
+    VolcanoEastStatue,
+    WestDesertStatue,
 }
 impl Into<usize> for Event {
     fn into(self) -> usize {
@@ -12681,244 +12681,103 @@ impl Into<usize> for Event {
 }
 impl BitSetCompatible for Event {
     const ALL: &'static [Event] = &[
-        Event::PickUpLeviasSoup,
-        Event::GoddessCubeOnEastGreatTreeWithRope,
-        Event::ActivateWaterNode,
-        Event::CanPlayThrillDigger,
-        Event::ForestTempleStatue,
-        Event::GoddessCubeNearHookBeetleFight,
-        Event::LanayruMineEntryStatue,
-        Event::GoddessCubeInSecretPassagewayInDesert,
-        Event::GoddessCubeAtLanayruMinesEntrance,
-        Event::GoddessCubeEastOfEarthTempleEntrance,
-        Event::BeatDemise,
-        Event::GoddessCubeInLakeFloria,
-        Event::GoddessCubeAtEldinEntrance,
-        Event::GoddessCubeNearMogmaTurfEntrance,
-        Event::CanFreelyChangeSandshipTemporality,
-        Event::OpenedShed,
-        Event::GoddessCubeInSandOasis,
-        Event::GoddessCubeInSkyviewSpring,
-        Event::OpenSharkhead,
-        Event::GoddessCubeInSummitWaterfall,
-        Event::DeepWoodsStatue,
-        Event::TriforcesCollected,
-        Event::EndurancePotion,
-        Event::CanBeatLanayruMiningFacility,
-        Event::RaiseGoT,
-        Event::SaveOrielle,
-        Event::TalkToYerbal,
-        Event::WestDesertStatue,
-        Event::PumpkinCarrying,
-        Event::GoddessCubeNearFsEntrance,
-        Event::GoddessCubeOnWestGreatTreeNearExit,
-        Event::CanSellTreasures,
-        Event::GoddessCubeAtRideNearTempleOfTime,
-        Event::GreatTreeStatue,
-        Event::ActivateLightningNode,
-        Event::TalkToOrielle,
-        Event::RetrieveOolo,
-        Event::VolcanoAscentStatue,
-        Event::DefeatImprisoned2,
-        Event::UnlockedZeldasRoom,
-        Event::GoddessCubeInMogmaTurf,
-        Event::RetrieveCrystalBall,
-        Event::RaiseLanayruMiningFacility,
-        Event::EldinEntranceStatue,
-        Event::BehindTheTempleStatue,
-        Event::SealedGroundsStatue,
-        Event::CanPlayCleanCut,
-        Event::CanRetrievePartyWheel,
-        Event::GoddessCubeInAncientHarbour,
-        Event::CanBeatSkyKeep,
-        Event::CanBeatEarthTemple,
-        Event::TalkToPeatriceInBazaar,
-        Event::DeliveredHotSoup,
-        Event::GoddessCubeInSkippersRetreat,
-        Event::GoddessCubeInDeepWoods,
-        Event::StartImprisoned2,
-        Event::SwordRequirementMet,
-        Event::GoddessCubeInEldinSlide,
-        Event::LumpyPumpkinQuestStart,
-        Event::GoddessCubeInFloriaWaterfall,
-        Event::ActivateSkyviewGoddessWall,
-        Event::GoddessCubeOnTopOfSkyview,
-        Event::CanBeatSandship,
-        Event::FloriaWaterfallStatue,
-        Event::InitialGoddessCube,
-        Event::ViewingPlatformStatue,
-        Event::GoddessCubeOnEastGreatTreeWithClawshotsTarget,
-        Event::GoddessCubeWestOfEarthTempleEntrance,
-        Event::HighRupeeFarm,
-        Event::CanBeatSkyview,
-        Event::NorthDesertStatue,
-        Event::CanBeatAncientCistern,
-        Event::VolcanoEastStatue,
-        Event::DesertEntranceStatue,
-        Event::DefeatedShipyardMolderach,
-        Event::GoddessCubeInPirateStronghold,
-        Event::PickUpGuld,
-        Event::BeatRequiredDungeons,
-        Event::TempleEntranceStatue,
-        Event::FaronWoodsEntryStatue,
-        Event::InTheWoodsStatue,
-        Event::LakeFloriaStatue,
-        Event::GoddessCubeInsideVolcanoSummit,
-        Event::InsideTheVolcanoStatue,
-        Event::LanayruDesertDungeonBeaten,
-        Event::CanLowerAcStatue,
         Event::ActivateFireNode,
-        Event::StoneCacheStatue,
+        Event::ActivateLightningNode,
+        Event::ActivateSkyviewGoddessWall,
+        Event::ActivateWaterNode,
+        Event::BeatDemise,
+        Event::BeatRequiredDungeons,
+        Event::BehindTheTempleStatue,
+        Event::CanBeatAncientCistern,
+        Event::CanBeatEarthTemple,
         Event::CanBeatFireSanctuary,
+        Event::CanBeatLanayruMiningFacility,
+        Event::CanBeatSandship,
+        Event::CanBeatSkyKeep,
+        Event::CanBeatSkyview,
+        Event::CanFreelyChangeSandshipTemporality,
+        Event::CanLowerAcStatue,
+        Event::CanPlayCleanCut,
+        Event::CanPlayThrillDigger,
+        Event::CanRetrievePartyWheel,
+        Event::CanSellTreasures,
+        Event::DeepWoodsStatue,
+        Event::DefeatImprisoned2,
+        Event::DefeatedShipyardMolderach,
+        Event::DeliveredHotSoup,
+        Event::DesertEntranceStatue,
+        Event::EldinEntranceStatue,
+        Event::EndurancePotion,
+        Event::FaronWoodsEntryStatue,
+        Event::FloriaWaterfallStatue,
+        Event::ForestTempleStatue,
+        Event::GoddessCubeEastOfEarthTempleEntrance,
+        Event::GoddessCubeWestOfEarthTempleEntrance,
+        Event::GoddessCubeAtEldinEntrance,
+        Event::GoddessCubeAtLanayruMinesEntrance,
+        Event::GoddessCubeAtRideNearTempleOfTime,
+        Event::GoddessCubeInAncientHarbour,
+        Event::GoddessCubeInDeepWoods,
+        Event::GoddessCubeInEldinSlide,
+        Event::GoddessCubeInFloriaWaterfall,
+        Event::GoddessCubeInLakeFloria,
+        Event::GoddessCubeInMogmaTurf,
+        Event::GoddessCubeInPirateStronghold,
+        Event::GoddessCubeInSandOasis,
+        Event::GoddessCubeInSecretPassagewayInDesert,
+        Event::GoddessCubeInSkippersRetreat,
+        Event::GoddessCubeInSkyviewSpring,
+        Event::GoddessCubeInSummitWaterfall,
+        Event::GoddessCubeInsideVolcanoSummit,
+        Event::GoddessCubeNearFsEntrance,
+        Event::GoddessCubeNearHookBeetleFight,
+        Event::GoddessCubeNearMogmaTurfEntrance,
+        Event::GoddessCubeOnEastGreatTreeWithClawshotsTarget,
+        Event::GoddessCubeOnEastGreatTreeWithRope,
+        Event::GoddessCubeOnWestGreatTreeNearExit,
+        Event::GoddessCubeOnTopOfSkyview,
+        Event::GreatTreeStatue,
+        Event::HighRupeeFarm,
+        Event::InTheWoodsStatue,
+        Event::InitialGoddessCube,
+        Event::InsideTheVolcanoStatue,
+        Event::LakeFloriaStatue,
+        Event::LanayruDesertDungeonBeaten,
+        Event::LanayruMineEntryStatue,
+        Event::LumpyPumpkinQuestStart,
+        Event::NorthDesertStatue,
+        Event::OpenSharkhead,
+        Event::OpenedShed,
+        Event::PickUpGuld,
+        Event::PickUpLeviasSoup,
+        Event::PumpkinCarrying,
+        Event::RaiseGoT,
+        Event::RaiseLanayruMiningFacility,
+        Event::RetrieveCrystalBall,
+        Event::RetrieveOolo,
+        Event::SaveOrielle,
+        Event::SealedGroundsStatue,
+        Event::StartImprisoned2,
+        Event::StoneCacheStatue,
+        Event::SwordRequirementMet,
+        Event::TalkToOrielle,
+        Event::TalkToPeatriceInBazaar,
+        Event::TalkToYerbal,
+        Event::TempleEntranceStatue,
+        Event::TriforcesCollected,
+        Event::UnlockedZeldasRoom,
+        Event::ViewingPlatformStatue,
+        Event::VolcanoAscentStatue,
+        Event::VolcanoEastStatue,
+        Event::WestDesertStatue,
     ];
 }
 impl Event {
     pub fn get(&self) -> &'static EventDef {
         match self {
-            Event::PickUpLeviasSoup => {
+            Event::ActivateFireNode => {
                 &EventDef {
-                    name: "Pick up Levia's Soup",
-                }
-            }
-            Event::GoddessCubeOnEastGreatTreeWithRope => {
-                &EventDef {
-                    name: "Goddess Cube on East Great Tree with Rope",
-                }
-            }
-            Event::ActivateWaterNode => {
-                &EventDef {
-                    name: "Activate Water Node",
-                }
-            }
-            Event::CanPlayThrillDigger => {
-                &EventDef {
-                    name: "Can Play Thrill Digger",
-                }
-            }
-            Event::ForestTempleStatue => {
-                &EventDef {
-                    name: "Forest Temple Statue",
-                }
-            }
-            Event::GoddessCubeNearHookBeetleFight => {
-                &EventDef {
-                    name: "Goddess Cube near Hook Beetle Fight",
-                }
-            }
-            Event::LanayruMineEntryStatue => {
-                &EventDef {
-                    name: "Lanayru Mine Entry Statue",
-                }
-            }
-            Event::GoddessCubeInSecretPassagewayInDesert => {
-                &EventDef {
-                    name: "Goddess Cube in Secret Passageway in Desert",
-                }
-            }
-            Event::GoddessCubeAtLanayruMinesEntrance => {
-                &EventDef {
-                    name: "Goddess Cube at Lanayru Mines Entrance",
-                }
-            }
-            Event::GoddessCubeEastOfEarthTempleEntrance => {
-                &EventDef {
-                    name: "Goddess Cube East of Earth Temple Entrance",
-                }
-            }
-            Event::BeatDemise => &EventDef { name: "Beat Demise" },
-            Event::GoddessCubeInLakeFloria => {
-                &EventDef {
-                    name: "Goddess Cube in Lake Floria",
-                }
-            }
-            Event::GoddessCubeAtEldinEntrance => {
-                &EventDef {
-                    name: "Goddess Cube at Eldin Entrance",
-                }
-            }
-            Event::GoddessCubeNearMogmaTurfEntrance => {
-                &EventDef {
-                    name: "Goddess Cube near Mogma Turf Entrance",
-                }
-            }
-            Event::CanFreelyChangeSandshipTemporality => {
-                &EventDef {
-                    name: "Can Freely Change Sandship Temporality",
-                }
-            }
-            Event::OpenedShed => &EventDef { name: "Opened Shed" },
-            Event::GoddessCubeInSandOasis => {
-                &EventDef {
-                    name: "Goddess Cube in Sand Oasis",
-                }
-            }
-            Event::GoddessCubeInSkyviewSpring => {
-                &EventDef {
-                    name: "Goddess Cube in Skyview Spring",
-                }
-            }
-            Event::OpenSharkhead => &EventDef { name: "Open Sharkhead" },
-            Event::GoddessCubeInSummitWaterfall => {
-                &EventDef {
-                    name: "Goddess Cube in Summit Waterfall",
-                }
-            }
-            Event::DeepWoodsStatue => {
-                &EventDef {
-                    name: "Deep Woods Statue",
-                }
-            }
-            Event::TriforcesCollected => {
-                &EventDef {
-                    name: "Triforces Collected",
-                }
-            }
-            Event::EndurancePotion => {
-                &EventDef {
-                    name: "Endurance Potion",
-                }
-            }
-            Event::CanBeatLanayruMiningFacility => {
-                &EventDef {
-                    name: "Can Beat Lanayru Mining Facility",
-                }
-            }
-            Event::RaiseGoT => &EventDef { name: "Raise GoT" },
-            Event::SaveOrielle => &EventDef { name: "Save Orielle" },
-            Event::TalkToYerbal => &EventDef { name: "Talk to Yerbal" },
-            Event::WestDesertStatue => {
-                &EventDef {
-                    name: "West Desert Statue",
-                }
-            }
-            Event::PumpkinCarrying => {
-                &EventDef {
-                    name: "Pumpkin Carrying",
-                }
-            }
-            Event::GoddessCubeNearFsEntrance => {
-                &EventDef {
-                    name: "Goddess Cube near FS Entrance",
-                }
-            }
-            Event::GoddessCubeOnWestGreatTreeNearExit => {
-                &EventDef {
-                    name: "Goddess Cube on West Great Tree near Exit",
-                }
-            }
-            Event::CanSellTreasures => {
-                &EventDef {
-                    name: "Can Sell Treasures",
-                }
-            }
-            Event::GoddessCubeAtRideNearTempleOfTime => {
-                &EventDef {
-                    name: "Goddess Cube at Ride near Temple of Time",
-                }
-            }
-            Event::GreatTreeStatue => {
-                &EventDef {
-                    name: "Great Tree Statue",
+                    name: "Activate Fire Node",
                 }
             }
             Event::ActivateLightningNode => {
@@ -12926,45 +12785,20 @@ impl Event {
                     name: "Activate Lightning Node",
                 }
             }
-            Event::TalkToOrielle => {
+            Event::ActivateSkyviewGoddessWall => {
                 &EventDef {
-                    name: "Talk to Orielle",
+                    name: "Activate Skyview Goddess Wall",
                 }
             }
-            Event::RetrieveOolo => &EventDef { name: "Retrieve Oolo" },
-            Event::VolcanoAscentStatue => {
+            Event::ActivateWaterNode => {
                 &EventDef {
-                    name: "Volcano Ascent Statue",
+                    name: "Activate Water Node",
                 }
             }
-            Event::DefeatImprisoned2 => {
+            Event::BeatDemise => &EventDef { name: "Beat Demise" },
+            Event::BeatRequiredDungeons => {
                 &EventDef {
-                    name: "Defeat Imprisoned 2",
-                }
-            }
-            Event::UnlockedZeldasRoom => {
-                &EventDef {
-                    name: "Unlocked Zelda's Room",
-                }
-            }
-            Event::GoddessCubeInMogmaTurf => {
-                &EventDef {
-                    name: "Goddess Cube in Mogma Turf",
-                }
-            }
-            Event::RetrieveCrystalBall => {
-                &EventDef {
-                    name: "Retrieve Crystal Ball",
-                }
-            }
-            Event::RaiseLanayruMiningFacility => {
-                &EventDef {
-                    name: "Raise Lanayru Mining Facility",
-                }
-            }
-            Event::EldinEntranceStatue => {
-                &EventDef {
-                    name: "Eldin Entrance Statue",
+                    name: "Beat Required Dungeons",
                 }
             }
             Event::BehindTheTempleStatue => {
@@ -12972,29 +12806,9 @@ impl Event {
                     name: "Behind the Temple Statue",
                 }
             }
-            Event::SealedGroundsStatue => {
+            Event::CanBeatAncientCistern => {
                 &EventDef {
-                    name: "Sealed Grounds Statue",
-                }
-            }
-            Event::CanPlayCleanCut => {
-                &EventDef {
-                    name: "Can Play Clean Cut",
-                }
-            }
-            Event::CanRetrievePartyWheel => {
-                &EventDef {
-                    name: "Can Retrieve Party Wheel",
-                }
-            }
-            Event::GoddessCubeInAncientHarbour => {
-                &EventDef {
-                    name: "Goddess Cube in Ancient Harbour",
-                }
-            }
-            Event::CanBeatSkyKeep => {
-                &EventDef {
-                    name: "Can Beat Sky Keep",
+                    name: "Can Beat Ancient Cistern",
                 }
             }
             Event::CanBeatEarthTemple => {
@@ -13002,59 +12816,14 @@ impl Event {
                     name: "Can Beat Earth Temple",
                 }
             }
-            Event::TalkToPeatriceInBazaar => {
+            Event::CanBeatFireSanctuary => {
                 &EventDef {
-                    name: "Talk to Peatrice in Bazaar",
+                    name: "Can Beat Fire Sanctuary",
                 }
             }
-            Event::DeliveredHotSoup => {
+            Event::CanBeatLanayruMiningFacility => {
                 &EventDef {
-                    name: "Delivered Hot Soup",
-                }
-            }
-            Event::GoddessCubeInSkippersRetreat => {
-                &EventDef {
-                    name: "Goddess Cube in Skipper's Retreat",
-                }
-            }
-            Event::GoddessCubeInDeepWoods => {
-                &EventDef {
-                    name: "Goddess Cube in Deep Woods",
-                }
-            }
-            Event::StartImprisoned2 => {
-                &EventDef {
-                    name: "Start Imprisoned 2",
-                }
-            }
-            Event::SwordRequirementMet => {
-                &EventDef {
-                    name: "Sword Requirement Met",
-                }
-            }
-            Event::GoddessCubeInEldinSlide => {
-                &EventDef {
-                    name: "Goddess Cube in Eldin Slide",
-                }
-            }
-            Event::LumpyPumpkinQuestStart => {
-                &EventDef {
-                    name: "Lumpy Pumpkin Quest Start",
-                }
-            }
-            Event::GoddessCubeInFloriaWaterfall => {
-                &EventDef {
-                    name: "Goddess Cube in Floria Waterfall",
-                }
-            }
-            Event::ActivateSkyviewGoddessWall => {
-                &EventDef {
-                    name: "Activate Skyview Goddess Wall",
-                }
-            }
-            Event::GoddessCubeOnTopOfSkyview => {
-                &EventDef {
-                    name: "Goddess Cube on top of Skyview",
+                    name: "Can Beat Lanayru Mining Facility",
                 }
             }
             Event::CanBeatSandship => {
@@ -13062,34 +12831,9 @@ impl Event {
                     name: "Can Beat Sandship",
                 }
             }
-            Event::FloriaWaterfallStatue => {
+            Event::CanBeatSkyKeep => {
                 &EventDef {
-                    name: "Floria Waterfall Statue",
-                }
-            }
-            Event::InitialGoddessCube => {
-                &EventDef {
-                    name: "Initial Goddess Cube",
-                }
-            }
-            Event::ViewingPlatformStatue => {
-                &EventDef {
-                    name: "Viewing Platform Statue",
-                }
-            }
-            Event::GoddessCubeOnEastGreatTreeWithClawshotsTarget => {
-                &EventDef {
-                    name: "Goddess Cube on East Great Tree with Clawshots Target",
-                }
-            }
-            Event::GoddessCubeWestOfEarthTempleEntrance => {
-                &EventDef {
-                    name: "Goddess Cube West of Earth Temple Entrance",
-                }
-            }
-            Event::HighRupeeFarm => {
-                &EventDef {
-                    name: "High Rupee Farm",
+                    name: "Can Beat Sky Keep",
                 }
             }
             Event::CanBeatSkyview => {
@@ -13097,75 +12841,9 @@ impl Event {
                     name: "Can Beat Skyview",
                 }
             }
-            Event::NorthDesertStatue => {
+            Event::CanFreelyChangeSandshipTemporality => {
                 &EventDef {
-                    name: "North Desert Statue",
-                }
-            }
-            Event::CanBeatAncientCistern => {
-                &EventDef {
-                    name: "Can Beat Ancient Cistern",
-                }
-            }
-            Event::VolcanoEastStatue => {
-                &EventDef {
-                    name: "Volcano East Statue",
-                }
-            }
-            Event::DesertEntranceStatue => {
-                &EventDef {
-                    name: "Desert Entrance Statue",
-                }
-            }
-            Event::DefeatedShipyardMolderach => {
-                &EventDef {
-                    name: "Defeated Shipyard Molderach",
-                }
-            }
-            Event::GoddessCubeInPirateStronghold => {
-                &EventDef {
-                    name: "Goddess Cube in Pirate Stronghold",
-                }
-            }
-            Event::PickUpGuld => &EventDef { name: "Pick up Guld" },
-            Event::BeatRequiredDungeons => {
-                &EventDef {
-                    name: "Beat Required Dungeons",
-                }
-            }
-            Event::TempleEntranceStatue => {
-                &EventDef {
-                    name: "Temple Entrance Statue",
-                }
-            }
-            Event::FaronWoodsEntryStatue => {
-                &EventDef {
-                    name: "Faron Woods Entry Statue",
-                }
-            }
-            Event::InTheWoodsStatue => {
-                &EventDef {
-                    name: "In the Woods Statue",
-                }
-            }
-            Event::LakeFloriaStatue => {
-                &EventDef {
-                    name: "Lake Floria Statue",
-                }
-            }
-            Event::GoddessCubeInsideVolcanoSummit => {
-                &EventDef {
-                    name: "Goddess Cube inside Volcano Summit",
-                }
-            }
-            Event::InsideTheVolcanoStatue => {
-                &EventDef {
-                    name: "Inside the Volcano Statue",
-                }
-            }
-            Event::LanayruDesertDungeonBeaten => {
-                &EventDef {
-                    name: "Lanayru Desert Dungeon Beaten",
+                    name: "Can Freely Change Sandship Temporality",
                 }
             }
             Event::CanLowerAcStatue => {
@@ -13173,9 +12851,285 @@ impl Event {
                     name: "Can Lower AC Statue",
                 }
             }
-            Event::ActivateFireNode => {
+            Event::CanPlayCleanCut => {
                 &EventDef {
-                    name: "Activate Fire Node",
+                    name: "Can Play Clean Cut",
+                }
+            }
+            Event::CanPlayThrillDigger => {
+                &EventDef {
+                    name: "Can Play Thrill Digger",
+                }
+            }
+            Event::CanRetrievePartyWheel => {
+                &EventDef {
+                    name: "Can Retrieve Party Wheel",
+                }
+            }
+            Event::CanSellTreasures => {
+                &EventDef {
+                    name: "Can Sell Treasures",
+                }
+            }
+            Event::DeepWoodsStatue => {
+                &EventDef {
+                    name: "Deep Woods Statue",
+                }
+            }
+            Event::DefeatImprisoned2 => {
+                &EventDef {
+                    name: "Defeat Imprisoned 2",
+                }
+            }
+            Event::DefeatedShipyardMolderach => {
+                &EventDef {
+                    name: "Defeated Shipyard Molderach",
+                }
+            }
+            Event::DeliveredHotSoup => {
+                &EventDef {
+                    name: "Delivered Hot Soup",
+                }
+            }
+            Event::DesertEntranceStatue => {
+                &EventDef {
+                    name: "Desert Entrance Statue",
+                }
+            }
+            Event::EldinEntranceStatue => {
+                &EventDef {
+                    name: "Eldin Entrance Statue",
+                }
+            }
+            Event::EndurancePotion => {
+                &EventDef {
+                    name: "Endurance Potion",
+                }
+            }
+            Event::FaronWoodsEntryStatue => {
+                &EventDef {
+                    name: "Faron Woods Entry Statue",
+                }
+            }
+            Event::FloriaWaterfallStatue => {
+                &EventDef {
+                    name: "Floria Waterfall Statue",
+                }
+            }
+            Event::ForestTempleStatue => {
+                &EventDef {
+                    name: "Forest Temple Statue",
+                }
+            }
+            Event::GoddessCubeEastOfEarthTempleEntrance => {
+                &EventDef {
+                    name: "Goddess Cube East of Earth Temple Entrance",
+                }
+            }
+            Event::GoddessCubeWestOfEarthTempleEntrance => {
+                &EventDef {
+                    name: "Goddess Cube West of Earth Temple Entrance",
+                }
+            }
+            Event::GoddessCubeAtEldinEntrance => {
+                &EventDef {
+                    name: "Goddess Cube at Eldin Entrance",
+                }
+            }
+            Event::GoddessCubeAtLanayruMinesEntrance => {
+                &EventDef {
+                    name: "Goddess Cube at Lanayru Mines Entrance",
+                }
+            }
+            Event::GoddessCubeAtRideNearTempleOfTime => {
+                &EventDef {
+                    name: "Goddess Cube at Ride near Temple of Time",
+                }
+            }
+            Event::GoddessCubeInAncientHarbour => {
+                &EventDef {
+                    name: "Goddess Cube in Ancient Harbour",
+                }
+            }
+            Event::GoddessCubeInDeepWoods => {
+                &EventDef {
+                    name: "Goddess Cube in Deep Woods",
+                }
+            }
+            Event::GoddessCubeInEldinSlide => {
+                &EventDef {
+                    name: "Goddess Cube in Eldin Slide",
+                }
+            }
+            Event::GoddessCubeInFloriaWaterfall => {
+                &EventDef {
+                    name: "Goddess Cube in Floria Waterfall",
+                }
+            }
+            Event::GoddessCubeInLakeFloria => {
+                &EventDef {
+                    name: "Goddess Cube in Lake Floria",
+                }
+            }
+            Event::GoddessCubeInMogmaTurf => {
+                &EventDef {
+                    name: "Goddess Cube in Mogma Turf",
+                }
+            }
+            Event::GoddessCubeInPirateStronghold => {
+                &EventDef {
+                    name: "Goddess Cube in Pirate Stronghold",
+                }
+            }
+            Event::GoddessCubeInSandOasis => {
+                &EventDef {
+                    name: "Goddess Cube in Sand Oasis",
+                }
+            }
+            Event::GoddessCubeInSecretPassagewayInDesert => {
+                &EventDef {
+                    name: "Goddess Cube in Secret Passageway in Desert",
+                }
+            }
+            Event::GoddessCubeInSkippersRetreat => {
+                &EventDef {
+                    name: "Goddess Cube in Skipper's Retreat",
+                }
+            }
+            Event::GoddessCubeInSkyviewSpring => {
+                &EventDef {
+                    name: "Goddess Cube in Skyview Spring",
+                }
+            }
+            Event::GoddessCubeInSummitWaterfall => {
+                &EventDef {
+                    name: "Goddess Cube in Summit Waterfall",
+                }
+            }
+            Event::GoddessCubeInsideVolcanoSummit => {
+                &EventDef {
+                    name: "Goddess Cube inside Volcano Summit",
+                }
+            }
+            Event::GoddessCubeNearFsEntrance => {
+                &EventDef {
+                    name: "Goddess Cube near FS Entrance",
+                }
+            }
+            Event::GoddessCubeNearHookBeetleFight => {
+                &EventDef {
+                    name: "Goddess Cube near Hook Beetle Fight",
+                }
+            }
+            Event::GoddessCubeNearMogmaTurfEntrance => {
+                &EventDef {
+                    name: "Goddess Cube near Mogma Turf Entrance",
+                }
+            }
+            Event::GoddessCubeOnEastGreatTreeWithClawshotsTarget => {
+                &EventDef {
+                    name: "Goddess Cube on East Great Tree with Clawshots Target",
+                }
+            }
+            Event::GoddessCubeOnEastGreatTreeWithRope => {
+                &EventDef {
+                    name: "Goddess Cube on East Great Tree with Rope",
+                }
+            }
+            Event::GoddessCubeOnWestGreatTreeNearExit => {
+                &EventDef {
+                    name: "Goddess Cube on West Great Tree near Exit",
+                }
+            }
+            Event::GoddessCubeOnTopOfSkyview => {
+                &EventDef {
+                    name: "Goddess Cube on top of Skyview",
+                }
+            }
+            Event::GreatTreeStatue => {
+                &EventDef {
+                    name: "Great Tree Statue",
+                }
+            }
+            Event::HighRupeeFarm => {
+                &EventDef {
+                    name: "High Rupee Farm",
+                }
+            }
+            Event::InTheWoodsStatue => {
+                &EventDef {
+                    name: "In the Woods Statue",
+                }
+            }
+            Event::InitialGoddessCube => {
+                &EventDef {
+                    name: "Initial Goddess Cube",
+                }
+            }
+            Event::InsideTheVolcanoStatue => {
+                &EventDef {
+                    name: "Inside the Volcano Statue",
+                }
+            }
+            Event::LakeFloriaStatue => {
+                &EventDef {
+                    name: "Lake Floria Statue",
+                }
+            }
+            Event::LanayruDesertDungeonBeaten => {
+                &EventDef {
+                    name: "Lanayru Desert Dungeon Beaten",
+                }
+            }
+            Event::LanayruMineEntryStatue => {
+                &EventDef {
+                    name: "Lanayru Mine Entry Statue",
+                }
+            }
+            Event::LumpyPumpkinQuestStart => {
+                &EventDef {
+                    name: "Lumpy Pumpkin Quest Start",
+                }
+            }
+            Event::NorthDesertStatue => {
+                &EventDef {
+                    name: "North Desert Statue",
+                }
+            }
+            Event::OpenSharkhead => &EventDef { name: "Open Sharkhead" },
+            Event::OpenedShed => &EventDef { name: "Opened Shed" },
+            Event::PickUpGuld => &EventDef { name: "Pick up Guld" },
+            Event::PickUpLeviasSoup => {
+                &EventDef {
+                    name: "Pick up Levia's Soup",
+                }
+            }
+            Event::PumpkinCarrying => {
+                &EventDef {
+                    name: "Pumpkin Carrying",
+                }
+            }
+            Event::RaiseGoT => &EventDef { name: "Raise GoT" },
+            Event::RaiseLanayruMiningFacility => {
+                &EventDef {
+                    name: "Raise Lanayru Mining Facility",
+                }
+            }
+            Event::RetrieveCrystalBall => {
+                &EventDef {
+                    name: "Retrieve Crystal Ball",
+                }
+            }
+            Event::RetrieveOolo => &EventDef { name: "Retrieve Oolo" },
+            Event::SaveOrielle => &EventDef { name: "Save Orielle" },
+            Event::SealedGroundsStatue => {
+                &EventDef {
+                    name: "Sealed Grounds Statue",
+                }
+            }
+            Event::StartImprisoned2 => {
+                &EventDef {
+                    name: "Start Imprisoned 2",
                 }
             }
             Event::StoneCacheStatue => {
@@ -13183,9 +13137,55 @@ impl Event {
                     name: "Stone Cache Statue",
                 }
             }
-            Event::CanBeatFireSanctuary => {
+            Event::SwordRequirementMet => {
                 &EventDef {
-                    name: "Can Beat Fire Sanctuary",
+                    name: "Sword Requirement Met",
+                }
+            }
+            Event::TalkToOrielle => {
+                &EventDef {
+                    name: "Talk to Orielle",
+                }
+            }
+            Event::TalkToPeatriceInBazaar => {
+                &EventDef {
+                    name: "Talk to Peatrice in Bazaar",
+                }
+            }
+            Event::TalkToYerbal => &EventDef { name: "Talk to Yerbal" },
+            Event::TempleEntranceStatue => {
+                &EventDef {
+                    name: "Temple Entrance Statue",
+                }
+            }
+            Event::TriforcesCollected => {
+                &EventDef {
+                    name: "Triforces Collected",
+                }
+            }
+            Event::UnlockedZeldasRoom => {
+                &EventDef {
+                    name: "Unlocked Zelda's Room",
+                }
+            }
+            Event::ViewingPlatformStatue => {
+                &EventDef {
+                    name: "Viewing Platform Statue",
+                }
+            }
+            Event::VolcanoAscentStatue => {
+                &EventDef {
+                    name: "Volcano Ascent Statue",
+                }
+            }
+            Event::VolcanoEastStatue => {
+                &EventDef {
+                    name: "Volcano East Statue",
+                }
+            }
+            Event::WestDesertStatue => {
+                &EventDef {
+                    name: "West Desert Statue",
                 }
             }
         }
@@ -13197,99 +13197,99 @@ pub struct ItemDef {
 }
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum Item {
-    SeaChart,
-    SandshipSmallKey,
-    MonsterHorn,
-    SkyKeepMap,
-    Clawshots,
-    ProgressiveWallet,
-    LanayruMiningFacilityBossKey,
-    LanayruSongOfTheHeroPart,
-    PotionMedal,
-    ProgressiveSword,
-    GoddessHarp,
-    AncientCisternBossKey,
-    GratitudeCrystalPack,
-    ProgressiveMitts,
-    GratitudeCrystal,
-    TreasureMedal,
-    EmeraldTablet,
-    DuskRelic,
-    BalladOfTheGoddess,
-    FaronSongOfTheHeroPart,
-    TriforceOfPower,
-    HeartContainer,
-    LifeMedal,
-    BugMedal,
-    EldinSongOfTheHeroPart,
-    LifeTreeSeedling,
-    ExtraWallet,
-    FireSanctuarySmallKey,
-    SkyviewMap,
-    SandshipBossKey,
-    AncientCisternSmallKey,
-    ProgressivePouch,
-    ProgressiveSlingshot,
-    Rupoor,
-    TriforceOfWisdom,
-    LanayruMiningFacilitySmallKey,
-    AmberTablet,
-    SandshipMap,
-    WaterScale,
-    SkyviewBossKey,
-    GustBellows,
-    AncientCisternMap,
-    ProgressiveBow,
-    EmptyBottle,
-    DekuSeeds10,
-    SkyKeepSmallKey,
-    SmallQuiver,
-    LifeTreeFruit,
-    X5Bombs,
-    FireSanctuaryMap,
-    SemiRareTreasure,
-    HornedColossusBeetle,
-    StoneOfTrials,
-    GoldRupee,
-    RedRupee,
-    SpiralCharge,
-    HeartMedal,
-    Tumbleweed,
-    FaroresCourage,
-    CawlinsLetter,
-    LanayruMiningFacilityMap,
-    GoldenSkull,
-    X10Bombs,
-    FireshieldEarrings,
-    KeyPiece,
-    WoodenShield,
-    BabyRattle,
-    EvilCrystal,
-    EarthTempleMap,
-    CursedMedal,
-    SmallSeedSatchel,
-    FireSanctuaryBossKey,
-    SmallBombBag,
-    RubyTablet,
     GreenRupee,
     BlueRupee,
-    ProgressiveBeetle,
-    ProgressiveBugNet,
+    RedRupee,
+    ProgressiveSword,
+    GoddessHarp,
+    ProgressiveBow,
+    Clawshots,
+    SpiralCharge,
+    AncientCisternBossKey,
+    FireSanctuaryBossKey,
+    SandshipBossKey,
+    KeyPiece,
+    SkyviewBossKey,
     EarthTempleBossKey,
-    RupeeMedal,
-    GoddessPlume,
-    NayrusWisdom,
-    HeartPiece,
-    HylianShield,
-    SkyviewSmallKey,
-    EldinOre,
+    LanayruMiningFacilityBossKey,
     SilverRupee,
+    GoldRupee,
+    Rupoor,
+    GratitudeCrystalPack,
+    X5Bombs,
+    X10Bombs,
+    GratitudeCrystal,
+    GustBellows,
+    ProgressiveSlingshot,
+    ProgressiveBeetle,
+    ProgressiveMitts,
+    DekuSeeds10,
+    SemiRareTreasure,
     RareTreasure,
-    LanayruCavesSmallKey,
+    WaterScale,
+    BugMedal,
+    ProgressiveBugNet,
     BombBag,
+    HeartContainer,
+    HeartPiece,
     TriforceOfCourage,
-    DinsPower,
+    TriforceOfPower,
+    TriforceOfWisdom,
+    SeaChart,
+    HeartMedal,
+    RupeeMedal,
+    TreasureMedal,
+    PotionMedal,
+    CursedMedal,
+    ProgressiveWallet,
+    ProgressivePouch,
+    LifeMedal,
+    WoodenShield,
+    HylianShield,
+    SmallSeedSatchel,
+    SmallQuiver,
+    SmallBombBag,
     Whip,
+    FireshieldEarrings,
+    EmptyBottle,
+    CawlinsLetter,
+    HornedColossusBeetle,
+    BabyRattle,
+    Tumbleweed,
+    EldinOre,
+    DuskRelic,
+    MonsterHorn,
+    EvilCrystal,
+    GoldenSkull,
+    GoddessPlume,
+    EmeraldTablet,
+    RubyTablet,
+    AmberTablet,
+    StoneOfTrials,
+    BalladOfTheGoddess,
+    FaroresCourage,
+    NayrusWisdom,
+    DinsPower,
+    FaronSongOfTheHeroPart,
+    EldinSongOfTheHeroPart,
+    LanayruSongOfTheHeroPart,
+    LifeTreeSeedling,
+    LifeTreeFruit,
+    ExtraWallet,
+    SkyviewSmallKey,
+    LanayruMiningFacilitySmallKey,
+    AncientCisternSmallKey,
+    FireSanctuarySmallKey,
+    SandshipSmallKey,
+    SkyKeepSmallKey,
+    LanayruCavesSmallKey,
+    SkyviewMap,
+    EarthTempleMap,
+    LanayruMiningFacilityMap,
+    AncientCisternMap,
+    FireSanctuaryMap,
+    SandshipMap,
+    SkyKeepMap,
 }
 impl Into<usize> for Item {
     fn into(self) -> usize {
@@ -13298,156 +13298,120 @@ impl Into<usize> for Item {
 }
 impl BitSetCompatible for Item {
     const ALL: &'static [Item] = &[
-        Item::SeaChart,
-        Item::SandshipSmallKey,
-        Item::MonsterHorn,
-        Item::SkyKeepMap,
-        Item::Clawshots,
-        Item::ProgressiveWallet,
-        Item::LanayruMiningFacilityBossKey,
-        Item::LanayruSongOfTheHeroPart,
-        Item::PotionMedal,
-        Item::ProgressiveSword,
-        Item::GoddessHarp,
-        Item::AncientCisternBossKey,
-        Item::GratitudeCrystalPack,
-        Item::ProgressiveMitts,
-        Item::GratitudeCrystal,
-        Item::TreasureMedal,
-        Item::EmeraldTablet,
-        Item::DuskRelic,
-        Item::BalladOfTheGoddess,
-        Item::FaronSongOfTheHeroPart,
-        Item::TriforceOfPower,
-        Item::HeartContainer,
-        Item::LifeMedal,
-        Item::BugMedal,
-        Item::EldinSongOfTheHeroPart,
-        Item::LifeTreeSeedling,
-        Item::ExtraWallet,
-        Item::FireSanctuarySmallKey,
-        Item::SkyviewMap,
-        Item::SandshipBossKey,
-        Item::AncientCisternSmallKey,
-        Item::ProgressivePouch,
-        Item::ProgressiveSlingshot,
-        Item::Rupoor,
-        Item::TriforceOfWisdom,
-        Item::LanayruMiningFacilitySmallKey,
-        Item::AmberTablet,
-        Item::SandshipMap,
-        Item::WaterScale,
-        Item::SkyviewBossKey,
-        Item::GustBellows,
-        Item::AncientCisternMap,
-        Item::ProgressiveBow,
-        Item::EmptyBottle,
-        Item::DekuSeeds10,
-        Item::SkyKeepSmallKey,
-        Item::SmallQuiver,
-        Item::LifeTreeFruit,
-        Item::X5Bombs,
-        Item::FireSanctuaryMap,
-        Item::SemiRareTreasure,
-        Item::HornedColossusBeetle,
-        Item::StoneOfTrials,
-        Item::GoldRupee,
-        Item::RedRupee,
-        Item::SpiralCharge,
-        Item::HeartMedal,
-        Item::Tumbleweed,
-        Item::FaroresCourage,
-        Item::CawlinsLetter,
-        Item::LanayruMiningFacilityMap,
-        Item::GoldenSkull,
-        Item::X10Bombs,
-        Item::FireshieldEarrings,
-        Item::KeyPiece,
-        Item::WoodenShield,
-        Item::BabyRattle,
-        Item::EvilCrystal,
-        Item::EarthTempleMap,
-        Item::CursedMedal,
-        Item::SmallSeedSatchel,
-        Item::FireSanctuaryBossKey,
-        Item::SmallBombBag,
-        Item::RubyTablet,
         Item::GreenRupee,
         Item::BlueRupee,
-        Item::ProgressiveBeetle,
-        Item::ProgressiveBugNet,
+        Item::RedRupee,
+        Item::ProgressiveSword,
+        Item::GoddessHarp,
+        Item::ProgressiveBow,
+        Item::Clawshots,
+        Item::SpiralCharge,
+        Item::AncientCisternBossKey,
+        Item::FireSanctuaryBossKey,
+        Item::SandshipBossKey,
+        Item::KeyPiece,
+        Item::SkyviewBossKey,
         Item::EarthTempleBossKey,
-        Item::RupeeMedal,
-        Item::GoddessPlume,
-        Item::NayrusWisdom,
-        Item::HeartPiece,
-        Item::HylianShield,
-        Item::SkyviewSmallKey,
-        Item::EldinOre,
+        Item::LanayruMiningFacilityBossKey,
         Item::SilverRupee,
+        Item::GoldRupee,
+        Item::Rupoor,
+        Item::GratitudeCrystalPack,
+        Item::X5Bombs,
+        Item::X10Bombs,
+        Item::GratitudeCrystal,
+        Item::GustBellows,
+        Item::ProgressiveSlingshot,
+        Item::ProgressiveBeetle,
+        Item::ProgressiveMitts,
+        Item::DekuSeeds10,
+        Item::SemiRareTreasure,
         Item::RareTreasure,
-        Item::LanayruCavesSmallKey,
+        Item::WaterScale,
+        Item::BugMedal,
+        Item::ProgressiveBugNet,
         Item::BombBag,
+        Item::HeartContainer,
+        Item::HeartPiece,
         Item::TriforceOfCourage,
-        Item::DinsPower,
+        Item::TriforceOfPower,
+        Item::TriforceOfWisdom,
+        Item::SeaChart,
+        Item::HeartMedal,
+        Item::RupeeMedal,
+        Item::TreasureMedal,
+        Item::PotionMedal,
+        Item::CursedMedal,
+        Item::ProgressiveWallet,
+        Item::ProgressivePouch,
+        Item::LifeMedal,
+        Item::WoodenShield,
+        Item::HylianShield,
+        Item::SmallSeedSatchel,
+        Item::SmallQuiver,
+        Item::SmallBombBag,
         Item::Whip,
+        Item::FireshieldEarrings,
+        Item::EmptyBottle,
+        Item::CawlinsLetter,
+        Item::HornedColossusBeetle,
+        Item::BabyRattle,
+        Item::Tumbleweed,
+        Item::EldinOre,
+        Item::DuskRelic,
+        Item::MonsterHorn,
+        Item::EvilCrystal,
+        Item::GoldenSkull,
+        Item::GoddessPlume,
+        Item::EmeraldTablet,
+        Item::RubyTablet,
+        Item::AmberTablet,
+        Item::StoneOfTrials,
+        Item::BalladOfTheGoddess,
+        Item::FaroresCourage,
+        Item::NayrusWisdom,
+        Item::DinsPower,
+        Item::FaronSongOfTheHeroPart,
+        Item::EldinSongOfTheHeroPart,
+        Item::LanayruSongOfTheHeroPart,
+        Item::LifeTreeSeedling,
+        Item::LifeTreeFruit,
+        Item::ExtraWallet,
+        Item::SkyviewSmallKey,
+        Item::LanayruMiningFacilitySmallKey,
+        Item::AncientCisternSmallKey,
+        Item::FireSanctuarySmallKey,
+        Item::SandshipSmallKey,
+        Item::SkyKeepSmallKey,
+        Item::LanayruCavesSmallKey,
+        Item::SkyviewMap,
+        Item::EarthTempleMap,
+        Item::LanayruMiningFacilityMap,
+        Item::AncientCisternMap,
+        Item::FireSanctuaryMap,
+        Item::SandshipMap,
+        Item::SkyKeepMap,
     ];
 }
 impl Item {
     pub fn get(&self) -> &'static ItemDef {
         match self {
-            Item::SeaChart => {
+            Item::GreenRupee => {
                 &ItemDef {
-                    item_id: 98u16,
-                    name: "Sea Chart",
+                    item_id: 2u16,
+                    name: "Green Rupee",
                 }
             }
-            Item::SandshipSmallKey => {
+            Item::BlueRupee => {
                 &ItemDef {
-                    item_id: 204u16,
-                    name: "Sandship Small Key",
+                    item_id: 3u16,
+                    name: "Blue Rupee",
                 }
             }
-            Item::MonsterHorn => {
+            Item::RedRupee => {
                 &ItemDef {
-                    item_id: 171u16,
-                    name: "Monster Horn",
-                }
-            }
-            Item::SkyKeepMap => {
-                &ItemDef {
-                    item_id: 213u16,
-                    name: "Sky Keep Map",
-                }
-            }
-            Item::Clawshots => {
-                &ItemDef {
-                    item_id: 20u16,
-                    name: "Clawshots",
-                }
-            }
-            Item::ProgressiveWallet => {
-                &ItemDef {
-                    item_id: 108u16,
-                    name: "Progressive Wallet",
-                }
-            }
-            Item::LanayruMiningFacilityBossKey => {
-                &ItemDef {
-                    item_id: 31u16,
-                    name: "Lanayru Mining Facility Boss Key",
-                }
-            }
-            Item::LanayruSongOfTheHeroPart => {
-                &ItemDef {
-                    item_id: 192u16,
-                    name: "Lanayru Song of the Hero Part",
-                }
-            }
-            Item::PotionMedal => {
-                &ItemDef {
-                    item_id: 103u16,
-                    name: "Potion Medal",
+                    item_id: 4u16,
+                    name: "Red Rupee",
                 }
             }
             Item::ProgressiveSword => {
@@ -13462,268 +13426,16 @@ impl Item {
                     name: "Goddess Harp",
                 }
             }
-            Item::AncientCisternBossKey => {
-                &ItemDef {
-                    item_id: 25u16,
-                    name: "Ancient Cistern Boss Key",
-                }
-            }
-            Item::GratitudeCrystalPack => {
-                &ItemDef {
-                    item_id: 35u16,
-                    name: "Gratitude Crystal Pack",
-                }
-            }
-            Item::ProgressiveMitts => {
-                &ItemDef {
-                    item_id: 56u16,
-                    name: "Progressive Mitts",
-                }
-            }
-            Item::GratitudeCrystal => {
-                &ItemDef {
-                    item_id: 48u16,
-                    name: "Gratitude Crystal",
-                }
-            }
-            Item::TreasureMedal => {
-                &ItemDef {
-                    item_id: 102u16,
-                    name: "Treasure Medal",
-                }
-            }
-            Item::EmeraldTablet => {
-                &ItemDef {
-                    item_id: 177u16,
-                    name: "Emerald Tablet",
-                }
-            }
-            Item::DuskRelic => {
-                &ItemDef {
-                    item_id: 168u16,
-                    name: "Dusk Relic",
-                }
-            }
-            Item::BalladOfTheGoddess => {
-                &ItemDef {
-                    item_id: 186u16,
-                    name: "Ballad of the Goddess",
-                }
-            }
-            Item::FaronSongOfTheHeroPart => {
-                &ItemDef {
-                    item_id: 190u16,
-                    name: "Faron Song of the Hero Part",
-                }
-            }
-            Item::TriforceOfPower => {
-                &ItemDef {
-                    item_id: 96u16,
-                    name: "Triforce of Power",
-                }
-            }
-            Item::HeartContainer => {
-                &ItemDef {
-                    item_id: 93u16,
-                    name: "Heart Container",
-                }
-            }
-            Item::LifeMedal => {
-                &ItemDef {
-                    item_id: 114u16,
-                    name: "Life Medal",
-                }
-            }
-            Item::BugMedal => {
-                &ItemDef {
-                    item_id: 70u16,
-                    name: "Bug Medal",
-                }
-            }
-            Item::EldinSongOfTheHeroPart => {
-                &ItemDef {
-                    item_id: 191u16,
-                    name: "Eldin Song of the Hero Part",
-                }
-            }
-            Item::LifeTreeSeedling => {
-                &ItemDef {
-                    item_id: 197u16,
-                    name: "Life Tree Seedling",
-                }
-            }
-            Item::ExtraWallet => {
-                &ItemDef {
-                    item_id: 199u16,
-                    name: "Extra Wallet",
-                }
-            }
-            Item::FireSanctuarySmallKey => {
-                &ItemDef {
-                    item_id: 203u16,
-                    name: "Fire Sanctuary Small Key",
-                }
-            }
-            Item::SkyviewMap => {
-                &ItemDef {
-                    item_id: 207u16,
-                    name: "Skyview Map",
-                }
-            }
-            Item::SandshipBossKey => {
-                &ItemDef {
-                    item_id: 27u16,
-                    name: "Sandship Boss Key",
-                }
-            }
-            Item::AncientCisternSmallKey => {
-                &ItemDef {
-                    item_id: 202u16,
-                    name: "Ancient Cistern Small Key",
-                }
-            }
-            Item::ProgressivePouch => {
-                &ItemDef {
-                    item_id: 112u16,
-                    name: "Progressive Pouch",
-                }
-            }
-            Item::ProgressiveSlingshot => {
-                &ItemDef {
-                    item_id: 52u16,
-                    name: "Progressive Slingshot",
-                }
-            }
-            Item::Rupoor => {
-                &ItemDef {
-                    item_id: 34u16,
-                    name: "Rupoor",
-                }
-            }
-            Item::TriforceOfWisdom => {
-                &ItemDef {
-                    item_id: 97u16,
-                    name: "Triforce of Wisdom",
-                }
-            }
-            Item::LanayruMiningFacilitySmallKey => {
-                &ItemDef {
-                    item_id: 201u16,
-                    name: "Lanayru Mining Facility Small Key",
-                }
-            }
-            Item::AmberTablet => {
-                &ItemDef {
-                    item_id: 179u16,
-                    name: "Amber Tablet",
-                }
-            }
-            Item::SandshipMap => {
-                &ItemDef {
-                    item_id: 212u16,
-                    name: "Sandship Map",
-                }
-            }
-            Item::WaterScale => {
-                &ItemDef {
-                    item_id: 68u16,
-                    name: "Water Scale",
-                }
-            }
-            Item::SkyviewBossKey => {
-                &ItemDef {
-                    item_id: 29u16,
-                    name: "Skyview Boss Key",
-                }
-            }
-            Item::GustBellows => {
-                &ItemDef {
-                    item_id: 49u16,
-                    name: "Gust Bellows",
-                }
-            }
-            Item::AncientCisternMap => {
-                &ItemDef {
-                    item_id: 210u16,
-                    name: "Ancient Cistern Map",
-                }
-            }
             Item::ProgressiveBow => {
                 &ItemDef {
                     item_id: 19u16,
                     name: "Progressive Bow",
                 }
             }
-            Item::EmptyBottle => {
+            Item::Clawshots => {
                 &ItemDef {
-                    item_id: 153u16,
-                    name: "Empty Bottle",
-                }
-            }
-            Item::DekuSeeds10 => {
-                &ItemDef {
-                    item_id: 60u16,
-                    name: "Deku Seeds 10",
-                }
-            }
-            Item::SkyKeepSmallKey => {
-                &ItemDef {
-                    item_id: 205u16,
-                    name: "Sky Keep Small Key",
-                }
-            }
-            Item::SmallQuiver => {
-                &ItemDef {
-                    item_id: 131u16,
-                    name: "Small Quiver",
-                }
-            }
-            Item::LifeTreeFruit => {
-                &ItemDef {
-                    item_id: 198u16,
-                    name: "Life Tree Fruit",
-                }
-            }
-            Item::X5Bombs => {
-                &ItemDef {
-                    item_id: 40u16,
-                    name: "5 Bombs",
-                }
-            }
-            Item::FireSanctuaryMap => {
-                &ItemDef {
-                    item_id: 211u16,
-                    name: "Fire Sanctuary Map",
-                }
-            }
-            Item::SemiRareTreasure => {
-                &ItemDef {
-                    item_id: 63u16,
-                    name: "Semi Rare Treasure",
-                }
-            }
-            Item::HornedColossusBeetle => {
-                &ItemDef {
-                    item_id: 159u16,
-                    name: "Horned Colossus Beetle",
-                }
-            }
-            Item::StoneOfTrials => {
-                &ItemDef {
-                    item_id: 180u16,
-                    name: "Stone of Trials",
-                }
-            }
-            Item::GoldRupee => {
-                &ItemDef {
-                    item_id: 33u16,
-                    name: "Gold Rupee",
-                }
-            }
-            Item::RedRupee => {
-                &ItemDef {
-                    item_id: 4u16,
-                    name: "Red Rupee",
+                    item_id: 20u16,
+                    name: "Clawshots",
                 }
             }
             Item::SpiralCharge => {
@@ -13732,94 +13444,10 @@ impl Item {
                     name: "Spiral Charge",
                 }
             }
-            Item::HeartMedal => {
+            Item::AncientCisternBossKey => {
                 &ItemDef {
-                    item_id: 100u16,
-                    name: "Heart Medal",
-                }
-            }
-            Item::Tumbleweed => {
-                &ItemDef {
-                    item_id: 163u16,
-                    name: "Tumbleweed",
-                }
-            }
-            Item::FaroresCourage => {
-                &ItemDef {
-                    item_id: 187u16,
-                    name: "Farore's Courage",
-                }
-            }
-            Item::CawlinsLetter => {
-                &ItemDef {
-                    item_id: 158u16,
-                    name: "Cawlin's Letter",
-                }
-            }
-            Item::LanayruMiningFacilityMap => {
-                &ItemDef {
-                    item_id: 209u16,
-                    name: "Lanayru Mining Facility Map",
-                }
-            }
-            Item::GoldenSkull => {
-                &ItemDef {
-                    item_id: 175u16,
-                    name: "Golden Skull",
-                }
-            }
-            Item::X10Bombs => {
-                &ItemDef {
-                    item_id: 41u16,
-                    name: "10 Bombs",
-                }
-            }
-            Item::FireshieldEarrings => {
-                &ItemDef {
-                    item_id: 138u16,
-                    name: "Fireshield Earrings",
-                }
-            }
-            Item::KeyPiece => {
-                &ItemDef {
-                    item_id: 28u16,
-                    name: "Key Piece",
-                }
-            }
-            Item::WoodenShield => {
-                &ItemDef {
-                    item_id: 116u16,
-                    name: "Wooden Shield",
-                }
-            }
-            Item::BabyRattle => {
-                &ItemDef {
-                    item_id: 160u16,
-                    name: "Baby Rattle",
-                }
-            }
-            Item::EvilCrystal => {
-                &ItemDef {
-                    item_id: 173u16,
-                    name: "Evil Crystal",
-                }
-            }
-            Item::EarthTempleMap => {
-                &ItemDef {
-                    item_id: 208u16,
-                    name: "Earth Temple Map",
-                }
-            }
-            Item::CursedMedal => {
-                &ItemDef {
-                    item_id: 104u16,
-                    name: "Cursed Medal",
-                }
-            }
-            Item::SmallSeedSatchel => {
-                &ItemDef {
-                    item_id: 128u16,
-                    name: "Small Seed Satchel",
+                    item_id: 25u16,
+                    name: "Ancient Cistern Boss Key",
                 }
             }
             Item::FireSanctuaryBossKey => {
@@ -13828,40 +13456,22 @@ impl Item {
                     name: "Fire Sanctuary Boss Key",
                 }
             }
-            Item::SmallBombBag => {
+            Item::SandshipBossKey => {
                 &ItemDef {
-                    item_id: 134u16,
-                    name: "Small Bomb Bag",
+                    item_id: 27u16,
+                    name: "Sandship Boss Key",
                 }
             }
-            Item::RubyTablet => {
+            Item::KeyPiece => {
                 &ItemDef {
-                    item_id: 178u16,
-                    name: "Ruby Tablet",
+                    item_id: 28u16,
+                    name: "Key Piece",
                 }
             }
-            Item::GreenRupee => {
+            Item::SkyviewBossKey => {
                 &ItemDef {
-                    item_id: 2u16,
-                    name: "Green Rupee",
-                }
-            }
-            Item::BlueRupee => {
-                &ItemDef {
-                    item_id: 3u16,
-                    name: "Blue Rupee",
-                }
-            }
-            Item::ProgressiveBeetle => {
-                &ItemDef {
-                    item_id: 53u16,
-                    name: "Progressive Beetle",
-                }
-            }
-            Item::ProgressiveBugNet => {
-                &ItemDef {
-                    item_id: 71u16,
-                    name: "Progressive Bug Net",
+                    item_id: 29u16,
+                    name: "Skyview Boss Key",
                 }
             }
             Item::EarthTempleBossKey => {
@@ -13870,46 +13480,10 @@ impl Item {
                     name: "Earth Temple Boss Key",
                 }
             }
-            Item::RupeeMedal => {
+            Item::LanayruMiningFacilityBossKey => {
                 &ItemDef {
-                    item_id: 101u16,
-                    name: "Rupee Medal",
-                }
-            }
-            Item::GoddessPlume => {
-                &ItemDef {
-                    item_id: 176u16,
-                    name: "Goddess Plume",
-                }
-            }
-            Item::NayrusWisdom => {
-                &ItemDef {
-                    item_id: 188u16,
-                    name: "Nayru's Wisdom",
-                }
-            }
-            Item::HeartPiece => {
-                &ItemDef {
-                    item_id: 94u16,
-                    name: "Heart Piece",
-                }
-            }
-            Item::HylianShield => {
-                &ItemDef {
-                    item_id: 125u16,
-                    name: "Hylian Shield",
-                }
-            }
-            Item::SkyviewSmallKey => {
-                &ItemDef {
-                    item_id: 200u16,
-                    name: "Skyview Small Key",
-                }
-            }
-            Item::EldinOre => {
-                &ItemDef {
-                    item_id: 165u16,
-                    name: "Eldin Ore",
+                    item_id: 31u16,
+                    name: "Lanayru Mining Facility Boss Key",
                 }
             }
             Item::SilverRupee => {
@@ -13918,16 +13492,100 @@ impl Item {
                     name: "Silver Rupee",
                 }
             }
+            Item::GoldRupee => {
+                &ItemDef {
+                    item_id: 33u16,
+                    name: "Gold Rupee",
+                }
+            }
+            Item::Rupoor => {
+                &ItemDef {
+                    item_id: 34u16,
+                    name: "Rupoor",
+                }
+            }
+            Item::GratitudeCrystalPack => {
+                &ItemDef {
+                    item_id: 35u16,
+                    name: "Gratitude Crystal Pack",
+                }
+            }
+            Item::X5Bombs => {
+                &ItemDef {
+                    item_id: 40u16,
+                    name: "5 Bombs",
+                }
+            }
+            Item::X10Bombs => {
+                &ItemDef {
+                    item_id: 41u16,
+                    name: "10 Bombs",
+                }
+            }
+            Item::GratitudeCrystal => {
+                &ItemDef {
+                    item_id: 48u16,
+                    name: "Gratitude Crystal",
+                }
+            }
+            Item::GustBellows => {
+                &ItemDef {
+                    item_id: 49u16,
+                    name: "Gust Bellows",
+                }
+            }
+            Item::ProgressiveSlingshot => {
+                &ItemDef {
+                    item_id: 52u16,
+                    name: "Progressive Slingshot",
+                }
+            }
+            Item::ProgressiveBeetle => {
+                &ItemDef {
+                    item_id: 53u16,
+                    name: "Progressive Beetle",
+                }
+            }
+            Item::ProgressiveMitts => {
+                &ItemDef {
+                    item_id: 56u16,
+                    name: "Progressive Mitts",
+                }
+            }
+            Item::DekuSeeds10 => {
+                &ItemDef {
+                    item_id: 60u16,
+                    name: "Deku Seeds 10",
+                }
+            }
+            Item::SemiRareTreasure => {
+                &ItemDef {
+                    item_id: 63u16,
+                    name: "Semi Rare Treasure",
+                }
+            }
             Item::RareTreasure => {
                 &ItemDef {
                     item_id: 64u16,
                     name: "Rare Treasure",
                 }
             }
-            Item::LanayruCavesSmallKey => {
+            Item::WaterScale => {
                 &ItemDef {
-                    item_id: 206u16,
-                    name: "LanayruCaves Small Key",
+                    item_id: 68u16,
+                    name: "Water Scale",
+                }
+            }
+            Item::BugMedal => {
+                &ItemDef {
+                    item_id: 70u16,
+                    name: "Bug Medal",
+                }
+            }
+            Item::ProgressiveBugNet => {
+                &ItemDef {
+                    item_id: 71u16,
+                    name: "Progressive Bug Net",
                 }
             }
             Item::BombBag => {
@@ -13936,10 +13594,238 @@ impl Item {
                     name: "Bomb Bag",
                 }
             }
+            Item::HeartContainer => {
+                &ItemDef {
+                    item_id: 93u16,
+                    name: "Heart Container",
+                }
+            }
+            Item::HeartPiece => {
+                &ItemDef {
+                    item_id: 94u16,
+                    name: "Heart Piece",
+                }
+            }
             Item::TriforceOfCourage => {
                 &ItemDef {
                     item_id: 95u16,
                     name: "Triforce of Courage",
+                }
+            }
+            Item::TriforceOfPower => {
+                &ItemDef {
+                    item_id: 96u16,
+                    name: "Triforce of Power",
+                }
+            }
+            Item::TriforceOfWisdom => {
+                &ItemDef {
+                    item_id: 97u16,
+                    name: "Triforce of Wisdom",
+                }
+            }
+            Item::SeaChart => {
+                &ItemDef {
+                    item_id: 98u16,
+                    name: "Sea Chart",
+                }
+            }
+            Item::HeartMedal => {
+                &ItemDef {
+                    item_id: 100u16,
+                    name: "Heart Medal",
+                }
+            }
+            Item::RupeeMedal => {
+                &ItemDef {
+                    item_id: 101u16,
+                    name: "Rupee Medal",
+                }
+            }
+            Item::TreasureMedal => {
+                &ItemDef {
+                    item_id: 102u16,
+                    name: "Treasure Medal",
+                }
+            }
+            Item::PotionMedal => {
+                &ItemDef {
+                    item_id: 103u16,
+                    name: "Potion Medal",
+                }
+            }
+            Item::CursedMedal => {
+                &ItemDef {
+                    item_id: 104u16,
+                    name: "Cursed Medal",
+                }
+            }
+            Item::ProgressiveWallet => {
+                &ItemDef {
+                    item_id: 108u16,
+                    name: "Progressive Wallet",
+                }
+            }
+            Item::ProgressivePouch => {
+                &ItemDef {
+                    item_id: 112u16,
+                    name: "Progressive Pouch",
+                }
+            }
+            Item::LifeMedal => {
+                &ItemDef {
+                    item_id: 114u16,
+                    name: "Life Medal",
+                }
+            }
+            Item::WoodenShield => {
+                &ItemDef {
+                    item_id: 116u16,
+                    name: "Wooden Shield",
+                }
+            }
+            Item::HylianShield => {
+                &ItemDef {
+                    item_id: 125u16,
+                    name: "Hylian Shield",
+                }
+            }
+            Item::SmallSeedSatchel => {
+                &ItemDef {
+                    item_id: 128u16,
+                    name: "Small Seed Satchel",
+                }
+            }
+            Item::SmallQuiver => {
+                &ItemDef {
+                    item_id: 131u16,
+                    name: "Small Quiver",
+                }
+            }
+            Item::SmallBombBag => {
+                &ItemDef {
+                    item_id: 134u16,
+                    name: "Small Bomb Bag",
+                }
+            }
+            Item::Whip => {
+                &ItemDef {
+                    item_id: 137u16,
+                    name: "Whip",
+                }
+            }
+            Item::FireshieldEarrings => {
+                &ItemDef {
+                    item_id: 138u16,
+                    name: "Fireshield Earrings",
+                }
+            }
+            Item::EmptyBottle => {
+                &ItemDef {
+                    item_id: 153u16,
+                    name: "Empty Bottle",
+                }
+            }
+            Item::CawlinsLetter => {
+                &ItemDef {
+                    item_id: 158u16,
+                    name: "Cawlin's Letter",
+                }
+            }
+            Item::HornedColossusBeetle => {
+                &ItemDef {
+                    item_id: 159u16,
+                    name: "Horned Colossus Beetle",
+                }
+            }
+            Item::BabyRattle => {
+                &ItemDef {
+                    item_id: 160u16,
+                    name: "Baby Rattle",
+                }
+            }
+            Item::Tumbleweed => {
+                &ItemDef {
+                    item_id: 163u16,
+                    name: "Tumbleweed",
+                }
+            }
+            Item::EldinOre => {
+                &ItemDef {
+                    item_id: 165u16,
+                    name: "Eldin Ore",
+                }
+            }
+            Item::DuskRelic => {
+                &ItemDef {
+                    item_id: 168u16,
+                    name: "Dusk Relic",
+                }
+            }
+            Item::MonsterHorn => {
+                &ItemDef {
+                    item_id: 171u16,
+                    name: "Monster Horn",
+                }
+            }
+            Item::EvilCrystal => {
+                &ItemDef {
+                    item_id: 173u16,
+                    name: "Evil Crystal",
+                }
+            }
+            Item::GoldenSkull => {
+                &ItemDef {
+                    item_id: 175u16,
+                    name: "Golden Skull",
+                }
+            }
+            Item::GoddessPlume => {
+                &ItemDef {
+                    item_id: 176u16,
+                    name: "Goddess Plume",
+                }
+            }
+            Item::EmeraldTablet => {
+                &ItemDef {
+                    item_id: 177u16,
+                    name: "Emerald Tablet",
+                }
+            }
+            Item::RubyTablet => {
+                &ItemDef {
+                    item_id: 178u16,
+                    name: "Ruby Tablet",
+                }
+            }
+            Item::AmberTablet => {
+                &ItemDef {
+                    item_id: 179u16,
+                    name: "Amber Tablet",
+                }
+            }
+            Item::StoneOfTrials => {
+                &ItemDef {
+                    item_id: 180u16,
+                    name: "Stone of Trials",
+                }
+            }
+            Item::BalladOfTheGoddess => {
+                &ItemDef {
+                    item_id: 186u16,
+                    name: "Ballad of the Goddess",
+                }
+            }
+            Item::FaroresCourage => {
+                &ItemDef {
+                    item_id: 187u16,
+                    name: "Farore's Courage",
+                }
+            }
+            Item::NayrusWisdom => {
+                &ItemDef {
+                    item_id: 188u16,
+                    name: "Nayru's Wisdom",
                 }
             }
             Item::DinsPower => {
@@ -13948,10 +13834,124 @@ impl Item {
                     name: "Din's Power",
                 }
             }
-            Item::Whip => {
+            Item::FaronSongOfTheHeroPart => {
                 &ItemDef {
-                    item_id: 137u16,
-                    name: "Whip",
+                    item_id: 190u16,
+                    name: "Faron Song of the Hero Part",
+                }
+            }
+            Item::EldinSongOfTheHeroPart => {
+                &ItemDef {
+                    item_id: 191u16,
+                    name: "Eldin Song of the Hero Part",
+                }
+            }
+            Item::LanayruSongOfTheHeroPart => {
+                &ItemDef {
+                    item_id: 192u16,
+                    name: "Lanayru Song of the Hero Part",
+                }
+            }
+            Item::LifeTreeSeedling => {
+                &ItemDef {
+                    item_id: 197u16,
+                    name: "Life Tree Seedling",
+                }
+            }
+            Item::LifeTreeFruit => {
+                &ItemDef {
+                    item_id: 198u16,
+                    name: "Life Tree Fruit",
+                }
+            }
+            Item::ExtraWallet => {
+                &ItemDef {
+                    item_id: 199u16,
+                    name: "Extra Wallet",
+                }
+            }
+            Item::SkyviewSmallKey => {
+                &ItemDef {
+                    item_id: 200u16,
+                    name: "Skyview Small Key",
+                }
+            }
+            Item::LanayruMiningFacilitySmallKey => {
+                &ItemDef {
+                    item_id: 201u16,
+                    name: "Lanayru Mining Facility Small Key",
+                }
+            }
+            Item::AncientCisternSmallKey => {
+                &ItemDef {
+                    item_id: 202u16,
+                    name: "Ancient Cistern Small Key",
+                }
+            }
+            Item::FireSanctuarySmallKey => {
+                &ItemDef {
+                    item_id: 203u16,
+                    name: "Fire Sanctuary Small Key",
+                }
+            }
+            Item::SandshipSmallKey => {
+                &ItemDef {
+                    item_id: 204u16,
+                    name: "Sandship Small Key",
+                }
+            }
+            Item::SkyKeepSmallKey => {
+                &ItemDef {
+                    item_id: 205u16,
+                    name: "Sky Keep Small Key",
+                }
+            }
+            Item::LanayruCavesSmallKey => {
+                &ItemDef {
+                    item_id: 206u16,
+                    name: "LanayruCaves Small Key",
+                }
+            }
+            Item::SkyviewMap => {
+                &ItemDef {
+                    item_id: 207u16,
+                    name: "Skyview Map",
+                }
+            }
+            Item::EarthTempleMap => {
+                &ItemDef {
+                    item_id: 208u16,
+                    name: "Earth Temple Map",
+                }
+            }
+            Item::LanayruMiningFacilityMap => {
+                &ItemDef {
+                    item_id: 209u16,
+                    name: "Lanayru Mining Facility Map",
+                }
+            }
+            Item::AncientCisternMap => {
+                &ItemDef {
+                    item_id: 210u16,
+                    name: "Ancient Cistern Map",
+                }
+            }
+            Item::FireSanctuaryMap => {
+                &ItemDef {
+                    item_id: 211u16,
+                    name: "Fire Sanctuary Map",
+                }
+            }
+            Item::SandshipMap => {
+                &ItemDef {
+                    item_id: 212u16,
+                    name: "Sandship Map",
+                }
+            }
+            Item::SkyKeepMap => {
+                &ItemDef {
+                    item_id: 213u16,
+                    name: "Sky Keep Map",
                 }
             }
         }
@@ -16929,66 +16929,241 @@ pub fn get_logic() -> Requirements<'static> {
     Requirements::new_from_map(
         HashMap::from([
             (
-                RequirementKey::Exit(Exit::Skyloft_To_Sky_PastWaterfallCave),
+                RequirementKey::Exit(Exit::AncientCistern_To_AncientCisternBoss),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Area(Area::Skyloft_PastWaterfallCave,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_PastWaterfallCave,
+                        RequirementExpression::Item(Item::AncientCisternBossKey, 1u8),
+                        RequirementExpression::Area(Area::AncientCistern_BeforeBossDoor,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::CentralSkyloftParrowsCrystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::SaveOrielle),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_Sky_ViewingPlatformStatue),
+                RequirementKey::Exit(Exit::AncientCistern_To_FloriaWaterfall),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        RequirementExpression::Area(Area::AncientCistern_MainHub,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::TempleOfTime_To_LanayruDesert_End),
+                RequirementKey::Exit(
+                    Exit::AncientCisternBoss_To_AncientCisternCandleRoom,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::AncientCisternBoss_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::BatreauxHouse_To_Skyloft),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::TempleOfTime_End,
+                        RequirementExpression::Area(Area::BatreauxHouse_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::CentralSkyloftWestCliffGoddessChest),
+                RequirementKey::Exit(Exit::BeedlesShop_To_Sky_Night),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Event(Event::GoddessCubeOnWestGreatTreeNearExit),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::BeedlesShop_To_Skyloft_Day),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Bazaar_To_Skyloft_North),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Bazaar_To_Skyloft_South),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Bazaar_To_Skyloft_West),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::ParrowAndOriellesHouse_To_Skyloft),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::ParrowAndOriellesHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::PeatricesHouse_To_Skyloft),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::PeatricesHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::PipersHouse_To_Skyloft),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::PipersHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_Bazaar_North),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Day),
                         RequirementExpression::Area(Area::Skyloft_CentralOutside,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::SkyChestInBreakableBoulderNearLumpyPumpkin,
-                ),
+                RequirementKey::Exit(Exit::Skyloft_To_Bazaar_South),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::SpiralCharge, 1u8),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_Bazaar_West),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_BeedlesShop_Day),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Day),
+                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Item(Item::BombBag, 1u8)])]),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_ParrowAndOriellesHouse),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_PeatricesHouse),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_PipersHouse),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_Sky),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_SkyloftSilentRealm),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::FaronSongOfTheHeroPart,
+                        1u8), RequirementExpression::Item(Item::EldinSongOfTheHeroPart,
+                        1u8), RequirementExpression::Item(Item::LanayruSongOfTheHeroPart,
+                        1u8)]), RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_WaterfallCave_Upper),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
@@ -17003,143 +17178,131 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Event(Event::VolcanoEastStatue),
-                RequirementExpression::Or(
+                RequirementKey::Exit(Exit::Skyloft_To_Sky_PastWaterfallCave),
+                RequirementExpression::And(
                     vec![
+                        RequirementExpression::Area(Area::Skyloft_PastWaterfallCave,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_PastWaterfallCave,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_WaterfallCave_Lower),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_PastWaterfallCave,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_SkyKeepEntry),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_ToSkyKeep,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::WaterfallCave_To_Skyloft_Upper),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::WaterfallCave_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::WaterfallCave_To_Skyloft_Lower),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::WaterfallCave_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::WrynasHouse_To_Skyloft),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::WrynasHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::EarthTemple_To_EarthTempleBoss),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EarthTempleBossKey, 1u8),
+                        RequirementExpression::Area(Area::EarthTemple_BossDoorArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::EarthTemple_To_EldinVolcano),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EarthTemple_Entrance,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::EarthTempleBoss_To_EarthTempleSpring),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
                         RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyBambooIslandGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeWestOfEarthTempleEntrance),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_LumpyPumpkin_South_Right),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::DeliveredHotSoup),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Event(Event::LumpyPumpkinQuestStart),
-                        RequirementExpression::Area(Area::SparringHall_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_BeforeBokoKeyDoor,
-                    to: Area::AncientCistern_AfterAcGutters,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::AncientCisternSmallKey, 2u8),
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::AncientCistern_BeforeBokoKeyDoor,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::InsideVolcanoSummit_To_EldinVolcano),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
-                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SparrotsHouse_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SparrotsHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FloriaWaterfall_To_AncientCistern),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeOnTopOfSkyview),
-                RequirementExpression::Or(
-                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Option(| options | options.hero_mode
+                        == true)]),
                         RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruCavesGossipStoneInCenter),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruCaves_Main,
+                        3u8), RequirementExpression::Option(| options | options.hero_mode
+                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
+                        5u8)])])]),
+                        RequirementExpression::Area(Area::EarthTempleBoss_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::EldinVolcanoGossipStoneInThrillDiggerCave,
-                ),
+                RequirementKey::Exit(Exit::EarthTempleSpring_To_EldinVolcano),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::ThrillDiggerCave_Main,
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::EarthTempleSpring_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::OutsidePiratesStronghold_Main,
-                    to: Area::OutsidePiratesStronghold_InsideSharkhead,
-                },
+                RequirementKey::Exit(Exit::EldinSilentRealm_To_EldinVolcano),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Event(Event::OpenSharkhead),
-                        RequirementExpression::Area(Area::OutsidePiratesStronghold_Main,
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinSilentRealm_Trial,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::TempleOfTime_NearCube,
-                    to: Area::TempleOfTime_End,
-                },
+                RequirementKey::Exit(Exit::EldinVolcano_To_Sky_EldinEntranceStatue),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::TempleOfTime_NearCube,
+                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -17155,218 +17318,219 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::Skyloft_To_InsideGoddessStatue),
+                RequirementKey::Exit(Exit::EldinVolcano_To_ThrillDiggerCave),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        RequirementExpression::Area(Area::EldinVolcano_NearThrillDigger,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::FireSanctuaryChestAfterBombableWall),
+                RequirementKey::Exit(Exit::EldinVolcano_To_EarthTemple),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryB_LastTrappedMogmaArea,
+                        RequirementExpression::Item(Item::KeyPiece, 5u8),
+                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::SkyGoddessChestOnIslandClosestToFaronPillar,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInDeepWoods),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SealedTemple_To_SealedGroundsSpiral),
+                RequirementKey::Exit(Exit::EldinVolcano_To_Sky_TempleEntranceStatue),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SealedTemple_Main,
+                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Event(Event::SealedGroundsStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SealedGroundsSpiral_Upper,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SealedTemple_To_BehindTheTemple),
+                RequirementKey::Exit(Exit::EldinVolcano_To_MogmaTurf_Skydive),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SealedTemple_Main,
+                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::CentralSkyloftPotionLadysGift),
+                RequirementKey::Exit(Exit::EldinVolcano_To_Sky_VolcanoEastStatue),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruMinesChestBehindFirstLanding),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::CentralSkyloftCrystalOnLightTower),
+                RequirementKey::Exit(Exit::EldinVolcano_To_EldinSilentRealm),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        RequirementExpression::Item(Item::DinsPower, 1u8),
+                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::LanayruMinesChestAtTheEndOfMines),
+                RequirementKey::Exit(Exit::EldinVolcano_To_Sky_VolcanoAscentStatue),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8)]), RequirementExpression::Area(Area::LanayruMines_FirstHalf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::TempleOfTime_NearGossipStone,
-                    to: Area::TempleOfTime_NearCube,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8),
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Item(Item::Whip, 1u8)])]),
-                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::ThrillDiggerCave_To_EldinVolcano),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::ThrillDiggerCave_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FaronSilentRealm_To_FaronWoods),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronSilentRealm_Trial,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::DeepWoods_To_FaronWoods),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::DeepWoods_Entry,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::DeepWoods_To_Sky_DeepWoodsStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::DeepWoods_To_Sky_ForestTempleStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::DeepWoods_To_SkyviewTemple),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
                         1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
                         RequirementExpression::Item(Item::Clawshots, 1u8),
                         RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Option(| options | options.hero_mode
-                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
-                        6u8)])]),
-                        RequirementExpression::Area(Area::TempleOfTime_NearGossipStone,
+                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::Sky_To_LanayruDesert_StoneCacheStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::AmberTablet, 1u8),
-                        RequirementExpression::Event(Event::StoneCacheStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruCaves_To_SandSeaDocks),
+                RequirementKey::Exit(Exit::FaronWoods_To_BehindTheTemple),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruCaves_ToSandSea,
+                        RequirementExpression::Area(Area::FaronWoods_Entry,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityA_SecondRoom,
-                    to: Area::LanayruMiningFacilityA_FirstKeyLockedRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::LanayruMiningFacilitySmallKey,
-                        1u8),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_SecondRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::ActivateFireNode),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Area(Area::FireNode_End,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::GreatTree_To_FaronWoods_UpperPlatform),
+                RequirementKey::Exit(Exit::FaronWoods_To_Sky_FaronWoodsEntryStatue),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::GreatTree_Upper,
+                        RequirementExpression::Area(Area::FaronWoods_Entry,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::FireSanctuaryChestInSecondRoom),
+                RequirementKey::Exit(Exit::FaronWoods_To_GreatTree_LowerPlatform),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireSanctuaryB_FirstOutsideSection,
+                        RequirementExpression::Area(Area::FaronWoods_GreatTreePlatforms,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::SkyDodohsCrystals),
+                RequirementKey::Exit(Exit::FaronWoods_To_GreatTree_UpperPlatform),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_GreatTreePlatforms,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::FireSanctuaryB_AfterDoubleMagmanosFight,
-                    to: Area::FireSanctuaryB_UnderDoubleMagmanosFight,
-                },
+                RequirementKey::Exit(Exit::FaronWoods_To_GreatTree_Top),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
-                        RequirementExpression::Area(Area::FireSanctuaryB_AfterDoubleMagmanosFight,
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FaronWoods_To_Sky_GreatTreeStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FaronWoods_To_DeepWoods),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FaronWoods_To_FaronSilentRealm),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::FaroresCourage, 1u8),
+                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -17382,112 +17546,321 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::IsleOfSongs_To_InsideThunderhead),
+                RequirementKey::Exit(Exit::FaronWoods_To_LakeFloria),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::IsleOfSongs_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EldinSilentRealmFireshieldEarrings),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinSilentRealm_Trial,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyNortheastIslandCageGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeEastOfEarthTempleEntrance),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyviewChestOnTreeBranch),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Event(Event::TalkToYerbal),
                         RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Item(Item::Whip, 1u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FaronWoods_To_Sky_InTheWoodsStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FaronWoods_To_Sky_ViewingPlatformStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::GreatTree_To_FaronWoods_Tunnel),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::GreatTree_Entry,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::GreatTree_To_FaronWoods_LowerPlatform),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::GreatTree_PastPlatforms,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::GreatTree_To_FaronWoods_UpperPlatform),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::GreatTree_Upper,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::GreatTree_To_FaronWoods_Top),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::GreatTree_Upper,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FireSanctuaryA_To_OutsideFireSanctuary),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireSanctuaryA_Entry,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FireSanctuaryA_To_FireSanctuaryBoss),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::FireSanctuaryBossKey, 1u8),
+                        RequirementExpression::Area(Area::FireSanctuaryA_InFrontOfBossDoor,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FireSanctuaryA_To_FireSanctuaryB),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::FireSanctuarySmallKey, 1u8),
+                        RequirementExpression::Area(Area::FireSanctuaryA_PastFirstWaterPlant,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FireSanctuaryB_To_FireSanctuaryA),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
                         RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
                         1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
                         RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::FireSanctuaryB_UnderDoubleMagmanosFight,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FireSanctuaryBoss_To_FireSanctuaryFlameRoom),
+                RequirementExpression::And(
+                    vec![
                         RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Item(Item::BombBag, 1u8)])])]),
-                        RequirementExpression::Area(Area::SkyviewTemple_FirstHub,
+                        RequirementExpression::Area(Area::FireSanctuaryBoss_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::SkyviewTemple_MainHub,
-                    to: Area::SkyviewTemple_BossDoorArea,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::SkyviewSmallKey, 2u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Item(Item::WaterScale, 1u8)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Option(| options | options.hero_mode
-                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
-                        6u8)]), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::SkyviewTemple_MainHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_GondosHouse),
+                RequirementKey::Exit(Exit::InsideGoddessStatue_To_Skyloft),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        RequirementExpression::Area(Area::InsideGoddessStatue_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::OutsideFireSanctuary_ToInsideSummit,
-                    to: Area::OutsideFireSanctuary_Middle,
-                },
+                RequirementKey::Exit(Exit::KnightAcademy_To_Skyloft_Lower_Right),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::ProgressivePouch, 1u8),
-                        RequirementExpression::Item(Item::EmptyBottle, 1u8),
-                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToInsideSummit,
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::AncientCisternBossKeyChest),
+                RequirementKey::Exit(Exit::KnightAcademy_To_Skyloft_Lower_Left),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::KnightAcademy_To_Skyloft_Upper_Right),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_BossKeyChestArea,
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::KnightAcademy_To_Skyloft_Upper_Left),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_InsideGoddessStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Chimney),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Lower_Right),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Lower_Left),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Upper_Right),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Upper_Left),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_SparringHall_Right),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_SparringHall_Left),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SparringHall_To_Skyloft_Right),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SparringHall_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SparringHall_To_Skyloft_Left),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SparringHall_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FaroresLair_To_FloriaWaterfall),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaroresLair_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FaroresLair_To_LakeFloria),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::FaroresLair_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FloriaWaterfall_To_AncientCistern),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FloriaWaterfall_To_FaronWoods),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -17503,11 +17876,261 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
+                RequirementKey::Exit(Exit::FloriaWaterfall_To_Sky_FloriaWaterfallStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LakeFloria_To_Sky_LakeFloriaStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LakeFloria_StatueSpot,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LakeFloria_To_FaroresLair),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::LakeFloria_ToFaroresLair,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruCaves_To_LanayruDesert),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruCaves_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruCaves_To_LanayruMines),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruCaves_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruCaves_To_SandSeaDocks),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruCaves_ToSandSea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::FireNode_To_LanayruDesert),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_LanayruMines),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_Sky_DesertEntranceStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_FireNode),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_LanayruMiningFacilityA),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::RaiseLanayruMiningFacility),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_LanayruSilentRealm),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::NayrusWisdom, 1u8),
+                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_LightningNode),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_Sky_NorthDesertStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_Sky_StoneCacheStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_TempleOfTime_End),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
                 RequirementKey::Exit(Exit::LanayruDesert_To_LanayruCaves),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Item(Item::Clawshots, 1u8),
                         RequirementExpression::Area(Area::LanayruDesert_SandOasis,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_Sky_WestDesertStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_SandOasis,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruDesert_To_TempleOfTime_Start),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_SandOasis,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LightningNode_To_LanayruDesert),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LightningNode_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::TempleOfTime_To_LanayruDesert_End),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::TempleOfTime_End,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::TempleOfTime_To_LanayruDesert_Start),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::TempleOfTime_Start,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruMines_To_Sky_LanayruMineEntryStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruMines_To_LanayruCaves),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruMines_ToCaves,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruMines_To_LanayruDesert),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruMines_ToDesert,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruMiningFacilityA_To_LanayruDesert),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_Entry,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -17532,805 +18155,18 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::Skyloft_CentralOutside,
-                    to: Area::Skyloft_OutsideGoddessStatue,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_FaronWoods_InTheWoodsStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::InTheWoodsStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyKeepChestAfterDreadfuse),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::SkyKeepEntry_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruMiningFacilityShortcutChestInMainHub,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_AfterLmfBkRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::FireSanctuaryFirstChestInWaterFruitRoom,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireSanctuaryB_WaterFruitRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruDesertFireNodeSecondSmallChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EldinVolcano_To_Sky_TempleEntranceStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Sky_BeedlesSkyHome,
-                    to: Area::Sky_BeedleIslandCage,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanBeatSkyview),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::SkyviewSpring_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanPlayThrillDigger),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveMitts,
-                        1u8), RequirementExpression::Area(Area::ThrillDiggerCave_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_AfterAcGutters,
-                    to: Area::AncientCistern_AfterWhipHooks,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_AfterAcGutters,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::AncientCisternChestBehindTheWaterfall,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_BehindWaterfall,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleChestBehindBombableRock),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FaronWoodsItemBehindBombableRock),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruDesertChestNearSandOasis),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::LanayruDesert_SandOasis,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruMiningFacilityMolderachHeartContainer,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GustBellows,
-                        1u8), RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyviewBeetle),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::WaterScale, 1u8)]),
-                        RequirementExpression::Area(Area::SkyviewTemple_MainHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyCrystalOnBeedlesShip),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
-                        TimeOfDay::Night),
-                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronSilentRealm_To_FaronWoods),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronSilentRealm_Trial,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_LakeFloria),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::TalkToYerbal),
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LakeFloria_ToFaroresLair,
-                    to: Area::LakeFloria_StatueSpot,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::LakeFloria_ToFaroresLair,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyCrystalInZeldasRoom),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::UnlockedZeldasRoom),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::WrynasHouse_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::WrynasHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_FaronWoods_FaronWoodsEntryStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::FaronWoodsEntryStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EldinVolcano_To_EldinSilentRealm),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::DinsPower, 1u8),
-                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Sky_Field,
-                    to: Area::Sky_OutsideLumpyPumpkin,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::OutsideFireSanctuary_Middle,
-                    to: Area::OutsideFireSanctuary_ToFireSanctuary,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressivePouch,
-                        1u8), RequirementExpression::Item(Item::EmptyBottle, 1u8)]),
-                        RequirementExpression::Area(Area::OutsideFireSanctuary_Middle,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::ShipyardConstructionBay_To_Shipyard_Upper),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::ShipyardConstructionBay_Upper,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyOriellesCrystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressivePouch, 1u8),
-                        RequirementExpression::Item(Item::EmptyBottle, 1u8),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::ThunderheadEastIslandChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveMitts,
-                        1u8), RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::ThunderheadGoddessChestOnTopOfIsleOfSongs,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeNearFsEntrance),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_Bazaar_South),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipChestBefore4DoorCorridor),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::CanFreelyChangeSandshipTemporality),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruSandSeaSkippersRetreatChestInShack,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Area(Area::SkippersShack_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruMiningFacilityBossKeyChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_InsideLmfBkRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::WaterfallCave_To_Skyloft_Upper),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::WaterfallCave_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_EldinVolcano_VolcanoEastStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::RubyTablet, 1u8),
-                        RequirementExpression::Event(Event::VolcanoEastStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::BeedleFirst100RupeeItem),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FaronWoods_Main,
-                    to: Area::FaronWoods_Entry,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_Bazaar_West),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::CentralSkyloftCrystalOnWestCliff),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_FaronSilentRealm),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::FaroresCourage, 1u8),
-                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::CentralSkyloftPeaterPeatricesCrystals,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::TalkToPeatriceInBazaar),
-                        RequirementExpression::Area(Area::PeatricesHouse_Main,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::PeatricesHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruSandSeaGossipStoneInShipyard),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Shipyard_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::GreatTree_Lower,
-                    to: Area::GreatTree_Middle,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Area(Area::GreatTree_Lower,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Skyloft_OutsideSkyloftVillage,
-                    to: Area::Skyloft_PastWaterfallCave,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::DesertEntranceStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkyviewBoss_To_SkyviewTemple),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::SkyviewBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::ActivateSkyviewGoddessWall),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Area(Area::SkyviewTemple_Entry,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::GreatTree_PastPlatforms,
-                    to: Area::GreatTree_Lower,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::GreatTree_PastPlatforms,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::BeedlesShop_To_Skyloft_Day),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::TempleOfTime_Start,
-                    to: Area::TempleOfTime_NearGossipStone,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Fixed(true)])]),
-                        RequirementExpression::Area(Area::TempleOfTime_Start,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
                 RequirementKey::Exit(
-                    Exit::InsideVolcanoSummit_To_VolcanoSummitWaterfall,
+                    Exit::LanayruMiningFacilityA_To_LanayruMiningFacilityB_HubW,
                 ),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
-                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Batreaux50Crystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        7u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        8u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        9u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        10u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FireSanctuaryB_PastSecondRoomWithWaterFruit,
-                    to: Area::FireSanctuaryB_WaterFruitRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::FireSanctuarySmallKey, 2u8),
-                        RequirementExpression::Area(Area::FireSanctuaryB_PastSecondRoomWithWaterFruit,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_FireNode),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::OpenedShed),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EarthTemple_BallRolling,
-                    to: Area::EarthTemple_AfterBallRolling,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8)]), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        1u8), RequirementExpression::Area(Area::EarthTemple_BallRolling,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::SaveOrielle),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressivePouch,
-                        1u8), RequirementExpression::Item(Item::EmptyBottle, 1u8),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruDesertLightningNodeSecondChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::LightningNode_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FireSanctuaryA_To_FireSanctuaryB),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::FireSanctuarySmallKey, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryA_PastFirstWaterPlant,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_SparringHall_Left),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_HotCaveArea,
-                    to: Area::EldinVolcano_SandSlide,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_HotCaveArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruCaves_Main,
-                    to: Area::LanayruCaves_ToSandSea,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::LanayruCavesSmallKey, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::LanayruCaves_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_VolcanoAscent,
-                    to: Area::EldinVolcano_FirstRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruCaves_To_LanayruMines),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruCaves_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyloftVillageSparrotsCrystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::RetrieveCrystalBall),
-                        RequirementExpression::Area(Area::SparrotsHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::ThunderheadIsleOfSongsFaroresCourage),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::IsleOfSongs_Main,
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GustBellows,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_MapRoom,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -18343,498 +18179,6 @@ pub fn get_logic() -> Requirements<'static> {
                     vec![
                         RequirementExpression::Fixed(true),
                         RequirementExpression::Area(Area::LanayruMiningFacilityA_SecondRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::MogmaTurfDiggingMittsFight),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::MogmaTurf_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(
-                    Exit::OutsidePiratesStronghold_To_InsidePiratesStronghold_Beginning,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::OutsidePiratesStronghold_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeEastOfEarthTempleEntrance),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_SpiderThread,
-                    to: Area::AncientCistern_BossKeyChestArea,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_SpiderThread,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::BehindTheTemple_To_FaronWoods),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BehindTheTemple_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_LanayruMines_LanayruMineEntryStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::AmberTablet, 1u8),
-                        RequirementExpression::Event(Event::LanayruMineEntryStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInAncientHarbour),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::SandSeaDocks_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleScalderaHeartContainer),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Option(| options | options.hero_mode
-                        == true)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        3u8), RequirementExpression::Option(| options | options.hero_mode
-                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
-                        5u8)])])]),
-                        RequirementExpression::Area(Area::EarthTempleBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleChestInWestRoom),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8)]),
-                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyCrystalInSparringHall),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Area(Area::SparringHall_Main,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::SparringHall_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleBombBag),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_BehindWaterfall,
-                    to: Area::AncientCistern_BeforeBokoKeyDoor,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::WaterScale,
-                        1u8), RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBow,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        1u8)]),
-                        RequirementExpression::Area(Area::AncientCistern_BehindWaterfall,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FireSanctuaryChestInStaircaseRoom),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireSanctuaryA_UpperStaircaseRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::AncientCisternChestAfterWhipHooks),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_AfterWhipHooks,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_PreMogmaTurf,
-                    to: Area::EldinVolcano_FirstRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FaronWoods_GreatTreeTop,
-                    to: Area::FaronWoods_GreatTreePlatforms,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_DeepWoods),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FloriaWaterfall_To_FaronWoods),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::GreatTree_Entry,
-                    to: Area::GreatTree_Lower,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::GreatTree_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FloriaWaterfall_To_Sky_FloriaWaterfallStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::BeedleThird100RupeeItem),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanPlayCleanCut),
-                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Event(Event::CanPlayThrillDigger)])]),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_FirstRoom,
-                    to: Area::EldinVolcano_VolcanoAscent,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_TempleOfTime_Start),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_SandOasis,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(
-                    Exit::LanayruMiningFacilityBoss_To_LanayruMiningFacilityToToT,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GustBellows,
-                        1u8), RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_BertiesHouse),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_MainBasement,
-                    to: Area::AncientCistern_SpiderThread,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8)]),
-                        RequirementExpression::Area(Area::AncientCistern_MainBasement,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInSkyviewSpring),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::SkyviewSpring_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::TalkToYerbal),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        1u8)]),
-                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(
-                    Exit::OutsideFireSanctuary_To_Sky_InsideTheVolcanoStatue,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToFireSanctuary,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyviewChestBehindThreeEyes),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::SkyviewTemple_MainHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyChestInGoddessStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::InsideGoddessStatue_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruDesert_PastToT,
-                    to: Area::LanayruDesert_HookBeetleArea,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_LumpyPumpkin_South_Left),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::LanayruMineEntryStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::VolcanoSummitSmallChestInVolcanoSummit,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
-                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Shipyard_To_ShipyardConstructionBay_Lower),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Shipyard_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruSandSeaPirateStrongholdThirdChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_NearThrillDigger,
-                    to: Area::EldinVolcano_OutsideEt,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_NearThrillDigger,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkippersRetreat_To_SkippersShack),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkippersRetreat_NextToShack,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::DeepWoods_To_Sky_DeepWoodsStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyGossipStoneInVolcanicIsland),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::GreatTree_Middle,
-                    to: Area::GreatTree_PastPlatforms,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::GreatTree_Middle,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -18859,306 +18203,164 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_VolcanoAscent,
-                    to: Area::EldinVolcano_NearThrillDigger,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBow,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::KnightAcademy_To_Skyloft_Upper_Left),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruMiningFacilityChestAfterArmosFight,
+                RequirementKey::Exit(
+                    Exit::LanayruMiningFacilityBoss_To_LanayruMiningFacilityToToT,
                 ),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GustBellows,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_MapRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkippersShack_To_SkippersRetreat),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkippersShack_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyGoddessChestInsideVolcanicIsland),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeOnEastGreatTreeWithClawshotsTarget),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GustBellows,
                         1u8), RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityBoss_Main,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::CentralSkyloftCrystalInOrielleAndParrowsHouse,
-                ),
+                RequirementKey::Exit(Exit::LanayruMiningFacilityToToT_To_TempleOfTime),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::ParrowAndOriellesHouse_Main,
+                        RequirementExpression::Area(Area::LanayruMiningFacilityToToT_ToTExit,
                         TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyBeedlesIslandGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeAtRideNearTempleOfTime),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Beedle800RupeeItem),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ExtraWallet,
-                        2u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
-                        1u8), RequirementExpression::Item(Item::ExtraWallet, 1u8)]),
-                        RequirementExpression::Item(Item::ProgressiveWallet, 2u8)]),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::SkySouthwestTripleIslandLowerGoddessChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeNearHookBeetleFight),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::GreatTree_To_FaronWoods_Tunnel),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::GreatTree_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_Sky_DesertEntranceStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Sky_OutsideLumpyPumpkin,
-                    to: Area::Sky_Field,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::ThunderheadBugHeaven10BugsIn3Minutes),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveBugNet, 1u8),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FaronWoodsChestInsideGreatTree),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::GreatTree_Middle,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::EldinVolcanoChestBehindBombableWallInFirstRoom,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyGoddessChestOutsideVolcanicIsland),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInSandOasis),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruDesertChestOnTopOfLanayruMiningFacility,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::RaiseLanayruMiningFacility),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityB_NearBossDoor,
-                    to: Area::LanayruMiningFacilityB_InsideLmfBkRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_NearBossDoor,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::ShipyardConstructionBay_Upper,
-                    to: Area::ShipyardConstructionBay_Lower,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::ShipyardConstructionBay_Upper,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkyviewTemple_To_DeepWoods),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkyviewTemple_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanBeatSandship),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBow,
-                        1u8), RequirementExpression::Area(Area::SandshipBoss_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_EldinVolcano_VolcanoAscentStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::RubyTablet, 1u8),
-                        RequirementExpression::Event(Event::VolcanoAscentStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruDesertHookBeetleFight),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8)]),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyGoddessChestUnderFunFunIsland),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInFloriaWaterfall),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeAtRideNearTempleOfTime),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::TempleOfTime_NearCube,
-                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
                 RequirementKey::Exit(
-                    Exit::LanayruMiningFacilityA_To_LanayruMiningFacilityB_HubW,
+                    Exit::InsidePiratesStronghold_To_OutsidePiratesStronghold_End,
                 ),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GustBellows,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_MapRoom,
+                        RequirementExpression::Event(Event::OpenSharkhead),
+                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(
+                    Exit::InsidePiratesStronghold_To_OutsidePiratesStronghold_Beginning,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(
+                    Exit::OutsidePiratesStronghold_To_InsidePiratesStronghold_End,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::OutsidePiratesStronghold_InsideSharkhead,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(
+                    Exit::OutsidePiratesStronghold_To_InsidePiratesStronghold_Beginning,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::OutsidePiratesStronghold_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::OutsidePiratesStronghold_To_SandSea),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::OutsidePiratesStronghold_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SandSea_To_OutsidePiratesStronghold),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SandSea_To_SandSeaDocks),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SandSea_To_Sandship),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::SeaChart, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SandSea_To_Shipyard),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SandSea_To_SkippersRetreat),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SandSeaDocks_To_SandSea),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Area(Area::SandSeaDocks_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SandSeaDocks_To_Sky_AncientHarbor),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SandSeaDocks_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SandSeaDocks_To_LanayruCaves),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SandSeaDocks_ToCaves,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -19174,179 +18376,554 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Location(Location::EldinVolcanoChestAfterCrawlspace),
+                RequirementKey::Exit(Exit::Shipyard_To_SandSea),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
-                        TimeOfDay::Both)
+                        RequirementExpression::Area(Area::Shipyard_Main, TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_MainHub,
-                    to: Area::AncientCistern_MainBasement,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::CanLowerAcStatue),
-                        RequirementExpression::Area(Area::AncientCistern_MainHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::KnightAcademyCrystalInKnightAcademyPlant,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_PipersHouse),
+                RequirementKey::Exit(Exit::Shipyard_To_ShipyardConstructionBay_Lower),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        RequirementExpression::Area(Area::Shipyard_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::ShipyardConstructionBay_To_Shipyard_Lower),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::ShipyardConstructionBay_Lower,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::ShipyardConstructionBay_To_Shipyard_Upper),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::ShipyardConstructionBay_Upper,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkippersRetreat_To_SkippersShack),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkippersRetreat_NextToShack,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkippersRetreat_To_SandSea),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkippersRetreat_Start,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkippersShack_To_SkippersRetreat),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkippersShack_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LanayruSilentRealm_To_LanayruDesert),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruSilentRealm_Trial,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::MogmaTurf_To_EldinVolcano_EndVent),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::MogmaTurf_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::MogmaTurf_To_EldinVolcano_StartVent),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::MogmaTurf_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sandship_To_SandSea),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sandship_To_SandshipBoss),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::CanFreelyChangeSandshipTemporality),
+                        RequirementExpression::Item(Item::SandshipBossKey, 1u8),
+                        RequirementExpression::Area(Area::Sandship_PastSpume,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::BehindTheTemple_To_FaronWoods),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::BehindTheTemple_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::BehindTheTemple_To_SealedGroundsSpiral),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::BehindTheTemple_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::BehindTheTemple_To_SealedTemple),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::BehindTheTemple_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::BehindTheTemple_To_Sky_BehindTheTempleStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::BehindTheTemple_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SealedGroundsSpiral_To_SealedTemple),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SealedGroundsSpiral_Lower,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::Exit(
-                    Exit::VolcanoSummitWaterfall_To_InsideVolcanoSummit,
+                    Exit::SealedGroundsSpiral_To_Sky_SealedGroundsStatue,
                 ),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::VolcanoSummitWaterfall_Main,
+                        RequirementExpression::Area(Area::SealedGroundsSpiral_Upper,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::Skyloft_To_ParrowAndOriellesHouse),
+                RequirementKey::Exit(Exit::SealedTemple_To_BehindTheTemple),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        RequirementExpression::Area(Area::SealedTemple_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::FireNode_Main,
-                    to: Area::FireNode_End,
-                },
+                RequirementKey::Exit(Exit::SealedTemple_To_HyliasTemple),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBeetle, 2u8),
-                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
+                        RequirementExpression::Event(Event::DefeatImprisoned2),
+                        RequirementExpression::Area(Area::SealedTemple_Main,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Event(Event::CanBeatSkyKeep),
-                RequirementExpression::Or(
+                RequirementKey::Exit(Exit::SealedTemple_To_SealedGroundsSpiral),
+                RequirementExpression::And(
                     vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Item(Item::SkyKeepSmallKey, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SealedTemple_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::InsideBambooIsland_To_Sky),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::InsideBambooIsland_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LumpyPumpkin_To_Sky_North),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LumpyPumpkin_To_Sky_South_Right),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::LumpyPumpkin_To_Sky_South_Left),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_BeedlesShop_Night),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_BehindTheTemple_BehindTheTempleStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::BehindTheTempleStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_DeepWoods_DeepWoodsStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::DeepWoodsStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_DeepWoods_ForestTempleStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::ForestTempleStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_EldinVolcano_EldinEntranceStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::RubyTablet, 1u8),
+                        RequirementExpression::Event(Event::EldinEntranceStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_EldinVolcano_TempleEntranceStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::RubyTablet, 1u8),
+                        RequirementExpression::Event(Event::TempleEntranceStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_EldinVolcano_VolcanoEastStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::RubyTablet, 1u8),
+                        RequirementExpression::Event(Event::VolcanoEastStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_EldinVolcano_VolcanoAscentStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::RubyTablet, 1u8),
+                        RequirementExpression::Event(Event::VolcanoAscentStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_FaronWoods_FaronWoodsEntryStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::FaronWoodsEntryStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_FaronWoods_GreatTreeStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::GreatTreeStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_FaronWoods_InTheWoodsStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::InTheWoodsStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_FaronWoods_ViewingPlatformStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::ViewingPlatformStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_FloriaWaterfall_FloriaWaterfallStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::FloriaWaterfallStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_InsideBambooIsland),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_InsideThunderhead),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BalladOfTheGoddess,
+                        1u8), RequirementExpression::Option(| options | options
+                        .open_thunderhead == OpenThunderhead::Open)]),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_LakeFloria_LakeFloriaStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::LakeFloriaStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_LanayruDesert_DesertEntranceStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::AmberTablet, 1u8),
+                        RequirementExpression::Event(Event::DesertEntranceStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_LanayruDesert_NorthDesertStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::AmberTablet, 1u8),
+                        RequirementExpression::Event(Event::NorthDesertStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_LanayruDesert_StoneCacheStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::AmberTablet, 1u8),
+                        RequirementExpression::Event(Event::StoneCacheStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_LanayruDesert_WestDesertStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::AmberTablet, 1u8),
+                        RequirementExpression::Event(Event::WestDesertStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_LanayruMines_LanayruMineEntryStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::AmberTablet, 1u8),
+                        RequirementExpression::Event(Event::LanayruMineEntryStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(
+                    Exit::Sky_To_OutsideFireSanctuary_InsideTheVolcanoStatue,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::RubyTablet, 1u8),
+                        RequirementExpression::Event(Event::InsideTheVolcanoStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(
+                    Exit::Sky_To_SealedGroundsSpiral_SealedGroundsStatue,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
+                        RequirementExpression::Event(Event::SealedGroundsStatue),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_Skyloft),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_LumpyPumpkin_North),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_LumpyPumpkin_South_Right),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Sky_To_LumpyPumpkin_South_Left),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkyKeepEntry_To_Skyloft),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
                         RequirementExpression::Area(Area::SkyKeepEntry_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FireSanctuaryB_UnderDoubleMagmanosFight,
-                    to: Area::FireSanctuaryB_LastTrappedMogmaArea,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryB_UnderDoubleMagmanosFight,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::ThunderheadGoddessChestOutsideIsleOfSongs,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInMogmaTurf),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruDesertSecretPassagewayChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8), RequirementExpression::Fixed(true)])]),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityA_FirstKeyLockedRoom,
-                    to: Area::LanayruMiningFacilityA_GustBellowsRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Fixed(true)])]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Fixed(true)])]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_FirstKeyLockedRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleBossKeyChest),
+                RequirementKey::Exit(Exit::SkyloftSilentRealm_To_Skyloft),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EarthTemple_BossDoorArea,
+                        RequirementExpression::Area(Area::SkyloftSilentRealm_Trial,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::SandSeaDocks_ToCaves,
-                    to: Area::SandSeaDocks_Main,
-                },
+                RequirementKey::Exit(Exit::BertiesHouse_To_Skyloft),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::SandSeaDocks_ToCaves,
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::BertiesHouse_Main,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -19372,116 +18949,373 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Location(Location::AncientCisternChestNearVines),
+                RequirementKey::Exit(Exit::RupinsHouse_To_Skyloft),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_MainRoomVines,
+                        RequirementExpression::Area(Area::RupinsHouse_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::KnightAcademyInZeldasCloset),
+                RequirementKey::Exit(Exit::Skyloft_To_BatreauxHouse),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Event(Event::UnlockedZeldasRoom),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        RequirementExpression::Event(Event::OpenedShed),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_PastMogmaTurf,
-                    to: Area::EldinVolcano_VolcanoAscent,
-                },
+                RequirementKey::Exit(Exit::Skyloft_To_BertiesHouse),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_PastMogmaTurf,
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::Batreaux70Crystals),
+                RequirementKey::Exit(Exit::Skyloft_To_GondosHouse),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        11u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        12u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        13u8)])]), RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_MallarasHouse),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_RupinsHouse),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::Skyloft_To_SparrotsHouse),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SparrotsHouse_To_Skyloft),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SparrotsHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkyviewBoss_To_SkyviewSpring),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::SkyviewBoss_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkyviewBoss_To_SkyviewTemple),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::SkyviewBoss_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkyviewSpring_To_DeepWoods),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::SkyviewSpring_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkyviewSpring_To_SkyviewBoss),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkyviewSpring_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkyviewTemple_To_SkyviewBoss),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::SkyviewBossKey, 1u8),
+                        RequirementExpression::Area(Area::SkyviewTemple_BossDoorArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::SkyviewTemple_To_DeepWoods),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkyviewTemple_Entry,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::InsideThunderhead_To_IsleOfSongs),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::InsideThunderhead_To_Sky),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::IsleOfSongs_To_InsideThunderhead),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::IsleOfSongs_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::InsideVolcanoSummit_To_EldinVolcano),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
+                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::InsideVolcanoSummit_To_OutsideFireSanctuary),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
+                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::Exit(
-                    Exit::AncientCisternBoss_To_AncientCisternCandleRoom,
+                    Exit::InsideVolcanoSummit_To_VolcanoSummitWaterfall,
                 ),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::AncientCisternBoss_Main,
+                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
+                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::FireSanctuaryChestOnBalcony),
+                RequirementKey::Exit(Exit::OutsideFireSanctuary_To_FireSanctuaryA),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryB_FirstOutsideSection,
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToFireSanctuary,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::LanayruDesertFireNodeShortcutChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipChestBehindCombinationLock),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GustBellows,
-                        1u8), RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::Sandship_PastSpume,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::CentralSkyloftWaterfallCaveSecondChest,
+                RequirementKey::Exit(
+                    Exit::OutsideFireSanctuary_To_Sky_InsideTheVolcanoStatue,
                 ),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::WaterfallCave_Main,
+                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToFireSanctuary,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(Exit::OutsideFireSanctuary_To_InsideVolcanoSummit),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToInsideSummit,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Exit(
+                    Exit::VolcanoSummitWaterfall_To_InsideVolcanoSummit,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::VolcanoSummitWaterfall_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_AfterAcGutters,
+                    to: Area::AncientCistern_AfterWhipHooks,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::AncientCistern_AfterAcGutters,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_AfterAcGutters,
+                    to: Area::AncientCistern_MainRoomVines,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Area(Area::AncientCistern_AfterAcGutters,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_AfterWhipHooks,
+                    to: Area::AncientCistern_MainRoomVines,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::AncientCistern_AfterWhipHooks,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_BeforeBokoKeyDoor,
+                    to: Area::AncientCistern_AfterAcGutters,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::AncientCisternSmallKey, 2u8),
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::AncientCistern_BeforeBokoKeyDoor,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_BehindWaterfall,
+                    to: Area::AncientCistern_BeforeBokoKeyDoor,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::WaterScale,
+                        1u8), RequirementExpression::Fixed(true)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBow,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        1u8)]),
+                        RequirementExpression::Area(Area::AncientCistern_BehindWaterfall,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_MainBasement,
+                    to: Area::AncientCistern_BeforeBossDoor,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Area(Area::AncientCistern_MainBasement,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_MainBasement,
+                    to: Area::AncientCistern_BossKeyChestArea,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::AncientCistern_MainBasement,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_MainBasement,
+                    to: Area::AncientCistern_SpiderThread,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8)]),
+                        RequirementExpression::Area(Area::AncientCistern_MainBasement,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_MainHub,
+                    to: Area::AncientCistern_AfterWhipHooks,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Area(Area::AncientCistern_MainHub,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -19502,1026 +19336,41 @@ pub fn get_logic() -> Requirements<'static> {
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::DeepWoods_PastBeehive,
-                    to: Area::DeepWoods_Entry,
+                    from: Area::AncientCistern_MainHub,
+                    to: Area::AncientCistern_BehindWaterfall,
                 },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::EldinVolcanoDiggingSpotAfterDrainingLava,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::EldinVolcano_PastSlide,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::RetrieveCrystalBall),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::MogmaTurfFreeFallChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::MogmaTurf_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyloftSilentRealmStoneOfTrials),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkyloftSilentRealm_Trial,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FireSanctuaryA_InFrontOfBossDoor,
-                    to: Area::FireSanctuaryA_UpperStaircaseRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryA_InFrontOfBossDoor,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::EldinEntranceStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FaronWoods_GreatTreeTop,
-                    to: Area::FaronWoods_ClawshotTargetBranch,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanRetrievePartyWheel),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::BeatRequiredDungeons),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SealedTemple_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleChestGuardedByLizalfos),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EarthTemple_AfterBallRolling,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LakeFloria_To_FaroresLair),
-                RequirementExpression::And(
-                    vec![
+                        RequirementExpression::Item(Item::Whip, 1u8),
                         RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::LakeFloria_ToFaroresLair,
+                        RequirementExpression::Area(Area::AncientCistern_MainHub,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::FireSanctuaryB_WaterFruitRoom,
-                    to: Area::FireSanctuaryB_AfterDoubleMagmanosFight,
+                    from: Area::AncientCistern_MainHub,
+                    to: Area::AncientCistern_MainBasement,
                 },
                 RequirementExpression::And(
                     vec![
+                        RequirementExpression::Event(Event::CanLowerAcStatue),
+                        RequirementExpression::Area(Area::AncientCistern_MainHub,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_MainHub,
+                    to: Area::AncientCistern_SpiderThread,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
                         RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryB_WaterFruitRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruDesertChestNearPartyWheel),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyCrystalOutsideLumpyPumpkin),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMines_FirstHalf,
-                    to: Area::LanayruMines_ToCaves,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityA_SecondRoom,
-                    to: Area::LanayruMiningFacilityA_FirstWestRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_SecondRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::MogmaTurfChestBehindBombableWallAtEntrance,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::MogmaTurf_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::SkippersRetreat_PastDekuBaba,
-                    to: Area::SkippersRetreat_NextToShack,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::SkippersRetreat_PastDekuBaba,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_LanayruDesert_DesertEntranceStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::AmberTablet, 1u8),
-                        RequirementExpression::Event(Event::DesertEntranceStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::OutsideFireSanctuary_To_InsideVolcanoSummit),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToInsideSummit,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipTreasureRoomSecondChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::EldinVolcanoDiggingSpotBehindBoulderOnSandySlope,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruCaves_ToSandSea,
-                    to: Area::LanayruCaves_Main,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::LanayruCavesSmallKey, 1u8),
-                        RequirementExpression::Area(Area::LanayruCaves_ToSandSea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInPirateStronghold),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::OutsidePiratesStronghold_InsideSharkhead,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Skyloft_CentralOutside,
-                    to: Area::Skyloft_ToSkyKeep,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::StoneOfTrials, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanLowerAcStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Whip,
-                        1u8),
-                        RequirementExpression::Area(Area::AncientCistern_MainRoomVines,
-                        TimeOfDay::Both)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Whip,
-                        1u8),
-                        RequirementExpression::Area(Area::AncientCistern_SpiderThread,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruSilentRealm_To_LanayruDesert),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruSilentRealm_Trial,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Batreaux70CrystalsSecondReward),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        11u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        12u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        13u8)])]), RequirementExpression::Area(Area::BatreauxHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyCrystalInLinksRoom),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SparringHall_To_Skyloft_Right),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SparringHall_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SandSea_To_SandSeaDocks),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::SkippersRetreat_Start,
-                    to: Area::SkippersRetreat_PastMoblin,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 2u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Whip,
-                        1u8), RequirementExpression::Fixed(true)])]),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::SkippersRetreat_Start,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanSellTreasures),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::RupinsHouse_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruMines_To_LanayruCaves),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMines_ToCaves,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::PipersHouse_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::PipersHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FireSanctuaryBossKeyChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
-                        RequirementExpression::Area(Area::FireSanctuaryA_UpperStaircaseRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_WaterfallCave_Upper),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::MogmaTurf_To_EldinVolcano_EndVent),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::MogmaTurf_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_BatreauxHouse),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::OpenedShed),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyLumpyPumpkinOutsideGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::InitialGoddessCube),
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Skyloft_CentralOutside,
-                    to: Area::Skyloft_WaterfallCaveCrystals,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruCavesGolosGift),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruCaves_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SealedGroundsSongFromImpa),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Area(Area::SealedTemple_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruDesertFireNodeRightEndingChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireNode_End, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_LightningNode),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Beedle50RupeeItem),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FaronWoodsSlingshot),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::RaiseLanayruMiningFacility),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Event(Event::ActivateWaterNode),
-                        RequirementExpression::Event(Event::ActivateFireNode),
-                        RequirementExpression::Event(Event::ActivateLightningNode),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::WestDesertStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_SandOasis,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::EldinVolcanoGossipStoneNextToEarthTemple,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkyviewSpring_To_DeepWoods),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::SkyviewSpring_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_BeedlesShop_Day),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Day),
-                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Item(Item::BombBag, 1u8)])]),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::ActivateLightningNode),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::LightningNode_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruMiningFacilityChestBehindFirstCrawlspace,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_WestHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_BeedlesShop_Night),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(
-                    Exit::SealedGroundsSpiral_To_Sky_SealedGroundsStatue,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SealedGroundsSpiral_Upper,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EldinVolcano_To_Sky_VolcanoEastStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkyloftSilentRealm_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkyloftSilentRealm_Trial,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::RaiseGoT),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GoddessHarp,
-                        1u8), RequirementExpression::Area(Area::SealedTemple_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::VolcanoSummitItemBehindDigging),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
-                        RequirementExpression::Area(Area::OutsideFireSanctuary_Middle,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_Sky_NorthDesertStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::VolcanoSummitGossipStoneOutsideFireSanctuary,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::OutsideFireSanctuary_Middle,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::ViewingPlatformStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityB_WestHub,
-                    to: Area::LanayruMiningFacilityB_NearBossDoor,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_WestHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyBeedlesIslandCageGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeOnTopOfSkyview),
-                        RequirementExpression::Area(Area::Sky_BeedleIslandCage,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::KnightAcademy_AboveZeldasRoom,
-                    to: Area::KnightAcademy_Main,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::KnightAcademy_AboveZeldasRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruDesertLightningNodeRaisedChestNearGenerator,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Fixed(true)])]),
-                        RequirementExpression::Area(Area::LightningNode_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyviewItemBehindBars),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        1u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Fixed(true)])]),
-                        RequirementExpression::Area(Area::SkyviewTemple_MainHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruMinesChestNearFirstTimeshiftStone,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SandSeaDocks_To_LanayruCaves),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SandSeaDocks_ToCaves,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_MallarasHouse),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::StoneCacheStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LakeFloria_Entry,
-                    to: Area::LakeFloria_StatueSpot,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::LakeFloria_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyOwlansGift),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::ParrowAndOriellesHouse_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::ParrowAndOriellesHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FaronWoods_Main,
-                    to: Area::FaronWoods_GreatTreePlatforms,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyviewChestNearBossDoor),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkyviewTemple_BossDoorArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EldinVolcano_To_Sky_VolcanoAscentStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanPlayCleanCut),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Area(Area::InsideBambooIsland_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruDesertFireNodeLeftEndingChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireNode_End, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::MogmaTurf_To_EldinVolcano_StartVent),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::MogmaTurf_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::CentralSkyloftBazaarGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInAncientHarbour),
-                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LakeFloriaDragonLairSouthChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::FaroresLair_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::CentralSkyloftCrystalBetweenWoodenPlanks,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipRobotInBrigsReward),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyGhostPipitsCrystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::CawlinsLetter, 1u8),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LakeFloria_To_Sky_LakeFloriaStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LakeFloria_StatueSpot,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_EldinVolcano_TempleEntranceStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::RubyTablet, 1u8),
-                        RequirementExpression::Event(Event::TempleEntranceStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::AncientCisternFaroresFlame),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::AncientCisternCandleRoom_Main,
+                        RequirementExpression::Area(Area::AncientCistern_MainHub,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -20555,313 +19404,83 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Location(Location::Batreaux30CrystalsChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        3u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        4u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        5u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        6u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::DeepWoods_To_FaronWoods),
+                RequirementKey::LogicExit {
+                    from: Area::AncientCistern_SpiderThread,
+                    to: Area::AncientCistern_BossKeyChestArea,
+                },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::DeepWoods_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Lower_Left),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        RequirementExpression::Area(Area::AncientCistern_SpiderThread,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::LanayruDesert_HookBeetleArea,
-                    to: Area::LanayruDesert_SandOasis,
+                    from: Area::AncientCistern_SpiderThread,
+                    to: Area::AncientCistern_MainBasement,
                 },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8), RequirementExpression::Item(Item::Clawshots, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(
-                    Exit::OutsidePiratesStronghold_To_InsidePiratesStronghold_End,
-                ),
-                RequirementExpression::And(
-                    vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::OutsidePiratesStronghold_InsideSharkhead,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SealedGroundsGorkosGoddessWallReward),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Event(Event::ActivateSkyviewGoddessWall),
-                        RequirementExpression::Area(Area::BehindTheTemple_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::DefeatImprisoned2),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Event(Event::StartImprisoned2),
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::SealedGroundsSpiral_Lower,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::AncientCisternBokoblin),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Area(Area::AncientCistern_BeforeBokoKeyDoor,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::BehindTheTempleStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BehindTheTemple_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanBeatEarthTemple),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::EarthTempleSpring_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EldinVolcanoDiggingSpotAfterVents),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::EldinVolcano_SandSlide,
+                        RequirementExpression::Area(Area::AncientCistern_SpiderThread,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityB_InsideLmfBkRoom,
-                    to: Area::LanayruMiningFacilityB_AfterLmfBkRoom,
+                    from: Area::Skyloft_CentralOutside,
+                    to: Area::Skyloft_ToSkyKeep,
                 },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_InsideLmfBkRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FireNode_To_LanayruDesert),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_OutsideEt,
-                    to: Area::EldinVolcano_HotCaveArea,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::SkyGoddessChestInCaveOnIslandNextToBambooIsland,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInSecretPassagewayInDesert),
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::DeepWoodsStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::CentralSkyloftCrystalOnWaterfallIsland,
-                ),
-                RequirementExpression::And(
-                    vec![
+                        RequirementExpression::Item(Item::StoneOfTrials, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Fixed(true)]),
                         RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Night), RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::AncientCistern_MainHub,
-                    to: Area::AncientCistern_BehindWaterfall,
+                    from: Area::Skyloft_CentralOutside,
+                    to: Area::Skyloft_WaterfallCaveCrystals,
                 },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::AncientCistern_MainHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::InitialGoddessCube),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::InsideTheVolcanoStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToFireSanctuary,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaroresLair_To_FloriaWaterfall),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaroresLair_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleChestLeftOfMainRoomBridge),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::InsideThunderhead_To_IsleOfSongs),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::Skyloft_OutsideSkyloftVillage,
-                    to: Area::Skyloft_CentralOutside,
+                    from: Area::Skyloft_CentralOutside,
+                    to: Area::Skyloft_OutsideGoddessStatue,
                 },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityA_Entry,
-                    to: Area::LanayruMiningFacilityA_SecondRoom,
+                    from: Area::Skyloft_CentralOutside,
+                    to: Area::Skyloft_OutsideSkyloftVillage,
                 },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Whip,
-                        1u8), RequirementExpression::Fixed(true)])]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Bazaar_To_Skyloft_South),
-                RequirementExpression::And(
-                    vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FireSanctuaryBoss_To_FireSanctuaryFlameRoom),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryBoss_Main,
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -20880,587 +19499,14 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::LanayruDesert_To_LanayruMines),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EarthTempleBoss_To_EarthTempleSpring),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Option(| options | options.hero_mode
-                        == true)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        3u8), RequirementExpression::Option(| options | options.hero_mode
-                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
-                        5u8)])])]),
-                        RequirementExpression::Area(Area::EarthTempleBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInEldinSlide),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::EldinVolcano_SandSlide,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::BeedleSecond100RupeeItem),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::FireSanctuaryChestNearFirstTrappedMogma,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GustBellows,
-                        1u8), RequirementExpression::Item(Item::Clawshots, 1u8)]),
-                        RequirementExpression::Area(Area::FireSanctuaryB_PastSecondRoomWithWaterFruit,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyviewChestBehindTwoEyes),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::SkyviewTemple_FirstHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::SkyloftVillageCrystalNearPumpkinPatch,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademySparringHallChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SparringHall_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInSummitWaterfall),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8),
-                        RequirementExpression::Area(Area::VolcanoSummitWaterfall_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::InTheWoodsStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SealedGroundsChestInsideSealedTemple),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SealedTemple_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyFledgesCrystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::EndurancePotion),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
                 RequirementKey::LogicExit {
-                    from: Area::AncientCistern_AfterWhipHooks,
-                    to: Area::AncientCistern_MainRoomVines,
+                    from: Area::Skyloft_ToSkyKeep,
+                    to: Area::Skyloft_CentralOutside,
                 },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::AncientCistern_AfterWhipHooks,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruMiningFacilityChestInSpikeMaze,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_WestHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::TalkToOrielle),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::VolcanoSummitChestBehindBombableWallInWaterfallArea,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::VolcanoSummitWaterfall_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FaronWoods_Main,
-                    to: Area::FaronWoods_ClawshotTargetBranch,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FireSanctuaryA_To_OutsideFireSanctuary),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireSanctuaryA_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(
-                    Exit::Sky_To_OutsideFireSanctuary_InsideTheVolcanoStatue,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::RubyTablet, 1u8),
-                        RequirementExpression::Event(Event::InsideTheVolcanoStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::PickUpGuld),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::MogmaTurf_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyPumpkinArchery600Points),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LumpyPumpkin_To_Sky_South_Right),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::VolcanoSummitBokoBasePouchChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
-                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::CentralSkyloftWaterfallGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInPirateStronghold),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FaronWoods_Entry,
-                    to: Area::FaronWoods_Main,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8)]),
-                        RequirementExpression::Area(Area::FaronWoods_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaroresLair_To_LakeFloria),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::FaroresLair_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInSecretPassagewayInDesert),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8), RequirementExpression::Fixed(true)])]),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8)]),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::AncientCistern_To_AncientCisternBoss),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::AncientCisternBossKey, 1u8),
-                        RequirementExpression::Area(Area::AncientCistern_BeforeBossDoor,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::ThunderheadIsleOfSongsDinsPower),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 4u8),
-                        RequirementExpression::Area(Area::IsleOfSongs_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::MogmaTurfChestBehindBombableWallInFireMaze,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::MogmaTurf_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SandSea_To_Shipyard),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::PumpkinCarrying),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Event(Event::DeliveredHotSoup),
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruMiningFacilityChestInFirstWestRoom,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_FirstWestRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::MogmaTurfSandSlideChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::MogmaTurf_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::FloriaWaterfallStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::ThunderheadFirstGoddessChestOnMogmaMittsIsland,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInsideVolcanoSummit),
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyKinasCrystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::PumpkinCarrying),
-                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Event(Event::PickUpGuld),
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipBow),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::SandshipSmallKey, 2u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_WaterfallCave_Lower),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_PastWaterfallCave,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_AfterAcGutters,
-                    to: Area::AncientCistern_MainRoomVines,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Area(Area::AncientCistern_AfterAcGutters,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleAmberTablet),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::EarthTempleSpring_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_LanayruMiningFacilityA),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::RaiseLanayruMiningFacility),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SandSeaDocks_To_SandSea),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Area(Area::SandSeaDocks_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::ThunderheadBugHeavenGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInSummitWaterfall),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruDesertChestOnPlatformNearLightningNode,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::CentralSkyloftParrowsGift),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::TalkToOrielle),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruMiningFacilityGustBellows),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_GustBellowsRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_GreatTree_Top),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::SealedGroundsSpiral_Lower,
-                    to: Area::SealedGroundsSpiral_Upper,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::BeatRequiredDungeons),
-                        RequirementExpression::Event(Event::RaiseGoT),
-                        RequirementExpression::Area(Area::SealedGroundsSpiral_Lower,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruMiningFacilityChestBehindBars),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_Entry,
+                        RequirementExpression::Area(Area::Skyloft_ToSkyKeep,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -21482,2150 +19528,16 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::FireSanctuarySecondChestInWaterFruitRoom,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireSanctuaryB_WaterFruitRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_FloriaWaterfall_FloriaWaterfallStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::FloriaWaterfallStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(
-                    Event::GoddessCubeOnEastGreatTreeWithClawshotsTarget,
-                ),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8),
-                        RequirementExpression::Area(Area::FaronWoods_ClawshotTargetBranch,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeAtLanayruMinesEntrance),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::LanayruMines_FirstHalf,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EldinVolcano_To_MogmaTurf_Skydive),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::CentralSkyloftShedGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Event(Event::GoddessCubeInEldinSlide),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruDesertGossipStoneInTempleOfTimeArea,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::TempleOfTime_NearGossipStone,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::TriforcesCollected),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::HyliasTemple_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInDeepWoods),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::KnightAcademy_To_Skyloft_Lower_Right),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkyviewBoss_To_SkyviewSpring),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::SkyviewBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::KnightAcademy_To_Skyloft_Lower_Left),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EarthTemple_To_EarthTempleBoss),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::EarthTempleBossKey, 1u8),
-                        RequirementExpression::Area(Area::EarthTemple_BossDoorArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_LumpyPumpkin_North),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_FaronWoods_ViewingPlatformStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::ViewingPlatformStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Shipyard_To_SandSea),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Shipyard_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipTreasureRoomThirdChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LakeFloriaDragonLairEastChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaroresLair_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
                 RequirementKey::LogicExit {
-                    from: Area::LanayruMines_ToCaves,
-                    to: Area::LanayruMines_FirstHalf,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::LanayruMines_ToCaves,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkyKeepEntry_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkyKeepEntry_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::LanayruDesertDungeonBeaten),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::TempleOfTime_AfterLmf,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_BehindTheTemple),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Bazaar_To_Skyloft_North),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_Sky),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::InsideGoddessStatue_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::InsideGoddessStatue_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::CentralSkyloftFloatingIslandGossipStone,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruDesertFireNodeFirstSmallChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::LumpyPumpkinQuestStart),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressivePouch,
-                        1u8), RequirementExpression::Item(Item::EmptyBottle, 1u8),
-                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruCavesChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruCaves_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_PeatricesHouse),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::DeepWoods_To_Sky_ForestTempleStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EldinVolcano_To_Sky_EldinEntranceStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::BertiesHouse_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BertiesHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EldinVolcanoDiggingSpotBelowTower),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruMines_To_LanayruDesert),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMines_ToDesert,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SealedGroundsZeldasBlessing),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::HyliasTemple_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Upper_Right),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityB_HubRoom,
-                    to: Area::LanayruMiningFacilityB_NearFirstHubRoomChest,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_HubRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Upper_Left),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyOwlansCrystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::RetrieveOolo),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FaronSilentRealmWaterScale),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronSilentRealm_Trial,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::SkyviewTemple_Entry,
-                    to: Area::SkyviewTemple_FirstHub,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)])])]),
-                        RequirementExpression::Area(Area::SkyviewTemple_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeOnWestGreatTreeNearExit),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8),
-                        RequirementExpression::Area(Area::FaronWoods_GreatTreePlatforms,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeOnEastGreatTreeWithRope),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EarthTemple_To_EldinVolcano),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EarthTemple_Entrance,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyLumpyPumpkinHarpMinigame),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::PumpkinCarrying),
-                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_InsideBambooIsland),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruMiningFacilityToToT_To_TempleOfTime),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityToToT_ToTExit,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::SkippersRetreat_PastMoblin,
-                    to: Area::SkippersRetreat_PastDekuBaba,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Area(Area::SkippersRetreat_PastMoblin,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipTreasureRoomFourthChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::ThunderheadSongFromLevias),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::PickUpLeviasSoup),
-                        RequirementExpression::Item(Item::SpiralCharge, 1u8),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInSandOasis),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::LanayruDesert_SandOasis,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_SparringHall_Right),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sandship_To_SandSea),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::BehindTheTemple_To_Sky_BehindTheTempleStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BehindTheTemple_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::OutsideFireSanctuary_To_FireSanctuaryA),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToFireSanctuary,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipTentalusHeartContainer),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Area(Area::SandshipBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_PreMogmaTurf,
-                    to: Area::EldinVolcano_PastMogmaTurf,
+                    from: Area::EarthTemple_BallRolling,
+                    to: Area::EarthTemple_AfterBallRolling,
                 },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
                         1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8)]),
-                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Batreaux30Crystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        3u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        4u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        5u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        6u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Batreaux80Crystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GratitudeCrystal, 15u8),
-                        RequirementExpression::Item(Item::GratitudeCrystalPack, 13u8),
-                        RequirementExpression::Area(Area::BatreauxHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyGossipStoneInsideBambooIsland),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::InsideBambooIsland_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_VolcanoAscent,
-                    to: Area::EldinVolcano_PastSlide,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8)]),
-                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::GreatTree_Upper,
-                    to: Area::GreatTree_Middle,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::GreatTree_Upper,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruMiningFacilityA_To_LanayruDesert),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeNearHookBeetleFight),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Option(| options | options.hero_mode
-                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
-                        6u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8)])]),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FireSanctuaryA_PrePlatsArea,
-                    to: Area::FireSanctuaryA_InFrontOfBossDoor,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::FireSanctuaryA_PrePlatsArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SandSeaDocks_To_Sky_AncientHarbor),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SandSeaDocks_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::ThrillDiggerCave_To_EldinVolcano),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::ThrillDiggerCave_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_FirstRoom,
-                    to: Area::EldinVolcano_PreMogmaTurf,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::DeepWoods_Entry,
-                    to: Area::DeepWoods_PastBeehive,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8)]),
-                        RequirementExpression::Area(Area::DeepWoods_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::RupinsHouse_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::RupinsHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::CentralSkyloftCrystalAfterWaterfallCave,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_WaterfallCaveCrystals,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::Skyloft_WaterfallCaveCrystals,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Sandship_Deck,
-                    to: Area::Sandship_PastSpume,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSlingshot, 1u8),
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Event(Event::CanFreelyChangeSandshipTemporality)]),
-                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FireSanctuaryB_FirstOutsideSection,
-                    to: Area::FireSanctuaryB_PastSecondRoomWithWaterFruit,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Item(Item::ProgressiveBeetle, 2u8),
-                        RequirementExpression::Area(Area::FireSanctuaryB_FirstOutsideSection,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipBossKeyChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::SandshipSmallKey, 2u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInSkippersRetreat),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::SkippersRetreat_PastMoblin,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::TempleEntranceStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::StartImprisoned2),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Event(Event::RaiseGoT),
-                        RequirementExpression::Event(Event::BeatRequiredDungeons),
-                        RequirementExpression::Event(Event::SwordRequirementMet),
-                        RequirementExpression::Area(Area::SealedTemple_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::HighRupeeFarm),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::BatreauxHouse_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BatreauxHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Beedle1200RupeeItem),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ExtraWallet,
-                        3u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
-                        1u8), RequirementExpression::Item(Item::ExtraWallet, 3u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
-                        2u8), RequirementExpression::Item(Item::ExtraWallet, 1u8)]),
-                        RequirementExpression::Item(Item::ProgressiveWallet, 3u8)])]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressivePouch,
-                        1u8), RequirementExpression::Option(| options | options.shop_mode
-                        != ShopMode::Vanilla)]),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkippersRetreat_To_SandSea),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkippersRetreat_Start,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Sandship_PastSpume,
-                    to: Area::Sandship_SandshipBrig,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Area(Area::Sandship_PastSpume,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::TempleOfTime_To_LanayruDesert_Start),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::TempleOfTime_Start,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_MainHub,
-                    to: Area::AncientCistern_AfterWhipHooks,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Area(Area::AncientCistern_MainHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(
-                    Exit::InsidePiratesStronghold_To_OutsidePiratesStronghold_Beginning,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(
-                    Exit::InsidePiratesStronghold_To_OutsidePiratesStronghold_End,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::OpenSharkhead),
-                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Beedle300RupeeItem),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanPlayCleanCut),
-                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Event(Event::CanPlayThrillDigger)])]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressivePouch,
-                        1u8), RequirementExpression::Option(| options | options.shop_mode
-                        != ShopMode::Vanilla)]),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_LanayruSilentRealm),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::NayrusWisdom, 1u8),
-                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Sky_Field,
-                    to: Area::Sky_BeedleIslandCage,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::ThunderheadEastIslandGoddessChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeOnEastGreatTreeWithRope),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FireSanctuaryChestInFirstRoom),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::FireSanctuaryA_PastFirstWaterPlant,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::SkySouthwestTripleIslandCageGoddessChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInSkippersRetreat),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::EndurancePotion),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Event(Event::LanayruDesertDungeonBeaten),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressivePouch,
-                        1u8), RequirementExpression::Item(Item::EmptyBottle, 1u8)]),
-                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::SkyviewTemple_FirstHub,
-                    to: Area::SkyviewTemple_MainHub,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Item(Item::SkyviewSmallKey, 1u8),
-                        RequirementExpression::Area(Area::SkyviewTemple_FirstHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::SwordRequirementMet),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SealedTemple_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityB_AfterLmfBkRoom,
-                    to: Area::LanayruMiningFacilityB_InsideLmfBkRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_AfterLmfBkRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::InsideBambooIsland_To_Sky),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::InsideBambooIsland_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_LanayruDesert_WestDesertStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::AmberTablet, 1u8),
-                        RequirementExpression::Event(Event::WestDesertStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyFledgesGift),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FireSanctuaryGhirahimHeartContainer),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_PastMogmaTurf,
-                    to: Area::EldinVolcano_PreMogmaTurf,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_PastMogmaTurf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::SkippersRetreat_NextToShack,
-                    to: Area::SkippersRetreat_PastDekuBaba,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::SkippersRetreat_NextToShack,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyFunFunIslandMinigame500Rupees),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruMiningFacilityChestInsideGustBellowsRoom,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_GustBellowsRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Chimney),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanBeatAncientCistern),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8),
-                        RequirementExpression::Area(Area::AncientCisternCandleRoom_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyLumpyPumpkinGoddessChestOnTheRoof),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInSkyviewSpring),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityToToT_BossDoor,
-                    to: Area::LanayruMiningFacilityToToT_ToTExit,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityToToT_BossDoor,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeNearFsEntrance),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToFireSanctuary,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_MainBasement,
-                    to: Area::AncientCistern_BossKeyChestArea,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_MainBasement,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleLeddsGift),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FireSanctuaryDinsFlame),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::FireSanctuaryFlameRoom_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Beedle1000RupeeItem),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ExtraWallet,
-                        3u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
-                        1u8), RequirementExpression::Item(Item::ExtraWallet, 2u8)]),
-                        RequirementExpression::Item(Item::ProgressiveWallet, 2u8)]),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_SkyKeepEntry),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_ToSkyKeep,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_PastSlide,
-                    to: Area::EldinVolcano_HotCaveArea,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_PastSlide,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_Sky_FaronWoodsEntryStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FireSanctuaryA_Entry,
-                    to: Area::FireSanctuaryA_PastFirstWaterPlant,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Item(Item::BombBag, 1u8)]),
-                        RequirementExpression::Area(Area::FireSanctuaryA_Entry,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipTreasureRoomFifthChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_MainBasement,
-                    to: Area::AncientCistern_BeforeBossDoor,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Area(Area::AncientCistern_MainBasement,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sandship_To_SandshipBoss),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::CanFreelyChangeSandshipTemporality),
-                        RequirementExpression::Item(Item::SandshipBossKey, 1u8),
-                        RequirementExpression::Area(Area::Sandship_PastSpume,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SandSea_To_OutsidePiratesStronghold),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::BehindTheTemple_To_SealedGroundsSpiral),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BehindTheTemple_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::RetrieveOolo),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_GreatTree_LowerPlatform),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_GreatTreePlatforms,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::KnightAcademy_To_Skyloft_Upper_Right),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::WaterfallCave_To_Skyloft_Lower),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::WaterfallCave_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SandSea_To_Sandship),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::SeaChart, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Skyloft_CentralOutside,
-                    to: Area::Skyloft_OutsideSkyloftVillage,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_KnightAcademy_Lower_Right),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::ForestTempleStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::Shipyard_Main,
-                    to: Area::Shipyard_AfterMinecartRide,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Shipyard_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_Bazaar_North),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Day),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::GreatTree_To_FaronWoods_Top),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::GreatTree_Upper,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_InsideThunderhead),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BalladOfTheGoddess,
-                        1u8), RequirementExpression::Option(| options | options
-                        .open_thunderhead == OpenThunderhead::Open)]),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::CentralSkyloftFloatingIslandGoddessChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeInLakeFloria),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_Sky_GreatTreeStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_LakeFloria_LakeFloriaStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::LakeFloriaStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::TalkToPeatriceInBazaar),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::GreatTree_Lower,
-                    to: Area::GreatTree_PastPlatforms,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Area(Area::GreatTree_Lower,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::AncientCisternChestInEastPart),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::AncientCistern_MainHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::OutsidePiratesStronghold_To_SandSea),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::OutsidePiratesStronghold_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LakeFloriaLakeFloriaChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LakeFloria_StatueSpot,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LumpyPumpkin_To_Sky_North),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_DeepWoods_DeepWoodsStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::DeepWoodsStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::PeatricesHouse_To_Skyloft),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::PeatricesHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_NearThrillDigger,
-                    to: Area::EldinVolcano_VolcanoAscent,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_NearThrillDigger,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::BeedlesShop_To_Sky_Night),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_TempleOfTime_End),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::TempleOfTime_AfterLmf,
-                    to: Area::TempleOfTime_NearGossipStone,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::TempleOfTime_AfterLmf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::NorthDesertStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::SkyGoddessChestOnIslandNextToBambooIsland,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeNearMogmaTurfEntrance),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EldinSilentRealm_To_EldinVolcano),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinSilentRealm_Trial,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::CentralSkyloftWaterfallCaveFirstChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::WaterfallCave_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruMiningFacilityGoddessHarp),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityToToT_ToTExit,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::CanBeatLanayruMiningFacility),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityToToT_ToTExit,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(
-                    Exit::Sky_To_SealedGroundsSpiral_SealedGroundsStatue,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::SealedGroundsStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_GreatTree_UpperPlatform),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_GreatTreePlatforms,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::FireSanctuaryChestAfterSecondTrappedMogma,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryB_LastTrappedMogmaArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::EldinVolcanoDiggingSpotInFrontOfEarthTemple,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_FaronWoods_GreatTreeStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::GreatTreeStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FaronWoodsDeepWoodsChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EarthTempleVentChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
-                        RequirementExpression::Area(Area::EarthTemple_Entrance,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruSilentRealmClawshots),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruSilentRealm_Trial,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeAtEldinEntrance),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::DeepWoods_To_SkyviewTemple),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyviewGhirahimHeartContainer),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::SkyviewBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyloftVillageMallarasCrystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
-                        RequirementExpression::Area(Area::MallarasHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::EldinVolcano_SandSlide,
-                    to: Area::EldinVolcano_PastSlide,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_SandSlide,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Batreaux5Crystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        1u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::CentralSkyloftCrystalInLoftwingPrison,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Area(Area::Skyloft_WaterfallCaveCrystals,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::Skyloft_WaterfallCaveCrystals,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyChestNearGoddessStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_MainHub,
-                    to: Area::AncientCistern_SpiderThread,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::AncientCistern_MainHub,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Bazaar_To_Skyloft_West),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeNearMogmaTurfEntrance),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8),
-                        RequirementExpression::Area(Area::EldinVolcano_PastMogmaTurf,
-                        TimeOfDay::Both)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8),
-                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SparringHall_To_Skyloft_Left),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SparringHall_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::FaronWoods_To_Sky_InTheWoodsStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityB_NearBossDoor,
-                    to: Area::LanayruMiningFacilityB_AfterLmfBkRoom,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityB_NearBossDoor,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::AncientCisternKoloktosHeartContainer),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Whip, 1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::AncientCisternBoss_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruDesert_HookBeetleArea,
-                    to: Area::LanayruDesert_PastToT,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8),
-                        RequirementExpression::Event(Event::RaiseLanayruMiningFacility)]),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::TempleOfTime_End,
-                    to: Area::TempleOfTime_Start,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::TempleOfTime_End,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Skyloft_To_SkyloftSilentRealm),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::FaronSongOfTheHeroPart,
-                        1u8), RequirementExpression::Item(Item::EldinSongOfTheHeroPart,
-                        1u8), RequirementExpression::Item(Item::LanayruSongOfTheHeroPart,
-                        1u8)]), RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::BeatDemise),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Event(Event::TriforcesCollected),
-                        RequirementExpression::Area(Area::HyliasTemple_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LumpyPumpkin_To_Sky_South_Left),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipTreasureRoomFirstChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::KnightAcademyCawlinsLetter),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
-                        RequirementExpression::Area(Area::KnightAcademy_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruSandSeaSkippersRetreatChestAfterMoblin,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkippersRetreat_PastMoblin,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::FireSanctuaryPlatsChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
-                        RequirementExpression::Area(Area::FireSanctuaryA_PrePlatsArea,
+                        2u8)]), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        1u8), RequirementExpression::Area(Area::EarthTemple_BallRolling,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -23655,166 +19567,49 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Location(Location::SkyviewRubyTablet),
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_FirstRoom,
+                    to: Area::EldinVolcano_PreMogmaTurf,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::SkyviewSpring_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::LanayruMinesChestBehindStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8)]), RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::Skyloft_ToSkyKeep,
-                    to: Area::Skyloft_CentralOutside,
+                    from: Area::EldinVolcano_FirstRoom,
+                    to: Area::EldinVolcano_VolcanoAscent,
                 },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::Skyloft_ToSkyKeep,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_Sky_WestDesertStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_SandOasis,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::OpenSharkhead),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GustBellows,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
-                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Beedle1600RupeeItem),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
-                        2u8), RequirementExpression::Item(Item::ExtraWallet, 2u8)]),
-                        RequirementExpression::Item(Item::ProgressiveWallet, 3u8)]),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::EldinVolcanoChestBehindBombableWallNearCliff,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::ThunderheadIsleOfSongsNayrusWisdom),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 3u8),
-                        RequirementExpression::Area(Area::IsleOfSongs_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::LakeFloriaStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LakeFloria_StatueSpot,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruCaves_To_LanayruDesert),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruCaves_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruSandSeaSkippersRetreatSkydiveChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkippersRetreat_NextToShack,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::EldinVolcanoItemOnCliff),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::LanayruMines_FirstHalf,
-                    to: Area::LanayruMines_ToDesert,
+                    from: Area::EldinVolcano_HotCaveArea,
+                    to: Area::EldinVolcano_SandSlide,
                 },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
-                        2u8)]), RequirementExpression::Area(Area::LanayruMines_FirstHalf,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::BehindTheTemple_To_SealedTemple),
-                RequirementExpression::And(
-                    vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::BehindTheTemple_Main,
+                        RequirementExpression::Area(Area::EldinVolcano_HotCaveArea,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::EldinVolcano_To_ThrillDiggerCave),
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_NearThrillDigger,
+                    to: Area::EldinVolcano_OutsideEt,
+                },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
@@ -23824,94 +19619,66 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Event(Event::UnlockedZeldasRoom),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::KnightAcademy_AboveZeldasRoom,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::LanayruDesert_To_Sky_StoneCacheStatue),
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_NearThrillDigger,
+                    to: Area::EldinVolcano_VolcanoAscent,
+                },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        RequirementExpression::Area(Area::EldinVolcano_NearThrillDigger,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::SkyviewBossKeyChest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Option(| options | options.hero_mode
-                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
-                        6u8)])]),
-                        RequirementExpression::Area(Area::SkyviewTemple_BossDoorArea,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::CentralSkyloftItemInBirdNest),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Item(Item::GustBellows, 1u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
-                        1u8), RequirementExpression::Fixed(true),
-                        RequirementExpression::Item(Item::GustBellows, 1u8)])]),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SkyviewSpring_To_SkyviewBoss),
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_OutsideEt,
+                    to: Area::EldinVolcano_HotCaveArea,
+                },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkyviewSpring_Main,
+                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::Sky_To_LanayruDesert_NorthDesertStatue),
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_PastMogmaTurf,
+                    to: Area::EldinVolcano_PreMogmaTurf,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::AmberTablet, 1u8),
-                        RequirementExpression::Event(Event::NorthDesertStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruDesertChestOnPlatformNearFireNode,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_PastMogmaTurf,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::FireSanctuaryA_To_FireSanctuaryBoss),
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_PastMogmaTurf,
+                    to: Area::EldinVolcano_VolcanoAscent,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::FireSanctuaryBossKey, 1u8),
-                        RequirementExpression::Area(Area::FireSanctuaryA_InFrontOfBossDoor,
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_PastMogmaTurf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_PastSlide,
+                    to: Area::EldinVolcano_HotCaveArea,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_PastSlide,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -23931,91 +19698,443 @@ pub fn get_logic() -> Requirements<'static> {
             ),
             (
                 RequirementKey::LogicExit {
-                    from: Area::LakeFloria_StatueSpot,
-                    to: Area::LakeFloria_ToFaroresLair,
+                    from: Area::EldinVolcano_PreMogmaTurf,
+                    to: Area::EldinVolcano_FirstRoom,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_PreMogmaTurf,
+                    to: Area::EldinVolcano_PastMogmaTurf,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8)]),
+                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_SandSlide,
+                    to: Area::EldinVolcano_PastSlide,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_SandSlide,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_VolcanoAscent,
+                    to: Area::EldinVolcano_FirstRoom,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_VolcanoAscent,
+                    to: Area::EldinVolcano_NearThrillDigger,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBow,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Fixed(true)]),
+                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::EldinVolcano_VolcanoAscent,
+                    to: Area::EldinVolcano_PastSlide,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8)]),
+                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::DeepWoods_Entry,
+                    to: Area::DeepWoods_PastBeehive,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8)]),
+                        RequirementExpression::Area(Area::DeepWoods_Entry,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::DeepWoods_PastBeehive,
+                    to: Area::DeepWoods_Entry,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FaronWoods_Entry,
+                    to: Area::FaronWoods_Main,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8)]),
+                        RequirementExpression::Area(Area::FaronWoods_Entry,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FaronWoods_GreatTreeTop,
+                    to: Area::FaronWoods_ClawshotTargetBranch,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FaronWoods_GreatTreeTop,
+                    to: Area::FaronWoods_GreatTreePlatforms,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FaronWoods_Main,
+                    to: Area::FaronWoods_ClawshotTargetBranch,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FaronWoods_Main,
+                    to: Area::FaronWoods_Entry,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FaronWoods_Main,
+                    to: Area::FaronWoods_GreatTreePlatforms,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::GreatTree_Entry,
+                    to: Area::GreatTree_Lower,
                 },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::LakeFloria_StatueSpot,
+                        RequirementExpression::Area(Area::GreatTree_Entry,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::SkyBeedlesCrystals),
+                RequirementKey::LogicExit {
+                    from: Area::GreatTree_Lower,
+                    to: Area::GreatTree_Entry,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::HornedColossusBeetle, 1u8),
-                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::GreatTree_Lower,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::VolcanoSummitGossipStoneInWaterfallArea,
-                ),
+                RequirementKey::LogicExit {
+                    from: Area::GreatTree_Lower,
+                    to: Area::GreatTree_Middle,
+                },
                 RequirementExpression::And(
                     vec![
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Area(Area::GreatTree_Lower,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::GreatTree_Lower,
+                    to: Area::GreatTree_PastPlatforms,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Area(Area::GreatTree_Lower,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::GreatTree_Middle,
+                    to: Area::GreatTree_Lower,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::GreatTree_Middle,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::GreatTree_Middle,
+                    to: Area::GreatTree_PastPlatforms,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::GreatTree_Middle,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::GreatTree_PastPlatforms,
+                    to: Area::GreatTree_Lower,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::GreatTree_PastPlatforms,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::GreatTree_Upper,
+                    to: Area::GreatTree_Middle,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::GreatTree_Upper,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FireSanctuaryA_Entry,
+                    to: Area::FireSanctuaryA_PastFirstWaterPlant,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
                         RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::VolcanoSummitWaterfall_Main,
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Area(Area::FireSanctuaryA_Entry,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::SandshipNayrusFlame),
+                RequirementKey::LogicExit {
+                    from: Area::FireSanctuaryA_InFrontOfBossDoor,
+                    to: Area::FireSanctuaryA_UpperStaircaseRoom,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
-                        RequirementExpression::Area(Area::SandshipBoss_Main,
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::FireSanctuaryA_InFrontOfBossDoor,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::FireSanctuaryB_To_FireSanctuaryA),
+                RequirementKey::LogicExit {
+                    from: Area::FireSanctuaryA_PrePlatsArea,
+                    to: Area::FireSanctuaryA_InFrontOfBossDoor,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
                         RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
                         1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
                         RequirementExpression::Item(Item::Clawshots, 1u8),
                         RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::FireSanctuaryA_PrePlatsArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FireSanctuaryA_UpperStaircaseRoom,
+                    to: Area::FireSanctuaryA_InFrontOfBossDoor,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireSanctuaryA_UpperStaircaseRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FireSanctuaryB_AfterDoubleMagmanosFight,
+                    to: Area::FireSanctuaryB_UnderDoubleMagmanosFight,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
+                        RequirementExpression::Area(Area::FireSanctuaryB_AfterDoubleMagmanosFight,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FireSanctuaryB_FirstOutsideSection,
+                    to: Area::FireSanctuaryB_PastSecondRoomWithWaterFruit,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Item(Item::ProgressiveBeetle, 2u8),
+                        RequirementExpression::Area(Area::FireSanctuaryB_FirstOutsideSection,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FireSanctuaryB_PastSecondRoomWithWaterFruit,
+                    to: Area::FireSanctuaryB_WaterFruitRoom,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::FireSanctuarySmallKey, 2u8),
+                        RequirementExpression::Area(Area::FireSanctuaryB_PastSecondRoomWithWaterFruit,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FireSanctuaryB_UnderDoubleMagmanosFight,
+                    to: Area::FireSanctuaryB_LastTrappedMogmaArea,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
                         RequirementExpression::Area(Area::FireSanctuaryB_UnderDoubleMagmanosFight,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::LanayruMines_To_Sky_LanayruMineEntryStatue),
+                RequirementKey::LogicExit {
+                    from: Area::FireSanctuaryB_WaterFruitRoom,
+                    to: Area::FireSanctuaryB_AfterDoubleMagmanosFight,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::FireSanctuaryB_WaterFruitRoom,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Event(Event::GreatTreeStatue),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SkyloftVillageBertiesCrystals),
+                RequirementKey::LogicExit {
+                    from: Area::KnightAcademy_AboveZeldasRoom,
+                    to: Area::KnightAcademy_Main,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::BabyRattle, 1u8),
-                        RequirementExpression::Area(Area::BertiesHouse_Main,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::BertiesHouse_Main,
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::KnightAcademy_AboveZeldasRoom,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -24034,35 +20153,123 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Event(Event::CanFreelyChangeSandshipTemporality),
-                RequirementExpression::Or(
+                RequirementKey::LogicExit {
+                    from: Area::LakeFloria_Entry,
+                    to: Area::LakeFloria_StatueSpot,
+                },
+                RequirementExpression::And(
                     vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBow,
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::LakeFloria_Entry,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LakeFloria_StatueSpot,
+                    to: Area::LakeFloria_ToFaroresLair,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::LakeFloria_StatueSpot,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LakeFloria_ToFaroresLair,
+                    to: Area::LakeFloria_StatueSpot,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::LakeFloria_ToFaroresLair,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruCaves_Main,
+                    to: Area::LanayruCaves_ToSandSea,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::LanayruCavesSmallKey, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::LanayruCaves_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruCaves_ToSandSea,
+                    to: Area::LanayruCaves_Main,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::LanayruCavesSmallKey, 1u8),
+                        RequirementExpression::Area(Area::LanayruCaves_ToSandSea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::FireNode_Main,
+                    to: Area::FireNode_End,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBeetle, 2u8),
+                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruDesert_HookBeetleArea,
+                    to: Area::LanayruDesert_PastToT,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
                         1u8),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::SandshipSmallKey, 2u8)]),
-                        RequirementExpression::Area(Area::Sandship_Deck,
-                        TimeOfDay::Both)])
+                        RequirementExpression::Event(Event::RaiseLanayruMiningFacility)]),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Event(Event::FaronWoodsEntryStatue),
-                RequirementExpression::Or(
+                RequirementKey::LogicExit {
+                    from: Area::LanayruDesert_HookBeetleArea,
+                    to: Area::LanayruDesert_SandOasis,
+                },
+                RequirementExpression::And(
                     vec![
-                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FaronWoods_Entry,
-                        TimeOfDay::Both)])
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8), RequirementExpression::Item(Item::Clawshots, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Event(Event::GoddessCubeInLakeFloria),
-                RequirementExpression::Or(
+                RequirementKey::LogicExit {
+                    from: Area::LanayruDesert_PastToT,
+                    to: Area::LanayruDesert_HookBeetleArea,
+                },
+                RequirementExpression::And(
                     vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::LakeFloria_StatueSpot,
-                        TimeOfDay::Both)])
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
@@ -24080,51 +20287,217 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::Skyloft_To_SparrotsHouse),
+                RequirementKey::LogicExit {
+                    from: Area::TempleOfTime_AfterLmf,
+                    to: Area::TempleOfTime_NearGossipStone,
+                },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        RequirementExpression::Area(Area::TempleOfTime_AfterLmf,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::Sky_To_BehindTheTemple_BehindTheTempleStatue),
+                RequirementKey::LogicExit {
+                    from: Area::TempleOfTime_End,
+                    to: Area::TempleOfTime_Start,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::BehindTheTempleStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::ShipyardConstructionBay_To_Shipyard_Lower),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::ShipyardConstructionBay_Lower,
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::TempleOfTime_End,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::SkyLumpyPumpkinChandelier),
+                RequirementKey::LogicExit {
+                    from: Area::TempleOfTime_NearCube,
+                    to: Area::TempleOfTime_End,
+                },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        RequirementExpression::Area(Area::TempleOfTime_NearCube,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::GreatTree_To_FaronWoods_LowerPlatform),
+                RequirementKey::LogicExit {
+                    from: Area::TempleOfTime_NearGossipStone,
+                    to: Area::TempleOfTime_NearCube,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8),
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Item(Item::Whip, 1u8)])]),
+                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Option(| options | options.hero_mode
+                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
+                        6u8)])]),
+                        RequirementExpression::Area(Area::TempleOfTime_NearGossipStone,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::TempleOfTime_Start,
+                    to: Area::TempleOfTime_NearGossipStone,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Fixed(true)])]),
+                        RequirementExpression::Area(Area::TempleOfTime_Start,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMines_FirstHalf,
+                    to: Area::LanayruMines_ToCaves,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMines_FirstHalf,
+                    to: Area::LanayruMines_ToDesert,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8)]), RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMines_ToCaves,
+                    to: Area::LanayruMines_FirstHalf,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::LanayruMines_ToCaves,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityA_Entry,
+                    to: Area::LanayruMiningFacilityA_SecondRoom,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Whip,
+                        1u8), RequirementExpression::Fixed(true)])]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_Entry,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityA_FirstKeyLockedRoom,
+                    to: Area::LanayruMiningFacilityA_GustBellowsRoom,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Fixed(true)])]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Fixed(true)])]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_FirstKeyLockedRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityA_FirstWestRoom,
+                    to: Area::LanayruMiningFacilityA_MapRoom,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_FirstWestRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityA_SecondRoom,
+                    to: Area::LanayruMiningFacilityA_FirstKeyLockedRoom,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::LanayruMiningFacilitySmallKey,
+                        1u8),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_SecondRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityA_SecondRoom,
+                    to: Area::LanayruMiningFacilityA_FirstWestRoom,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_SecondRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityB_AfterLmfBkRoom,
+                    to: Area::LanayruMiningFacilityB_InsideLmfBkRoom,
+                },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::GreatTree_PastPlatforms,
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_AfterLmfBkRoom,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -24149,51 +20522,1377 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::SkyviewTemple_To_SkyviewBoss),
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityB_HubRoom,
+                    to: Area::LanayruMiningFacilityB_NearFirstHubRoomChest,
+                },
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::SkyviewBossKey, 1u8),
-                        RequirementExpression::Area(Area::SkyviewTemple_BossDoorArea,
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_HubRoom,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::SandSea_To_SkippersRetreat),
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityB_InsideLmfBkRoom,
+                    to: Area::LanayruMiningFacilityB_AfterLmfBkRoom,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_InsideLmfBkRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityB_NearBossDoor,
+                    to: Area::LanayruMiningFacilityB_AfterLmfBkRoom,
+                },
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SandSea_Main, TimeOfDay::Both)
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_NearBossDoor,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Event(Event::DefeatedShipyardMolderach),
-                RequirementExpression::Or(
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityB_NearBossDoor,
+                    to: Area::LanayruMiningFacilityB_InsideLmfBkRoom,
+                },
+                RequirementExpression::And(
                     vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GustBellows,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8),
-                        RequirementExpression::Area(Area::ShipyardConstructionBay_Lower,
-                        TimeOfDay::Both)])
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_NearBossDoor,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Event(Event::VolcanoAscentStatue),
-                RequirementExpression::Or(
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityB_WestHub,
+                    to: Area::LanayruMiningFacilityB_NearBossDoor,
+                },
+                RequirementExpression::And(
                     vec![
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_WestHub,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::LanayruMiningFacilityToToT_BossDoor,
+                    to: Area::LanayruMiningFacilityToToT_ToTExit,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityToToT_BossDoor,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::OutsidePiratesStronghold_Main,
+                    to: Area::OutsidePiratesStronghold_InsideSharkhead,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::OpenSharkhead),
+                        RequirementExpression::Area(Area::OutsidePiratesStronghold_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SandSeaDocks_ToCaves,
+                    to: Area::SandSeaDocks_Main,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::SandSeaDocks_ToCaves,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::Shipyard_Main,
+                    to: Area::Shipyard_AfterMinecartRide,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Shipyard_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::ShipyardConstructionBay_Upper,
+                    to: Area::ShipyardConstructionBay_Lower,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::ShipyardConstructionBay_Upper,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SkippersRetreat_NextToShack,
+                    to: Area::SkippersRetreat_PastDekuBaba,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::SkippersRetreat_NextToShack,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SkippersRetreat_PastDekuBaba,
+                    to: Area::SkippersRetreat_NextToShack,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::SkippersRetreat_PastDekuBaba,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SkippersRetreat_PastMoblin,
+                    to: Area::SkippersRetreat_PastDekuBaba,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Fixed(true)]),
+                        RequirementExpression::Area(Area::SkippersRetreat_PastMoblin,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SkippersRetreat_Start,
+                    to: Area::SkippersRetreat_PastMoblin,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 2u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Whip,
+                        1u8), RequirementExpression::Fixed(true)])]),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::SkippersRetreat_Start,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::Sandship_Deck,
+                    to: Area::Sandship_PastSpume,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSlingshot, 1u8),
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Event(Event::CanFreelyChangeSandshipTemporality)]),
+                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::Sandship_PastSpume,
+                    to: Area::Sandship_SandshipBrig,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Area(Area::Sandship_PastSpume,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SealedGroundsSpiral_Lower,
+                    to: Area::SealedGroundsSpiral_Upper,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::BeatRequiredDungeons),
+                        RequirementExpression::Event(Event::RaiseGoT),
+                        RequirementExpression::Area(Area::SealedGroundsSpiral_Lower,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SealedGroundsSpiral_Upper,
+                    to: Area::SealedGroundsSpiral_Lower,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SealedGroundsSpiral_Upper,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::Sky_BeedlesSkyHome,
+                    to: Area::Sky_BeedleIslandCage,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::Sky_Field,
+                    to: Area::Sky_BeedleIslandCage,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::Sky_Field,
+                    to: Area::Sky_OutsideLumpyPumpkin,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::Sky_OutsideLumpyPumpkin,
+                    to: Area::Sky_Field,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::Skyloft_OutsideSkyloftVillage,
+                    to: Area::Skyloft_CentralOutside,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::Skyloft_OutsideSkyloftVillage,
+                    to: Area::Skyloft_PastWaterfallCave,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SkyviewTemple_Entry,
+                    to: Area::SkyviewTemple_FirstHub,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)])])]),
+                        RequirementExpression::Area(Area::SkyviewTemple_Entry,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SkyviewTemple_FirstHub,
+                    to: Area::SkyviewTemple_MainHub,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Item(Item::SkyviewSmallKey, 1u8),
+                        RequirementExpression::Area(Area::SkyviewTemple_FirstHub,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::SkyviewTemple_MainHub,
+                    to: Area::SkyviewTemple_BossDoorArea,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::SkyviewSmallKey, 2u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::WaterScale, 1u8)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Option(| options | options.hero_mode
+                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
+                        6u8)]), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::SkyviewTemple_MainHub,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::OutsideFireSanctuary_Middle,
+                    to: Area::OutsideFireSanctuary_ToFireSanctuary,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressivePouch,
+                        1u8), RequirementExpression::Item(Item::EmptyBottle, 1u8)]),
+                        RequirementExpression::Area(Area::OutsideFireSanctuary_Middle,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::LogicExit {
+                    from: Area::OutsideFireSanctuary_ToInsideSummit,
+                    to: Area::OutsideFireSanctuary_Middle,
+                },
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressivePouch, 1u8),
+                        RequirementExpression::Item(Item::EmptyBottle, 1u8),
+                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToInsideSummit,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::AncientCisternChestAfterWhipHooks),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::AncientCistern_AfterWhipHooks,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::AncientCisternBokoblin),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Area(Area::AncientCistern_BeforeBokoKeyDoor,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::AncientCisternChestBehindTheWaterfall,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::AncientCistern_BehindWaterfall,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::AncientCisternBossKeyChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::AncientCistern_BossKeyChestArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::AncientCisternChestInEastPart),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::AncientCistern_MainHub,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::AncientCisternChestNearVines),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::AncientCistern_MainRoomVines,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::AncientCisternWhip),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::AncientCistern_WhipChestRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::AncientCisternKoloktosHeartContainer),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::AncientCisternBoss_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::AncientCisternFaroresFlame),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::AncientCisternCandleRoom_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Batreaux10Crystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        10u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        1u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        2u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Batreaux30Crystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        3u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        4u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        5u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        6u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Batreaux30CrystalsChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        3u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        4u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        5u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        6u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Batreaux40Crystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        5u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        6u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        7u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        8u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Batreaux5Crystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        1u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Batreaux50Crystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        7u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        8u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        9u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        10u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Batreaux70Crystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        11u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        12u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        13u8)])]), RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Batreaux70CrystalsSecondReward),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        11u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        12u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
+                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
+                        13u8)])]), RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Batreaux80Crystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GratitudeCrystal, 15u8),
+                        RequirementExpression::Item(Item::GratitudeCrystalPack, 13u8),
+                        RequirementExpression::Area(Area::BatreauxHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Beedle1000RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ExtraWallet,
+                        3u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
+                        1u8), RequirementExpression::Item(Item::ExtraWallet, 2u8)]),
+                        RequirementExpression::Item(Item::ProgressiveWallet, 2u8)]),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Beedle1200RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ExtraWallet,
+                        3u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
+                        1u8), RequirementExpression::Item(Item::ExtraWallet, 3u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
+                        2u8), RequirementExpression::Item(Item::ExtraWallet, 1u8)]),
+                        RequirementExpression::Item(Item::ProgressiveWallet, 3u8)])]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressivePouch,
+                        1u8), RequirementExpression::Option(| options | options.shop_mode
+                        != ShopMode::Vanilla)]),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Beedle1600RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
+                        2u8), RequirementExpression::Item(Item::ExtraWallet, 2u8)]),
+                        RequirementExpression::Item(Item::ProgressiveWallet, 3u8)]),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Beedle300RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanPlayCleanCut),
+                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Event(Event::CanPlayThrillDigger)])]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressivePouch,
+                        1u8), RequirementExpression::Option(| options | options.shop_mode
+                        != ShopMode::Vanilla)]),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Beedle50RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Beedle600RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ExtraWallet,
+                        1u8), RequirementExpression::Item(Item::ProgressiveWallet,
+                        2u8)])]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressivePouch,
+                        1u8), RequirementExpression::Option(| options | options.shop_mode
+                        != ShopMode::Vanilla)]),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::Beedle800RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ExtraWallet,
+                        2u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveWallet,
+                        1u8), RequirementExpression::Item(Item::ExtraWallet, 1u8)]),
+                        RequirementExpression::Item(Item::ProgressiveWallet, 2u8)]),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::BeedleFirst100RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::BeedleSecond100RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::BeedleThird100RupeeItem),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanPlayCleanCut),
+                        RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Event(Event::CanPlayThrillDigger)])]),
+                        RequirementExpression::Area(Area::BeedlesShop_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftBazaarGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInAncientHarbour),
+                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftPotionLadysGift),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftCrystalInOrielleAndParrowsHouse,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::ParrowAndOriellesHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftPeaterPeatricesCrystals,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::TalkToPeatriceInBazaar),
+                        RequirementExpression::Area(Area::PeatricesHouse_Main,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::PeatricesHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftCrystalBetweenWoodenPlanks,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftCrystalOnLightTower),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftCrystalOnWaterfallIsland,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Night), RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftCrystalOnWestCliff),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftFloatingIslandGoddessChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInLakeFloria),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftFloatingIslandGossipStone,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftItemInBirdNest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Item(Item::GustBellows, 1u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        1u8), RequirementExpression::Fixed(true),
+                        RequirementExpression::Item(Item::GustBellows, 1u8)])]),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftParrowsCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::SaveOrielle),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftParrowsGift),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::TalkToOrielle),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftShedChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftShedGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Event(Event::GoddessCubeInEldinSlide),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftWaterfallGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInPirateStronghold),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftWestCliffGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeOnWestGreatTreeNearExit),
+                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftCrystalAfterWaterfallCave,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_WaterfallCaveCrystals,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::Skyloft_WaterfallCaveCrystals,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftCrystalInLoftwingPrison,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_WaterfallCaveCrystals,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::Skyloft_WaterfallCaveCrystals,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftWaterfallCaveFirstChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::WaterfallCave_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::CentralSkyloftWaterfallCaveSecondChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::WaterfallCave_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::CentralSkyloftWrynasCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::WrynasHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EarthTempleChestGuardedByLizalfos),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EarthTemple_AfterBallRolling,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EarthTempleBombBag),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EarthTempleChestLeftOfMainRoomBridge),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EarthTempleChestBehindBombableRock),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EarthTempleChestInWestRoom),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8)]),
+                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EarthTempleLeddsGift),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Area(Area::EarthTemple_BallRolling,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EarthTempleBossKeyChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EarthTemple_BossDoorArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EarthTempleVentChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::EarthTemple_Entrance,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EarthTempleScalderaHeartContainer),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
                         RequirementExpression::And(vec![RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
-                        TimeOfDay::Both)])
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Option(| options | options.hero_mode
+                        == true)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        3u8), RequirementExpression::Option(| options | options.hero_mode
+                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
+                        5u8)])])]),
+                        RequirementExpression::Area(Area::EarthTempleBoss_Main,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::SkyKeepFirstChest),
+                RequirementKey::Location(Location::EarthTempleAmberTablet),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::EarthTempleSpring_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EldinSilentRealmFireshieldEarrings),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SkyKeepEntry_Main,
+                        RequirementExpression::Area(Area::EldinSilentRealm_Trial,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::EldinVolcanoChestBehindBombableWallInFirstRoom,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::EldinVolcanoDiggingSpotBehindBoulderOnSandySlope,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EldinVolcanoDiggingSpotBelowTower),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::EldinVolcanoDiggingSpotInFrontOfEarthTemple,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::EldinVolcanoGossipStoneNextToEarthTemple,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::EldinVolcanoDiggingSpotAfterDrainingLava,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::EldinVolcano_PastSlide,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EldinVolcanoChestAfterCrawlspace),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::EldinVolcanoChestBehindBombableWallNearCliff,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EldinVolcanoItemOnCliff),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::EldinVolcanoDiggingSpotAfterVents),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::EldinVolcano_SandSlide,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::EldinVolcanoChestBehindBombableWallNearVolcanoAscent,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::EldinVolcanoGossipStoneInThrillDiggerCave,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::ThrillDiggerCave_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FaronSilentRealmWaterScale),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronSilentRealm_Trial,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FaronWoodsDeepWoodsChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::FaronWoodsChestBehindBombableRocksNearErla,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FaronWoodsItemBehindBombableRock),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -24209,27 +21908,659 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::SkyChestInBreakableBoulderNearFunFunIsland,
-                ),
+                RequirementKey::Location(Location::FaronWoodsSlingshot),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::SpiralCharge, 1u8),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::LanayruMiningFacilityA_FirstWestRoom,
-                    to: Area::LanayruMiningFacilityA_MapRoom,
-                },
+                RequirementKey::Location(Location::FaronWoodsChestInsideGreatTree),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::GreatTree_Middle,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryChestInFirstRoom),
+                RequirementExpression::And(
+                    vec![
                         RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
-                        RequirementExpression::Area(Area::LanayruMiningFacilityA_FirstWestRoom,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::FireSanctuaryA_PastFirstWaterPlant,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryPlatsChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
+                        RequirementExpression::Area(Area::FireSanctuaryA_PrePlatsArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryBossKeyChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
+                        RequirementExpression::Area(Area::FireSanctuaryA_UpperStaircaseRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryChestInStaircaseRoom),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireSanctuaryA_UpperStaircaseRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryMogmaMitts),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireSanctuaryB_AfterDoubleMagmanosFight,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryChestInSecondRoom),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireSanctuaryB_FirstOutsideSection,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryChestOnBalcony),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::FireSanctuaryB_FirstOutsideSection,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryChestAfterBombableWall),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::FireSanctuaryB_LastTrappedMogmaArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::FireSanctuaryChestAfterSecondTrappedMogma,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::FireSanctuaryB_LastTrappedMogmaArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::FireSanctuaryChestNearFirstTrappedMogma,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GustBellows,
+                        1u8), RequirementExpression::Item(Item::Clawshots, 1u8)]),
+                        RequirementExpression::Area(Area::FireSanctuaryB_PastSecondRoomWithWaterFruit,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::FireSanctuaryFirstChestInWaterFruitRoom,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireSanctuaryB_WaterFruitRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::FireSanctuarySecondChestInWaterFruitRoom,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireSanctuaryB_WaterFruitRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryGhirahimHeartContainer),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::FireSanctuaryBoss_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::FireSanctuaryDinsFlame),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::FireSanctuaryFlameRoom_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyChestInGoddessStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::InsideGoddessStatue_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyCawlinsLetter),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::KnightAcademyCrystalInKnightAcademyPlant,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyCrystalInLinksRoom),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyCrystalInZeldasRoom),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::UnlockedZeldasRoom),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyFledgesCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::EndurancePotion),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyFledgesGift),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyGhostPipitsCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::CawlinsLetter, 1u8),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyInZeldasCloset),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::UnlockedZeldasRoom),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyOwlansCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::RetrieveOolo),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::KnightAcademy_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyChestNearGoddessStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyOwlansGift),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyPumpkinArchery600Points),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Skyloft_OutsideGoddessStatue,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademyCrystalInSparringHall),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Area(Area::SparringHall_Main,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::SparringHall_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::KnightAcademySparringHallChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SparringHall_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LakeFloriaDragonLairEastChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaroresLair_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LakeFloriaDragonLairSouthChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::FaroresLair_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LakeFloriaLakeFloriaChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LakeFloria_StatueSpot,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruCavesChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruCaves_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruCavesGolosGift),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruCaves_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruCavesGossipStoneInCenter),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruCaves_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruDesertFireNodeLeftEndingChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireNode_End, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruDesertFireNodeRightEndingChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FireNode_End, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruDesertFireNodeFirstSmallChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruDesertFireNodeSecondSmallChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruDesertFireNodeShortcutChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Fixed(true)]),
+                        RequirementExpression::Area(Area::FireNode_Main, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruDesertChestNearHookBeetleFight,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruDesertChestNearPartyWheel),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruDesertHookBeetleFight),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8)]),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruDesertChestOnPlatformNearFireNode,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruDesertChestOnPlatformNearLightningNode,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruDesertChestOnTopOfLanayruMiningFacility,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::RaiseLanayruMiningFacility),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruDesertSecretPassagewayChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8), RequirementExpression::Fixed(true)])]),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruDesertChestNearSandOasis),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::LanayruDesert_SandOasis,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruDesertLightningNodeFirstChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::LightningNode_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruDesertLightningNodeRaisedChestNearGenerator,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Fixed(true)])]),
+                        RequirementExpression::Area(Area::LightningNode_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruDesertLightningNodeSecondChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::LightningNode_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruDesertGossipStoneInTempleOfTimeArea,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::TempleOfTime_NearGossipStone,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruMinesChestAtTheEndOfMines),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8)]), RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruMinesChestBehindFirstLanding),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruMinesChestBehindStatue),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8)]), RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruMinesChestNearFirstTimeshiftStone,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Fixed(true)]),
+                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruMiningFacilityChestBehindBars),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_Entry,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -24254,34 +22585,96 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::Skyloft_To_RupinsHouse),
+                RequirementKey::Location(
+                    Location::LanayruMiningFacilityChestInFirstWestRoom,
+                ),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_FirstWestRoom,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Event(Event::CanBeatFireSanctuary),
-                RequirementExpression::Or(
+                RequirementKey::Location(
+                    Location::LanayruMiningFacilityChestInsideGustBellowsRoom,
+                ),
+                RequirementExpression::And(
                     vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8),
-                        RequirementExpression::Area(Area::FireSanctuaryFlameRoom_Main,
-                        TimeOfDay::Both)])
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_GustBellowsRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruMiningFacilityGustBellows),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_GustBellowsRoom,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
                 RequirementKey::Location(
-                    Location::LanayruSandSeaPirateStrongholdSecondChest,
+                    Location::LanayruMiningFacilityChestAfterArmosFight,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GustBellows,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityA_MapRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruMiningFacilityShortcutChestInMainHub,
                 ),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_AfterLmfBkRoom,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruMiningFacilityBossKeyChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_InsideLmfBkRoom,
                         TimeOfDay::Both)
                     ],
                 ),
@@ -24299,110 +22692,95 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::GreatTree_Middle,
-                    to: Area::GreatTree_Lower,
-                },
+                RequirementKey::Location(
+                    Location::LanayruMiningFacilityChestBehindFirstCrawlspace,
+                ),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::GreatTree_Middle,
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_WestHub,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::LightningNode_To_LanayruDesert),
+                RequirementKey::Location(
+                    Location::LanayruMiningFacilityChestInSpikeMaze,
+                ),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LightningNode_Main,
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityB_WestHub,
                         TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::LanayruDesertLightningNodeFirstChest),
+                RequirementKey::Location(
+                    Location::LanayruMiningFacilityMolderachHeartContainer,
+                ),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::LightningNode_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::FireSanctuaryA_UpperStaircaseRoom,
-                    to: Area::FireSanctuaryA_InFrontOfBossDoor,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireSanctuaryA_UpperStaircaseRoom,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SealedGroundsSpiral_To_SealedTemple),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SealedGroundsSpiral_Lower,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::Sky_To_EldinVolcano_EldinEntranceStatue),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::RubyTablet, 1u8),
-                        RequirementExpression::Event(Event::EldinEntranceStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::GoddessCubeInFloriaWaterfall),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::SandshipChestAtTheStern),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GustBellows,
                         1u8), RequirementExpression::Fixed(true)]),
-                        RequirementExpression::Event(Event::CanFreelyChangeSandshipTemporality),
-                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityBoss_Main,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
             (
-                RequirementKey::Event(Event::PickUpLeviasSoup),
-                RequirementExpression::Or(
-                    vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::SpiralCharge,
-                        1u8), RequirementExpression::Area(Area::LumpyPumpkin_Main,
-                        TimeOfDay::Both)])
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::InsideThunderhead_To_Sky),
+                RequirementKey::Location(Location::LanayruMiningFacilityGoddessHarp),
                 RequirementExpression::And(
                     vec![
                         RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        RequirementExpression::Area(Area::LanayruMiningFacilityToToT_ToTExit,
                         TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruSandSeaPirateStrongholdFirstChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruSandSeaPirateStrongholdSecondChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruSandSeaPirateStrongholdThirdChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruSandSeaGossipStoneInShipyard),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Shipyard_Main, TimeOfDay::Both)
                     ],
                 ),
             ),
@@ -24418,12 +22796,770 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Event(Event::GoddessCubeInMogmaTurf),
-                RequirementExpression::Or(
+                RequirementKey::Location(
+                    Location::LanayruSandSeaSkippersRetreatSkydiveChest,
+                ),
+                RequirementExpression::And(
                     vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
-                        2u8), RequirementExpression::Area(Area::MogmaTurf_Main,
-                        TimeOfDay::Both)])
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkippersRetreat_NextToShack,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruSandSeaSkippersRetreatChestOnTopOfCactiPillar,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::SkippersRetreat_PastDekuBaba,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruSandSeaSkippersRetreatChestAfterMoblin,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkippersRetreat_PastMoblin,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::LanayruSandSeaSkippersRetreatChestInShack,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Area(Area::SkippersShack_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::LanayruSilentRealmClawshots),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruSilentRealm_Trial,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::MogmaTurfChestBehindBombableWallAtEntrance,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::MogmaTurf_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::MogmaTurfChestBehindBombableWallInFireMaze,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::MogmaTurf_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::MogmaTurfDiggingMittsFight),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::MogmaTurf_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::MogmaTurfFreeFallChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::MogmaTurf_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::MogmaTurfSandSlideChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 1u8),
+                        RequirementExpression::Area(Area::MogmaTurf_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipBossKeyChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::SandshipSmallKey, 2u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipBow),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::SandshipSmallKey, 2u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipChestAtTheStern),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Fixed(true)]),
+                        RequirementExpression::Event(Event::CanFreelyChangeSandshipTemporality),
+                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipChestBefore4DoorCorridor),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::CanFreelyChangeSandshipTemporality),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Area(Area::Sandship_Deck, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipChestBehindCombinationLock),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GustBellows,
+                        1u8), RequirementExpression::Fixed(true)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Area(Area::Sandship_PastSpume,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipRobotInBrigsReward),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipTreasureRoomFifthChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipTreasureRoomFirstChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipTreasureRoomFourthChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipTreasureRoomSecondChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipTreasureRoomThirdChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sandship_SandshipBrig,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipNayrusFlame),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Area(Area::SandshipBoss_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SandshipTentalusHeartContainer),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Area(Area::SandshipBoss_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SealedGroundsGorkosGoddessWallReward),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Event(Event::ActivateSkyviewGoddessWall),
+                        RequirementExpression::Area(Area::BehindTheTemple_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SealedGroundsZeldasBlessing),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::HyliasTemple_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SealedGroundsChestInsideSealedTemple),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SealedTemple_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SealedGroundsSongFromImpa),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Area(Area::SealedTemple_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyGossipStoneInsideBambooIsland),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::InsideBambooIsland_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyCrystalInsideLumpyPumpkin),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyLumpyPumpkinChandelier),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyLumpyPumpkinHarpMinigame),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::PumpkinCarrying),
+                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyBeedlesIslandCageGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeOnTopOfSkyview),
+                        RequirementExpression::Area(Area::Sky_BeedleIslandCage,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyBeedlesCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::HornedColossusBeetle, 1u8),
+                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyCrystalOnBeedlesShip),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
+                        TimeOfDay::Night),
+                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Area(Area::Sky_BeedlesSkyHome,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyBambooIslandGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeWestOfEarthTempleEntrance),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyBeedlesIslandGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeAtRideNearTempleOfTime),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkyChestInBreakableBoulderNearFunFunIsland,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::SpiralCharge, 1u8),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkyChestInBreakableBoulderNearLumpyPumpkin,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::SpiralCharge, 1u8),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyDodohsCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyFunFunIslandMinigame500Rupees),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkyGoddessChestInCaveOnIslandNextToBambooIsland,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInSecretPassagewayInDesert),
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyGoddessChestInsideVolcanicIsland),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeOnEastGreatTreeWithClawshotsTarget),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Fixed(true)]),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkyGoddessChestOnIslandClosestToFaronPillar,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInDeepWoods),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkyGoddessChestOnIslandNextToBambooIsland,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeNearMogmaTurfEntrance),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyGoddessChestOutsideVolcanicIsland),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInSandOasis),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyGoddessChestUnderFunFunIsland),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInFloriaWaterfall),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyGossipStoneInVolcanicIsland),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyLumpyPumpkinGoddessChestOnTheRoof),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInSkyviewSpring),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyNortheastIslandCageGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeEastOfEarthTempleEntrance),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkyNortheastIslandGoddessChestBehindBombableRocks,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeAtLanayruMinesEntrance),
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyOriellesCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressivePouch, 1u8),
+                        RequirementExpression::Item(Item::EmptyBottle, 1u8),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkySouthwestTripleIslandCageGoddessChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInSkippersRetreat),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkySouthwestTripleIslandLowerGoddessChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeNearHookBeetleFight),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkySouthwestTripleIslandUpperGoddessChest,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeAtEldinEntrance),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyCrystalOutsideLumpyPumpkin),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyKinasCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::PumpkinCarrying),
+                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Event(Event::PickUpGuld),
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Day),
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyLumpyPumpkinOutsideGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::InitialGoddessCube),
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyKeepChestAfterDreadfuse),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::SkyKeepEntry_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyKeepFirstChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkyKeepEntry_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyloftSilentRealmStoneOfTrials),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkyloftSilentRealm_Trial,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyloftVillageBertiesCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::BabyRattle, 1u8),
+                        RequirementExpression::Area(Area::BertiesHouse_Main,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::BertiesHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyloftVillageMallarasCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Area(Area::MallarasHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::SkyloftVillageCrystalNearPumpkinPatch,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyloftVillageSparrotsCrystals),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::RetrieveCrystalBall),
+                        RequirementExpression::Area(Area::SparrotsHouse_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyviewGhirahimHeartContainer),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::SkyviewBoss_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyviewRubyTablet),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::SkyviewSpring_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyviewBossKeyChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Option(| options | options.hero_mode
+                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
+                        6u8)])]),
+                        RequirementExpression::Area(Area::SkyviewTemple_BossDoorArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyviewChestNearBossDoor),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SkyviewTemple_BossDoorArea,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyviewChestBehindTwoEyes),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::SkyviewTemple_FirstHub,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyviewChestOnTreeBranch),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Item(Item::Whip, 1u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Item(Item::BombBag, 1u8)])])]),
+                        RequirementExpression::Area(Area::SkyviewTemple_FirstHub,
+                        TimeOfDay::Both)
                     ],
                 ),
             ),
@@ -24443,15 +23579,562 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::GreatTree_Lower,
-                    to: Area::GreatTree_Entry,
-                },
+                RequirementKey::Location(Location::SkyviewBeetle),
                 RequirementExpression::And(
                     vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::GreatTree_Lower,
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::WaterScale, 1u8)]),
+                        RequirementExpression::Area(Area::SkyviewTemple_MainHub,
                         TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyviewChestBehindThreeEyes),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveBeetle, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::SkyviewTemple_MainHub,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::SkyviewItemBehindBars),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        1u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Fixed(true)])]),
+                        RequirementExpression::Area(Area::SkyviewTemple_MainHub,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::ThunderheadBugHeaven10BugsIn3Minutes),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveBugNet, 1u8),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::ThunderheadBugHeavenGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInSummitWaterfall),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::ThunderheadEastIslandChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveMitts,
+                        1u8), RequirementExpression::Fixed(true)]),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::ThunderheadEastIslandGoddessChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeOnEastGreatTreeWithRope),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::ThunderheadFirstGoddessChestOnMogmaMittsIsland,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInsideVolcanoSummit),
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::ThunderheadGoddessChestOnTopOfIsleOfSongs,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeNearFsEntrance),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::ThunderheadGoddessChestOutsideIsleOfSongs,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::GoddessCubeInMogmaTurf),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::ThunderheadSongFromLevias),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Event(Event::PickUpLeviasSoup),
+                        RequirementExpression::Item(Item::SpiralCharge, 1u8),
+                        RequirementExpression::Area(Area::InsideThunderhead_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::ThunderheadIsleOfSongsDinsPower),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 4u8),
+                        RequirementExpression::Area(Area::IsleOfSongs_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::ThunderheadIsleOfSongsFaroresCourage),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::IsleOfSongs_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::ThunderheadIsleOfSongsNayrusWisdom),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveSword, 3u8),
+                        RequirementExpression::Area(Area::IsleOfSongs_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::VolcanoSummitBokoBasePouchChest),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
+                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::VolcanoSummitSmallChestInVolcanoSummit,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
+                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::VolcanoSummitGossipStoneOutsideFireSanctuary,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::OutsideFireSanctuary_Middle,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(Location::VolcanoSummitItemBehindDigging),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::ProgressiveMitts, 2u8),
+                        RequirementExpression::Area(Area::OutsideFireSanctuary_Middle,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::VolcanoSummitChestBehindBombableWallInWaterfallArea,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::VolcanoSummitWaterfall_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Location(
+                    Location::VolcanoSummitGossipStoneInWaterfallArea,
+                ),
+                RequirementExpression::And(
+                    vec![
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::VolcanoSummitWaterfall_Main,
+                        TimeOfDay::Both)
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::ActivateFireNode),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Area(Area::FireNode_End,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::ActivateLightningNode),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::LightningNode_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::ActivateSkyviewGoddessWall),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::BombBag, 1u8)]),
+                        RequirementExpression::Item(Item::WaterScale, 1u8),
+                        RequirementExpression::Item(Item::GoddessHarp, 1u8),
+                        RequirementExpression::Area(Area::SkyviewTemple_Entry,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::ActivateWaterNode),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::BeatDemise),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Event(Event::TriforcesCollected),
+                        RequirementExpression::Area(Area::HyliasTemple_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::BeatRequiredDungeons),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SealedTemple_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::BehindTheTempleStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::BehindTheTemple_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanBeatAncientCistern),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8),
+                        RequirementExpression::Area(Area::AncientCisternCandleRoom_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanBeatEarthTemple),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::EarthTempleSpring_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanBeatFireSanctuary),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8),
+                        RequirementExpression::Area(Area::FireSanctuaryFlameRoom_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanBeatLanayruMiningFacility),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruMiningFacilityToToT_ToTExit,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanBeatSandship),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBow,
+                        1u8), RequirementExpression::Area(Area::SandshipBoss_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanBeatSkyKeep),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Item(Item::SkyKeepSmallKey, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveBow, 1u8),
+                        RequirementExpression::Item(Item::GustBellows, 1u8),
+                        RequirementExpression::Item(Item::Whip, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::SkyKeepEntry_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanBeatSkyview),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::SkyviewSpring_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanFreelyChangeSandshipTemporality),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBow,
+                        1u8),
+                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::SandshipSmallKey, 2u8)]),
+                        RequirementExpression::Area(Area::Sandship_Deck,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanLowerAcStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Whip,
+                        1u8),
+                        RequirementExpression::Area(Area::AncientCistern_MainRoomVines,
+                        TimeOfDay::Both)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Whip,
+                        1u8),
+                        RequirementExpression::Area(Area::AncientCistern_SpiderThread,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanPlayCleanCut),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Area(Area::InsideBambooIsland_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanPlayThrillDigger),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveMitts,
+                        1u8), RequirementExpression::Area(Area::ThrillDiggerCave_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanRetrievePartyWheel),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::CanSellTreasures),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::RupinsHouse_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::DeepWoodsStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::DefeatImprisoned2),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Event(Event::StartImprisoned2),
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::SealedGroundsSpiral_Lower,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::DefeatedShipyardMolderach),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GustBellows,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Area(Area::ShipyardConstructionBay_Lower,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::DeliveredHotSoup),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Event(Event::LumpyPumpkinQuestStart),
+                        RequirementExpression::Area(Area::SparringHall_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::DesertEntranceStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::EldinEntranceStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::EndurancePotion),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Event(Event::LanayruDesertDungeonBeaten),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressivePouch,
+                        1u8), RequirementExpression::Item(Item::EmptyBottle, 1u8)]),
+                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::FaronWoodsEntryStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_Entry,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::FloriaWaterfallStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::ForestTempleStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::GoddessCubeEastOfEarthTempleEntrance),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
@@ -24466,179 +24149,162 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::FaronWoodsChestBehindBombableRocksNearErla,
-                ),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeAtEldinEntrance),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::FaronWoods_Main,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::EldinVolcano_FirstRoom,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::CentralSkyloftShedChest),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeAtLanayruMinesEntrance),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Item(Item::WaterScale, 1u8),
-                        RequirementExpression::Area(Area::Skyloft_CentralOutside,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::EldinVolcano_To_EarthTemple),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeAtRideNearTempleOfTime),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Item(Item::KeyPiece, 5u8),
-                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::TempleOfTime_NearCube,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::SkyCrystalInsideLumpyPumpkin),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInAncientHarbour),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
-                        TimeOfDay::Night),
-                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::SandSeaDocks_Main,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::SkyNortheastIslandGoddessChestBehindBombableRocks,
-                ),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInDeepWoods),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Event(Event::GoddessCubeAtLanayruMinesEntrance),
-                        RequirementExpression::Item(Item::BombBag, 1u8),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::DeepWoods_PastBeehive,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::FireSanctuaryMogmaMitts),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInEldinSlide),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::FireSanctuaryB_AfterDoubleMagmanosFight,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::EldinVolcano_SandSlide,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::EldinVolcanoChestBehindBombableWallNearVolcanoAscent,
-                ),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInFloriaWaterfall),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::FloriaWaterfall_Main,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::LogicExit {
-                    from: Area::AncientCistern_SpiderThread,
-                    to: Area::AncientCistern_MainBasement,
-                },
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInLakeFloria),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_SpiderThread,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::LakeFloria_StatueSpot,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::Beedle600RupeeItem),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInMogmaTurf),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
-                        RequirementExpression::Event(Event::CanPlayThrillDigger)]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ExtraWallet,
-                        1u8), RequirementExpression::Item(Item::ProgressiveWallet,
-                        2u8)])]),
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressivePouch,
-                        1u8), RequirementExpression::Option(| options | options.shop_mode
-                        != ShopMode::Vanilla)]),
-                        RequirementExpression::Area(Area::BeedlesShop_Main,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::MogmaTurf_Main,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::AncientCisternWhip),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInPirateStronghold),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_WhipChestRoom,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::OutsidePiratesStronghold_InsideSharkhead,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::LanayruDesertChestNearHookBeetleFight,
-                ),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInSandOasis),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::LanayruDesert_SandOasis,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::Batreaux40Crystals),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInSecretPassagewayInDesert),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        15u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        5u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        10u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        6u8)]),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        7u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        8u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveBeetle,
+                        2u8), RequirementExpression::Fixed(true)])]),
+                        RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Item(Item::ProgressiveSword, 2u8)]),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::AncientCistern_To_FloriaWaterfall),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInSkippersRetreat),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::AncientCistern_MainHub,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::SkippersRetreat_PastMoblin,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::Sky_To_DeepWoods_ForestTempleStatue),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInSkyviewSpring),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Item(Item::EmeraldTablet, 1u8),
-                        RequirementExpression::Event(Event::ForestTempleStatue),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::SkyviewSpring_Main,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Exit(Exit::InsideVolcanoSummit_To_OutsideFireSanctuary),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::GoddessCubeInSummitWaterfall),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Item(Item::FireshieldEarrings, 1u8),
-                        RequirementExpression::Area(Area::InsideVolcanoSummit_Main,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8),
+                        RequirementExpression::Area(Area::VolcanoSummitWaterfall_Main,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),
@@ -24658,105 +24324,439 @@ pub fn get_logic() -> Requirements<'static> {
                 ),
             ),
             (
-                RequirementKey::Location(
-                    Location::LanayruSandSeaSkippersRetreatChestOnTopOfCactiPillar,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::Clawshots, 1u8),
-                        RequirementExpression::Area(Area::SkippersRetreat_PastDekuBaba,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::LogicExit {
-                    from: Area::SealedGroundsSpiral_Upper,
-                    to: Area::SealedGroundsSpiral_Lower,
-                },
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::SealedGroundsSpiral_Upper,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::EarthTempleSpring_To_EldinVolcano),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Item(Item::ProgressiveSword, 2u8),
-                        RequirementExpression::Area(Area::EarthTempleSpring_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::SkySouthwestTripleIslandUpperGoddessChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::GoddessCubeAtEldinEntrance),
-                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(Location::Batreaux10Crystals),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Or(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        10u8),
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GratitudeCrystal,
-                        5u8), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        1u8)]), RequirementExpression::Item(Item::GratitudeCrystalPack,
-                        2u8)]), RequirementExpression::Area(Area::BatreauxHouse_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Exit(Exit::SealedTemple_To_HyliasTemple),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Event(Event::DefeatImprisoned2),
-                        RequirementExpression::Area(Area::SealedTemple_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Location(
-                    Location::LanayruSandSeaPirateStrongholdFirstChest,
-                ),
-                RequirementExpression::And(
-                    vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
-                        TimeOfDay::Both)
-                    ],
-                ),
-            ),
-            (
-                RequirementKey::Event(Event::ActivateWaterNode),
+                RequirementKey::Event(Event::GoddessCubeNearFsEntrance),
                 RequirementExpression::Or(
                     vec![
-                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
-                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 2u8),
+                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToFireSanctuary,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::GoddessCubeNearHookBeetleFight),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Or(vec![RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Option(| options | options.hero_mode
+                        == true)]), RequirementExpression::Item(Item::ProgressiveSword,
+                        6u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8)])]),
+                        RequirementExpression::Area(Area::LanayruDesert_HookBeetleArea,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::GoddessCubeNearMogmaTurfEntrance),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8),
+                        RequirementExpression::Area(Area::EldinVolcano_PastMogmaTurf,
+                        TimeOfDay::Both)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8),
+                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(
+                    Event::GoddessCubeOnEastGreatTreeWithClawshotsTarget,
+                ),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8),
+                        RequirementExpression::Area(Area::FaronWoods_ClawshotTargetBranch,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::GoddessCubeOnEastGreatTreeWithRope),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::GoddessCubeOnWestGreatTreeNearExit),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8),
+                        RequirementExpression::Area(Area::FaronWoods_GreatTreePlatforms,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::GoddessCubeOnTopOfSkyview),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Item(Item::Clawshots, 1u8),
+                        RequirementExpression::Area(Area::DeepWoods_PastBeehive,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::GreatTreeStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::HighRupeeFarm),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Event(Event::CanRetrievePartyWheel),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::InTheWoodsStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::InitialGoddessCube),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        2u8), RequirementExpression::Area(Area::DeepWoods_PastBeehive,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::InsideTheVolcanoStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::OutsideFireSanctuary_ToFireSanctuary,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::LakeFloriaStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LakeFloria_StatueSpot,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::LanayruDesertDungeonBeaten),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::TempleOfTime_AfterLmf,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::LanayruMineEntryStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruMines_FirstHalf,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::LumpyPumpkinQuestStart),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressivePouch,
+                        1u8), RequirementExpression::Item(Item::EmptyBottle, 1u8),
+                        RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::NorthDesertStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
                         RequirementExpression::Area(Area::LanayruDesert_PastToT,
                         TimeOfDay::Both)])
                     ],
                 ),
             ),
             (
-                RequirementKey::Location(Location::CentralSkyloftWrynasCrystals),
-                RequirementExpression::And(
+                RequirementKey::Event(Event::OpenSharkhead),
+                RequirementExpression::Or(
                     vec![
-                        RequirementExpression::Fixed(true),
-                        RequirementExpression::Area(Area::WrynasHouse_Main,
-                        TimeOfDay::Both)
+                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSword,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBow, 1u8)]),
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GustBellows,
+                        1u8), RequirementExpression::Item(Item::ProgressiveSword, 1u8)]),
+                        RequirementExpression::Area(Area::InsidePiratesStronghold_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::OpenedShed),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Night),
+                        RequirementExpression::Area(Area::Skyloft_OutsideSkyloftVillage,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::PickUpGuld),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::MogmaTurf_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::PickUpLeviasSoup),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::SpiralCharge,
+                        1u8), RequirementExpression::Area(Area::LumpyPumpkin_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::PumpkinCarrying),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Event(Event::DeliveredHotSoup),
+                        RequirementExpression::Area(Area::Sky_OutsideLumpyPumpkin,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::RaiseGoT),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::GoddessHarp,
+                        1u8), RequirementExpression::Area(Area::SealedTemple_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::RaiseLanayruMiningFacility),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Event(Event::ActivateWaterNode),
+                        RequirementExpression::Event(Event::ActivateFireNode),
+                        RequirementExpression::Event(Event::ActivateLightningNode),
+                        RequirementExpression::Item(Item::ProgressiveSword, 1u8),
+                        RequirementExpression::Item(Item::BombBag, 1u8),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::RetrieveCrystalBall),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::Clawshots,
+                        1u8), RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::RetrieveOolo),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::BombBag,
+                        1u8), RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::SaveOrielle),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Item(Item::ProgressivePouch,
+                        1u8), RequirementExpression::Item(Item::EmptyBottle, 1u8),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::SealedGroundsStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SealedGroundsSpiral_Upper,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::StartImprisoned2),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Event(Event::RaiseGoT),
+                        RequirementExpression::Event(Event::BeatRequiredDungeons),
+                        RequirementExpression::Event(Event::SwordRequirementMet),
+                        RequirementExpression::Area(Area::SealedTemple_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::StoneCacheStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_PastToT,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::SwordRequirementMet),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::SealedTemple_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::TalkToOrielle),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Sky_Field, TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::TalkToPeatriceInBazaar),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::Bazaar_Main, TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::TalkToYerbal),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Or(vec![RequirementExpression::Item(Item::ProgressiveSlingshot,
+                        1u8), RequirementExpression::Item(Item::ProgressiveBeetle,
+                        1u8)]),
+                        RequirementExpression::Area(Area::FaronWoods_GreatTreeTop,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::TempleEntranceStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_OutsideEt,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::TriforcesCollected),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::HyliasTemple_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::UnlockedZeldasRoom),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::KnightAcademy_AboveZeldasRoom,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::ViewingPlatformStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::FaronWoods_Main,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::VolcanoAscentStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_VolcanoAscent,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::VolcanoEastStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::EldinVolcano_PreMogmaTurf,
+                        TimeOfDay::Both)])
+                    ],
+                ),
+            ),
+            (
+                RequirementKey::Event(Event::WestDesertStatue),
+                RequirementExpression::Or(
+                    vec![
+                        RequirementExpression::And(vec![RequirementExpression::Fixed(true),
+                        RequirementExpression::Area(Area::LanayruDesert_SandOasis,
+                        TimeOfDay::Both)])
                     ],
                 ),
             ),

@@ -600,8 +600,10 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, HashMap<RequirementKey, Req
         }
     }
 
-    let events: Vec<Event> = unparsed_events
-        .keys()
+    let mut sorted_events: Vec<_> = unparsed_events.into_iter().collect();
+    sorted_events.sort_unstable_by_key(|(key, _)| *key);
+
+    let events: Vec<Event> = sorted_events.iter().map(|(key, _)| key)
         .enumerate()
         .map(|(id, event)| Event {
             id: EventId(id as u16),
@@ -675,7 +677,7 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, HashMap<RequirementKey, Req
         requirements.insert(*req_key, req);
     }
 
-    for (event, raw_reqs) in unparsed_events.iter() {
+    for (event, raw_reqs) in sorted_events.iter() {
         let event_id = event_names[event];
         let mut reqs = Vec::new();
         for (area_id, req_string) in raw_reqs {
