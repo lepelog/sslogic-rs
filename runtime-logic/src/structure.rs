@@ -1,8 +1,8 @@
 use std::{collections::HashMap, fmt::Display};
 
+use proc_macro2::TokenStream;
+use quote::quote;
 use serde::Deserialize;
-
-use crate::bitset::BitSetCompatible;
 
 /// Encapsulates everything obtained from logic files
 /// never changes, and thus can always be immutably borrowed everywhere
@@ -86,6 +86,17 @@ bitflags::bitflags! {
     }
 }
 
+impl TimeOfDay {
+    pub fn to_token(&self) -> TokenStream {
+        match *self {
+            TimeOfDay::Day => quote!(TimeOfDay::Day),
+            TimeOfDay::Night => quote!(TimeOfDay::Night),
+            TimeOfDay::Both => quote!(TimeOfDay::Both),
+            _ => unreachable!(),
+        }
+    }
+}
+
 // TODO inner num shouldn't be pub
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct AreaId(pub u16);
@@ -103,25 +114,6 @@ pub struct LocationId(pub u16);
 pub struct EventId(pub u16);
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct ItemId(pub u16);
-
-macro_rules! impl_bitset_compat {
-    ($name:ident) => {
-        impl BitSetCompatible for $name {
-            fn to_num(&self) -> u16 {
-                self.0
-            }
-        }
-    };
-}
-
-impl_bitset_compat!(AreaId);
-impl_bitset_compat!(StageId);
-impl_bitset_compat!(RegionId);
-impl_bitset_compat!(ExitId);
-impl_bitset_compat!(EntranceId);
-impl_bitset_compat!(LocationId);
-impl_bitset_compat!(EventId);
-impl_bitset_compat!(ItemId);
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum RequirementKey {
@@ -152,6 +144,9 @@ impl From<EventId> for RequirementKey {
 pub struct Area {
     pub id: AreaId,
     pub name: String,
+    // includes the stage
+    pub full_name: String,
+    pub ident: String,
     pub region: RegionId,
     pub stage: StageId,
     pub time_of_day: TimeOfDay,
@@ -182,6 +177,7 @@ impl ContextLoadable for AreaId {
 pub struct Stage {
     pub id: StageId,
     pub name: String,
+    pub ident: String,
     pub areas: Vec<AreaId>,
 }
 
@@ -209,6 +205,7 @@ pub struct Region {
     pub id: RegionId,
     pub name: String,
     pub areas: Vec<AreaId>,
+    pub ident: String,
 }
 
 impl ContextLoadable for RegionId {
@@ -306,6 +303,7 @@ pub struct Entrance {
     pub from: AreaId,
     pub disambiguation: Option<String>,
     pub display_name: String,
+    pub ident: String,
     pub door_connection: DoorConnection<EntranceId>,
     pub connection_shuffle_type: ConnectionShuffleType,
     // these might be ambiguous, multiple exits can lead to the same entrance
@@ -356,6 +354,7 @@ pub struct Exit {
     pub to: AreaId,
     pub disambiguation: Option<String>,
     pub display_name: String,
+    pub ident: String,
     pub door_connection: DoorConnection<ExitId>,
     pub connection_shuffle_type: ConnectionShuffleType,
     pub coupled_entrance: Option<EntranceId>,
@@ -389,6 +388,7 @@ pub struct Location {
     pub name: String,
     /// includes region info
     pub display_name: String,
+    pub ident: String,
     pub kind: LocationKind,
     // TODO: technical detail enum
 }
@@ -430,6 +430,7 @@ impl ContextLoadable for LocationId {
 pub struct Event {
     pub id: EventId,
     pub name: String,
+    pub ident: String,
 }
 
 impl ContextLoadable for EventId {
@@ -455,6 +456,7 @@ impl ContextLoadable for EventId {
 pub struct Item {
     pub id: ItemId,
     pub name: String,
+    pub ident: String,
     // TODO technical stuff
 }
 

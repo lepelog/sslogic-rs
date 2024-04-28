@@ -1,17 +1,18 @@
 use core::fmt;
-use std::{
-    collections::{HashMap, HashSet},
-    fmt::{Debug, Display},
-};
+use std::{collections::HashMap, fmt::Debug};
 
 use anyhow::{bail, Context};
+use heck::{ToPascalCase, ToSnekCase};
+use proc_macro2::{Span, TokenStream};
+use quote::quote;
+use regex::Regex;
+use syn::Ident;
 
 use crate::{
-    explorer::Inventory,
+    dumper::convert_to_upper_camel_case,
     structure::{
-        AreaId, ContextLoadable, EventId, Item, ItemId, LogicContext, RequirementKey, TimeOfDay,
+        AreaId, ContextLoadable, EventId, ItemId, LogicContext, TimeOfDay,
     },
-    Options,
 };
 
 #[derive(Clone)]
@@ -24,52 +25,62 @@ pub enum RequirementExpression<'a> {
     // it otherwise uses the specific allowed TimeOfDay
     Area(AreaId, TimeOfDay),
     Fixed(bool),
+    OptionEnabled {
+        option: String,
+        enabled: bool,
+    },
+    OptionIs {
+        option: String,
+        value: String,
+        not: bool,
+    },
     Ref(&'a RequirementExpression<'a>),
 }
 
 impl<'a> RequirementExpression<'a> {
-    pub fn check(&self, inventory: &Inventory, options: &Options, allowed_tod: TimeOfDay) -> bool {
+    pub fn dump(&self, ctx: &LogicContext) -> TokenStream {
         match self {
-            RequirementExpression::And(exprs) => exprs
-                .iter()
-                .all(|e| e.check(inventory, options, allowed_tod)),
-            RequirementExpression::Or(exprs) => exprs
-                .iter()
-                .any(|e| e.check(inventory, options, allowed_tod)),
-            RequirementExpression::Item(item, count) => inventory.item_count(*item) >= *count,
-            RequirementExpression::Event(event) => inventory.has_event(*event),
-            RequirementExpression::Area(area, tod) => !inventory
-                .get_area_tod(*area)
-                .intersection(allowed_tod)
-                .intersection(*tod)
-                .is_empty(),
-            RequirementExpression::Fixed(val) => *val,
-            RequirementExpression::Ref(req) => req.check(inventory, options, allowed_tod),
-        }
-    }
-
-    pub fn remove_used_items(
-        &self,
-        inventory: &Inventory,
-        options: &Options,
-        items: &mut HashSet<ItemId>,
-    ) {
-        // if the requirement is met, don't consider items used
-        if !self.check(inventory, options, TimeOfDay::all()) {
-            match self {
-                RequirementExpression::And(exprs) | RequirementExpression::Or(exprs) => {
-                    for expr in exprs.iter() {
-                        expr.remove_used_items(inventory, options, items);
-                    }
+            RequirementExpression::And(exprs) => {
+                let dumped_exprs = exprs.iter().map(|e| e.dump(ctx));
+                // TODO: make this a Cow?
+                quote!(RequirementExpression::And(vec![#(#dumped_exprs),*]))
+            }
+            RequirementExpression::Or(exprs) => {
+                let dumped_exprs = exprs.iter().map(|e| e.dump(ctx));
+                quote!(RequirementExpression::Or(vec![#(#dumped_exprs),*]))
+            }
+            RequirementExpression::Item(item, count) => {
+                let item_ident = Ident::new(&item.ctx(ctx).ident, Span::call_site());
+                quote!(RequirementExpression::Item(Item::#item_ident, #count))
+            }
+            RequirementExpression::Area(area, tod) => {
+                let area_ident = Ident::new(&area.ctx(ctx).ident, Span::call_site());
+                let tod_tokens = tod.to_token();
+                quote!(RequirementExpression::Area(Area::#area_ident, #tod_tokens))
+            }
+            RequirementExpression::Fixed(value) => {
+                quote!(RequirementExpression::Fixed(#value))
+            }
+            RequirementExpression::Event(event) => {
+                let event_ident = Ident::new(&event.ctx(ctx).ident, Span::call_site());
+                quote!(RequirementExpression::Event(Event::#event_ident))
+            }
+            RequirementExpression::OptionEnabled { option, enabled } => {
+                let opt_ident = Ident::new(&option.to_snek_case(), Span::call_site());
+                quote!(RequirementExpression::Option(|options| options.#opt_ident == #enabled))
+            }
+            RequirementExpression::OptionIs { option, value, not } => {
+                let opt_ident = Ident::new(&option.to_snek_case(), Span::call_site());
+                let opt_enum_ident = Ident::new(&option.to_pascal_case(), Span::call_site());
+                let value_ident =
+                    Ident::new(&convert_to_upper_camel_case(value), Span::call_site());
+                if *not {
+                    quote!(RequirementExpression::Option(|options| options.#opt_ident != #opt_enum_ident::#value_ident))
+                } else {
+                    quote!(RequirementExpression::Option(|options| options.#opt_ident == #opt_enum_ident::#value_ident))
                 }
-                RequirementExpression::Item(item, ..) => {
-                    items.remove(item);
-                }
-                RequirementExpression::Event(..) => (),
-                RequirementExpression::Area(..) => (),
-                RequirementExpression::Fixed(..) => (),
-                RequirementExpression::Ref(req) => req.remove_used_items(inventory, options, items),
-            };
+            }
+            RequirementExpression::Ref(rf) => rf.dump(ctx),
         }
     }
 
@@ -103,7 +114,7 @@ impl<'a> RequirementExpression<'a> {
             }
             RequirementExpression::Fixed(val) => f.write_fmt(format_args!("{}", val))?,
             RequirementExpression::Ref(req) => req.display_helper(ctx, f)?,
-            // RequirementExpression::Option(fun) => fun(options),
+            _ => {} // RequirementExpression::Option(fun) => fun(options),
         }
         Ok(())
     }
@@ -114,15 +125,31 @@ impl<'a> RequirementExpression<'a> {
 
     pub fn owned(&self) -> RequirementExpression<'static> {
         match self {
-            RequirementExpression::And(reqs) => 
-                RequirementExpression::And(reqs.iter().map(|req| req.owned()).collect()),
-            RequirementExpression::Or(reqs) =>
-                RequirementExpression::Or(reqs.iter().map(|req| req.owned()).collect()),
-            RequirementExpression::Item(item_id, count) => RequirementExpression::Item(
-                *item_id, *count),
+            RequirementExpression::And(reqs) => {
+                RequirementExpression::And(reqs.iter().map(|req| req.owned()).collect())
+            }
+            RequirementExpression::Or(reqs) => {
+                RequirementExpression::Or(reqs.iter().map(|req| req.owned()).collect())
+            }
+            RequirementExpression::Item(item_id, count) => {
+                RequirementExpression::Item(*item_id, *count)
+            }
             RequirementExpression::Event(event_id) => RequirementExpression::Event(*event_id),
             RequirementExpression::Area(area, tod) => RequirementExpression::Area(*area, *tod),
             RequirementExpression::Fixed(value) => RequirementExpression::Fixed(*value),
+            RequirementExpression::OptionEnabled { option, enabled } => {
+                RequirementExpression::OptionEnabled {
+                    option: option.clone(),
+                    enabled: *enabled,
+                }
+            }
+            RequirementExpression::OptionIs { option, value, not } => {
+                RequirementExpression::OptionIs {
+                    option: option.clone(),
+                    value: value.clone(),
+                    not: *not,
+                }
+            }
             RequirementExpression::Ref(inner) => inner.owned(),
         }
     }
@@ -314,110 +341,31 @@ impl RequirementExpression<'static> {
         if let Some(item_id) = item_names.get(s).cloned() {
             return Ok(RequirementExpression::Item(item_id, 1));
         }
-        if s.contains("Trick") || s.contains("Option") {
+        if s.contains("Trick") {
             // return Ok(RequirementExpression::Option(s.to_string()));
             return Ok(RequirementExpression::Fixed(true)); // TODO
+        }
+        if s.contains("Option") {
+            let option_enabled_re = Regex::new("Option \"([a-z-]+)\" Enabled").unwrap();
+            let option_is_re =
+                Regex::new("Option \"([a-z-]+)\" Is( Not)? \"([A-Za-z-]+)\"").unwrap();
+            if let Some(enabled) = option_enabled_re.captures(s) {
+                let opt = enabled.get(1).unwrap();
+                return Ok(RequirementExpression::OptionEnabled {
+                    option: opt.as_str().to_string(),
+                    enabled: true,
+                });
+            }
+            if let Some(option_is) = option_is_re.captures(s) {
+                let option = option_is.get(1).unwrap().as_str().to_string();
+                let not = option_is.get(2).is_some();
+                let value = option_is.get(3).unwrap().as_str().to_string();
+                return Ok(RequirementExpression::OptionIs { option, value, not });
+            }
         }
         if let Some(event_id) = event_names.get(s).cloned() {
             return Ok(RequirementExpression::Event(event_id));
         }
         bail!("unknown expression: {s}");
-    }
-}
-
-pub const IMPOSSIBLE: RequirementExpression = RequirementExpression::Fixed(false);
-pub const NOTHING: RequirementExpression = RequirementExpression::Fixed(true);
-
-pub struct Requirements<'a> {
-    parent: Option<&'a Requirements<'a>>,
-    requirements: HashMap<RequirementKey, RequirementExpression<'a>>,
-}
-
-impl Requirements<'static> {
-    pub fn new() -> Self {
-        Self::new_from_map(Default::default())
-    }
-
-    pub fn new_from_map(
-        requirements: HashMap<RequirementKey, RequirementExpression<'static>>,
-    ) -> Self {
-        Self {
-            parent: None,
-            requirements,
-        }
-    }
-}
-
-impl<'a> Requirements<'a> {
-    pub fn check(
-        &self,
-        requirement: RequirementKey,
-        inventory: &Inventory,
-        options: &Options,
-        allowed_tod: TimeOfDay,
-    ) -> bool {
-        if let Some(req) = self.requirements.get(&requirement) {
-            req.check(inventory, options, allowed_tod)
-        } else if let Some(parent) = self.parent {
-            parent.check(requirement, inventory, options, allowed_tod)
-        } else {
-            false
-        }
-    }
-
-    pub fn create_layer(&'a self) -> Requirements<'a> {
-        Requirements {
-            parent: Some(self),
-            requirements: Default::default(),
-        }
-    }
-
-    pub fn get_owned_requirement(
-        &self,
-        requirement: RequirementKey,
-    ) -> Option<RequirementExpression<'a>> {
-        match self.requirements.get(&requirement) {
-            Some(req) => Some(req.clone()),
-            None => self.parent.and_then(|parent| {
-                parent
-                    .get_requirement(requirement)
-                    .map(|r| RequirementExpression::Ref(r))
-            }),
-        }
-    }
-
-    pub fn get_requirement(
-        &'a self,
-        requirement: RequirementKey,
-    ) -> Option<&'a RequirementExpression<'a>> {
-        self.requirements
-            .get(&requirement)
-            .or_else(|| self.parent.and_then(|p| p.get_requirement(requirement)))
-    }
-
-    pub fn set_requirement(
-        &mut self,
-        requirement_key: RequirementKey,
-        requirement_expression: RequirementExpression<'a>,
-    ) {
-        self.requirements
-            .insert(requirement_key, requirement_expression);
-    }
-
-    /// Add the requirement of "requirement" to "combined_requirement"
-    /// useful, for example, to temporarily mark the need to get a certain gossip stone for reaching another check:
-    /// `req.combine.requirement(RequirementKey::GossipStoneInSummit, RequirementKey::KnightAcademy_FledgesGift)`
-    pub fn combine_requirement(
-        &mut self,
-        requirement: RequirementKey,
-        combined_requirement: RequirementKey,
-    ) {
-        // TODO: the requirements should really exist in all cases, but should there be
-        // a default just in case? But this should be fine since it signals a bug
-        let combined = RequirementExpression::And(vec![
-            self.get_owned_requirement(requirement).unwrap(),
-            self.get_owned_requirement(combined_requirement).unwrap(),
-        ]);
-        self.requirements.insert(combined_requirement, combined);
     }
 }

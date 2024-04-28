@@ -1,6 +1,6 @@
-use std::collections::{hash_map::Entry, HashMap, HashSet};
+use std::collections::{HashMap, HashSet};
 
-use crate::{generated::{Area, Entrance, Event, Exit, Item, Location, Options}, logic_static::{AreaBitset, BitSetCompatible, EventBitset, Inventory, ItemCollection, LocationBitset, RequirementKey, Requirements, TimeOfDay}};
+use crate::{generated::{Area, Entrance, Event, Exit, Item, Location, Options}, logic_static::{BitSetCompatible, EventBitset, Inventory, LocationBitset, RequirementKey, Requirements, TimeOfDay}};
 
 #[derive(Clone)]
 pub struct Placement {

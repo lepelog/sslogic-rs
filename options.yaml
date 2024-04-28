@@ -186,16 +186,16 @@
 - name: Max Batreaux Reward
   command: max-batreaux-reward
   type: singlechoice
-  default: 80
+  default: "80"
   choices:
-    - 0
-    - 5
-    - 10
-    - 30
-    - 40
-    - 50
-    - 70
-    - 80
+    - "0"
+    - "5"
+    - "10"
+    - "30"
+    - "40"
+    - "50"
+    - "70"
+    - "80"
   bits: 3
   help: Enables progression items to appear in all Batreaux rewards up to and including
     the specified amount.

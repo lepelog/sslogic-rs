@@ -1,6 +1,5 @@
 use std::{
     collections::{BTreeMap, HashMap},
-    fmt::Display,
     fs::File,
     io::BufReader,
 };
@@ -11,13 +10,12 @@ use regex::Regex;
 use serde::Deserialize;
 
 use crate::{
-    requirements::{RequirementExpression, Requirements},
-    structure::{
+    dumper::convert_to_upper_camel_case, requirements::RequirementExpression, structure::{
         self, Area, AreaId, ConnectionShuffleType, ContextLoadable, DoorConnection, DoubleDoor,
         Entrance, EntranceId, EntrancePatchInfo, Event, EventId, Exit, ExitId, ExitPatchInfo, Item,
         ItemId, Location, LocationId, LocationKind, LogicContext, Region, RegionId, RequirementKey,
         Stage, StageId,
-    },
+    }
 };
 
 #[derive(Debug, Deserialize, Clone, Copy, PartialEq, Eq)]
@@ -111,6 +109,54 @@ pub struct CheckYaml {
     types: String,
 }
 
+fn tru() -> bool {
+    true
+}
+
+#[derive(Debug, Deserialize)]
+pub struct OptionEntry {
+    pub name: String,
+    pub command: String,
+    pub help: Option<String>,
+    #[serde(default)]
+    pub cosmetic: bool,
+    #[serde(default = "tru")]
+    pub permalink: bool,
+    #[serde(flatten)]
+    pub variant: OptionVariant,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(tag = "type")]
+pub enum OptionVariant {
+    #[serde(rename = "boolean")]
+    Boolean(BooleanOption),
+    #[serde(rename = "int")]
+    Int(IntOption),
+    #[serde(rename = "singlechoice")]
+    Singlechoice(SinglechoiceOption),
+    #[serde(other)]
+    Other,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct BooleanOption {
+    pub default: bool,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct IntOption {
+    pub default: isize,
+    pub min: Option<isize>,
+    pub max: Option<isize>,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct SinglechoiceOption {
+    pub default: String,
+    pub choices: Vec<String>,
+}
+
 fn read_logic_into(name: &str, map: &mut BTreeMap<String, RegionYaml>) -> anyhow::Result<()> {
     let reader = BufReader::new(
         File::open(format!("../bitless/{name}.yaml")).with_context(|| name.to_string())?,
@@ -128,8 +174,7 @@ fn parse_macro_file() -> anyhow::Result<IndexMap<String, String>> {
 }
 
 pub fn read_item_file() -> anyhow::Result<HashMap<ItemId, Item>> {
-    let reader =
-        BufReader::new(File::open(format!("../logic-generator/items.yaml")).context("items")?);
+    let reader = BufReader::new(File::open(format!("../items.yaml")).context("items")?);
     let items_yaml: Vec<ItemYaml> = serde_yaml::from_reader(reader)?;
 
     let items = items_yaml
@@ -138,6 +183,7 @@ pub fn read_item_file() -> anyhow::Result<HashMap<ItemId, Item>> {
             let item_id = ItemId(item_yaml.id);
             let item = Item {
                 id: item_id,
+                ident: convert_to_upper_camel_case(&item_yaml.name),
                 name: item_yaml.name,
             };
             (item_id, item)
@@ -162,10 +208,20 @@ pub fn read_checks() -> anyhow::Result<IndexMap<String, CheckYaml>> {
     Ok(result)
 }
 
-pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
+pub fn read_options() -> anyhow::Result<Vec<OptionEntry>> {
+    let reader = BufReader::new(File::open(format!("../options.yaml")).context("options")?);
+    let result: Vec<OptionEntry> = serde_yaml::from_reader(reader)?;
+
+    Ok(result)
+}
+
+pub fn load_logic() -> anyhow::Result<(LogicContext, HashMap<RequirementKey, RequirementExpression<'static>>, Vec<OptionEntry>)> {
     let macros = parse_macro_file()?;
     let items = read_item_file()?;
     let checks = read_checks()?;
+    let options = read_options()?;
+
+    println!("{:?}", options);
 
     let stage_exit_re = Regex::new(r#"([^-]+) - ([^(-]+)( \(([^-]+)\))?$"#)?;
     let mut regions: BTreeMap<String, RegionYaml> = BTreeMap::new();
@@ -214,6 +270,7 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
                         areas: Vec::new(),
                         id: stage_id,
                         name: stage_name.clone(),
+                        ident: convert_to_upper_camel_case(&stage_name),
                     });
                     (stage_id, &mut stages.last_mut().unwrap().areas)
                 };
@@ -253,6 +310,7 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
 
                     locations.push(Location {
                         area: area_id,
+                        ident: convert_to_upper_camel_case(&display_name),
                         display_name,
                         name: location_name.clone(),
                         id: location_id,
@@ -271,9 +329,17 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
                     area_macros.insert(area_id, &area.macros);
                 }
 
+                // let full_name = format("{} - {}", stage_name, area_name);
+
                 areas.push(Area {
                     id: area_id,
                     can_sleep: area.can_sleep,
+                    full_name: format!("{} - {}", stage_name, area_name),
+                    ident: format!(
+                        "{}_{}",
+                        convert_to_upper_camel_case(stage_name),
+                        convert_to_upper_camel_case(area_name)
+                    ),
                     name: area_name.clone(),
                     time_of_day: area
                         .force_tod
@@ -301,13 +367,14 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
             areas: region_areas,
             id: region_id,
             name: region_name.clone(),
+            ident: convert_to_upper_camel_case(&region_name),
         });
     }
 
     let mut exits = Vec::new();
     let mut entrances: Vec<Entrance> = Vec::new();
 
-    for (region_name, region) in regions.iter() {
+    for region in regions.values() {
         for (stage_name, stage) in region.stages.iter() {
             for (area_name, area) in stage.areas.iter() {
                 let area_id = area_rev_lookup[&(stage_name.as_str(), area_name.as_str())];
@@ -333,8 +400,6 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
                         let other_areaname = &captures[2];
                         let disambiguation = captures.get(4).map(|c| c.as_str());
                         let other_area_id = area_rev_lookup[&(other_stagename, other_areaname)];
-
-                        let mut has_no_connection_def = true;
 
                         let mut create_connection = |connection_def: Option<&ConnectionYaml>| {
                             let double_door = connection_def
@@ -369,6 +434,20 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
                                     "{other_stagename} from {stage_name}{}",
                                     format_disambiguation
                                 ),
+                                ident: if let Some(disambig) = disambiguation {
+                                    format!(
+                                        "{}_From_{}_{}",
+                                        convert_to_upper_camel_case(other_stagename),
+                                        convert_to_upper_camel_case(stage_name),
+                                        convert_to_upper_camel_case(disambig)
+                                    )
+                                } else {
+                                    format!(
+                                        "{}_From_{}",
+                                        convert_to_upper_camel_case(other_stagename),
+                                        convert_to_upper_camel_case(stage_name)
+                                    )
+                                },
                                 door_connection: DoorConnection::No, // maybe filled later
                                 connection_shuffle_type,
                                 patch_info: connection_def.map(|info| EntrancePatchInfo {
@@ -391,6 +470,20 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
                                 display_name: format!(
                                     "{stage_name} to {other_stagename}{format_disambiguation}"
                                 ),
+                                ident: if let Some(disambig) = disambiguation {
+                                    format!(
+                                        "{}_To_{}_{}",
+                                        convert_to_upper_camel_case(stage_name),
+                                        convert_to_upper_camel_case(other_stagename),
+                                        convert_to_upper_camel_case(disambig)
+                                    )
+                                } else {
+                                    format!(
+                                        "{}_To_{}",
+                                        convert_to_upper_camel_case(stage_name),
+                                        convert_to_upper_camel_case(other_stagename)
+                                    )
+                                },
                                 to: other_area_id,
                                 coupled_entrance: None, // to be filled later
                                 door_connection: DoorConnection::No, // maybe filled later
@@ -453,14 +546,18 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
                             let right_entrance_no = entrances.len() - 2;
                             entrances[left_entrance_no].door_connection =
                                 DoorConnection::Right(EntranceId(right_entrance_no as u16));
+                            entrances[left_entrance_no].ident.push_str("_Left");
                             entrances[right_entrance_no].door_connection =
                                 DoorConnection::Left(EntranceId(left_entrance_no as u16));
+                            entrances[right_entrance_no].ident.push_str("_Right");
                             let left_exit_no = exits.len() - 1;
                             let right_exit_no = exits.len() - 2;
                             exits[left_exit_no].door_connection =
                                 DoorConnection::Right(ExitId(right_exit_no as u16));
+                            exits[left_exit_no].ident.push_str("_Left");
                             exits[right_exit_no].door_connection =
                                 DoorConnection::Left(ExitId(left_exit_no as u16));
+                            exits[right_entrance_no].ident.push_str("_Right");
                         } else if connection_defs.len() == 1 {
                             assert!(connection_defs[0].door == None);
                             create_connection(Some(connection_defs[0]));
@@ -509,6 +606,7 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
         .map(|(id, event)| Event {
             id: EventId(id as u16),
             name: event.to_string(),
+            ident: convert_to_upper_camel_case(&event),
         })
         .collect();
 
@@ -642,7 +740,5 @@ pub fn load_logic() -> anyhow::Result<(LogicContext, Requirements<'static>)> {
         assert!(i.id == i.id.ctx(&ctx).id);
     }
 
-    let reqs = Requirements::new_from_map(requirements);
-
-    Ok((ctx, reqs))
+    Ok((ctx, requirements, options))
 }
