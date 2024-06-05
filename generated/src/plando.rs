@@ -3,7 +3,11 @@ use std::collections::{HashMap, HashSet};
 use rand::{seq::SliceRandom, Rng};
 use snafu::Snafu;
 
-use crate::{explorer::{Explorer, Placement}, generated::{Item, Location, Options}, logic_static::Requirements};
+use crate::{
+    explorer::{MultiworldExplorer, Placement},
+    generated::{Item, Location, Options},
+    logic_static::Requirements,
+};
 
 /// The algorithm works as follows:
 ///
@@ -47,7 +51,7 @@ pub enum Error {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
-enum LocationOrStart {
+pub enum LocationOrStart {
     Start,
     Location(Location),
 }
@@ -90,7 +94,7 @@ impl LocationOrStart {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
-enum ItemOrVacant {
+pub enum ItemOrVacant {
     Vacant,
     Item(Item),
 }
@@ -134,8 +138,8 @@ impl From<Item> for ItemOrVacant {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct WeightedItem {
-    item: ItemOrVacant,
-    weight: u8,
+    pub item: ItemOrVacant,
+    pub weight: u8,
 }
 
 impl WeightedItem {
@@ -155,8 +159,8 @@ impl WeightedItem {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct WeightedLocation {
-    location: LocationOrStart,
-    weight: u8,
+    pub location: LocationOrStart,
+    pub weight: u8,
 }
 
 impl WeightedLocation {
@@ -174,7 +178,7 @@ impl WeightedLocation {
     }
 }
 
-#[derive(Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct WeightedCombination {
     item: WeightedItem,
     location: WeightedLocation,
@@ -204,6 +208,7 @@ pub fn place_items_plando(
     items: &mut HashMap<Item, u8>,
     progress_locations: &HashSet<Location>,
     progress_items: &HashSet<Item>,
+    world_index: usize,
 ) -> Result<(), Error> {
     let mut settings_placed_items: HashSet<Item> = HashSet::new();
     let mut settings_filled_locations: HashSet<Location> = HashSet::new();
@@ -216,7 +221,7 @@ pub fn place_items_plando(
                 items, locations, ..
             } => {
                 if items.len() == 1 && locations.len() == 1 {
-                    return 2;
+                    2
                 } else if locations.iter().all(|loc| loc.location.is_start()) {
                     return 1; // then startitems
                 } else {
@@ -225,7 +230,7 @@ pub fn place_items_plando(
             }
         }
     }
-    plando_entries.sort_by(|a, b| rate_entry(a).cmp(&rate_entry(b)));
+    plando_entries.sort_by_key(rate_entry);
     while let Some(current_entry) = plando_entries.pop() {
         let (count, mut entry_items, mut entry_locations, is_plando, allows_vacant) =
             match current_entry {
@@ -254,8 +259,8 @@ pub fn place_items_plando(
                 } => (count, items, locations, is_plando, false),
             };
         let mut new_settings_placed_items = Vec::new();
-        for placed_count in 0..count {
-            let mut unplaced_items: Vec<_> = entry_items
+        for _placed_count in 0..count {
+            let unplaced_items: Vec<_> = entry_items
                 .iter()
                 .filter(|placable| {
                     placable
@@ -264,7 +269,7 @@ pub fn place_items_plando(
                 })
                 .copied()
                 .collect();
-            let mut unfilled_locations: Vec<_> = entry_locations
+            let unfilled_locations: Vec<_> = entry_locations
                 .iter()
                 .filter(|place| place.location.is_start_or(|loc| locations.contains(&loc)))
                 .copied()
@@ -277,10 +282,7 @@ pub fn place_items_plando(
                 })
             {
                 return Err(Error::SettingsConflictItem {
-                    impossible_items: format!(
-                        "{:?}",
-                        entry_items
-                    ),
+                    impossible_items: format!("{:?}", entry_items),
                 });
             }
             if unfilled_locations.is_empty()
@@ -291,9 +293,7 @@ pub fn place_items_plando(
                 })
             {
                 return Err(Error::SettingsConflictLocation {
-                    impossible_locations: format!(
-                        "{:?}", entry_locations
-                    ),
+                    impossible_locations: format!("{:?}", entry_locations),
                 });
             }
             if unplaced_items.is_empty() || unfilled_locations.is_empty() {
@@ -327,41 +327,45 @@ pub fn place_items_plando(
                     ItemOrVacant::Item(item_to_place) => {
                         // explore, using all items that aren't placed yet, except the one we want to place
                         // assumed fill
-                        let mut explorer = Explorer::create(requirements, placement, options);
+                        let mut explorer = MultiworldExplorer::new();
+                        explorer.add_world(world_index, None, placement, requirements, options);
                         for (item, item_count) in items.iter() {
                             let count = if *item == item_to_place {
                                 *item_count - 1
                             } else {
                                 *item_count
                             };
-                            explorer.inventory.insert_items(*item, count);
+                            explorer.insert_items(world_index, *item, count);
                         }
                         for loc_or_start in unfilled_locations.iter() {
                             // if we're placing a progress item, make sure we only consider progress locations
-                            if !progress_items.contains(&item_to_place)
+                            if (!progress_items.contains(&item_to_place)
                                 || loc_or_start
                                     .location
-                                    .is_start_or(|l| progress_locations.contains(&l))
+                                    .is_start_or(|l| progress_locations.contains(&l)))
+                                && loc_or_start.location.is_start_or(|loc_to_fill| {
+                                    explorer.can_reach(world_index, loc_to_fill)
+                                })
                             {
-                                if loc_or_start
-                                    .location
-                                    .is_start_or(|loc_to_fill| explorer.can_reach(loc_to_fill))
-                                {
-                                    possible_combinations.push(WeightedCombination {
-                                        location: *loc_or_start,
-                                        item: *item_or_vacant,
-                                    });
-                                }
+                                possible_combinations.push(WeightedCombination {
+                                    location: *loc_or_start,
+                                    item: *item_or_vacant,
+                                });
                             }
                         }
                     }
                 }
             }
+            // println!("{entry_items:?}, {entry_locations:?}");
+            // println!("{unplaced_items:?}, {unfilled_locations:?}");
+            // println!("{possible_combinations:?}");
             if let Ok(combination) = possible_combinations.choose_weighted(rng, |combo| {
                 (combo.item.weight as u16) * (combo.location.weight as u16)
             }) {
-                // TODO: debug impl
-                println!("placing {:?} at {:?}", combination.item.item, combination.location.location);
+                // println!(
+                //     "placing {:?} at {:?}",
+                //     combination.item.item, combination.location.location
+                // );
                 // remove it from remaining items
                 entry_items.swap_remove(
                     entry_items
@@ -397,14 +401,15 @@ pub fn place_items_plando(
                     LocationOrStart::Location(loc) => {
                         locations.remove(&loc);
                         settings_filled_locations.insert(loc);
-                        placement.set_location(loc, combination.item.item.as_item().unwrap());
+                        placement.set_location(loc, world_index, combination.item.item);
                     }
                     LocationOrStart::Start => {
-                        let count = placement.initial_items.entry(
-                            combination.item.item.as_item().unwrap()
-                        ).or_default();
+                        let count = placement
+                            .initial_items
+                            .entry(combination.item.item.as_item().unwrap())
+                            .or_default();
                         *count = count.saturating_add(1);
-                    },
+                    }
                 }
             } else {
                 return Err(Error::PlandoNoLocation);

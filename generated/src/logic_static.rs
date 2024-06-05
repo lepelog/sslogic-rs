@@ -1,6 +1,9 @@
-use std::{collections::{HashMap, HashSet}, marker::PhantomData};
+use std::{
+    collections::{HashMap, HashSet},
+    marker::PhantomData,
+};
 
-use crate::generated::{Area, Event, Exit, Item, Location, Stage, Options};
+use crate::generated::{Area, Event, Exit, Item, Location, Options, Stage};
 
 bitflags::bitflags! {
     #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
@@ -73,11 +76,11 @@ impl<T: BitSetCompatible, const N: usize> BitSet<T, N> {
     }
 
     pub fn get_all_set(&self) -> impl Iterator<Item = T> + '_ {
-        T::ALL.iter().map(|a| *a).filter(|a| self.has(*a))
+        T::ALL.iter().copied().filter(|a| self.has(*a))
     }
 
     pub fn get_all_unset(&self) -> impl Iterator<Item = T> + '_ {
-        T::ALL.iter().map(|a| *a).filter(|a| !self.has(*a))
+        T::ALL.iter().copied().filter(|a| !self.has(*a))
     }
 }
 
@@ -134,8 +137,6 @@ pub struct Inventory {
     pub events: EventBitset,
 }
 
-
-
 impl Inventory {
     pub fn get_area_tod(&self, area: Area) -> TimeOfDay {
         let mut tod = TimeOfDay::empty();
@@ -175,6 +176,12 @@ impl Inventory {
 pub struct Requirements<'a> {
     parent: Option<&'a Requirements<'a>>,
     pub requirements: std::collections::HashMap<RequirementKey, RequirementExpression<'a>>,
+}
+
+impl Default for Requirements<'static> {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Requirements<'static> {
@@ -225,7 +232,7 @@ impl<'a> Requirements<'a> {
             None => self.parent.and_then(|parent| {
                 parent
                     .get_requirement(requirement)
-                    .map(|r| RequirementExpression::Ref(r))
+                    .map(RequirementExpression::Ref)
             }),
         }
     }
@@ -278,8 +285,6 @@ pub enum RequirementExpression<'a> {
     Ref(&'a RequirementExpression<'a>),
 }
 
-
-
 impl<'a> RequirementExpression<'a> {
     pub fn check(&self, inventory: &Inventory, options: &Options, allowed_tod: TimeOfDay) -> bool {
         match self {
@@ -330,12 +335,15 @@ impl<'a> RequirementExpression<'a> {
 
     pub fn owned(&self) -> RequirementExpression<'static> {
         match self {
-            RequirementExpression::And(reqs) => 
-                RequirementExpression::And(reqs.iter().map(|req| req.owned()).collect()),
-            RequirementExpression::Or(reqs) =>
-                RequirementExpression::Or(reqs.iter().map(|req| req.owned()).collect()),
-            RequirementExpression::Item(item_id, count) => RequirementExpression::Item(
-                *item_id, *count),
+            RequirementExpression::And(reqs) => {
+                RequirementExpression::And(reqs.iter().map(|req| req.owned()).collect())
+            }
+            RequirementExpression::Or(reqs) => {
+                RequirementExpression::Or(reqs.iter().map(|req| req.owned()).collect())
+            }
+            RequirementExpression::Item(item_id, count) => {
+                RequirementExpression::Item(*item_id, *count)
+            }
             RequirementExpression::Event(event_id) => RequirementExpression::Event(*event_id),
             RequirementExpression::Area(area, tod) => RequirementExpression::Area(*area, *tod),
             RequirementExpression::Fixed(value) => RequirementExpression::Fixed(*value),
@@ -371,7 +379,10 @@ impl From<Event> for RequirementKey {
     }
 }
 
-impl <T> From<&T> for RequirementKey where T: Into<RequirementKey> + Copy {
+impl<T> From<&T> for RequirementKey
+where
+    T: Into<RequirementKey> + Copy,
+{
     fn from(value: &T) -> Self {
         (*value).into()
     }
