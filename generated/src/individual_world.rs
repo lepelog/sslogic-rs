@@ -1,7 +1,7 @@
 use std::{
-    collections::{HashMap, HashSet},
     iter::repeat,
 };
+use fxhash::{FxHashMap as HashMap, FxHashSet as HashSet};
 
 use rand::prelude::*;
 
@@ -128,11 +128,11 @@ pub fn generate_single_world<'a, R: Rng>(
     );
 
     // figure out item pool
-    let mut item_pool = HashMap::new();
+    let mut item_pool = HashMap::default();
 
     // TODO rename, probably
-    let mut item_meta = HashMap::new();
-    let mut useless_items = HashSet::new();
+    let mut item_meta = HashMap::default();
+    let mut useless_items = HashSet::default();
     for (item, count) in PROGRESS_ITEMS {
         item_pool.insert(*item, *count);
         item_meta.insert(
@@ -183,7 +183,7 @@ pub fn generate_single_world<'a, R: Rng>(
         .collect();
 
     let empty_inventory = Inventory::default();
-    let mut progress_locations = HashSet::new();
+    let mut progress_locations = HashSet::default();
 
     for area in Area::ALL {
         if banned_areas.contains(area) {

@@ -1,4 +1,4 @@
-use std::collections::{HashMap, HashSet};
+use fxhash::{FxHashMap as HashMap, FxHashSet as HashSet};
 
 use crate::{
     generated::{Area, Entrance, Event, Exit, Item, Location, Options},
@@ -357,7 +357,7 @@ impl<'a> MultiworldExplorer<'a> {
                     world.options,
                     &mut world.inventory,
                     world.banned_areas,
-                    &HashMap::new(),
+                    &HashMap::default(),
                 ) {
                     any_update = true;
                 }

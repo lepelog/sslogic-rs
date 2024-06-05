@@ -1,4 +1,4 @@
-use std::collections::{HashMap, HashSet};
+use fxhash::{FxHashMap as HashMap, FxHashSet as HashSet};
 
 use rand::{seq::SliceRandom, Rng};
 use snafu::Snafu;
@@ -210,8 +210,8 @@ pub fn place_items_plando(
     progress_items: &HashSet<Item>,
     world_index: usize,
 ) -> Result<(), Error> {
-    let mut settings_placed_items: HashSet<Item> = HashSet::new();
-    let mut settings_filled_locations: HashSet<Location> = HashSet::new();
+    let mut settings_placed_items: HashSet<Item> = HashSet::default();
+    let mut settings_filled_locations: HashSet<Location> = HashSet::default();
     plando_entries.shuffle(rng);
     // this makes sure that entries with the same item * locations length are near another, but random
     fn rate_entry(entry: &PlandoEntry) -> usize {

@@ -1,7 +1,8 @@
 use std::{
-    collections::{HashMap, HashSet},
     marker::PhantomData,
 };
+
+use fxhash::{FxHashMap as HashMap, FxHashSet as HashSet};
 
 use crate::generated::{Area, Event, Exit, Item, Location, Options, Stage};
 
@@ -175,7 +176,7 @@ impl Inventory {
 
 pub struct Requirements<'a> {
     parent: Option<&'a Requirements<'a>>,
-    pub requirements: std::collections::HashMap<RequirementKey, RequirementExpression<'a>>,
+    pub requirements: HashMap<RequirementKey, RequirementExpression<'a>>,
 }
 
 impl Default for Requirements<'static> {

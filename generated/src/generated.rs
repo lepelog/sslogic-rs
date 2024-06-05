@@ -2,7 +2,7 @@
 use super::logic_static::{
     BitSetCompatible, ForceToD, RequirementExpression, RequirementKey, Requirements, TimeOfDay,
 };
-use std::collections::HashMap;
+use fxhash::{FxHashMap as HashMap};
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum Region {
     AncientCistern,
@@ -14002,7 +14002,7 @@ impl Location {
     }
 }
 pub fn get_logic() -> Requirements<'static> {
-    Requirements::new_from_map(HashMap::from([
+    Requirements::new_from_map(std::collections::HashMap::from([
         (
             RequirementKey::Exit(Exit::AncientCistern_To_AncientCisternBoss),
             RequirementExpression::And(vec![
@@ -20213,7 +20213,7 @@ pub fn get_logic() -> Requirements<'static> {
                 RequirementExpression::Area(Area::LanayruDesert_SandOasis, TimeOfDay::Both),
             ])]),
         ),
-    ]))
+    ]).into_iter().collect())
 }
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum OpenThunderhead {
